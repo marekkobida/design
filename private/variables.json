@@ -1,0 +1,82 @@
+{
+  ":root": [
+    {
+      "name": "--body--background-color",
+      "value": "255, 255, 255"
+    },
+    {
+      "name": "--body--font-size",
+      "value": "1rem"
+    },
+    {
+      "name": "--body--line-height",
+      "value": "1.25"
+    },
+    {
+      "name": "--color",
+      "value": "0, 0, 0"
+    },
+    {
+      "name": "--color-alpha",
+      "value": "1"
+    },
+    {
+      "name": "--space",
+      "value": "1rem"
+    }
+  ],
+  "breakpoints": [
+    null,
+    {
+      "name": "\\#",
+      "size": "40rem"
+    },
+    {
+      "name": "\\#\\#",
+      "size": "64rem"
+    }
+  ],
+  "columns": 12,
+  "spaces": [
+    {
+      "name": "0",
+      "size": "0"
+    },
+    {
+      "name": "1",
+      "size": "calc(var(--space) * 0.25)"
+    },
+    {
+      "name": "2",
+      "size": "calc(var(--space) * 0.5)"
+    },
+    {
+      "name": "3",
+      "size": "calc(var(--space) * 0.75)"
+    },
+    {
+      "name": "4",
+      "size": "calc(var(--space) * 1)"
+    },
+    {
+      "name": "5",
+      "size": "calc(var(--space) * 1.25)"
+    },
+    {
+      "name": "6",
+      "size": "calc(var(--space) * 1.5)"
+    },
+    {
+      "name": "7",
+      "size": "calc(var(--space) * 1.75)"
+    },
+    {
+      "name": "8",
+      "size": "calc(var(--space) * 2)"
+    },
+    {
+      "name": "16",
+      "size": "calc(var(--space) * 4)"
+    }
+  ]
+}
