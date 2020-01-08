@@ -1,5 +1,3 @@
-import '../index.css';
-
 import Container from '@redred/pages/private/Container';
 
 import pages from './pages';
