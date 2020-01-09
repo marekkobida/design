@@ -42,18 +42,16 @@ const components = (
 
 ### css
 
-#### components
-
-1. [Flex](./private/css/components/Flex.ts)
-1. [Grid](./private/css/components/Grid.ts)
-1. [Helpers](./private/css/components/Helpers.ts)
-1. [Spaces](./private/css/components/Spaces.ts)
-1. [Tabs](./private/css/components/Tabs.ts)
-1. [Typography](./private/css/components/Typography.ts)
-
 ---
 
 ### helpers
 
 1. [createClassName](./private/helpers/createClassName.ts)
 1. [createResponsiveClassName](./private/helpers/createResponsiveClassName.ts)
+
+---
+
+### variables `json`
+
+```ts
+```
