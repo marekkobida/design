@@ -13,7 +13,7 @@ interface P {
   weight?: Text['props']['weight'];
 }
 
-class Heading extends React.Component<P & Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof P> & Omit<Element['props'], keyof P>> {
+class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof P> & Omit<Element['props'], keyof P>> {
   render() {
     const {
       alignment, className, color, size, weight, ...props

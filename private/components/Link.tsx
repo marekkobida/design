@@ -14,7 +14,7 @@ interface P {
   weight?: Text['props']['weight'];
 }
 
-class Link extends React.Component<P & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof P> & Omit<Element['props'], keyof P>> {
+class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P> & Omit<Element['props'], keyof P>> {
   render() {
     const {
       alignment, className, color, size, to, weight, ...props

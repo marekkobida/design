@@ -1,12 +1,12 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName } from '../helpers/createClassName';
 
 interface P {
-  className?: Parameters<typeof createClassName>[0];
+  className?: ClassName | ClassName[];
 }
 
-class Element extends React.Component<P & Omit<React.HTMLAttributes<HTMLDivElement>, keyof P>> {
+class Element extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'div'>, keyof P>> {
   render() {
     const { className, ...props } = this.props;
 

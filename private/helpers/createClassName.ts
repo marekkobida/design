@@ -2,10 +2,10 @@ import {
   isArray, isNumber, isObject, isString,
 } from '@redred/helpers';
 
-type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
+export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
 
-function createClassName(...parameters: Array<Array<ClassName> | ClassName>): string | undefined {
-  let $: Array<number | string> = [];
+function createClassName(...parameters: (ClassName[] | ClassName)[]): string | undefined {
+  let $: (number | string)[] = [];
 
   for (let i = 0; i < parameters.length; i += 1) {
     const parameter = parameters[i];

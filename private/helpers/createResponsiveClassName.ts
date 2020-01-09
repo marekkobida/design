@@ -6,8 +6,8 @@ export type Breakpoint = '#' | '##';
 
 export type ResponsiveClassName<T extends number | string> = T | [T, { [breakpoint in Breakpoint]?: T }] | [T] | { [breakpoint in Breakpoint]?: T };
 
-function createResponsiveClassName(...parameters: Array<[string, string, ResponsiveClassName<number | string> | undefined]>): string | undefined {
-  let $: Array<string> = [];
+function createResponsiveClassName(...parameters: [string, string, ResponsiveClassName<number | string> | undefined][]): string | undefined {
+  let $: string[] = [];
 
   function $$(...responsiveClassName: [string, string, number | string | undefined]) {
     if (!responsiveClassName[2]) {

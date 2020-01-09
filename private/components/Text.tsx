@@ -12,7 +12,7 @@ interface P {
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 }
 
-class Text extends React.Component<P & Omit<React.HTMLAttributes<HTMLParagraphElement>, keyof P> & Omit<Element['props'], keyof P>> {
+class Text extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'p'>, keyof P> & Omit<Element['props'], keyof P>> {
   render() {
     const {
       alignment, className, color, size, weight, ...props
