@@ -47,7 +47,7 @@ class CSS {
       const b = $(i, isArray(to) ? to[i] : null);
 
       if (b) {
-        $$ = [...$$, b];
+        $$ = [ ...$$, b ];
       }
     }
 

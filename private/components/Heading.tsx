@@ -21,7 +21,7 @@ class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h
 
     const createdClassName = createClassName(
       color && `color_${color}`,
-      createResponsiveClassName(['t', 'alignment', alignment]),
+      createResponsiveClassName([ 't', 'alignment', alignment ]),
       weight && `t_weight_${weight}`,
       className,
     );

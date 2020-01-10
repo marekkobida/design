@@ -13,14 +13,14 @@ function createClassName(...parameters: (ClassName[] | ClassName)[]): string | u
         const createdClassName = createClassName(...parameter);
 
         if (createdClassName) {
-          $ = [...$, createdClassName];
+          $ = [ ...$, createdClassName ];
         }
       } else if (helpers.isNumber(parameter) || helpers.isString(parameter)) {
-        $ = [...$, parameter];
+        $ = [ ...$, parameter ];
       } else if (helpers.isObject(parameter)) {
         for (const className in parameter) {
           if (parameter[className]) {
-            $ = [...$, className];
+            $ = [ ...$, className ];
           }
         }
       }

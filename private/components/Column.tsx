@@ -19,8 +19,8 @@ class Column extends React.Component<P & Omit<Element['props'], keyof P>> {
 
     const createdClassName = createClassName(
       'column',
-      createResponsiveClassName(['column', 'offset', offset]),
-      createResponsiveClassName(['column', 'size', size]),
+      createResponsiveClassName([ 'column', 'offset', offset ]),
+      createResponsiveClassName([ 'column', 'size', size ]),
       'p-x-2',
       className,
     );

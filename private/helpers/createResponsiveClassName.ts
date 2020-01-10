@@ -12,7 +12,7 @@ function createResponsiveClassName(...parameters: [string, string, ResponsiveCla
       return;
     }
 
-    $ = [...$, `${responsiveClassName[0]}_${responsiveClassName[1]}_${responsiveClassName[2]}`];
+    $ = [ ...$, `${responsiveClassName[0]}_${responsiveClassName[1]}_${responsiveClassName[2]}` ];
   }
 
   for (let i = 0; i < parameters.length; i += 1) {

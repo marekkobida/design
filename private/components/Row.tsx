@@ -20,10 +20,10 @@ class Row extends React.Component<P & Omit<Element['props'], keyof P>> {
 
     const createdClassName = createClassName(
       'flex flex_flex-wrap_wrap',
-      createResponsiveClassName(['flex', 'align-items', alignItems]),
-      createResponsiveClassName(['flex', 'flex-direction', flexDirection]),
-      createResponsiveClassName(['flex', 'flex-wrap', flexWrap]),
-      createResponsiveClassName(['flex', 'justify-content', justifyContent]),
+      createResponsiveClassName([ 'flex', 'align-items', alignItems ]),
+      createResponsiveClassName([ 'flex', 'flex-direction', flexDirection ]),
+      createResponsiveClassName([ 'flex', 'flex-wrap', flexWrap ]),
+      createResponsiveClassName([ 'flex', 'justify-content', justifyContent ]),
       'm-x-!2',
       className,
     );
