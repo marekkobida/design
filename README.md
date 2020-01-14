@@ -28,7 +28,7 @@
 import React from 'react';
 import { Column, Container, Row } from '@redred/design';
 
-const components = (
+const test = (
   <Container>
     <Row>
       <Column>Left</Column>
@@ -48,10 +48,3 @@ const components = (
 
 1. [createClassName](./private/helpers/createClassName.ts)
 1. [createResponsiveClassName](./private/helpers/createResponsiveClassName.ts)
-
----
-
-### variables `json`
-
-```ts
-```
