@@ -34,8 +34,9 @@ ${new Grid().css()}
 ${new Helpers().css()}
 ${new Spaces().css()}
 ${new Tabs().css()}
-${new Typography().css()}`;
+${new Typography().css()}
+`;
   }
 }
 
-write('./packages/design/index.css', `/**\n * Copyright 2020 Marek Kobida\n */\n${new Index().css()}\n`);
+write('./packages/design/index.css', new Index().css());
