@@ -2,7 +2,7 @@ import CSS from '../CSS';
 import variables from '../../variables.json';
 
 class Spaces extends CSS {
-  css(spaces = variables.spaces, breakpoints = variables.breakpoints) {
+  css (spaces = variables.spaces, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => {
         const $ = (property: string, abbreviation: string) => this.test({
@@ -78,7 +78,7 @@ ${$$}
   margin-top: auto !important;
 }`;
       },
-      breakpoints,
+      breakpoints
     );
   }
 }

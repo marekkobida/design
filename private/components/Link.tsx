@@ -15,7 +15,7 @@ interface P {
 }
 
 class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P> & Omit<Element['props'], keyof P>> {
-  render() {
+  render () {
     const {
       alignment, className, color, size, to, weight, ...props
     } = this.props;
@@ -23,9 +23,9 @@ class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>,
     const createdClassName = createClassName(
       color && `color_${color}`,
       size && `h${size}`,
-      createResponsiveClassName([ 't', 'alignment', alignment ]),
+      createResponsiveClassName([ 't', 'alignment', alignment, ]),
       weight && `t_weight_${weight}`,
-      className,
+      className
     );
 
     return <a {...props} className={createdClassName} href={to} />;

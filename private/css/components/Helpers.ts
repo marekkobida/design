@@ -2,7 +2,7 @@ import CSS from '../CSS';
 import variables from '../../variables.json';
 
 class Helpers extends CSS {
-  css(breakpoints = variables.breakpoints) {
+  css (breakpoints = variables.breakpoints) {
     const $ = this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}block {
   display: block !important;
@@ -13,7 +13,7 @@ class Helpers extends CSS {
 .${breakpoint.name}none {
   display: none !important;
 }`,
-      breakpoints,
+      breakpoints
     );
 
     const $$ = this.forBreakpoints(
@@ -35,7 +35,7 @@ class Helpers extends CSS {
 .${breakpoint.name}top {
   top: 0 !important;
 }`,
-      breakpoints,
+      breakpoints
     );
 
     return `${$}

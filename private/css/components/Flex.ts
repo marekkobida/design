@@ -2,7 +2,7 @@ import CSS from '../CSS';
 import variables from '../../variables.json';
 
 class Flex extends CSS {
-  css(breakpoints = variables.breakpoints) {
+  css (breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}flex {
   display: flex !important;
@@ -55,7 +55,7 @@ class Flex extends CSS {
 .${breakpoint.name}inline-flex {
   display: inline-flex !important;
 }`,
-      breakpoints,
+      breakpoints
     );
   }
 }

@@ -2,7 +2,7 @@ import CSS from '../CSS';
 import variables from '../../variables.json';
 
 class Typography extends CSS {
-  createAlignments(breakpoints = variables.breakpoints) {
+  createAlignments (breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}t_alignment_\\# {
   text-align: center !important;
@@ -13,11 +13,11 @@ class Typography extends CSS {
 .${breakpoint.name}t_alignment_r {
   text-align: right !important;
 }`,
-      breakpoints,
+      breakpoints
     );
   }
 
-  css(breakpoints = variables.breakpoints) {
+  css (breakpoints = variables.breakpoints) {
     return `:root {
   --heading--font-family: SF Pro Display;
   --heading--font-weight: 500;

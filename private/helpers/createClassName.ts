@@ -4,7 +4,7 @@ import * as helpers from '@redred/helpers';
 
 export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
 
-function createClassName(...parameters: (ClassName[] | ClassName)[]): string | undefined {
+function createClassName (...parameters: (ClassName[] | ClassName)[]): string | undefined {
   let $: (number | string)[] = [];
 
   for (let i = 0; i < parameters.length; i += 1) {
@@ -15,27 +15,23 @@ function createClassName(...parameters: (ClassName[] | ClassName)[]): string | u
         const createdClassName = createClassName(...parameter);
 
         if (createdClassName) {
-          $ = [ ...$, createdClassName ];
+          $ = [ ...$, createdClassName, ];
         }
-      } else if (helpers.isNumber(parameter) || helpers.isString(parameter)) {
-
-        if (helpers.isString(parameter)) {
-          const aaa = parameter.split(' ');
-          if (aaa.length > 0) {
-            $ = [ ...$, ...aaa ];
-          } else {
-            $ = [ ...$, parameter ];
-          }
-        } else {
-          $ = [ ...$, parameter ];
-        }
-
-
+      } else if (helpers.isNumber(parameter)) {
+        $ = [ ...$, parameter, ];
       } else if (helpers.isObject(parameter)) {
         for (const className in parameter) {
           if (parameter[className]) {
-            $ = [ ...$, className ];
+            $ = [ ...$, className, ];
           }
+        }
+      } else if (helpers.isString(parameter)) {
+        const $$ = parameter.split(' ');
+
+        if ($$.length > 0) {
+          $ = [ ...$, ...$$, ];
+        } else {
+          $ = [ ...$, parameter, ];
         }
       }
     }

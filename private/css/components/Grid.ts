@@ -2,7 +2,7 @@ import CSS from '../CSS';
 import variables from '../../variables.json';
 
 class Grid extends CSS {
-  createColumn() {
+  createColumn () {
     return `.column {
   flex-basis: 0;
   flex-grow: 1;
@@ -11,7 +11,7 @@ class Grid extends CSS {
 }`;
   }
 
-  createColumnOffsets(columns: number = variables.columns, breakpoints = variables.breakpoints) {
+  createColumnOffsets (columns: number = variables.columns, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => this.test({
         $: (i) => `.${breakpoint.name}column_offset_${i} {
@@ -19,11 +19,11 @@ class Grid extends CSS {
 }`,
         to: columns,
       }),
-      breakpoints,
+      breakpoints
     );
   }
 
-  createColumnSizes(columns: number = variables.columns, breakpoints = variables.breakpoints) {
+  createColumnSizes (columns: number = variables.columns, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => {
         const sizes = this.test({
@@ -46,17 +46,17 @@ class Grid extends CSS {
 }
 ${sizes}`;
       },
-      breakpoints,
+      breakpoints
     );
   }
 
-  createContainer() {
+  createContainer () {
     return `.container {
   max-width: 75rem;
 }`;
   }
 
-  css(columns = variables.columns, breakpoints = variables.breakpoints) {
+  css (columns = variables.columns, breakpoints = variables.breakpoints) {
     return `${this.createColumn()}
 ${this.createColumnOffsets(columns, breakpoints)}
 ${this.createColumnSizes(columns, breakpoints)}

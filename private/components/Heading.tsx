@@ -14,16 +14,16 @@ interface P {
 }
 
 class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof P> & Omit<Element['props'], keyof P>> {
-  render() {
+  render () {
     const {
       alignment, className, color, size, weight, ...props
     } = this.props;
 
     const createdClassName = createClassName(
       color && `color_${color}`,
-      createResponsiveClassName([ 't', 'alignment', alignment ]),
+      createResponsiveClassName([ 't', 'alignment', alignment, ]),
       weight && `t_weight_${weight}`,
-      className,
+      className
     );
 
     const E = `h${size}` as 'h1';

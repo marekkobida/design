@@ -1,7 +1,7 @@
 import React from 'react';
 
 import createClassName from '../helpers/createClassName';
-import createResponsiveClassName, { ResponsiveClassName } from '../helpers/createResponsiveClassName';
+import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
 
 import Element from './Element';
 
@@ -13,7 +13,7 @@ interface P {
 }
 
 class Text extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'p'>, keyof P> & Omit<Element['props'], keyof P>> {
-  render() {
+  render () {
     const {
       alignment, className, color, size, weight, ...props
     } = this.props;
@@ -21,9 +21,9 @@ class Text extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'p'>,
     const createdClassName = createClassName(
       color && `color_${color}`,
       size && `h${size}`,
-      createResponsiveClassName([ 't', 'alignment', alignment ]),
+      createResponsiveClassName([ 't', 'alignment', alignment, ]),
       weight && `t_weight_${weight}`,
-      className,
+      className
     );
 
     return <p {...props} className={createdClassName} />;

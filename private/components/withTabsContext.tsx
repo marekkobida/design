@@ -6,11 +6,11 @@ interface R {
   Tabs: React.ContextType<typeof TabsContext>;
 }
 
-function withTabsContext<L extends R>(Component: React.ComponentType<L>) {
+function withTabsContext<L extends R> (Component: React.ComponentType<L>) {
   return class WithTabsContext extends React.Component<Omit<L, keyof R>> {
     static displayName = `WithTabsContext(${Component.name})`;
 
-    render() {
+    render () {
       return (
         <TabsContext.Consumer>
           {

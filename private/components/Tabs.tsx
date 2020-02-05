@@ -14,29 +14,29 @@ interface S {
 }
 
 class Tabs extends React.Component<P & Omit<Element['props'], keyof P>> {
-  state = { activeId: null };
+  state = { activeId: null, };
 
-  get activeId() {
-    const { activeId } = this.state;
+  get activeId () {
+    const { activeId, } = this.state;
 
     return activeId;
   }
 
-  set activeId(id: S['activeId']) {
-    const { onActivation } = this.props;
+  set activeId (id: S['activeId']) {
+    const { onActivation, } = this.props;
 
-    onActivation({ activeId: id });
+    onActivation({ activeId: id, });
 
-    this.setState(() => ({ activeId: id }));
+    this.setState(() => ({ activeId: id, }));
   }
 
-  render() {
+  render () {
     const { className, onActivation, ...props } = this.props;
 
     const createdClassName = createClassName('flex flex_justify-content_#', className);
 
     return (
-      <TabsContext.Provider value={{ Tabs: this }}>
+      <TabsContext.Provider value={{ Tabs: this, }}>
         <Element {...props} className={createdClassName} />
       </TabsContext.Provider>
     );

@@ -4,15 +4,15 @@ export type Breakpoint = '#' | '##';
 
 export type ResponsiveClassName<T extends number | string> = T | [T, { [breakpoint in Breakpoint]?: T }] | [T] | { [breakpoint in Breakpoint]?: T };
 
-function createResponsiveClassName(...parameters: [string, string, ResponsiveClassName<number | string> | undefined][]): string | undefined {
+function createResponsiveClassName (...parameters: [string, string, ResponsiveClassName<number | string> | undefined][]): string | undefined {
   let $: string[] = [];
 
-  function $$(...responsiveClassName: [string, string, number | string | undefined]) {
+  function $$ (...responsiveClassName: [string, string, number | string | undefined]) {
     if (!responsiveClassName[2]) {
       return;
     }
 
-    $ = [ ...$, `${responsiveClassName[0]}_${responsiveClassName[1]}_${responsiveClassName[2]}` ];
+    $ = [ ...$, `${responsiveClassName[0]}_${responsiveClassName[1]}_${responsiveClassName[2]}`, ];
   }
 
   for (let i = 0; i < parameters.length; i += 1) {

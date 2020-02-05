@@ -1,7 +1,7 @@
 import React from 'react';
 
 import createClassName from '../helpers/createClassName';
-import createResponsiveClassName, { ResponsiveClassName } from '../helpers/createResponsiveClassName';
+import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
 
 import Element from './Element';
 
@@ -12,17 +12,17 @@ interface P {
 }
 
 class Column extends React.Component<P & Omit<Element['props'], keyof P>> {
-  render() {
+  render () {
     const {
       className, offset, size, test, ...props
     } = this.props;
 
     const createdClassName = createClassName(
       'column',
-      createResponsiveClassName([ 'column', 'offset', offset ]),
-      createResponsiveClassName([ 'column', 'size', size ]),
+      createResponsiveClassName([ 'column', 'offset', offset, ]),
+      createResponsiveClassName([ 'column', 'size', size, ]),
       'p-x-2',
-      className,
+      className
     );
 
     return <div {...props} ref={test} className={createdClassName} />;

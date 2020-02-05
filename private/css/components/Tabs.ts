@@ -1,7 +1,7 @@
 import CSS from '../CSS';
 
 class Tabs extends CSS {
-  css() {
+  css () {
     return `.tab {
   border-bottom: 0.0625rem solid rgb(var(--border--border-color));
 }
