@@ -1,3 +1,5 @@
+import css from '../../index.css';
+
 import * as helpers from '@redred/helpers';
 
 export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
@@ -16,7 +18,19 @@ function createClassName(...parameters: (ClassName[] | ClassName)[]): string | u
           $ = [ ...$, createdClassName ];
         }
       } else if (helpers.isNumber(parameter) || helpers.isString(parameter)) {
-        $ = [ ...$, parameter ];
+
+        if (helpers.isString(parameter)) {
+          const aaa = parameter.split(' ');
+          if (aaa.length > 0) {
+            $ = [ ...$, ...aaa ];
+          } else {
+            $ = [ ...$, parameter ];
+          }
+        } else {
+          $ = [ ...$, parameter ];
+        }
+
+
       } else if (helpers.isObject(parameter)) {
         for (const className in parameter) {
           if (parameter[className]) {
@@ -24,6 +38,12 @@ function createClassName(...parameters: (ClassName[] | ClassName)[]): string | u
           }
         }
       }
+    }
+  }
+
+  for (let i = 0; i < $.length; i += 1) {
+    if (css[$[i]]) {
+      $[i] = css[$[i]];
     }
   }
 
