@@ -1,6 +1,5 @@
-import css from '../../index.css';
-
 import * as helpers from '@redred/helpers';
+import encodeClassName from './encodeClassName';
 
 export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
 
@@ -37,11 +36,7 @@ function createClassName (...parameters: (ClassName[] | ClassName)[]): string | 
     }
   }
 
-  for (let i = 0; i < $.length; i += 1) {
-    if (css[$[i]]) {
-      $[i] = css[$[i]];
-    }
-  }
+  $ = encodeClassName($);
 
   if ($.length > 0) {
     return $.join(' ');

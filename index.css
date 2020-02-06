@@ -14,7 +14,7 @@
 body {
   background-color: rgb(var(--body--background-color));
   color: rgba(var(--color), var(--color-alpha));
-  font-family: SF Pro Text;
+  font-family: -apple-system, BlinkMacSystemFont;
   font-size: var(--body--font-size);
   line-height: var(--body--line-height);
   margin: 0;
