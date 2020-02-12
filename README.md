@@ -48,3 +48,4 @@ const test = (
 
 1. [createClassName](./private/helpers/createClassName.ts)
 1. [createResponsiveClassName](./private/helpers/createResponsiveClassName.ts)
+1. [encodeClassName](./private/helpers/encodeClassName.ts)
