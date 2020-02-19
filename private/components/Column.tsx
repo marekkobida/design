@@ -1,17 +1,16 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
 
-import Element from './Element';
-
 interface P {
+  className?: ClassName | ClassName[];
   offset?: ResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
   size?: ResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
   test?: React.RefObject<HTMLDivElement>;
 }
 
-class Column extends React.Component<P & Omit<Element['props'], keyof P>> {
+class Column extends React.Component<P> {
   render () {
     const {
       className, offset, size, test, ...props

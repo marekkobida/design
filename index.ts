@@ -2,7 +2,6 @@ export { ClassName, default as createClassName, } from './private/helpers/create
 export { ResponsiveClassName, default as createResponsiveClassName, } from './private/helpers/createResponsiveClassName';
 export { default as Column, } from './private/components/Column';
 export { default as Container, } from './private/components/Container';
-export { default as Element, } from './private/components/Element';
 export { default as Heading, } from './private/components/Heading';
 export { default as Link, } from './private/components/Link';
 export { default as Row, } from './private/components/Row';

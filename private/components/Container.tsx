@@ -1,16 +1,18 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 
-import Element from './Element';
+interface P {
+  className?: ClassName | ClassName[];
+}
 
-class Container extends React.Component<Element['props']> {
+class Container extends React.Component<P> {
   render () {
     const { className, ...props } = this.props;
 
     const createdClassName = createClassName('container m-x-# p-x-2', className);
 
-    return <Element {...props} className={createdClassName} />;
+    return <div {...props} className={createdClassName} />;
   }
 }
 

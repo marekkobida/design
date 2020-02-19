@@ -14,7 +14,6 @@
 
 1. [Column](./private/components/Column.tsx)
 1. [Container](./private/components/Container.tsx)
-1. [Element](./private/components/Element.tsx)
 1. [Heading](./private/components/Heading.tsx)
 1. [Link](./private/components/Link.tsx)
 1. [Row](./private/components/Row.tsx)

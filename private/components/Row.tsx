@@ -1,18 +1,17 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
-
-import Element from './Element';
 
 interface P {
   alignItems?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
+  className?: ClassName | ClassName[];
   flexDirection?: ResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: ResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
   justifyContent?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
 }
 
-class Row extends React.Component<P & Omit<Element['props'], keyof P>> {
+class Row extends React.Component<P> {
   render () {
     const {
       alignItems, className, flexDirection, flexWrap, justifyContent, ...props
@@ -28,7 +27,7 @@ class Row extends React.Component<P & Omit<Element['props'], keyof P>> {
       className
     );
 
-    return <Element {...props} className={createdClassName} />;
+    return <div {...props} className={createdClassName} />;
   }
 }
 

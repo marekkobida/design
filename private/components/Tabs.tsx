@@ -1,11 +1,11 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 
-import Element from './Element';
 import TabsContext from './TabsContext';
 
 interface P {
+  className?: ClassName | ClassName[];
   onActivation: ($: { activeId: S['activeId'] }) => void;
 }
 
@@ -13,7 +13,7 @@ interface S {
   activeId: null | string;
 }
 
-class Tabs extends React.Component<P & Omit<Element['props'], keyof P>> {
+class Tabs extends React.Component<P> {
   state = { activeId: null, };
 
   get activeId () {
@@ -37,7 +37,7 @@ class Tabs extends React.Component<P & Omit<Element['props'], keyof P>> {
 
     return (
       <TabsContext.Provider value={{ Tabs: this, }}>
-        <Element {...props} className={createdClassName} />
+        <div {...props} className={createdClassName} />
       </TabsContext.Provider>
     );
   }

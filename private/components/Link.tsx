@@ -1,20 +1,20 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName from '../helpers/createResponsiveClassName';
 
-import Element from './Element';
 import Text from './Text';
 
 interface P {
   alignment?: Text['props']['alignment'];
+  className?: ClassName | ClassName[];
   color?: string;
   size?: 1 | 2 | 3 | 4 | 5 | 6;
   to: string;
   weight?: Text['props']['weight'];
 }
 
-class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P> & Omit<Element['props'], keyof P>> {
+class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P>> {
   render () {
     const {
       alignment, className, color, size, to, weight, ...props

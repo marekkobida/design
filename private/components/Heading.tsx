@@ -1,19 +1,19 @@
 import React from 'react';
 
-import createClassName from '../helpers/createClassName';
+import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName from '../helpers/createResponsiveClassName';
 
-import Element from './Element';
 import Text from './Text';
 
 interface P {
   alignment?: Text['props']['alignment'];
+  className?: ClassName | ClassName[];
   color?: string;
   size: 1 | 2 | 3 | 4 | 5 | 6;
   weight?: Text['props']['weight'];
 }
 
-class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof P> & Omit<Element['props'], keyof P>> {
+class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof P>> {
   render () {
     const {
       alignment, className, color, size, weight, ...props
