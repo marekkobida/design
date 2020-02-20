@@ -3,16 +3,6 @@ module.exports = ({ types: t, }) => {
 
   return {
     visitor: {
-      Program: {
-        enter (path, state) {
-          state.createClassNameIdentifier = path.scope.generateUidIdentifier('createClassName');
-        },
-        exit (path, state) {
-          if (state.$) {
-            path.node.body.unshift(t.importDeclaration([ t.importSpecifier(state.createClassNameIdentifier, t.identifier('createClassName')), ], t.stringLiteral('@redred/design')));
-          }
-        },
-      },
       JSXAttribute (path, state) {
         if (path.node.name.name !== 'className') {
           return;
@@ -24,7 +14,7 @@ module.exports = ({ types: t, }) => {
           const expression = value.get('expression');
 
           if (expression.isArrayExpression()) {
-            expression.replaceWith(t.callExpression(cloneNode(state.createClassNameIdentifier), expression.get('elements').map((e) => cloneNode(e.node))));
+            expression.replaceWith(t.callExpression(cloneNode(state.createClassNameIdentifier), expression.get('elements').map((element) => cloneNode(element.node))));
 
             state.$ = true;
           }
@@ -35,6 +25,16 @@ module.exports = ({ types: t, }) => {
 
           state.$ = true;
         }
+      },
+      Program: {
+        enter (path, state) {
+          state.createClassNameIdentifier = path.scope.generateUidIdentifier('createClassName');
+        },
+        exit (path, state) {
+          if (state.$) {
+            path.node.body.unshift(t.importDeclaration([ t.importSpecifier(state.createClassNameIdentifier, t.identifier('createClassName')), ], t.stringLiteral('@redred/design')));
+          }
+        },
       },
     },
   };

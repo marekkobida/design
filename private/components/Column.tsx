@@ -7,13 +7,12 @@ interface P {
   className?: ClassName | ClassName[];
   offset?: ResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
   size?: ResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
-  test?: React.RefObject<HTMLDivElement>;
 }
 
 class Column extends React.Component<P> {
   render () {
     const {
-      className, offset, size, test, ...props
+      className, offset, size, ...props
     } = this.props;
 
     const createdClassName = createClassName(
@@ -24,7 +23,7 @@ class Column extends React.Component<P> {
       className
     );
 
-    return <div {...props} ref={test} className={createdClassName} />;
+    return <div {...props} className={createdClassName} />;
   }
 }
 
