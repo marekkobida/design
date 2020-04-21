@@ -1,4 +1,4 @@
-import { write, } from '@redred/helpers/server';
+import { writeFile } from '@redred/helpers/server';
 
 import variables from '../variables.json';
 
@@ -11,9 +11,12 @@ import Tabs from './components/Tabs';
 import Typography from './components/Typography';
 
 class Index extends CSS {
-  css () {
+  css() {
     return `:root {
-${this.test({ $: (i, $) => `  ${$.name}: ${$.value};`, to: variables[':root'], })}
+${this.test({
+  $: (i, $) => `  ${$.name}: ${$.value};`,
+  to: variables[':root'],
+})}
 }
 *,
 *::after,
@@ -39,4 +42,4 @@ ${new Typography().css()}
   }
 }
 
-write('./packages/design/index.css', new Index().css());
+writeFile('./packages/design/index.css', new Index().css());
