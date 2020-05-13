@@ -32,7 +32,7 @@ module.exports = ({ types: t, }) => {
         },
         exit (path, state) {
           if (state.$) {
-            path.node.body.unshift(t.importDeclaration([ t.importSpecifier(state.createClassNameIdentifier, t.identifier('createClassName')), ], t.stringLiteral('@redred/design')));
+            path.node.body.unshift(t.importDeclaration([ t.importSpecifier(state.createClassNameIdentifier, t.identifier('createClassName')), ], t.stringLiteral('@redredsk/design')));
           }
         },
       },

@@ -1,4 +1,4 @@
-import * as helpers from '@redred/helpers';
+import * as helpers from '@redredsk/helpers';
 import encodeClassName from './encodeClassName';
 
 export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };

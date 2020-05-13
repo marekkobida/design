@@ -1,4 +1,4 @@
-import * as helpers from '@redred/helpers';
+import * as helpers from '@redredsk/helpers';
 
 export type Breakpoint = '#' | '##';
 

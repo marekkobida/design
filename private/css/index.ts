@@ -1,4 +1,4 @@
-import { writeFile } from '@redred/helpers/server';
+import { writeFile } from '@redredsk/helpers/server';
 
 import variables from '../variables.json';
 

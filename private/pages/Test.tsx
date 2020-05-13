@@ -1,4 +1,4 @@
-import Page from '@redred/pages/private/Page';
+import Page from '@redredsk/pages/private/Page';
 import React from 'react';
 
 class Test extends Page {

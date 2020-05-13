@@ -25,7 +25,7 @@
 
 ```tsx
 import React from 'react';
-import { Column, Container, Row } from '@redred/design';
+import { Column, Container, Row } from '@redredsk/design';
 
 const test = (
   <Container>

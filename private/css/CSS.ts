@@ -1,4 +1,4 @@
-import { isArray, isNumber, } from '@redred/helpers';
+import { isArray, isNumber, } from '@redredsk/helpers';
 
 import variables from '../variables.json';
 

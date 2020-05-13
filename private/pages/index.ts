@@ -1,4 +1,4 @@
-import Container from '@redred/pages/private/Container';
+import Container from '@redredsk/pages/private/Container';
 
 import Test from './Test';
 
