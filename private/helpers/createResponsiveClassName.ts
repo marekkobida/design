@@ -1,4 +1,7 @@
-import * as helpers from '@redredsk/helpers';
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
+import isObject from '@redredsk/helpers/private/types/isObject';
+import isString from '@redredsk/helpers/private/types/isString';
 
 export type Breakpoint = '#' | '##';
 
@@ -22,19 +25,19 @@ function createResponsiveClassName (...parameters: [string, string, ResponsiveCl
       continue;
     }
 
-    if (helpers.isArray(parameter[2])) {
+    if (isArray(parameter[2])) {
       $$(parameter[0], parameter[1], parameter[2][0]);
 
       if (parameter[2].length === 2) {
-        if (helpers.isObject(parameter[2][1])) {
+        if (isObject(parameter[2][1])) {
           for (const breakpoint in parameter[2][1]) {
             $$(`${breakpoint}${parameter[0]}`, parameter[1], parameter[2][1][breakpoint as Breakpoint]);
           }
         }
       }
-    } else if (helpers.isNumber(parameter[2]) || helpers.isString(parameter[2])) {
+    } else if (isNumber(parameter[2]) || isString(parameter[2])) {
       $$(parameter[0], parameter[1], parameter[2]);
-    } else if (helpers.isObject(parameter[2])) {
+    } else if (isObject(parameter[2])) {
       for (const breakpoint in parameter[2]) {
         $$(`${breakpoint}${parameter[0]}`, parameter[1], parameter[2][breakpoint as Breakpoint]);
       }

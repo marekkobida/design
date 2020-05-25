@@ -1,5 +1,8 @@
-import * as helpers from '@redredsk/helpers';
 import encodeClassName from './encodeClassName';
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
+import isObject from '@redredsk/helpers/private/types/isObject';
+import isString from '@redredsk/helpers/private/types/isString';
 
 export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
 
@@ -10,21 +13,21 @@ function createClassName (...parameters: (ClassName[] | ClassName)[]): string | 
     const parameter = parameters[i];
 
     if (parameter) {
-      if (helpers.isArray(parameter)) {
+      if (isArray(parameter)) {
         const createdClassName = createClassName(...parameter);
 
         if (createdClassName) {
           $ = [ ...$, createdClassName, ];
         }
-      } else if (helpers.isNumber(parameter)) {
+      } else if (isNumber(parameter)) {
         $ = [ ...$, parameter, ];
-      } else if (helpers.isObject(parameter)) {
+      } else if (isObject(parameter)) {
         for (const className in parameter) {
           if (parameter[className]) {
             $ = [ ...$, className, ];
           }
         }
-      } else if (helpers.isString(parameter)) {
+      } else if (isString(parameter)) {
         const $$ = parameter.split(' ');
 
         if ($$.length > 0) {
