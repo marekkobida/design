@@ -1,5 +1,5 @@
-import { isArray, isNumber, } from '@redredsk/helpers';
-
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
 import variables from '../variables.json';
 
 class CSS {

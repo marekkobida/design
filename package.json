@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "react": "^16.13.1"
-  },
   "name": "@redredsk/design",
   "version": "0.1.0"
 }

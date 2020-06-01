@@ -1,7 +1,3 @@
-import { writeFile } from '@redredsk/helpers/server';
-
-import variables from '../variables.json';
-
 import CSS from './CSS';
 import Flex from './components/Flex';
 import Grid from './components/Grid';
@@ -9,14 +5,16 @@ import Helpers from './components/Helpers';
 import Spaces from './components/Spaces';
 import Tabs from './components/Tabs';
 import Typography from './components/Typography';
+import variables from '../variables.json';
+import writeFile from '@redredsk/helpers/private/writeFile';
 
 class Index extends CSS {
-  css() {
+  css () {
     return `:root {
 ${this.test({
-  $: (i, $) => `  ${$.name}: ${$.value};`,
-  to: variables[':root'],
-})}
+    $: (i, $) => `  ${$.name}: ${$.value};`,
+    to: variables[':root'],
+  })}
 }
 *,
 *::after,
