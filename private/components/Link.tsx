@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ServerRequest from '@redredsk/helpers/private/ServerRequest';
 import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName from '../helpers/createResponsiveClassName';
 
@@ -15,9 +16,19 @@ interface P {
 }
 
 class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P>> {
+  serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
+
+  onClick: Link['props']['onClick'] = (event) => {
+    this.serverRequest.get('/statistics.json', { parameters: { url: this.props.to, }, });
+
+    if (this.props.onClick) {
+      this.props.onClick(event);
+    }
+  }
+
   render () {
     const {
-      alignment, className, color, size, to, weight, ...props
+      alignment, className, color, onClick, size, to, weight, ...props
     } = this.props;
 
     const createdClassName = createClassName(
@@ -28,7 +39,7 @@ class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>,
       className
     );
 
-    return <a {...props} className={createdClassName} href={to} />;
+    return <a {...props} className={createdClassName} href={to} onClick={this.onClick} />;
   }
 }
 
