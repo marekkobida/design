@@ -16,7 +16,7 @@ interface P {
 }
 
 class Link extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'a'>, keyof P>> {
-  serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1339');
+  serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1338');
 
   onClick: Link['props']['onClick'] = (event) => {
     this.serverRequest.get('/statistics.json', { parameters: { url: this.props.to, }, });
