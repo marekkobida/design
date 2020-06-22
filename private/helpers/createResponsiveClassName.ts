@@ -7,52 +7,48 @@ export type Breakpoint =
   | '#'
   | '##';
 
-export type ResponsiveClassName<T extends string> =
+export type ResponsiveClassName<T extends number | string> =
   | T
   | [T, { [breakpoint in Breakpoint]?: T }]
   | [T]
   | { [breakpoint in Breakpoint]?: T };
 
-function createResponsiveClassName (parameter: [string, string, ResponsiveClassName<string> | undefined]): string | undefined {
+function createResponsiveClassName (left: string, right: ResponsiveClassName<number | string> | undefined): string {
   let createdResponsiveClassName: string[] = [];
 
-  function $ (...responsiveClassName: [string, string, string | undefined]) {
-    if (!responsiveClassName[2]) {
-      return;
+  function $ (l: string, r: number | string | undefined) {
+    if (r || r === 0) {
+      createdResponsiveClassName = [ ...createdResponsiveClassName, `${l}${r}`, ];
     }
-
-    createdResponsiveClassName = [ ...createdResponsiveClassName, `${responsiveClassName[0]}_${responsiveClassName[1]}_${responsiveClassName[2]}`, ];
   }
 
-  if (isArray(parameter[2])) {
+  if (isArray(right)) {
     // [T]
-    $(parameter[0], parameter[1], parameter[2][0]);
+    $(left, right[0]);
 
-    if (parameter[2].length === 2) {
-      if (isObject(parameter[2][1])) {
-        for (const breakpoint in parameter[2][1]) {
-          // [T, { [breakpoint in Breakpoint]?: T }]
-          $(`${breakpoint}${parameter[0]}`, parameter[1], parameter[2][1][breakpoint as Breakpoint]);
-        }
+    if (right.length === 2) {
+      for (const breakpoint in right[1]) {
+        // [T, { [breakpoint in Breakpoint]?: T }]
+        $(`${breakpoint}${left}`, right[1][breakpoint as Breakpoint]);
       }
     }
   }
 
-  if (isNumber(parameter[2])) {
+  if (isNumber(right)) {
     // T
-    $(parameter[0], parameter[1], parameter[2].toString());
+    $(left, right);
   }
 
-  if (isObject(parameter[2])) {
-    for (const breakpoint in parameter[2]) {
+  if (isObject(right)) {
+    for (const breakpoint in right) {
       // { [breakpoint in Breakpoint]?: T }
-      $(`${breakpoint}${parameter[0]}`, parameter[1], parameter[2][breakpoint as Breakpoint]);
+      $(`${breakpoint}${left}`, right[breakpoint as Breakpoint]);
     }
   }
 
-  if (isString(parameter[2])) {
+  if (isString(right)) {
     // T
-    $(parameter[0], parameter[1], parameter[2]);
+    $(left, right);
   }
 
   return createdResponsiveClassName.join(' ');

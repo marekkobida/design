@@ -1,34 +1,28 @@
 import React from 'react';
-
-import createClassName, { ClassName, } from '../helpers/createClassName';
-import createResponsiveClassName from '../helpers/createResponsiveClassName';
-
 import Text from './Text';
+import createResponsiveClassName from '../helpers/createResponsiveClassName';
 
 interface P {
   alignment?: Text['props']['alignment'];
-  className?: ClassName | ClassName[];
-  color?: string;
-  size: 1 | 2 | 3 | 4 | 5 | 6;
+  color?: Text['props']['color'];
+  size: Text['props']['size'];
   weight?: Text['props']['weight'];
 }
 
-class Heading extends React.Component<P & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof P>> {
+class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyof P>> {
   render () {
-    const {
-      alignment, className, color, size, weight, ...props
-    } = this.props;
+    const { alignment, className, color, size, weight, ...props } = this.props;
 
-    const createdClassName = createClassName(
+    const $ = [
       color && `color_${color}`,
-      createResponsiveClassName([ 't', 'alignment', alignment, ]),
+      createResponsiveClassName('t_alignment_', alignment),
       weight && `t_weight_${weight}`,
-      className
-    );
+      className,
+    ];
 
     const E = `h${size}` as 'h1';
 
-    return <E {...props} className={createdClassName} />;
+    return <E {...props} className={$} />;
   }
 }
 

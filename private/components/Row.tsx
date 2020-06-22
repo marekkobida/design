@@ -1,33 +1,28 @@
 import React from 'react';
-
-import createClassName, { ClassName, } from '../helpers/createClassName';
 import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
 
 interface P {
   alignItems?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
-  className?: ClassName | ClassName[];
   flexDirection?: ResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: ResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
   justifyContent?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
 }
 
-class Row extends React.Component<P> {
+class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {
-    const {
-      alignItems, className, flexDirection, flexWrap, justifyContent, ...props
-    } = this.props;
+    const { alignItems, className, flexDirection, flexWrap, justifyContent, ...props } = this.props;
 
-    const createdClassName = createClassName(
+    const $ = [
       'flex flex_flex-wrap_wrap',
-      createResponsiveClassName([ 'flex', 'align-items', alignItems, ]),
-      createResponsiveClassName([ 'flex', 'flex-direction', flexDirection, ]),
-      createResponsiveClassName([ 'flex', 'flex-wrap', flexWrap, ]),
-      createResponsiveClassName([ 'flex', 'justify-content', justifyContent, ]),
+      createResponsiveClassName('flex_align-items_', alignItems),
+      createResponsiveClassName('flex_flex-direction_', flexDirection),
+      createResponsiveClassName('flex_flex-wrap_', flexWrap),
+      createResponsiveClassName('flex_justify-content_', justifyContent),
       'm-x-!2',
-      className
-    );
+      className,
+    ];
 
-    return <div {...props} className={createdClassName} />;
+    return <div {...props} className={$} />;
   }
 }
 
