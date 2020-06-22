@@ -13,8 +13,8 @@ export type ClassName =
   | undefined
   | { [left: string]: boolean | null | number | string | undefined };
 
-function test (...parameters: ClassName[]): string[] {
-  let createdClassName: string[] = [];
+function test (...parameters: ClassName[]): (number | string)[] {
+  let createdClassName: (number | string)[] = [];
 
   for (let i = 0; i < parameters.length; i += 1) {
     const parameter = parameters[i];
@@ -32,7 +32,7 @@ function test (...parameters: ClassName[]): string[] {
     }
 
     if (isNumber(parameter)) {
-      createdClassName = [ ...createdClassName, parameter.toString(), ];
+      createdClassName = [ ...createdClassName, parameter, ];
     }
 
     if (isObject(parameter)) {

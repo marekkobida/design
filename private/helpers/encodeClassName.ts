@@ -1,6 +1,6 @@
 import css from '../../index.css';
 
-function encodeClassName (parameters: string[]): string[] {
+function encodeClassName (parameters: (number | string)[]): (number | string)[] {
   for (let i = 0; i < parameters.length; i += 1) {
     const encodedClassName = css[parameters[i]];
 
