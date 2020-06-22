@@ -5,14 +5,15 @@ import isObject from '@redredsk/helpers/private/types/isObject';
 import isString from '@redredsk/helpers/private/types/isString';
 
 export type ClassName =
+  | ClassName[]
   | boolean
   | null
   | number
   | string
   | undefined
-  | { [left: string]: boolean, };
+  | { [left: string]: boolean | null | number | string | undefined };
 
-function createClassName (...parameters: (ClassName | ClassName[])[]): string {
+function test (...parameters: ClassName[]): string[] {
   let createdClassName: string[] = [];
 
   for (let i = 0; i < parameters.length; i += 1) {
@@ -22,7 +23,7 @@ function createClassName (...parameters: (ClassName | ClassName[])[]): string {
       for (const left in parameter) {
         const right = parameter[left];
 
-        createdClassName = [ ...createdClassName, createClassName(right), ];
+        createdClassName = [ ...createdClassName, ...test(right), ];
       }
     }
 
@@ -35,7 +36,7 @@ function createClassName (...parameters: (ClassName | ClassName[])[]): string {
         const right = parameter[left];
 
         if (right) {
-          createdClassName = [ ...createdClassName, createClassName(left), ];
+          createdClassName = [ ...createdClassName, left, ];
         }
       }
     }
@@ -50,6 +51,12 @@ function createClassName (...parameters: (ClassName | ClassName[])[]): string {
       }
     }
   }
+
+  return createdClassName;
+}
+
+function createClassName (...parameters: ClassName[]): string {
+  let createdClassName = test(...parameters);
 
   createdClassName = encodeClassName(createdClassName);
 
