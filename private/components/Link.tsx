@@ -25,15 +25,20 @@ class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>
   render () {
     const { alignment, className, color, onClick, size, to, weight, ...props } = this.props;
 
-    const $ = [
-      color && `color_${color}`,
-      size && `h${size}`,
-      createResponsiveClassName('t_alignment_', alignment),
-      weight && `t_weight_${weight}`,
-      className,
-    ];
-
-    return <a {...props} className={$} href={to} onClick={this.onClick} />;
+    return (
+      <a
+        {...props}
+        className={[
+          color && `color_${color}`,
+          size && `h${size}`,
+          createResponsiveClassName('t_alignment_', alignment),
+          weight && `t_weight_${weight}`,
+          className,
+        ]}
+        href={to}
+        onClick={this.onClick}
+      />
+    );
   }
 }
 

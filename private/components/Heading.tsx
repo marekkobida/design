@@ -13,16 +13,19 @@ class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyo
   render () {
     const { alignment, className, color, size, weight, ...props } = this.props;
 
-    const $ = [
-      color && `color_${color}`,
-      createResponsiveClassName('t_alignment_', alignment),
-      weight && `t_weight_${weight}`,
-      className,
-    ];
-
     const E = `h${size}` as 'h1';
 
-    return <E {...props} className={$} />;
+    return (
+      <E
+        {...props}
+        className={[
+          color && `color_${color}`,
+          createResponsiveClassName('t_alignment_', alignment),
+          weight && `t_weight_${weight}`,
+          className,
+        ]}
+      />
+    );
   }
 }
 

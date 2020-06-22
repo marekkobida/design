@@ -10,15 +10,18 @@ class Column extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyo
   render () {
     const { className, offset, size, ...props } = this.props;
 
-    const $ = [
-      'column',
-      createResponsiveClassName('column_offset_', offset),
-      createResponsiveClassName('column_size_', size),
-      'p-x-2',
-      className,
-    ];
-
-    return <div {...props} className={$} />;
+    return (
+      <div
+        {...props}
+        className={[
+          'column',
+          createResponsiveClassName('column_offset_', offset),
+          createResponsiveClassName('column_size_', size),
+          'p-x-2',
+          className,
+        ]}
+      />
+    );
   }
 }
 

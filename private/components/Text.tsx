@@ -14,17 +14,20 @@ class Text extends React.Component<P & Omit<JSX.IntrinsicElements['p'], keyof P>
   render () {
     const { alignment, className, color, m, p, size, weight, ...props } = this.props;
 
-    const $ = [
-      color && `color_${color}`,
-      size && `h${size}`,
-      createResponsiveClassName('m-', m),
-      createResponsiveClassName('p-', p),
-      createResponsiveClassName('t_alignment_', alignment),
-      weight && `t_weight_${weight}`,
-      className,
-    ];
-
-    return <p {...props} className={$} />;
+    return (
+      <p
+        {...props}
+        className={[
+          color && `color_${color}`,
+          size && `h${size}`,
+          createResponsiveClassName('m-', m),
+          createResponsiveClassName('p-', p),
+          createResponsiveClassName('t_alignment_', alignment),
+          weight && `t_weight_${weight}`,
+          className,
+        ]}
+      />
+    );
   }
 }
 

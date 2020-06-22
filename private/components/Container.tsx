@@ -8,9 +8,7 @@ class Container extends React.Component<P & Omit<JSX.IntrinsicElements['div'], k
   render () {
     const { className, ...props } = this.props;
 
-    const $ = [ 'container m-x-# p-x-2', className, ];
-
-    return <div {...props} className={$} />;
+    return <div {...props} className={[ 'container m-x-# p-x-2', className, ]} />;
   }
 }
 

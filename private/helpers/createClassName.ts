@@ -19,6 +19,10 @@ function test (...parameters: ClassName[]): string[] {
   for (let i = 0; i < parameters.length; i += 1) {
     const parameter = parameters[i];
 
+    if (!parameter) {
+      continue;
+    }
+
     if (isArray(parameter)) {
       for (const left in parameter) {
         const right = parameter[left];
