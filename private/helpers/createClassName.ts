@@ -4,48 +4,56 @@ import isNumber from '@redredsk/helpers/private/types/isNumber';
 import isObject from '@redredsk/helpers/private/types/isObject';
 import isString from '@redredsk/helpers/private/types/isString';
 
-export type ClassName = boolean | null | number | string | undefined | { [className: string]: boolean | null | undefined };
+export type ClassName =
+  | boolean
+  | null
+  | number
+  | string
+  | undefined
+  | { [left: string]: boolean, };
 
-function createClassName (...parameters: (ClassName[] | ClassName)[]): string | undefined {
-  let $: (number | string)[] = [];
+function createClassName (...parameters: (ClassName | ClassName[])[]): string {
+  let createdClassName: string[] = [];
 
   for (let i = 0; i < parameters.length; i += 1) {
     const parameter = parameters[i];
 
-    if (parameter) {
-      if (isArray(parameter)) {
-        const createdClassName = createClassName(...parameter);
+    if (isArray(parameter)) {
+      for (const left in parameter) {
+        const right = parameter[left];
 
-        if (createdClassName) {
-          $ = [ ...$, createdClassName, ];
-        }
-      } else if (isNumber(parameter)) {
-        $ = [ ...$, parameter, ];
-      } else if (isObject(parameter)) {
-        for (const className in parameter) {
-          if (parameter[className]) {
-            $ = [ ...$, className, ];
-          }
-        }
-      } else if (isString(parameter)) {
-        const $$ = parameter.split(' ');
+        createdClassName = [ ...createdClassName, createClassName(right), ];
+      }
+    }
 
-        if ($$.length > 0) {
-          $ = [ ...$, ...$$, ];
-        } else {
-          $ = [ ...$, parameter, ];
+    if (isNumber(parameter)) {
+      createdClassName = [ ...createdClassName, parameter.toString(), ];
+    }
+
+    if (isObject(parameter)) {
+      for (const left in parameter) {
+        const right = parameter[left];
+
+        if (right) {
+          createdClassName = [ ...createdClassName, createClassName(left), ];
         }
+      }
+    }
+
+    if (isString(parameter)) {
+      const $ = parameter.split(' ');
+
+      if ($.length > 0) {
+        createdClassName = [ ...createdClassName, ...$, ];
+      } else {
+        createdClassName = [ ...createdClassName, parameter, ];
       }
     }
   }
 
-  $ = encodeClassName($);
+  createdClassName = encodeClassName(createdClassName);
 
-  if ($.length > 0) {
-    return $.join(' ');
-  }
-
-  return undefined;
+  return createdClassName.join(' ');
 }
 
 export default createClassName;
