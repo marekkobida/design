@@ -13,6 +13,7 @@ declare module 'react' {
 
   namespace JSX {
     interface IntrinsicElements {
+      'var': Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       a: Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, keyof P> & P;
       abbr: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       address: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
@@ -103,6 +104,7 @@ declare module 'react' {
       script: Omit<DetailedHTMLProps<ScriptHTMLAttributes<HTMLScriptElement>, HTMLScriptElement>, keyof P> & P;
       section: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       select: Omit<DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>, keyof P> & P;
+      slot: Omit<DetailedHTMLProps<SlotHTMLAttributes<HTMLSlotElement>, HTMLSlotElement>, keyof P> & P;
       small: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       source: Omit<DetailedHTMLProps<SourceHTMLAttributes<HTMLSourceElement>, HTMLSourceElement>, keyof P> & P;
       span: Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, keyof P> & P;
@@ -125,7 +127,6 @@ declare module 'react' {
       track: Omit<DetailedHTMLProps<TrackHTMLAttributes<HTMLTrackElement>, HTMLTrackElement>, keyof P> & P;
       u: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       ul: Omit<DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>, keyof P> & P;
-      var: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       video: Omit<DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>, keyof P> & P;
       wbr: Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, keyof P> & P;
       webview: Omit<DetailedHTMLProps<WebViewHTMLAttributes<HTMLWebViewElement>, HTMLWebViewElement>, keyof P> & P;
