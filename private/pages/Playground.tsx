@@ -1,7 +1,7 @@
 import Container from '../components/Container';
+import Heading from '../components/Heading';
 import Page from '@redredsk/pages/private/Page';
 import React from 'react';
-import css from './Playground.css';
 import template from '@redredsk/pages/private/template';
 
 class Playground extends Page {
@@ -10,7 +10,12 @@ class Playground extends Page {
   }
 
   element () {
-    return <Container>{this.name}</Container>;
+    return (
+      <Container>
+        <Heading size={1}>{this.name}</Heading>
+        <Heading size={2}>{this.name}</Heading>
+      </Container>
+    );
   }
 
   template = template();
