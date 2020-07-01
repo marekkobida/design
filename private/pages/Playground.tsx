@@ -14,7 +14,7 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Heading mB={{ '#': 8, }} size={1}>{this.name}</Heading>
+        <Heading size={1}>{this.name}</Heading>
         <Heading size={2}>{this.name}</Heading>
         <Heading size={3}>{this.name}</Heading>
         <Heading size={4}>{this.name}</Heading>
