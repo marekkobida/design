@@ -1,31 +1,15 @@
 import React from 'react';
-import Text from './Text';
-import createResponsiveClassName from '../helpers/createResponsiveClassName';
+import handleTextParameters from './handleTextParameters';
 
-interface P {
-  alignment?: Text['props']['alignment'];
-  color?: Text['props']['color'];
-  size: Text['props']['size'];
-  weight?: Text['props']['weight'];
-}
+type P = Parameters<typeof handleTextParameters>[0];
 
 class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyof P>> {
   render () {
-    const { alignment, className, color, size, weight, ...props } = this.props;
+    const { className, ...props } = handleTextParameters(this.props);
 
-    const E = `h${size}` as 'h1';
+    const H = `h${this.props.size}` as 'h1';
 
-    return (
-      <E
-        {...props}
-        className={[
-          color && `color_${color}`,
-          createResponsiveClassName('t_alignment_', alignment),
-          weight && `t_weight_${weight}`,
-          className,
-        ]}
-      />
-    );
+    return <H {...props} className={className} />;
   }
 }
 

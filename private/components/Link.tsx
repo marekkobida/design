@@ -1,15 +1,8 @@
 import React from 'react';
 import ServerRequest from '@redredsk/helpers/private/ServerRequest';
-import Text from './Text';
-import createResponsiveClassName from '../helpers/createResponsiveClassName';
+import handleTextParameters from './handleTextParameters';
 
-interface P {
-  alignment?: Text['props']['alignment'];
-  color?: Text['props']['color'];
-  size?: Text['props']['size'];
-  to: string;
-  weight?: Text['props']['weight'];
-}
+type P = { to: string; } & Parameters<typeof handleTextParameters>[0];
 
 class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
@@ -23,22 +16,9 @@ class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>
   }
 
   render () {
-    const { alignment, className, color, onClick, size, to, weight, ...props } = this.props;
+    const { className, to, ...props } = handleTextParameters(this.props);
 
-    return (
-      <a
-        {...props}
-        className={[
-          color && `color_${color}`,
-          size && `h${size}`,
-          createResponsiveClassName('t_alignment_', alignment),
-          weight && `t_weight_${weight}`,
-          className,
-        ]}
-        href={to}
-        onClick={this.onClick}
-      />
-    );
+    return <a {...props} className={className} href={to} onClick={this.onClick} />;
   }
 }
 

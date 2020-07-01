@@ -1,7 +1,9 @@
 import React from 'react';
 import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
+import { ClassName, } from '../helpers/createClassName';
 
 interface P {
+  className?: ClassName | ClassName[];
   offset?: ResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
   size?: ResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
 }
