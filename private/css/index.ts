@@ -18,11 +18,10 @@ ${this.test((i, $) => `  ${$.name}: ${$.value}; /* ${i} */`, variables[':root'])
 *::after,
 *::before {
   box-sizing: border-box;
+  color: rgba(var(--color), var(--color-alpha));
 }
 body {
   -webkit-text-size-adjust: 100%;
-  background-color: rgb(var(--body--background-color));
-  color: rgba(var(--color), var(--color-alpha));
   font-family: var(--body--font-family);
   font-size: var(--body--font-size);
   line-height: var(--body--line-height);

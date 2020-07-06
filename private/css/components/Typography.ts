@@ -19,7 +19,6 @@ class Typography extends CSS {
 
   css (breakpoints = variables.breakpoints) {
     return `a {
-  color: rgba(var(--color), var(--color-alpha));
   text-decoration: none;
 }
 a:focus,
@@ -38,7 +37,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: rgba(var(--color), var(--color-alpha));
   font-family: var(--heading--font-family);
   font-weight: var(--heading--font-weight);
   line-height: var(--heading--line-height);
@@ -70,12 +68,8 @@ h6 {
   font-size: var(--h6-font-size);
 }
 p {
-  color: rgba(var(--color), var(--color-alpha));
   margin-bottom: 0;
   margin-top: 0;
-}
-span {
-  color: rgba(var(--color), var(--color-alpha));
 }
 .color-alpha_100 {
   --color-alpha: 1;
