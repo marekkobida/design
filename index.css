@@ -1,9 +1,13 @@
 :root {
   --body--background-color: 255, 255, 255;
+  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --body--font-size: 1rem;
   --body--line-height: 1.25;
   --color: 0, 0, 0;
   --color-alpha: 1;
+  --heading--font-family: var(--body--font-family);
+  --heading--font-weight: 500;
+  --heading--line-height: var(--body--line-height);
   --space: 1rem;
 }
 *,
@@ -14,7 +18,7 @@
 body {
   background-color: rgb(var(--body--background-color));
   color: rgba(var(--color), var(--color-alpha));
-  font-family: -apple-system, BlinkMacSystemFont;
+  font-family: var(--body--font-family);
   font-size: var(--body--font-size);
   line-height: var(--body--line-height);
   margin: 0;
@@ -2294,11 +2298,6 @@ body {
 .tab_active,
 .tab:hover {
   font-weight: var(--heading--font-weight);
-}
-:root {
-  --heading--font-family: SF Pro Display;
-  --heading--font-weight: 500;
-  --heading--line-height: 1.25;
 }
 a {
   color: rgba(var(--color), var(--color-alpha));

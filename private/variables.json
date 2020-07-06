@@ -5,6 +5,10 @@
       "value": "255, 255, 255"
     },
     {
+      "name": "--body--font-family",
+      "value": "system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji"
+    },
+    {
       "name": "--body--font-size",
       "value": "1rem"
     },
@@ -19,6 +23,18 @@
     {
       "name": "--color-alpha",
       "value": "1"
+    },
+    {
+      "name": "--heading--font-family",
+      "value": "var(--body--font-family)"
+    },
+    {
+      "name": "--heading--font-weight",
+      "value": "500"
+    },
+    {
+      "name": "--heading--line-height",
+      "value": "var(--body--line-height)"
     },
     {
       "name": "--space",

@@ -18,12 +18,7 @@ class Typography extends CSS {
   }
 
   css (breakpoints = variables.breakpoints) {
-    return `:root {
-  --heading--font-family: SF Pro Display;
-  --heading--font-weight: 500;
-  --heading--line-height: 1.25;
-}
-a {
+    return `a {
   color: rgba(var(--color), var(--color-alpha));
   text-decoration: none;
 }

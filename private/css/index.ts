@@ -26,7 +26,7 @@ ${this.test({
 body {
   background-color: rgb(var(--body--background-color));
   color: rgba(var(--color), var(--color-alpha));
-  font-family: -apple-system, BlinkMacSystemFont;
+  font-family: var(--body--font-family);
   font-size: var(--body--font-size);
   line-height: var(--body--line-height);
   margin: 0;
