@@ -5,8 +5,8 @@ class Spaces extends CSS {
   css (spaces = variables.spaces, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => {
-        const $ = (property: string, abbreviation: string) => this.test({
-          $: (i, space) => `.${breakpoint.name}${abbreviation}-${space.name} {
+        const $ = (property: string, abbreviation: string) => this.test(
+          (i, space) => `.${breakpoint.name}${abbreviation}-${space.name} {
   ${property}: ${space.size} !important;
 }
 .${breakpoint.name}${abbreviation}-b-${space.name},
@@ -25,11 +25,11 @@ class Spaces extends CSS {
 .${breakpoint.name}${abbreviation}-y-${space.name} {
   ${property}-top: ${space.size} !important;
 }`,
-          to: spaces,
-        });
+          spaces
+        );
 
-        const $$ = this.test({
-          $: (i, space) => {
+        const $$ = this.test(
+          (i, space) => {
             if (space.name !== '0') {
               return `.${breakpoint.name}m-\\!${space.name} {
   margin: calc(${space.size} * -1) !important;
@@ -51,9 +51,11 @@ class Spaces extends CSS {
   margin-top: calc(${space.size} * -1) !important;
 }`;
             }
+
+            return '';
           },
-          to: spaces,
-        });
+          spaces
+        );
 
         return `${$('margin', 'm')}
 ${$('padding', 'p')}

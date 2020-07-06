@@ -5,8 +5,8 @@ import variables from '../variables.json';
 
 class CSS {
   forBreakpoints ($: (breakpoint: { name: string; size?: string }) => string, breakpoints: typeof variables.breakpoints) {
-    return this.test({
-      $: (i, breakpoint) => {
+    return this.test(
+      (i, breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;
 
         if (breakpoint !== null) {
@@ -17,8 +17,8 @@ class CSS {
 
         return $({ name: suffix, });
       },
-      to: breakpoints,
-    });
+      breakpoints
+    );
   }
 
   percentage (i: number, ii: number): string {
@@ -31,7 +31,7 @@ class CSS {
     return `${$.toFixed(6)}%`;
   }
 
-  test<Test extends any[]> ({ $, from = 0, to, }: { $: (i: number, ii: Test[0]) => string; from?: number; to: Test | number }) {
+  test<Test extends any[]> ($: (i: number, ii: Test[0]) => string, to: Test | number): string {
     let To = 0;
 
     if (isArray(to)) {
@@ -44,7 +44,7 @@ class CSS {
 
     let $$: string[] = [];
 
-    for (let i = from; i < To; i += 1) {
+    for (let i = 0; i < To; i += 1) {
       const b = $(i, isArray(to) ? to[i] : null);
 
       if (b) {

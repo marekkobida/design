@@ -7,16 +7,12 @@ import Flex from './components/Flex';
 import Grid from './components/Grid';
 import Helpers from './components/Helpers';
 import Spaces from './components/Spaces';
-import Tabs from './components/Tabs';
 import Typography from './components/Typography';
 
 class Index extends CSS {
   css () {
     return `:root {
-${this.test({
-    $: (i, $) => `  ${$.name}: ${$.value};`,
-    to: variables[':root'],
-  })}
+${this.test((i, $) => `  ${$.name}: ${$.value}; /* ${i} */`, variables[':root'])}
 }
 *,
 *::after,
@@ -24,19 +20,18 @@ ${this.test({
   box-sizing: border-box;
 }
 body {
+  -webkit-text-size-adjust: 100%;
   background-color: rgb(var(--body--background-color));
   color: rgba(var(--color), var(--color-alpha));
   font-family: var(--body--font-family);
   font-size: var(--body--font-size);
   line-height: var(--body--line-height);
   margin: 0;
-  -webkit-text-size-adjust: 100%;
 }
 ${new Flex().css()}
 ${new Grid().css()}
 ${new Helpers().css()}
 ${new Spaces().css()}
-${new Tabs().css()}
 ${new Typography().css()}
 `;
   }

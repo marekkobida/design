@@ -13,12 +13,12 @@ class Grid extends CSS {
 
   createColumnOffsets (columns: number = variables.columns, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
-      (breakpoint) => this.test({
-        $: (i) => `.${breakpoint.name}column_offset_${i} {
+      (breakpoint) => this.test(
+        (i) => `.${breakpoint.name}column_offset_${i} {
   margin-left: ${this.percentage(i, columns)};
 }`,
-        to: columns,
-      }),
+        columns
+      ),
       breakpoints
     );
   }
@@ -26,13 +26,13 @@ class Grid extends CSS {
   createColumnSizes (columns: number = variables.columns, breakpoints = variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => {
-        const sizes = this.test({
-          $: (i) => `.${breakpoint.name}column_size_${i + 1} {
+        const sizes = this.test(
+          (i) => `.${breakpoint.name}column_size_${i + 1} {
   flex: 0 0 ${this.percentage(i + 1, columns)};
   max-width: ${this.percentage(i + 1, columns)};
 }`,
-          to: columns,
-        });
+          columns
+        );
 
         return `.${breakpoint.name}column_size_\\# {
   flex-basis: 0;
