@@ -47,27 +47,27 @@ h6 {
 }
 .h1,
 h1 {
-  font-size: 2.75rem;
+  font-size: var(--h1-font-size);
 }
 .h2,
 h2 {
-  font-size: 2.25rem;
+  font-size: var(--h2-font-size);
 }
 .h3,
 h3 {
-  font-size: 1.75rem;
+  font-size: var(--h3-font-size);
 }
 .h4,
 h4 {
-  font-size: 1.5rem;
+  font-size: var(--h4-font-size);
 }
 .h5,
 h5 {
-  font-size: 1.25rem;
+  font-size: var(--h5-font-size);
 }
 .h6,
 h6 {
-  font-size: 1rem;
+  font-size: var(--h6-font-size);
 }
 p {
   color: rgba(var(--color), var(--color-alpha));

@@ -25,6 +25,30 @@
       "value": "1"
     },
     {
+      "name": "--h1-font-size",
+      "value": "2.75rem"
+    },
+    {
+      "name": "--h2-font-size",
+      "value": "2.25rem"
+    },
+    {
+      "name": "--h3-font-size",
+      "value": "1.75rem"
+    },
+    {
+      "name": "--h4-font-size",
+      "value": "1.5rem"
+    },
+    {
+      "name": "--h5-font-size",
+      "value": "1.25rem"
+    },
+    {
+      "name": "--h6-font-size",
+      "value": "1rem"
+    },
+    {
       "name": "--heading--font-family",
       "value": "var(--body--font-family)"
     },
