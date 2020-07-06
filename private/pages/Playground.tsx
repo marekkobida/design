@@ -2,9 +2,11 @@ import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
 import React from 'react';
 
+import Column from '../components/Column';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Link from '../components/Link';
+import Row from '../components/Row';
 import Text from '../components/Text';
 
 class Playground extends Page {
@@ -15,14 +17,32 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Heading size={1}>{this.name}</Heading>
-        <Heading size={2}>{this.name}</Heading>
-        <Heading size={3}>{this.name}</Heading>
-        <Heading size={4}>{this.name}</Heading>
-        <Heading size={5}>{this.name}</Heading>
-        <Heading size={6}>{this.name}</Heading>
-        <Link to="#">{this.name}</Link>
-        <Text>{this.name}</Text>
+        <Text>Container</Text>
+        <Container>
+          <Text>Row</Text>
+          <Row>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+            <Column>Column</Column>
+          </Row>
+        </Container>
+        <Heading size={1}>Heading</Heading>
+        <Heading size={2}>Heading</Heading>
+        <Heading size={3}>Heading</Heading>
+        <Heading size={4}>Heading</Heading>
+        <Heading size={5}>Heading</Heading>
+        <Heading size={6}>Heading</Heading>
+        <Link to="#">Link</Link>
+        <Text>Text</Text>
       </Container>
     );
   }

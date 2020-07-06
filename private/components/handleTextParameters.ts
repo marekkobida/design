@@ -4,7 +4,6 @@ import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/crea
 interface P {
   alignment?: ResponsiveClassName<'#' | 'l' | 'r'>;
   className?: ClassName | ClassName[];
-  color?: string;
   m?: ResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
   mB?: ResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
   mL?: ResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
@@ -23,11 +22,10 @@ interface P {
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 }
 
-function handleTextParameters<PP extends P> (parameters: PP): { className: ClassName | ClassName[], } & Pick<PP, Exclude<keyof PP, keyof P>> {
+function handleTextParameters<Parameters extends P> (parameters: Parameters): { className: ClassName | ClassName[], } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
   const {
     alignment,
     className,
-    color,
     m,
     mB,
     mL,
@@ -49,7 +47,6 @@ function handleTextParameters<PP extends P> (parameters: PP): { className: Class
 
   return {
     className: createClassName([
-      color && `color_${color}`,
       size && `h${size}`,
       createResponsiveClassName('m-', m),
       createResponsiveClassName('m-b-', mB),
