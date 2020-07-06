@@ -1,10 +1,11 @@
+import Page from '@redredsk/pages/private/Page';
+import template from '@redredsk/pages/private/template';
+import React from 'react';
+
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Link from '../components/Link';
-import Page from '@redredsk/pages/private/Page';
-import React from 'react';
 import Text from '../components/Text';
-import template from '@redredsk/pages/private/template';
 
 class Playground extends Page {
   constructor () {

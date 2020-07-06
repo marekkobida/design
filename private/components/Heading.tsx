@@ -1,4 +1,5 @@
 import React from 'react';
+
 import handleTextParameters from './handleTextParameters';
 
 type P = Parameters<typeof handleTextParameters>[0];

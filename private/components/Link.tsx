@@ -1,5 +1,6 @@
-import React from 'react';
 import ServerRequest from '@redredsk/helpers/private/ServerRequest';
+import React from 'react';
+
 import handleTextParameters from './handleTextParameters';
 
 type P = { to: string; } & Parameters<typeof handleTextParameters>[0];

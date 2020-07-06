@@ -1,8 +1,9 @@
-import encodeClassName from './encodeClassName';
 import isArray from '@redredsk/helpers/private/types/isArray';
 import isNumber from '@redredsk/helpers/private/types/isNumber';
 import isObject from '@redredsk/helpers/private/types/isObject';
 import isString from '@redredsk/helpers/private/types/isString';
+
+import encodeClassName from './encodeClassName';
 
 export type ClassName =
   | ClassName[]

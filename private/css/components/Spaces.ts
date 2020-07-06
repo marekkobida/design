@@ -1,5 +1,5 @@
-import CSS from '../CSS';
 import variables from '../../variables.json';
+import CSS from '../CSS';
 
 class Spaces extends CSS {
   css (spaces = variables.spaces, breakpoints = variables.breakpoints) {

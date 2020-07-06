@@ -1,5 +1,5 @@
-import CSS from '../CSS';
 import variables from '../../variables.json';
+import CSS from '../CSS';
 
 class Helpers extends CSS {
   css (breakpoints = variables.breakpoints) {

@@ -1,6 +1,7 @@
 import React from 'react';
-import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
+
 import { ClassName, } from '../helpers/createClassName';
+import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
 
 interface P {
   alignItems?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
