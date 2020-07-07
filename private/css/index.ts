@@ -12,7 +12,7 @@ import Typography from './components/Typography';
 class Index extends CSS {
   css () {
     return `:root {
-${this.test((i, $) => `  ${$.name}: ${$.value}; /* ${i} */`, variables[':root'])}
+${this.test((i, $) => `  ${$.name}: ${$.value};`, variables[':root'])}
 }
 *,
 *::after,

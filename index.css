@@ -1,20 +1,20 @@
 :root {
-  --body--background-color: 255, 255, 255; /* 0 */
-  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji; /* 1 */
-  --body--font-size: 1rem; /* 2 */
-  --body--line-height: 1.25; /* 3 */
-  --color: 0, 0, 0; /* 4 */
-  --color-alpha: 1; /* 5 */
-  --h1--font-size: 2.75rem; /* 6 */
-  --h2--font-size: 2.25rem; /* 7 */
-  --h3--font-size: 1.75rem; /* 8 */
-  --h4--font-size: 1.5rem; /* 9 */
-  --h5--font-size: 1.25rem; /* 10 */
-  --h6--font-size: 1rem; /* 11 */
-  --heading--font-family: var(--body--font-family); /* 12 */
-  --heading--font-weight: 500; /* 13 */
-  --heading--line-height: var(--body--line-height); /* 14 */
-  --space: 1rem; /* 15 */
+  --body--background-color: 255, 255, 255;
+  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --body--font-size: 1rem;
+  --body--line-height: 1.25;
+  --color: 0, 0, 0;
+  --color-alpha: 1;
+  --h1--font-size: 2.75rem;
+  --h2--font-size: 2.25rem;
+  --h3--font-size: 1.75rem;
+  --h4--font-size: 1.5rem;
+  --h5--font-size: 1.25rem;
+  --h6--font-size: 1rem;
+  --heading--font-family: var(--body--font-family);
+  --heading--font-weight: 500;
+  --heading--line-height: var(--body--line-height);
+  --space: 1rem;
 }
 *,
 *::after,
