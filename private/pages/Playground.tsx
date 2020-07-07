@@ -9,8 +9,6 @@ import Link from '../components/Link';
 import Row from '../components/Row';
 import Text from '../components/Text';
 
-import css from './Playground.css';
-
 class Playground extends Page {
   constructor () {
     super(-1, 'Playground');
@@ -41,7 +39,6 @@ class Playground extends Page {
         <Heading size={6}>Heading</Heading>
         <Link to="#">Link</Link>
         <Text>Text</Text>
-        <Heading className={[ 'color-alpha_50', css.test, ]} size={1}>Test</Heading>
       </Container>
     );
   }

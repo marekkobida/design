@@ -45,27 +45,27 @@ h6 {
 }
 .h1,
 h1 {
-  font-size: var(--h1-font-size);
+  font-size: var(--h1--font-size);
 }
 .h2,
 h2 {
-  font-size: var(--h2-font-size);
+  font-size: var(--h2--font-size);
 }
 .h3,
 h3 {
-  font-size: var(--h3-font-size);
+  font-size: var(--h3--font-size);
 }
 .h4,
 h4 {
-  font-size: var(--h4-font-size);
+  font-size: var(--h4--font-size);
 }
 .h5,
 h5 {
-  font-size: var(--h5-font-size);
+  font-size: var(--h5--font-size);
 }
 .h6,
 h6 {
-  font-size: var(--h6-font-size);
+  font-size: var(--h6--font-size);
 }
 p {
   margin-bottom: 0;
