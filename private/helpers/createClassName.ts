@@ -5,67 +5,76 @@ import isString from '@redredsk/helpers/private/types/isString';
 
 import encodeClassName from './encodeClassName';
 
+export type ClassNameArray = ClassName[];
+
+export type ClassNameObject = { [className: string]: boolean | null | undefined };
+
 export type ClassName =
-  | ClassName[]
-  | boolean
+  | ClassNameArray
+  | ClassNameObject
   | null
   | number
   | string
-  | undefined
-  | { [left: string]: boolean | null | number | string | undefined };
+  | undefined;
 
-function test (...parameters: ClassName[]): (number | string)[] {
-  let createdClassName: (number | string)[] = [];
+function testArray (classNames: ClassNameArray, $: string[]): string[] {
+  for (const className of test(...classNames)) {
+    $ = [ ...$, className, ];
+  }
 
-  for (let i = 0; i < parameters.length; i += 1) {
-    const parameter = parameters[i];
+  return $;
+}
 
-    if (!parameter) {
-      continue;
-    }
-
-    if (isArray(parameter)) {
-      for (const left in parameter) {
-        const right = parameter[left];
-
-        createdClassName = [ ...createdClassName, ...test(right), ];
-      }
-    }
-
-    if (isNumber(parameter)) {
-      createdClassName = [ ...createdClassName, parameter, ];
-    }
-
-    if (isObject(parameter)) {
-      for (const left in parameter) {
-        const right = parameter[left];
-
-        if (right) {
-          createdClassName = [ ...createdClassName, left, ];
-        }
-      }
-    }
-
-    if (isString(parameter)) {
-      const $ = parameter.split(' ');
-
-      if ($.length > 0) {
-        createdClassName = [ ...createdClassName, ...$, ];
-      } else {
-        createdClassName = [ ...createdClassName, parameter, ];
-      }
+function testObject (classNames: ClassNameObject, $: string[]): string[] {
+  for (const className in classNames) {
+    if (classNames[className]) {
+      $ = [ ...$, className, ];
     }
   }
 
-  return createdClassName;
+  return $;
 }
 
-function createClassName (...parameters: ClassName[]): string {
-  let createdClassName = test(...parameters);
+function testString (classNames: string, $: string[]) {
+  for (const className of classNames.split(' ')) {
+    $ = [ ...$, className, ];
+  }
 
-  createdClassName = encodeClassName(createdClassName);
+  return $;
+}
 
-  return createdClassName.join(' ');
+function test (...classNames: ClassNameArray): string[] {
+  let $: string[] = [];
+
+  for (const className of classNames) {
+    if (isArray(className)) {
+      $ = testArray(className, $);
+    }
+
+    if (isNumber(className)) {
+      $ = [ ...$, `${className}`, ];
+    }
+
+    if (isObject(className)) {
+      $ = testObject(className, $);
+    }
+
+    if (isString(className)) {
+      $ = testString(className, $);
+    }
+  }
+
+  return $;
+}
+
+function createClassName (...parameters: ClassNameArray): string {
+  let $ = test(...parameters);
+
+  if (process.env.NODE_ENV !== 'test') {
+    $ = encodeClassName($);
+  }
+
+  return $.join(' ');
 }
 
 export default createClassName;

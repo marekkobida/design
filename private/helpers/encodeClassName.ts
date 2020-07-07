@@ -1,7 +1,7 @@
-import css from '../../index.css';
+function encodeClassName (parameters: string[]): string[] {
+  const css = require('../../index.css');
 
-function encodeClassName (parameters: (number | string)[]): (number | string)[] {
-  for (let i = 0; i < parameters.length; i += 1) {
+  for (const i in parameters) {
     const encodedClassName = css[parameters[i]];
 
     if (encodedClassName) {
