@@ -3,11 +3,11 @@ import React from 'react';
 import { EncodedClassName, } from '../helpers/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
-interface P {
+type P = {
   className?: EncodedClassName | EncodedClassName[];
   offset?: EncodedResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
   size?: EncodedResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
-}
+};
 
 class Column extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {

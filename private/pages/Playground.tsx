@@ -9,6 +9,14 @@ import Link from '../components/Link';
 import Row from '../components/Row';
 import Text from '../components/Text';
 
+class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6, }> {
+  render () {
+    const { size, ...props } = this.props;
+
+    return <div {...props} className={[ 'border', `p-${size}`, ]} />;
+  }
+}
+
 class Playground extends Page {
   constructor () {
     super(-1, 'Playground');
@@ -17,19 +25,74 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Row>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
-          <Column>Column</Column>
+        <Row alignItems="#" className="m-y-4" justifyContent="#">
+          <Column size="width">
+            <Test size={4}>Column 1</Test>
+          </Column>
+          <Column size="width">
+            <Test size={2}>Column 2</Test>
+          </Column>
+        </Row>
+        <Row alignItems="end" className="m-y-4" flexDirection="row-reverse" justifyContent="end">
+          <Column size="width">
+            <Test size={4}>Column 1</Test>
+          </Column>
+          <Column size="width">
+            <Test size={2}>Column 2</Test>
+          </Column>
+        </Row>
+        <Row className="m-y-4">
+          <Column>
+            <Test size={2}>1</Test>
+          </Column>
+          <Column>
+            <Test size={2}>2</Test>
+          </Column>
+          <Column>
+            <Test size={2}>3</Test>
+          </Column>
+          <Column>
+            <Test size={2}>4</Test>
+          </Column>
+          <Column>
+            <Test size={2}>5</Test>
+          </Column>
+          <Column>
+            <Test size={2}>6</Test>
+          </Column>
+          <Column>
+            <Test size={2}>7</Test>
+          </Column>
+          <Column>
+            <Test size={2}>8</Test>
+          </Column>
+          <Column>
+            <Test size={2}>9</Test>
+          </Column>
+          <Column>
+            <Test size={2}>10</Test>
+          </Column>
+          <Column>
+            <Test size={2}>11</Test>
+          </Column>
+          <Column>
+            <Test size={2}>12</Test>
+          </Column>
+        </Row>
+        <Row className="m-y-4">
+          <Column size="#">
+            <Test size={2}>Column</Test>
+          </Column>
+        </Row>
+        <Row className="m-y-4">
+          <Column offset={2} size={8}>
+            <Test size={2}>Column</Test>
+          </Column>
+        </Row>
+        <Row className="m-y-4">
+          <Column size="width">
+            <Test size={2}>Column</Test>
+          </Column>
         </Row>
         <Heading size={1}>Heading</Heading>
         <Heading size={2}>Heading</Heading>

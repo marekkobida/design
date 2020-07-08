@@ -1,15 +1,16 @@
+import isUndefined from '@redredsk/helpers/private/types/isUndefined';
 import React from 'react';
 
 import { EncodedClassName, } from '../helpers/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
-interface P {
+type P = {
   alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
   className?: EncodedClassName | EncodedClassName[];
   flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
   justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
-}
+};
 
 class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {
@@ -20,7 +21,7 @@ class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P
         {...props}
         className={[
           'flex',
-          { 'flex_flex-wrap_wrap': typeof flexWrap === undefined, },
+          { 'flex_flex-wrap_wrap': isUndefined(flexWrap), },
           decodeResponsiveClassName('flex_align-items_', alignItems),
           decodeResponsiveClassName('flex_flex-direction_', flexDirection),
           decodeResponsiveClassName('flex_flex-wrap_', flexWrap),

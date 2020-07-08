@@ -1,6 +1,6 @@
 :root {
   --body--background-color: 255, 255, 255;
-  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
   --body--font-size: 1rem;
   --body--line-height: 1.25;
   --color: 0, 0, 0;

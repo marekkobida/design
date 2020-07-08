@@ -2,9 +2,9 @@ import React from 'react';
 
 import { EncodedClassName, } from '../helpers/decodeClassName';
 
-interface P {
+type P = {
   className?: EncodedClassName | EncodedClassName[];
-}
+};
 
 class Container extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {

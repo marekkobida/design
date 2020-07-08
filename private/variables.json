@@ -6,7 +6,7 @@
     },
     {
       "name": "--body--font-family",
-      "value": "system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji"
+      "value": "system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif"
     },
     {
       "name": "--body--font-size",

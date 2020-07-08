@@ -1,7 +1,7 @@
 import decodeClassName, { EncodedClassName, } from '../helpers/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
-interface P {
+type P = {
   alignment?: EncodedResponsiveClassName<'#' | 'l' | 'r'>;
   className?: EncodedClassName | EncodedClassName[];
   m?: EncodedResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
@@ -20,7 +20,7 @@ interface P {
   pY?: EncodedResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
   size?: 1 | 2 | 3 | 4 | 5 | 6;
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-}
+};
 
 function handleTextParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName | EncodedClassName[], } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
   const {
