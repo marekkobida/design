@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { ClassName, } from '../helpers/createClassName';
-import createResponsiveClassName, { ResponsiveClassName, } from '../helpers/createResponsiveClassName';
+import { EncodedClassName, } from '../helpers/decodeClassName';
+import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
 interface P {
-  alignItems?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
-  className?: ClassName | ClassName[];
-  flexDirection?: ResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
-  flexWrap?: ResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
-  justifyContent?: ResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
+  alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
+  className?: EncodedClassName | EncodedClassName[];
+  flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
+  flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
+  justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
 }
 
 class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
@@ -21,10 +21,10 @@ class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P
         className={[
           'flex',
           { 'flex_flex-wrap_wrap': typeof flexWrap === undefined, },
-          createResponsiveClassName('flex_align-items_', alignItems),
-          createResponsiveClassName('flex_flex-direction_', flexDirection),
-          createResponsiveClassName('flex_flex-wrap_', flexWrap),
-          createResponsiveClassName('flex_justify-content_', justifyContent),
+          decodeResponsiveClassName('flex_align-items_', alignItems),
+          decodeResponsiveClassName('flex_flex-direction_', flexDirection),
+          decodeResponsiveClassName('flex_flex-wrap_', flexWrap),
+          decodeResponsiveClassName('flex_justify-content_', justifyContent),
           'm-x-!2',
           className,
         ]}

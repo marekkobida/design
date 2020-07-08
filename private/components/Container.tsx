@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ClassName, } from '../helpers/createClassName';
+import { EncodedClassName, } from '../helpers/decodeClassName';
 
 interface P {
-  className?: ClassName | ClassName[];
+  className?: EncodedClassName | EncodedClassName[];
 }
 
 class Container extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {

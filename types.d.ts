@@ -1,4 +1,4 @@
-import { ClassName, } from './private/helpers/createClassName';
+import { EncodedClassName, } from './private/helpers/decodeClassName';
 
 declare module 'react' {
   // namespace React {
@@ -8,7 +8,7 @@ declare module 'react' {
   // }
 
   interface P {
-    className?: ClassName | ClassName[];
+    className?: EncodedClassName | EncodedClassName[];
   }
 
   namespace JSX {
