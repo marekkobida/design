@@ -20,6 +20,18 @@ module.exports = ({ types: t, }) => {
           }
         }
 
+        if (value.isNullLiteral()) {
+          value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.nullLiteral(value.node.value), ])));
+
+          state.$ = true;
+        }
+
+        if (value.isNumberLiteral()) {
+          value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.numberLiteral(value.node.value), ])));
+
+          state.$ = true;
+        }
+
         if (value.isStringLiteral()) {
           value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.stringLiteral(value.node.value), ])));
 
