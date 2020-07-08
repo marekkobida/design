@@ -50,18 +50,12 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
 }
 
 function decodeClassName (...encodedClassNames: EncodedClassName[]): DecodedClassName {
-  const decodedClassNames = $(...encodedClassNames);
+  let decodedClassNames = $(...encodedClassNames);
 
   if (process.env.NODE_ENV !== 'test') {
     const css = require('../../index.css');
 
-    for (const i in decodedClassNames) {
-      const $ = css[decodedClassNames[i]];
-
-      if ($) {
-        decodedClassNames[i] = $;
-      }
-    }
+    decodedClassNames = decodedClassNames.map((decodedClassName) => decodedClassName = css[decodedClassName] ? css[decodedClassName] : decodedClassName);
   }
 
   return decodedClassNames.join(' ');
