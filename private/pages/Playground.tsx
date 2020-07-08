@@ -13,7 +13,7 @@ class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6, }> {
   render () {
     const { size, ...props } = this.props;
 
-    return <div {...props} className={[ 'border', `p-${size}`, ]} />;
+    return <div {...props} className={`border p-${size}`} />;
   }
 }
 

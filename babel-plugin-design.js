@@ -1,6 +1,4 @@
 module.exports = ({ types: t, }) => {
-  const cloneNode = t.cloneNode || t.cloneDeep;
-
   return {
     visitor: {
       JSXAttribute (path, state) {
@@ -13,27 +11,21 @@ module.exports = ({ types: t, }) => {
         if (value.isJSXExpressionContainer()) {
           const expression = value.get('expression');
 
-          if (expression.isArrayExpression()) {
-            expression.replaceWith(t.callExpression(cloneNode(state.decodeClassNameIdentifier), expression.get('elements').map((element) => cloneNode(element.node))));
+          if (
+            expression.isArrayExpression()
+            || expression.isNumericLiteral()
+            || expression.isObjectExpression()
+            || expression.isStringLiteral()
+            || expression.isTemplateLiteral()
+          ) {
+            expression.replaceWith(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [  t.cloneNode(expression.node), ]));
 
             state.$ = true;
           }
         }
 
-        if (value.isNullLiteral()) {
-          value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.nullLiteral(value.node.value), ])));
-
-          state.$ = true;
-        }
-
-        if (value.isNumberLiteral()) {
-          value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.numberLiteral(value.node.value), ])));
-
-          state.$ = true;
-        }
-
         if (value.isStringLiteral()) {
-          value.replaceWith(t.JSXExpressionContainer(t.callExpression(cloneNode(state.decodeClassNameIdentifier), [ t.stringLiteral(value.node.value), ])));
+          value.replaceWith(t.JSXExpressionContainer(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [  t.cloneNode(value.node), ])));
 
           state.$ = true;
         }
