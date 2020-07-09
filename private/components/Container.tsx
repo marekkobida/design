@@ -1,6 +1,5 @@
+import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import React from 'react';
-
-import { EncodedClassName, } from '../helpers/decodeClassName';
 
 type P = {
   className?: EncodedClassName | EncodedClassName[];

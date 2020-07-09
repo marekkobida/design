@@ -1,4 +1,4 @@
-import { EncodedClassName, } from './private/helpers/decodeClassName';
+import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 
 declare module 'react' {
   // namespace React {

@@ -1,5 +1,5 @@
-import decodeClassName, { EncodedClassName, } from '../helpers/decodeClassName';
-import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
+import decodeClassName, { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
+import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 
 type P = {
   alignment?: EncodedResponsiveClassName<'#' | 'l' | 'r'>;
