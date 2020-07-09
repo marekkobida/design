@@ -94,14 +94,16 @@ class Playground extends Page {
             <Test size={2}>Column</Test>
           </Column>
         </Row>
-        <Heading size={1}>Heading</Heading>
-        <Heading size={2}>Heading</Heading>
-        <Heading size={3}>Heading</Heading>
-        <Heading size={4}>Heading</Heading>
-        <Heading size={5}>Heading</Heading>
-        <Heading size={6}>Heading</Heading>
-        <Link to="#">Link</Link>
-        <Text>Text</Text>
+        <div className="m-y-4">
+          <Heading size={1}>Heading</Heading>
+          <Heading size={2}>Heading</Heading>
+          <Heading size={3}>Heading</Heading>
+          <Heading size={4}>Heading</Heading>
+          <Heading size={5}>Heading</Heading>
+          <Heading size={6}>Heading</Heading>
+          <Link to="#">Link</Link>
+          <Text>Text</Text>
+        </div>
       </Container>
     );
   }
