@@ -22,7 +22,7 @@ type P = {
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 };
 
-function handleTextParameters<Parameters extends P> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof P>> & { className: EncodedClassName | EncodedClassName[], } {
+function handleTextParameters<Parameters extends P> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof P>> & { className: EncodedClassName | EncodedClassName[]; } {
   const {
     alignment,
     className,

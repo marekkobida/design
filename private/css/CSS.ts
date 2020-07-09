@@ -4,7 +4,7 @@ import isNumber from '@redredsk/helpers/private/types/isNumber';
 import variables from '../variables.json';
 
 class CSS {
-  forBreakpoints ($: (breakpoint: { name: string; size?: string }) => string, breakpoints: typeof variables.breakpoints) {
+  forBreakpoints ($: (breakpoint: { name: string; size?: string; }) => string, breakpoints: typeof variables.breakpoints) {
     return this.test(
       (i, breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;

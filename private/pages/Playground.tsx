@@ -11,7 +11,7 @@ import Text from '../components/Text';
 
 import css from './Playground.css';
 
-class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6, }> {
+class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6; }> {
   render () {
     const { size, ...props } = this.props;
 
