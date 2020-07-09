@@ -1,4 +1,4 @@
-import decodeClassName, { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
+import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 
 type P = {
@@ -22,7 +22,7 @@ type P = {
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 };
 
-function handleTextParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName | EncodedClassName[], } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
+function handleTextParameters<Parameters extends P> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof P>> & { className: EncodedClassName | EncodedClassName[], } {
   const {
     alignment,
     className,
@@ -46,7 +46,7 @@ function handleTextParameters<Parameters extends P> (parameters: Parameters): { 
   } = parameters;
 
   return {
-    className: decodeClassName([
+    className: [
       size && `h${size}`,
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),
@@ -65,7 +65,7 @@ function handleTextParameters<Parameters extends P> (parameters: Parameters): { 
       decodeResponsiveClassName('t_alignment_', alignment),
       weight && `t_weight_${weight}`,
       className,
-    ]),
+    ],
     ...$,
   };
 }
