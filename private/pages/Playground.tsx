@@ -9,11 +9,13 @@ import Link from '../components/Link';
 import Row from '../components/Row';
 import Text from '../components/Text';
 
+import css from './Playground.css';
+
 class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6, }> {
   render () {
     const { size, ...props } = this.props;
 
-    return <div {...props} className={`border p-${size}`} />;
+    return <div {...props} className={[ `border p-${size}`, css.test, ]} />;
   }
 }
 
