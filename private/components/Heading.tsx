@@ -1,12 +1,12 @@
 import React from 'react';
 
-import handleTextParameters from './handleTextParameters';
+import decodeTextParameters from './decodeTextParameters';
 
-type P = Parameters<typeof handleTextParameters>[0];
+type P = Parameters<typeof decodeTextParameters>[0];
 
 class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyof P>> {
   render () {
-    const { className, ...props } = handleTextParameters(this.props);
+    const { className, ...props } = decodeTextParameters(this.props);
 
     const H = `h${this.props.size}` as 'h1';
 

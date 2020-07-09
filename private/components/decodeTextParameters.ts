@@ -22,7 +22,7 @@ type P = {
   weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 };
 
-function handleTextParameters<Parameters extends P> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof P>> & { className: EncodedClassName | EncodedClassName[]; } {
+function decodeTextParameters<Parameters extends P> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof P>> & { className: EncodedClassName | EncodedClassName[]; } {
   const {
     alignment,
     className,
@@ -70,4 +70,4 @@ function handleTextParameters<Parameters extends P> (parameters: Parameters): Pi
   };
 }
 
-export default handleTextParameters;
+export default decodeTextParameters;

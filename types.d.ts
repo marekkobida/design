@@ -1,12 +1,6 @@
 import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 
 declare module 'react' {
-  // namespace React {
-  //   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-  //     className?: ClassName | ClassName[];
-  //   }
-  // }
-
   interface P {
     className?: EncodedClassName | EncodedClassName[];
   }
