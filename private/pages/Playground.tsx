@@ -104,7 +104,7 @@ class Playground extends Page {
           <Heading size={5}>Heading</Heading>
           <Heading size={6}>Heading</Heading>
           <Link to="#">Link</Link>
-          <Text>Text</Text>
+          <Text data-test="ahoj" mB={2} mT={4} className="lol p-2">Text</Text>
         </div>
       </Container>
     );
