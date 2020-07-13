@@ -97,12 +97,12 @@ class Playground extends Page {
           </Column>
         </Row>
         <div className="m-y-4">
-          <Heading size={1}>Heading</Heading>
-          <Heading size={2}>Heading</Heading>
-          <Heading size={3}>Heading</Heading>
-          <Heading size={4}>Heading</Heading>
-          <Heading size={5}>Heading</Heading>
-          <Heading size={6}>Heading</Heading>
+          <Heading textSize={1}>Heading</Heading>
+          <Heading textSize={2}>Heading</Heading>
+          <Heading textSize={3}>Heading</Heading>
+          <Heading textSize={4}>Heading</Heading>
+          <Heading textSize={5}>Heading</Heading>
+          <Heading textSize={6}>Heading</Heading>
           <Link to="#">Link</Link>
           <Text data-test="ahoj" mB={2} mT={4} className="lol p-2">Text</Text>
         </div>

@@ -1,16 +1,14 @@
 import React from 'react';
 
-import decodeSharedParameters from './decodeSharedParameters';
-import decodeTextParameters from './decodeTextParameters';
+import decodeParameters from './decodeParameters';
 
-type P = Parameters<typeof decodeSharedParameters>[0] & Parameters<typeof decodeTextParameters>[0];
+type P = Parameters<typeof decodeParameters>[0];
 
 class E extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {
-    const { className: L, ...l } = decodeSharedParameters(this.props);
-    const { className: R, ...r } = decodeTextParameters(l);
+    const { className, ...props } = decodeParameters(this.props);
 
-    return <div {...r} className={[ L, R, ]} />;
+    return <div {...props} className={className} />;
   }
 }
 
