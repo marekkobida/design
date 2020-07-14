@@ -57,10 +57,10 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
 
   return {
     className: [
-      decodeResponsiveClassName('align-items_', alignItems),
-      decodeResponsiveClassName('flex-direction_', flexDirection),
-      decodeResponsiveClassName('flex-wrap_', flexWrap),
-      decodeResponsiveClassName('justify-content_', justifyContent),
+      decodeResponsiveClassName('align-items-', alignItems),
+      decodeResponsiveClassName('flex-direction-', flexDirection),
+      decodeResponsiveClassName('flex-wrap-', flexWrap),
+      decodeResponsiveClassName('justify-content-', justifyContent),
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),
       decodeResponsiveClassName('m-l-', mL),

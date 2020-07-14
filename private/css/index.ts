@@ -30,6 +30,21 @@ body {
   line-height: var(--body--line-height);
   margin: 0;
 }
+.color-alpha_0 {
+  --color-alpha: 0;
+}
+.color-alpha_25 {
+  --color-alpha: 0.25;
+}
+.color-alpha_50 {
+  --color-alpha: 0.5;
+}
+.color-alpha_75 {
+  --color-alpha: 0.75;
+}
+.color-alpha_100 {
+  --color-alpha: 1;
+}
 ${new Flex().css({ breakpoints: variables.breakpoints, })}
 ${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.columns, })}
 ${new Helpers().css({ breakpoints: variables.breakpoints, })}

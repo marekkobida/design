@@ -8,7 +8,7 @@ class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P
   render () {
     const { className, ...props } = decodeParameters(this.props);
 
-    return <div {...props} className={[ 'flex flex-wrap_wrap m-x-!2', className, ]} />;
+    return <div {...props} className={[ 'flex flex-wrap-wrap m-x-!2', className, ]} />;
   }
 }
 

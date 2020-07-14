@@ -71,21 +71,6 @@ p {
   margin-bottom: 0;
   margin-top: 0;
 }
-.color-alpha_0 {
-  --color-alpha: 0;
-}
-.color-alpha_25 {
-  --color-alpha: 0.25;
-}
-.color-alpha_50 {
-  --color-alpha: 0.5;
-}
-.color-alpha_75 {
-  --color-alpha: 0.75;
-}
-.color-alpha_100 {
-  --color-alpha: 1;
-}
 ${this.createAlignments({ breakpoints, })}
 .text_weight_100 {
   font-weight: 100 !important;

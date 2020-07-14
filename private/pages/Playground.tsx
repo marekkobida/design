@@ -11,8 +11,6 @@ import Text from '../components/Text';
 
 import css from './Playground.css';
 
-console.log(css);
-
 class Playground extends Page {
   constructor () {
     super(-1, 'Playground');
@@ -21,15 +19,15 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Row alignItems="#" justifyContent="#" mY={4}>
+        <Row alignItems="#" className={css.test__row} justifyContent="#" mY={4}>
           <Column className="border p-y-2" columnSize="width">Column 1</Column>
           <Column className="border p-y-4" columnSize="width">Column 2</Column>
         </Row>
-        <Row alignItems="end" flexDirection="row-reverse" justifyContent="end" mY={4}>
+        <Row alignItems="end" className={css.test__row} flexDirection="row-reverse" justifyContent="end" mY={4}>
           <Column className="border p-y-2" columnSize="width">Column 1</Column>
           <Column className="border p-y-4" columnSize="width">Column 2</Column>
         </Row>
-        <Row mY={4}>
+        <Row className={css.test__row} mY={4}>
           <Column className="border p-y-2">1</Column>
           <Column className="border p-y-2">2</Column>
           <Column className="border p-y-2">3</Column>
@@ -43,7 +41,7 @@ class Playground extends Page {
           <Column className="border p-y-2">11</Column>
           <Column className="border p-y-2">12</Column>
         </Row>
-        <Row alignItems="#" mY={4}>
+        <Row alignItems="#" className={css.test__row} mY={4}>
           <Column className="border p-y-2" columnOffset={1} columnSize={4}>Column 1</Column>
           <Column className="border p-y-4" columnOffset={2} columnSize={4}>Column 2</Column>
         </Row>
