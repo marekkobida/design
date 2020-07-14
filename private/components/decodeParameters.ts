@@ -4,7 +4,11 @@ import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redreds
 type S = EncodedResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
 
 type P = {
+  alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
   className?: EncodedClassName | EncodedClassName[];
+  flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
+  flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
+  justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
   m?: S;
   mB?: S;
   mL?: S;
@@ -26,7 +30,11 @@ type P = {
 
 function decodeParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
   const {
+    alignItems,
     className,
+    flexDirection,
+    flexWrap,
+    justifyContent,
     m,
     mB,
     mL,
@@ -49,6 +57,10 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
 
   return {
     className: [
+      decodeResponsiveClassName('align-items_', alignItems),
+      decodeResponsiveClassName('flex-direction_', flexDirection),
+      decodeResponsiveClassName('flex-wrap_', flexWrap),
+      decodeResponsiveClassName('justify-content_', justifyContent),
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),
       decodeResponsiveClassName('m-l-', mL),
