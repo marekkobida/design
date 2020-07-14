@@ -1,4 +1,3 @@
-import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 import isUndefined from '@redredsk/helpers/private/types/isUndefined';
 import React from 'react';
@@ -7,7 +6,6 @@ import decodeParameters from './decodeParameters';
 
 type P = Parameters<typeof decodeParameters>[0] & {
   alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
-  className?: EncodedClassName | EncodedClassName[];
   flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
   justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;

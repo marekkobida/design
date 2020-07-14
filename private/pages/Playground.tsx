@@ -4,6 +4,7 @@ import React from 'react';
 
 import Column from '../components/Column';
 import Container from '../components/Container';
+import E from '../components/E';
 import Heading from '../components/Heading';
 import Link from '../components/Link';
 import Row from '../components/Row';
@@ -27,23 +28,23 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Row alignItems="#" className="m-y-4" justifyContent="#">
-          <Column size="width">
+        <Row alignItems="#" justifyContent="#" mY={4}>
+          <Column columnSize="width">
             <Test size={4}>Column 1</Test>
           </Column>
-          <Column size="width">
+          <Column columnSize="width">
             <Test size={2}>Column 2</Test>
           </Column>
         </Row>
-        <Row alignItems="end" className="m-y-4" flexDirection="row-reverse" justifyContent="end">
-          <Column size="width">
+        <Row alignItems="end" flexDirection="row-reverse" justifyContent="end" mY={4}>
+          <Column columnSize="width">
             <Test size={4}>Column 1</Test>
           </Column>
-          <Column size="width">
+          <Column columnSize="width">
             <Test size={2}>Column 2</Test>
           </Column>
         </Row>
-        <Row className="m-y-4">
+        <Row mY={4}>
           <Column>
             <Test size={2}>1</Test>
           </Column>
@@ -81,22 +82,22 @@ class Playground extends Page {
             <Test size={2}>12</Test>
           </Column>
         </Row>
-        <Row className="m-y-4">
-          <Column size="#">
+        <Row mY={4}>
+          <Column columnSize="#">
             <Test size={2}>Column</Test>
           </Column>
         </Row>
-        <Row className="m-y-4">
-          <Column offset={2} size={8}>
+        <Row mY={4}>
+          <Column columnOffset={2} columnSize={8}>
             <Test size={2}>Column</Test>
           </Column>
         </Row>
-        <Row className="m-y-4">
-          <Column size="width">
+        <Row mY={4}>
+          <Column columnSize="width">
             <Test size={2}>Column</Test>
           </Column>
         </Row>
-        <div className="m-y-4">
+        <E mY={4}>
           <Heading textSize={1}>Heading</Heading>
           <Heading textSize={2}>Heading</Heading>
           <Heading textSize={3}>Heading</Heading>
@@ -104,8 +105,8 @@ class Playground extends Page {
           <Heading textSize={5}>Heading</Heading>
           <Heading textSize={6}>Heading</Heading>
           <Link to="#">Link</Link>
-          <Text data-test="ahoj" mB={2} mT={4} className="lol p-2">Text</Text>
-        </div>
+          <Text>Text</Text>
+        </E>
       </Container>
     );
   }
