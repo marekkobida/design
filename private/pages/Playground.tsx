@@ -82,18 +82,11 @@ class Playground extends Page {
           </Column>
         </Row>
         <Row mY={4}>
-          <Column columnSize="#">
-            <Test size={2}>Column</Test>
+          <Column columnOffset={1} columnSize={4}>
+            <Test size={2}>Column 1</Test>
           </Column>
-        </Row>
-        <Row mY={4}>
-          <Column columnOffset={2} columnSize={8}>
-            <Test size={2}>Column</Test>
-          </Column>
-        </Row>
-        <Row mY={4}>
-          <Column columnSize="width">
-            <Test size={2}>Column</Test>
+          <Column columnOffset={2} columnSize={4}>
+            <Test size={2}>Column 2</Test>
           </Column>
         </Row>
         <div className="m-y-4">

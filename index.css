@@ -2,6 +2,7 @@
   --body--background-color: 255, 255, 255;
   --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
   --body--font-size: 1rem;
+  --body--font-weight: 400;
   --body--line-height: 1.25;
   --color: 0, 0, 0;
   --color-alpha: 1;
@@ -23,9 +24,12 @@
   color: rgba(var(--color), var(--color-alpha));
 }
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   font-family: var(--body--font-family);
   font-size: var(--body--font-size);
+  font-weight: var(--body--font-weight);
   line-height: var(--body--line-height);
   margin: 0;
 }

@@ -13,6 +13,10 @@
       "value": "1rem"
     },
     {
+      "name": "--body--font-weight",
+      "value": "400"
+    },
+    {
       "name": "--body--line-height",
       "value": "1.25"
     },

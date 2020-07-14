@@ -1,3 +1,12 @@
+@import "~@redredsk/fonts/private/index.css";
+
+:root {
+  --body--font-family: Ridley Grotesk, system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
+  --body--font-weight: 500;
+  --heading--font-family: Playfair Display;
+  --heading--font-weight: 700;
+}
+
 .test {
   --border--border-color: 255, 0, 0;
 }
