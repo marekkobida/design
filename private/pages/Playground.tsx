@@ -4,7 +4,6 @@ import React from 'react';
 
 import Column from '../components/Column';
 import Container from '../components/Container';
-import E from '../components/E';
 import Heading from '../components/Heading';
 import Link from '../components/Link';
 import Row from '../components/Row';
@@ -97,7 +96,7 @@ class Playground extends Page {
             <Test size={2}>Column</Test>
           </Column>
         </Row>
-        <E mY={4}>
+        <div className="m-y-4">
           <Heading textSize={1}>Heading</Heading>
           <Heading textSize={2}>Heading</Heading>
           <Heading textSize={3}>Heading</Heading>
@@ -106,7 +105,7 @@ class Playground extends Page {
           <Heading textSize={6}>Heading</Heading>
           <Link to="#">Link</Link>
           <Text>Text</Text>
-        </E>
+        </div>
       </Container>
     );
   }

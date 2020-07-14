@@ -32,158 +32,158 @@ body {
 .flex {
   display: flex !important;
 }
-.flex_align-items_\# {
+.align-items_\# {
   align-items: center !important;
 }
-.flex_align-items_baseline {
+.align-items_baseline {
   align-items: baseline !important;
 }
-.flex_align-items_end {
+.align-items_end {
   align-items: flex-end !important;
 }
-.flex_align-items_start {
+.align-items_start {
   align-items: flex-start !important;
 }
-.flex_flex-direction_column {
+.flex-direction_column {
   flex-direction: column !important;
 }
-.flex_flex-direction_column-reverse {
+.flex-direction_column-reverse {
   flex-direction: column-reverse !important;
 }
-.flex_flex-direction_row {
+.flex-direction_row {
   flex-direction: row !important;
 }
-.flex_flex-direction_row-reverse {
+.flex-direction_row-reverse {
   flex-direction: row-reverse !important;
 }
-.flex_flex-wrap_nowrap {
+.flex-wrap_nowrap {
   flex-wrap: nowrap !important;
 }
-.flex_flex-wrap_wrap {
+.flex-wrap_wrap {
   flex-wrap: wrap !important;
 }
-.flex_flex-wrap_wrap-reverse {
+.flex-wrap_wrap-reverse {
   flex-wrap: wrap-reverse !important;
-}
-.flex_justify-content_\# {
-  justify-content: center !important;
-}
-.flex_justify-content_baseline {
-  justify-content: baseline !important;
-}
-.flex_justify-content_end {
-  justify-content: flex-end !important;
-}
-.flex_justify-content_start {
-  justify-content: flex-start !important;
 }
 .inline-flex {
   display: inline-flex !important;
+}
+.justify-content_\# {
+  justify-content: center !important;
+}
+.justify-content_baseline {
+  justify-content: baseline !important;
+}
+.justify-content_end {
+  justify-content: flex-end !important;
+}
+.justify-content_start {
+  justify-content: flex-start !important;
 }
 @media (min-width: 40rem) {
   .\#flex {
     display: flex !important;
   }
-  .\#flex_align-items_\# {
+  .\#align-items_\# {
     align-items: center !important;
   }
-  .\#flex_align-items_baseline {
+  .\#align-items_baseline {
     align-items: baseline !important;
   }
-  .\#flex_align-items_end {
+  .\#align-items_end {
     align-items: flex-end !important;
   }
-  .\#flex_align-items_start {
+  .\#align-items_start {
     align-items: flex-start !important;
   }
-  .\#flex_flex-direction_column {
+  .\#flex-direction_column {
     flex-direction: column !important;
   }
-  .\#flex_flex-direction_column-reverse {
+  .\#flex-direction_column-reverse {
     flex-direction: column-reverse !important;
   }
-  .\#flex_flex-direction_row {
+  .\#flex-direction_row {
     flex-direction: row !important;
   }
-  .\#flex_flex-direction_row-reverse {
+  .\#flex-direction_row-reverse {
     flex-direction: row-reverse !important;
   }
-  .\#flex_flex-wrap_nowrap {
+  .\#flex-wrap_nowrap {
     flex-wrap: nowrap !important;
   }
-  .\#flex_flex-wrap_wrap {
+  .\#flex-wrap_wrap {
     flex-wrap: wrap !important;
   }
-  .\#flex_flex-wrap_wrap-reverse {
+  .\#flex-wrap_wrap-reverse {
     flex-wrap: wrap-reverse !important;
-  }
-  .\#flex_justify-content_\# {
-    justify-content: center !important;
-  }
-  .\#flex_justify-content_baseline {
-    justify-content: baseline !important;
-  }
-  .\#flex_justify-content_end {
-    justify-content: flex-end !important;
-  }
-  .\#flex_justify-content_start {
-    justify-content: flex-start !important;
   }
   .\#inline-flex {
     display: inline-flex !important;
+  }
+  .\#justify-content_\# {
+    justify-content: center !important;
+  }
+  .\#justify-content_baseline {
+    justify-content: baseline !important;
+  }
+  .\#justify-content_end {
+    justify-content: flex-end !important;
+  }
+  .\#justify-content_start {
+    justify-content: flex-start !important;
   }
 }
 @media (min-width: 64rem) {
   .\#\#flex {
     display: flex !important;
   }
-  .\#\#flex_align-items_\# {
+  .\#\#align-items_\# {
     align-items: center !important;
   }
-  .\#\#flex_align-items_baseline {
+  .\#\#align-items_baseline {
     align-items: baseline !important;
   }
-  .\#\#flex_align-items_end {
+  .\#\#align-items_end {
     align-items: flex-end !important;
   }
-  .\#\#flex_align-items_start {
+  .\#\#align-items_start {
     align-items: flex-start !important;
   }
-  .\#\#flex_flex-direction_column {
+  .\#\#flex-direction_column {
     flex-direction: column !important;
   }
-  .\#\#flex_flex-direction_column-reverse {
+  .\#\#flex-direction_column-reverse {
     flex-direction: column-reverse !important;
   }
-  .\#\#flex_flex-direction_row {
+  .\#\#flex-direction_row {
     flex-direction: row !important;
   }
-  .\#\#flex_flex-direction_row-reverse {
+  .\#\#flex-direction_row-reverse {
     flex-direction: row-reverse !important;
   }
-  .\#\#flex_flex-wrap_nowrap {
+  .\#\#flex-wrap_nowrap {
     flex-wrap: nowrap !important;
   }
-  .\#\#flex_flex-wrap_wrap {
+  .\#\#flex-wrap_wrap {
     flex-wrap: wrap !important;
   }
-  .\#\#flex_flex-wrap_wrap-reverse {
+  .\#\#flex-wrap_wrap-reverse {
     flex-wrap: wrap-reverse !important;
-  }
-  .\#\#flex_justify-content_\# {
-    justify-content: center !important;
-  }
-  .\#\#flex_justify-content_baseline {
-    justify-content: baseline !important;
-  }
-  .\#\#flex_justify-content_end {
-    justify-content: flex-end !important;
-  }
-  .\#\#flex_justify-content_start {
-    justify-content: flex-start !important;
   }
   .\#\#inline-flex {
     display: inline-flex !important;
+  }
+  .\#\#justify-content_\# {
+    justify-content: center !important;
+  }
+  .\#\#justify-content_baseline {
+    justify-content: baseline !important;
+  }
+  .\#\#justify-content_end {
+    justify-content: flex-end !important;
+  }
+  .\#\#justify-content_start {
+    justify-content: flex-start !important;
   }
 }
 .column {
@@ -2300,12 +2300,12 @@ a:focus,
 a:hover {
   text-decoration: underline;
 }
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
+.text_size_1,
+.text_size_2,
+.text_size_3,
+.text_size_4,
+.text_size_5,
+.text_size_6,
 h1,
 h2,
 h3,
@@ -2318,27 +2318,27 @@ h6 {
   margin-bottom: 0;
   margin-top: 0;
 }
-.h1,
+.text_size_1,
 h1 {
   font-size: var(--h1--font-size);
 }
-.h2,
+.text_size_2,
 h2 {
   font-size: var(--h2--font-size);
 }
-.h3,
+.text_size_3,
 h3 {
   font-size: var(--h3--font-size);
 }
-.h4,
+.text_size_4,
 h4 {
   font-size: var(--h4--font-size);
 }
-.h5,
+.text_size_5,
 h5 {
   font-size: var(--h5--font-size);
 }
-.h6,
+.text_size_6,
 h6 {
   font-size: var(--h6--font-size);
 }

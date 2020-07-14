@@ -49,7 +49,6 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
 
   return {
     className: [
-      textSize && `h${textSize}`,
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),
       decodeResponsiveClassName('m-l-', mL),
@@ -65,6 +64,7 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
       decodeResponsiveClassName('p-x-', pX),
       decodeResponsiveClassName('p-y-', pY),
       decodeResponsiveClassName('text_alignment_', textAlignment),
+      textSize && `text_size_${textSize}`,
       textWeight && `text_weight_${textWeight}`,
       className,
     ],

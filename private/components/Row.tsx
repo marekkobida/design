@@ -1,5 +1,4 @@
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
-import isUndefined from '@redredsk/helpers/private/types/isUndefined';
 import React from 'react';
 
 import decodeParameters from './decodeParameters';
@@ -20,11 +19,10 @@ class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P
         {...props}
         className={[
           'flex',
-          { 'flex_flex-wrap_wrap': isUndefined(flexWrap), },
-          decodeResponsiveClassName('flex_align-items_', alignItems),
-          decodeResponsiveClassName('flex_flex-direction_', flexDirection),
-          decodeResponsiveClassName('flex_flex-wrap_', flexWrap),
-          decodeResponsiveClassName('flex_justify-content_', justifyContent),
+          decodeResponsiveClassName('align-items_', alignItems),
+          decodeResponsiveClassName('flex-direction_', flexDirection),
+          flexWrap ? decodeResponsiveClassName('flex-wrap_', flexWrap) : 'flex-wrap_wrap',
+          decodeResponsiveClassName('justify-content_', justifyContent),
           'm-x-!2',
           className,
         ]}
