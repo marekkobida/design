@@ -4,7 +4,10 @@ import isNumber from '@redredsk/helpers/private/types/isNumber';
 import variables from '../variables.json';
 
 class CSS {
-  forBreakpoints ($: (breakpoint: { name: string; size?: string; }) => string, breakpoints: typeof variables.breakpoints) {
+  forBreakpoints (
+    $: (breakpoint: { name: string; size?: string; }) => string,
+    breakpoints: typeof variables.breakpoints
+  ) {
     return this.test(
       (i, breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;
@@ -31,7 +34,10 @@ class CSS {
     return `${$.toFixed(6)}%`;
   }
 
-  test<Test extends any[]> ($: (i: number, ii: Test[0]) => string, to: Test | number): string {
+  test<T extends any[]> (
+    $: (i: number, ii: T[0]) => string,
+    to: T | number
+  ): string {
     let To = 0;
 
     if (isArray(to)) {

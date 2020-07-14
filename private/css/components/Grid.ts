@@ -4,14 +4,11 @@ import CSS from '../CSS';
 class Grid extends CSS {
   createColumn () {
     return `.column {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-  width: 100%;
+  flex: 1 0 0%;
 }`;
   }
 
-  createColumnOffsets (columns: number = variables.columns, breakpoints = variables.breakpoints) {
+  createColumnOffsets (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => this.test(
         (i) => `.${breakpoint.name}column_offset_${i} {
@@ -23,28 +20,25 @@ class Grid extends CSS {
     );
   }
 
-  createColumnSizes (columns: number = variables.columns, breakpoints = variables.breakpoints) {
+  createColumnSizes (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
     return this.forBreakpoints(
       (breakpoint) => {
         const sizes = this.test(
           (i) => `.${breakpoint.name}column_size_${i + 1} {
-  flex: 0 0 ${this.percentage(i + 1, columns)};
-  max-width: ${this.percentage(i + 1, columns)};
+  flex: 0 0 auto;
+  width: ${this.percentage(i + 1, columns)};
 }`,
           columns
         );
 
         return `.${breakpoint.name}column_size_\\# {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-  width: 100%;
+  flex: 1 0 0%;
 }
+${sizes}
 .${breakpoint.name}column_size_width {
   flex: 0 0 auto;
   width: auto;
-}
-${sizes}`;
+}`;
       },
       breakpoints
     );
@@ -56,7 +50,7 @@ ${sizes}`;
 }`;
   }
 
-  css (columns = variables.columns, breakpoints = variables.breakpoints) {
+  css (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
     return `${this.createColumn()}
 ${this.createColumnOffsets(columns, breakpoints)}
 ${this.createColumnSizes(columns, breakpoints)}

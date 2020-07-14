@@ -30,11 +30,11 @@ body {
   line-height: var(--body--line-height);
   margin: 0;
 }
-${new Flex().css()}
-${new Grid().css()}
-${new Helpers().css()}
-${new Spaces().css()}
-${new Typography().css()}
+${new Flex().css(variables.breakpoints)}
+${new Grid().css(variables.columns, variables.breakpoints)}
+${new Helpers().css(variables.breakpoints)}
+${new Spaces().css(variables.spaces, variables.breakpoints)}
+${new Typography().css(variables.breakpoints)}
 `;
   }
 }
