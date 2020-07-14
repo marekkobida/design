@@ -3,7 +3,9 @@ import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redreds
 import isUndefined from '@redredsk/helpers/private/types/isUndefined';
 import React from 'react';
 
-type P = {
+import decodeParameters from './decodeParameters';
+
+type P = Parameters<typeof decodeParameters>[0] & {
   alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
   className?: EncodedClassName | EncodedClassName[];
   flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
@@ -13,7 +15,7 @@ type P = {
 
 class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {
-    const { alignItems, className, flexDirection, flexWrap, justifyContent, ...props } = this.props;
+    const { alignItems, className, flexDirection, flexWrap, justifyContent, ...props } = decodeParameters(this.props);
 
     return (
       <div

@@ -3,7 +3,7 @@ import React from 'react';
 
 import decodeParameters from './decodeParameters';
 
-type P = { to: string; } & Parameters<typeof decodeParameters>[0];
+type P = Parameters<typeof decodeParameters>[0] & { to: string; };
 
 class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');

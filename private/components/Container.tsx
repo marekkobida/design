@@ -1,13 +1,12 @@
-import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import React from 'react';
 
-type P = {
-  className?: EncodedClassName | EncodedClassName[];
-};
+import decodeParameters from './decodeParameters';
+
+type P = Parameters<typeof decodeParameters>[0];
 
 class Container extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
   render () {
-    const { className, ...props } = this.props;
+    const { className, ...props } = decodeParameters(this.props);
 
     return <div {...props} className={[ 'container m-x-# p-x-2', className, ]} />;
   }
