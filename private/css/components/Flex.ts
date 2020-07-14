@@ -2,7 +2,7 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Flex extends CSS {
-  css (breakpoints: typeof variables.breakpoints) {
+  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}flex {
   display: flex !important;

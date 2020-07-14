@@ -2,7 +2,7 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Typography extends CSS {
-  createAlignments (breakpoints: typeof variables.breakpoints) {
+  createAlignments ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}text_alignment_\\# {
   text-align: center !important;
@@ -17,7 +17,7 @@ class Typography extends CSS {
     );
   }
 
-  css (breakpoints: typeof variables.breakpoints) {
+  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
     return `a {
   text-decoration: none;
 }
@@ -86,7 +86,7 @@ p {
 .color-alpha_100 {
   --color-alpha: 1;
 }
-${this.createAlignments(breakpoints)}
+${this.createAlignments({ breakpoints, })}
 .text_weight_100 {
   font-weight: 100 !important;
 }

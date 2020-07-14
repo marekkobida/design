@@ -13,14 +13,6 @@ import css from './Playground.css';
 
 console.log(css);
 
-class Test extends React.Component<{ size: 1 | 2 | 3 | 4 | 5 | 6; }> {
-  render () {
-    const { size, ...props } = this.props;
-
-    return <div {...props} className={`border p-${size}`} />;
-  }
-}
-
 class Playground extends Page {
   constructor () {
     super(-1, 'Playground');
@@ -30,66 +22,30 @@ class Playground extends Page {
     return (
       <Container>
         <Row alignItems="#" justifyContent="#" mY={4}>
-          <Column columnSize="width">
-            <Test size={4}>Column 1</Test>
-          </Column>
-          <Column columnSize="width">
-            <Test size={2}>Column 2</Test>
-          </Column>
+          <Column className="border p-y-2" columnSize="width">Column 1</Column>
+          <Column className="border p-y-4" columnSize="width">Column 2</Column>
         </Row>
         <Row alignItems="end" flexDirection="row-reverse" justifyContent="end" mY={4}>
-          <Column columnSize="width">
-            <Test size={4}>Column 1</Test>
-          </Column>
-          <Column columnSize="width">
-            <Test size={2}>Column 2</Test>
-          </Column>
+          <Column className="border p-y-2" columnSize="width">Column 1</Column>
+          <Column className="border p-y-4" columnSize="width">Column 2</Column>
         </Row>
         <Row mY={4}>
-          <Column>
-            <Test size={2}>1</Test>
-          </Column>
-          <Column>
-            <Test size={2}>2</Test>
-          </Column>
-          <Column>
-            <Test size={2}>3</Test>
-          </Column>
-          <Column>
-            <Test size={2}>4</Test>
-          </Column>
-          <Column>
-            <Test size={2}>5</Test>
-          </Column>
-          <Column>
-            <Test size={2}>6</Test>
-          </Column>
-          <Column>
-            <Test size={2}>7</Test>
-          </Column>
-          <Column>
-            <Test size={2}>8</Test>
-          </Column>
-          <Column>
-            <Test size={2}>9</Test>
-          </Column>
-          <Column>
-            <Test size={2}>10</Test>
-          </Column>
-          <Column>
-            <Test size={2}>11</Test>
-          </Column>
-          <Column>
-            <Test size={2}>12</Test>
-          </Column>
+          <Column className="border p-y-2">1</Column>
+          <Column className="border p-y-2">2</Column>
+          <Column className="border p-y-2">3</Column>
+          <Column className="border p-y-2">4</Column>
+          <Column className="border p-y-2">5</Column>
+          <Column className="border p-y-2">6</Column>
+          <Column className="border p-y-2">7</Column>
+          <Column className="border p-y-2">8</Column>
+          <Column className="border p-y-2">9</Column>
+          <Column className="border p-y-2">10</Column>
+          <Column className="border p-y-2">11</Column>
+          <Column className="border p-y-2">12</Column>
         </Row>
-        <Row mY={4}>
-          <Column columnOffset={1} columnSize={4}>
-            <Test size={2}>Column 1</Test>
-          </Column>
-          <Column columnOffset={2} columnSize={4}>
-            <Test size={2}>Column 2</Test>
-          </Column>
+        <Row alignItems="#" mY={4}>
+          <Column className="border p-y-2" columnOffset={1} columnSize={4}>Column 1</Column>
+          <Column className="border p-y-4" columnOffset={2} columnSize={4}>Column 2</Column>
         </Row>
         <div className="m-y-4">
           <Heading textSize={1}>Heading</Heading>

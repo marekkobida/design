@@ -30,11 +30,11 @@ body {
   line-height: var(--body--line-height);
   margin: 0;
 }
-${new Flex().css(variables.breakpoints)}
-${new Grid().css(variables.columns, variables.breakpoints)}
-${new Helpers().css(variables.breakpoints)}
-${new Spaces().css(variables.spaces, variables.breakpoints)}
-${new Typography().css(variables.breakpoints)}
+${new Flex().css({ breakpoints: variables.breakpoints, })}
+${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.columns, })}
+${new Helpers().css({ breakpoints: variables.breakpoints, })}
+${new Spaces().css({ breakpoints: variables.breakpoints, spaces: variables.spaces, })}
+${new Typography().css({ breakpoints: variables.breakpoints, })}
 `;
   }
 }

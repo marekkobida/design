@@ -2,7 +2,7 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Spaces extends CSS {
-  css (spaces: typeof variables.spaces, breakpoints: typeof variables.breakpoints) {
+  css ({ breakpoints, spaces, }: { breakpoints: typeof variables.breakpoints; spaces: typeof variables.spaces; }) {
     return this.forBreakpoints(
       (breakpoint) => {
         const $ = (property: string, abbreviation: string) => this.test(

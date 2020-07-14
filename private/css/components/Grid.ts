@@ -8,7 +8,7 @@ class Grid extends CSS {
 }`;
   }
 
-  createColumnOffsets (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
+  createColumnOffsets ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
     return this.forBreakpoints(
       (breakpoint) => this.test(
         (i) => `.${breakpoint.name}column_offset_${i} {
@@ -20,7 +20,7 @@ class Grid extends CSS {
     );
   }
 
-  createColumnSizes (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
+  createColumnSizes ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
     return this.forBreakpoints(
       (breakpoint) => {
         const sizes = this.test(
@@ -50,10 +50,10 @@ ${sizes}
 }`;
   }
 
-  css (columns: typeof variables.columns, breakpoints: typeof variables.breakpoints) {
+  css ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
     return `${this.createColumn()}
-${this.createColumnOffsets(columns, breakpoints)}
-${this.createColumnSizes(columns, breakpoints)}
+${this.createColumnOffsets({ breakpoints, columns, })}
+${this.createColumnSizes({ breakpoints, columns, })}
 ${this.createContainer()}`;
   }
 }

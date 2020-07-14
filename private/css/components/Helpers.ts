@@ -2,7 +2,7 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Helpers extends CSS {
-  css (breakpoints: typeof variables.breakpoints) {
+  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
     const $ = this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}block {
   display: block !important;
