@@ -85,14 +85,29 @@ h6 {
 }
 ${
   this.forBreakpoints(
-    (breakpoint) => `.${breakpoint.name}text-align-\\# {
+    (breakpoint) => `.${breakpoint.name}text-align-center {
   text-align: center !important;
+}
+.${breakpoint.name}text-align-end {
+  text-align: end !important;
+}
+.${breakpoint.name}text-align-justify {
+  text-align: justify !important;
+}
+.${breakpoint.name}text-align-justify-all {
+  text-align: justify-all !important;
 }
 .${breakpoint.name}text-align-left {
   text-align: left !important;
 }
+.${breakpoint.name}text-align-match-parent {
+  text-align: match-parent !important;
+}
 .${breakpoint.name}text-align-right {
   text-align: right !important;
+}
+.${breakpoint.name}text-align-start {
+  text-align: start !important;
 }`,
     breakpoints
   )

@@ -19,7 +19,7 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Row alignItems="#" className={[ 'border', css.test__row, ]} justifyContent="#" mY={4}>
+        <Row alignItems="center" className={[ 'border', css.test__row, ]} justifyContent="center" mY={4}>
           <Column className="border" columnSize="width" pY={2}>Column 1</Column>
           <Column className="border" columnSize="width" pY={4}>Column 2</Column>
         </Row>
@@ -41,13 +41,13 @@ class Playground extends Page {
           <Column className="border" pY={2}>11</Column>
           <Column className="border" pY={2}>12</Column>
         </Row>
-        <Row alignItems="#" className={[ 'border', css.test__row, ]} mY={4}>
+        <Row alignItems="center" className={[ 'border', css.test__row, ]} mY={4}>
           <Column className="border" columnOffset={1} columnSize={4} pY={2}>Column 1</Column>
           <Column className="border" columnOffset={2} columnSize={4} pY={4}>Column 2</Column>
         </Row>
         <div className="m-y-4">
           <Heading fontSize={1} textAlign="left">Heading</Heading>
-          <Heading fontSize={2} textAlign="#">Heading</Heading>
+          <Heading fontSize={2} textAlign="center">Heading</Heading>
           <Heading fontSize={3} textAlign="right">Heading</Heading>
           <Heading fontSize={4}>Heading</Heading>
           <Heading fontSize={5}>Heading</Heading>

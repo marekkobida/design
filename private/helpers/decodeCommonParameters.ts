@@ -10,7 +10,7 @@ type ContentDistribution =
 
 // https://drafts.csswg.org/css-align-3/#typedef-content-position
 type ContentPosition =
-  | '#'
+  | 'center'
   | 'end'
   | 'flex-end'
   | 'flex-start'
@@ -42,7 +42,7 @@ type S = EncodedResponsiveClassName<
 
 // https://drafts.csswg.org/css-align-3/#typedef-self-position
 type SelfPosition =
-  | '#'
+  | 'center'
   | 'end'
   | 'flex-end'
   | 'flex-start'
@@ -84,7 +84,7 @@ type CommonParameters = {
   pX?: S;
   pY?: S;
   textAlign?: EncodedResponsiveClassName<
-    | '#'
+    | 'center'
     | 'end'
     | 'justify'
     | 'justify-all'
