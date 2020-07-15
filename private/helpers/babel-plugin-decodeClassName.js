@@ -37,7 +37,7 @@ module.exports = ({ types: t, }) => {
         },
         exit (path, state) {
           if (state.$) {
-            path.node.body.unshift(t.importDeclaration([ t.importDefaultSpecifier(state.decodeClassNameIdentifier), ], t.stringLiteral('@redredsk/design/private/components/decodeClassName')));
+            path.node.body.unshift(t.importDeclaration([ t.importDefaultSpecifier(state.decodeClassNameIdentifier), ], t.stringLiteral('@redredsk/design/private/helpers/decodeClassName')));
           }
         },
       },

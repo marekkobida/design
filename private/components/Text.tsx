@@ -1,6 +1,6 @@
 import React from 'react';
 
-import decodeCommonParameters from './decodeCommonParameters';
+import decodeCommonParameters from '../helpers/decodeCommonParameters';
 
 type P = Parameters<typeof decodeCommonParameters>[0];
 

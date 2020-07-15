@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeCommonParameters from './decodeCommonParameters';
-import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
+import decodeCommonParameters from '../helpers/decodeCommonParameters';
+import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
 type P = Parameters<typeof decodeCommonParameters>[0] & {
   columnOffset?: EncodedResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
