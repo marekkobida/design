@@ -18,7 +18,7 @@ ${this.test((i, $) => `  ${$.name}: ${$.value};`, variables[':root'])}
 *::after,
 *::before {
   box-sizing: border-box;
-  color: rgba(var(--color), var(--color-alpha));
+  color: rgb(var(--color));
 }
 body {
   -moz-osx-font-smoothing: grayscale;
@@ -29,21 +29,6 @@ body {
   font-weight: var(--body--font-weight);
   line-height: var(--body--line-height);
   margin: 0;
-}
-.color-alpha_0 {
-  --color-alpha: 0;
-}
-.color-alpha_25 {
-  --color-alpha: 0.25;
-}
-.color-alpha_50 {
-  --color-alpha: 0.5;
-}
-.color-alpha_75 {
-  --color-alpha: 0.75;
-}
-.color-alpha_100 {
-  --color-alpha: 1;
 }
 ${new Flex().css({ breakpoints: variables.breakpoints, })}
 ${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.columns, })}

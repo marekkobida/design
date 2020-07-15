@@ -18,15 +18,11 @@
     },
     {
       "name": "--body--line-height",
-      "value": "1.25"
+      "value": "1.5"
     },
     {
       "name": "--color",
       "value": "0, 0, 0"
-    },
-    {
-      "name": "--color-alpha",
-      "value": "1"
     },
     {
       "name": "--h1--font-size",
@@ -62,7 +58,7 @@
     },
     {
       "name": "--heading--line-height",
-      "value": "var(--body--line-height)"
+      "value": "1.25"
     },
     {
       "name": "--space",
