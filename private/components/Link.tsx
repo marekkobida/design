@@ -1,9 +1,9 @@
 import ServerRequest from '@redredsk/helpers/private/ServerRequest';
 import React from 'react';
 
-import decodeParameters from './decodeParameters';
+import decodeCommonParameters from './decodeCommonParameters';
 
-type P = Parameters<typeof decodeParameters>[0] & { to: string; };
+type P = Parameters<typeof decodeCommonParameters>[0] & { to: string; };
 
 class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
@@ -17,9 +17,9 @@ class Link extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>
   }
 
   render () {
-    const { className, to, ...props } = decodeParameters(this.props);
+    const { className, to, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <a {...props} className={className} href={to} onClick={this.onClick} />;
+    return <a {...notCommonParameters} className={className} href={to} onClick={this.onClick} />;
   }
 }
 

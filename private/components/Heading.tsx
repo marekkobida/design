@@ -1,16 +1,18 @@
 import React from 'react';
 
-import decodeParameters from './decodeParameters';
+import decodeCommonParameters from './decodeCommonParameters';
 
-type P = Parameters<typeof decodeParameters>[0];
+type P = Parameters<typeof decodeCommonParameters>[0];
 
 class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyof P>> {
   render () {
-    const { className, ...props } = decodeParameters(this.props);
+    const { fontSize, ...parameters } = this.props;
 
-    const H = `h${this.props.fontSize}` as 'h1';
+    const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-    return <H {...props} className={className} />;
+    const H = `h${fontSize}` as 'h1';
+
+    return <H {...notCommonParameters} className={className} />;
   }
 }
 

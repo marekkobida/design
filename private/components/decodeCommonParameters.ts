@@ -50,7 +50,7 @@ type SelfPosition =
   | 'self-start'
   | 'start';
 
-type P = {
+type CommonParameters = {
   alignItems?: EncodedResponsiveClassName<
     | 'baseline'
     | 'normal'
@@ -95,7 +95,7 @@ type P = {
   >;
 };
 
-function decodeParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
+function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
   const {
     alignItems,
     className,
@@ -119,7 +119,7 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
     pX,
     pY,
     textAlign,
-    ...$
+    ...notCommonParameters
   } = parameters;
 
   return {
@@ -147,8 +147,8 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
       decodeResponsiveClassName('text-align-', textAlign),
       className,
     ],
-    ...$,
+    ...notCommonParameters,
   };
 }
 
-export default decodeParameters;
+export default decodeCommonParameters;

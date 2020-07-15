@@ -1,14 +1,14 @@
 import React from 'react';
 
-import decodeParameters from './decodeParameters';
+import decodeCommonParameters from './decodeCommonParameters';
 
-type P = Parameters<typeof decodeParameters>[0];
+type P = Parameters<typeof decodeCommonParameters>[0];
 
 class Text extends React.Component<P & Omit<JSX.IntrinsicElements['p'], keyof P>> {
   render () {
-    const { className, ...props } = decodeParameters(this.props);
+    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <p {...props} className={className} />;
+    return <p {...notCommonParameters} className={className} />;
   }
 }
 
