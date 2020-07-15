@@ -46,12 +46,12 @@ class Playground extends Page {
           <Column className="border p-y-4" columnOffset={2} columnSize={4}>Column 2</Column>
         </Row>
         <div className="m-y-4">
-          <Heading textSize={1}>Heading</Heading>
-          <Heading textSize={2}>Heading</Heading>
-          <Heading textSize={3}>Heading</Heading>
-          <Heading textSize={4}>Heading</Heading>
-          <Heading textSize={5}>Heading</Heading>
-          <Heading textSize={6}>Heading</Heading>
+          <Heading fontSize={1} textAlign="left">Heading</Heading>
+          <Heading fontSize={2} textAlign="#">Heading</Heading>
+          <Heading fontSize={3} textAlign="right">Heading</Heading>
+          <Heading fontSize={4}>Heading</Heading>
+          <Heading fontSize={5}>Heading</Heading>
+          <Heading fontSize={6}>Heading</Heading>
           <Link to="#">Link</Link>
           <Text>Text</Text>
         </div>

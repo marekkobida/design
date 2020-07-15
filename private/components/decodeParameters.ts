@@ -8,6 +8,8 @@ type P = {
   className?: EncodedClassName | EncodedClassName[];
   flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
+  fontSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
   m?: S;
   mB?: S;
@@ -23,9 +25,7 @@ type P = {
   pT?: S;
   pX?: S;
   pY?: S;
-  textAlignment?: EncodedResponsiveClassName<'#' | 'l' | 'r'>;
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  textWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+  textAlign?: EncodedResponsiveClassName<'#' | 'left' | 'right'>;
 };
 
 function decodeParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
@@ -34,6 +34,8 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
     className,
     flexDirection,
     flexWrap,
+    fontSize,
+    fontWeight,
     justifyContent,
     m,
     mB,
@@ -49,9 +51,7 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
     pT,
     pX,
     pY,
-    textAlignment,
-    textSize,
-    textWeight,
+    textAlign,
     ...$
   } = parameters;
 
@@ -60,6 +60,8 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
       decodeResponsiveClassName('align-items-', alignItems),
       decodeResponsiveClassName('flex-direction-', flexDirection),
       decodeResponsiveClassName('flex-wrap-', flexWrap),
+      fontSize && `font-size-${fontSize}`,
+      fontWeight && `font-weight-${fontWeight}`,
       decodeResponsiveClassName('justify-content-', justifyContent),
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),
@@ -75,9 +77,7 @@ function decodeParameters<Parameters extends P> (parameters: Parameters): { clas
       decodeResponsiveClassName('p-t-', pT),
       decodeResponsiveClassName('p-x-', pX),
       decodeResponsiveClassName('p-y-', pY),
-      decodeResponsiveClassName('text_alignment_', textAlignment),
-      textSize && `text_size_${textSize}`,
-      textWeight && `text_weight_${textWeight}`,
+      decodeResponsiveClassName('text-align-', textAlign),
       className,
     ],
     ...$,

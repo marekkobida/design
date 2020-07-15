@@ -8,7 +8,7 @@ class Heading extends React.Component<P & Omit<JSX.IntrinsicElements['h1'], keyo
   render () {
     const { className, ...props } = decodeParameters(this.props);
 
-    const H = `h${this.props.textSize}` as 'h1';
+    const H = `h${this.props.fontSize}` as 'h1';
 
     return <H {...props} className={className} />;
   }
