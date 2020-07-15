@@ -1,16 +1,33 @@
 import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 
+type ContentDistribution = 'space-around' | 'space-between' | 'space-evenly' | 'stretch';
+
+type ContentPosition = '#' | 'end' | 'flex-end' | 'flex-start' | 'start';
+
 type S = EncodedResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
 
+type SelfPosition = '#' | 'end' | 'flex-end' | 'flex-start' | 'self-end' | 'self-start' | 'start';
+
 type P = {
-  alignItems?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
+  alignItems?: EncodedResponsiveClassName<
+    | 'baseline'
+    | 'normal'
+    | 'stretch'
+    | SelfPosition
+  >;
   className?: EncodedClassName | EncodedClassName[];
   flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
   flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
   fontSize?: 1 | 2 | 3 | 4 | 5 | 6;
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-  justifyContent?: EncodedResponsiveClassName<'#' | 'baseline' | 'end' | 'start'>;
+  justifyContent?: EncodedResponsiveClassName<
+    | 'left'
+    | 'normal'
+    | 'right'
+    | ContentDistribution
+    | ContentPosition
+  >;
   m?: S;
   mB?: S;
   mL?: S;
@@ -25,7 +42,16 @@ type P = {
   pT?: S;
   pX?: S;
   pY?: S;
-  textAlign?: EncodedResponsiveClassName<'#' | 'left' | 'right'>;
+  textAlign?: EncodedResponsiveClassName<
+    | '#'
+    | 'end'
+    | 'justify'
+    | 'justify-all'
+    | 'left'
+    | 'match-parent'
+    | 'right'
+    | 'start'
+  >;
 };
 
 function decodeParameters<Parameters extends P> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof P>> {
