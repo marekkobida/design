@@ -20,30 +20,30 @@ class Playground extends Page {
     return (
       <Container>
         <Row alignItems="#" className={css.test__row} justifyContent="#" mY={4}>
-          <Column className="border p-y-2" columnSize="width">Column 1</Column>
-          <Column className="border p-y-4" columnSize="width">Column 2</Column>
+          <Column className="border" columnSize="width" pY={2}>Column 1</Column>
+          <Column className="border" columnSize="width" pY={4}>Column 2</Column>
         </Row>
         <Row alignItems="end" className={css.test__row} flexDirection="row-reverse" justifyContent="end" mY={4}>
-          <Column className="border p-y-2" columnSize="width">Column 1</Column>
-          <Column className="border p-y-4" columnSize="width">Column 2</Column>
+          <Column className="border" columnSize="width" pY={2}>Column 1</Column>
+          <Column className="border" columnSize="width" pY={4}>Column 2</Column>
         </Row>
         <Row className={css.test__row} mY={4}>
-          <Column className="border p-y-2">1</Column>
-          <Column className="border p-y-2">2</Column>
-          <Column className="border p-y-2">3</Column>
-          <Column className="border p-y-2">4</Column>
-          <Column className="border p-y-2">5</Column>
-          <Column className="border p-y-2">6</Column>
-          <Column className="border p-y-2">7</Column>
-          <Column className="border p-y-2">8</Column>
-          <Column className="border p-y-2">9</Column>
-          <Column className="border p-y-2">10</Column>
-          <Column className="border p-y-2">11</Column>
-          <Column className="border p-y-2">12</Column>
+          <Column className="border" pY={2}>1</Column>
+          <Column className="border" pY={2}>2</Column>
+          <Column className="border" pY={2}>3</Column>
+          <Column className="border" pY={2}>4</Column>
+          <Column className="border" pY={2}>5</Column>
+          <Column className="border" pY={2}>6</Column>
+          <Column className="border" pY={2}>7</Column>
+          <Column className="border" pY={2}>8</Column>
+          <Column className="border" pY={2}>9</Column>
+          <Column className="border" pY={2}>10</Column>
+          <Column className="border" pY={2}>11</Column>
+          <Column className="border" pY={2}>12</Column>
         </Row>
         <Row alignItems="#" className={css.test__row} mY={4}>
-          <Column className="border p-y-2" columnOffset={1} columnSize={4}>Column 1</Column>
-          <Column className="border p-y-4" columnOffset={2} columnSize={4}>Column 2</Column>
+          <Column className="border" columnOffset={1} columnSize={4} pY={2}>Column 1</Column>
+          <Column className="border" columnOffset={2} columnSize={4} pY={4}>Column 2</Column>
         </Row>
         <div className="m-y-4">
           <Heading fontSize={1} textAlign="left">Heading</Heading>

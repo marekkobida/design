@@ -1,13 +1,54 @@
 import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 
-type ContentDistribution = 'space-around' | 'space-between' | 'space-evenly' | 'stretch';
+// https://drafts.csswg.org/css-align-3/#typedef-content-distribution
+type ContentDistribution =
+  | 'space-around'
+  | 'space-between'
+  | 'space-evenly'
+  | 'stretch';
 
-type ContentPosition = '#' | 'end' | 'flex-end' | 'flex-start' | 'start';
+// https://drafts.csswg.org/css-align-3/#typedef-content-position
+type ContentPosition =
+  | '#'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'start';
 
-type S = EncodedResponsiveClassName<'!0' | '!1' | '!2' | '!3' | '!4' | '!5' |'!6' |'!7' |'!8' |'!16' |'#' | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 16>;
+type S = EncodedResponsiveClassName<
+  | '!0'
+  | '!1'
+  | '!16'
+  | '!2'
+  | '!3'
+  | '!4'
+  | '!5'
+  | '!6'
+  | '!7'
+  | '!8'
+  | '#'
+  | 0
+  | 1
+  | 16
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+>;
 
-type SelfPosition = '#' | 'end' | 'flex-end' | 'flex-start' | 'self-end' | 'self-start' | 'start';
+// https://drafts.csswg.org/css-align-3/#typedef-self-position
+type SelfPosition =
+  | '#'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'self-end'
+  | 'self-start'
+  | 'start';
 
 type P = {
   alignItems?: EncodedResponsiveClassName<
