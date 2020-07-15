@@ -19,14 +19,14 @@ module.exports = ({ types: t, }) => {
             || expression.isStringLiteral()
             || expression.isTemplateLiteral()
           ) {
-            expression.replaceWith(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [  t.cloneNode(expression.node), ]));
+            expression.replaceWith(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [ t.cloneNode(expression.node), ]));
 
             state.$ = true;
           }
         }
 
         if (value.isStringLiteral()) {
-          value.replaceWith(t.JSXExpressionContainer(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [  t.cloneNode(value.node), ])));
+          value.replaceWith(t.JSXExpressionContainer(t.callExpression(t.cloneNode(state.decodeClassNameIdentifier), [ t.cloneNode(value.node), ])));
 
           state.$ = true;
         }
