@@ -1,4 +1,4 @@
-import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
+import { EncodedClassName, } from './private/components/decodeClassName';
 
 declare module 'react' {
   interface P {

@@ -1,5 +1,5 @@
-import { EncodedClassName, } from '@redredsk/helpers/private/decodeClassName';
-import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
+import { EncodedClassName, } from './decodeClassName';
+import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 
 // https://drafts.csswg.org/css-align-3/#typedef-content-distribution
 type ContentDistribution =

@@ -1,7 +1,7 @@
-import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '@redredsk/helpers/private/decodeResponsiveClassName';
 import React from 'react';
 
 import decodeCommonParameters from './decodeCommonParameters';
+import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 
 type P = Parameters<typeof decodeCommonParameters>[0] & {
   columnOffset?: EncodedResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
