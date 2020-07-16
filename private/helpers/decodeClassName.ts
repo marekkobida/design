@@ -9,6 +9,7 @@ export type DecodedClassName = string;
 
 export type EncodedClassName =
   | EncodedClassName[]
+  | boolean
   | null
   | number
   | string
