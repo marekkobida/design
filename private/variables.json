@@ -50,7 +50,7 @@
     },
     {
       "name": "--heading--font-family",
-      "value": "var(--body--font-family)"
+      "value": "inherit"
     },
     {
       "name": "--heading--font-weight",

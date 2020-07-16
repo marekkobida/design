@@ -11,7 +11,7 @@
   --h4--font-size: 1.5rem;
   --h5--font-size: 1.25rem;
   --h6--font-size: 1rem;
-  --heading--font-family: var(--body--font-family);
+  --heading--font-family: inherit;
   --heading--font-weight: 500;
   --heading--line-height: 1.25;
   --space: 1rem;
@@ -31,6 +31,27 @@ body {
   font-weight: var(--body--font-weight);
   line-height: var(--body--line-height);
   margin: 0;
+}
+input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 0.125rem solid rgba(var(--color), 0.25);
+  border-radius: 0.25rem;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  width: 100%;
+}
+input:focus {
+  border-color: rgba(var(--color), 0.75);
+  outline: 0;
+}
+label {
+  display: inline-block;
+  font-weight: var(--heading--font-weight);
 }
 .flex {
   display: flex !important;

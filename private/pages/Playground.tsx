@@ -5,6 +5,8 @@ import React from 'react';
 import Column from '../components/Column';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
+import Input from '../components/Input';
+import Label from '../components/Label';
 import Link from '../components/Link';
 import Row from '../components/Row';
 import Text from '../components/Text';
@@ -55,6 +57,24 @@ class Playground extends Page {
           <Link to="#">Link</Link>
           <Text>Text</Text>
         </div>
+        <Row className={[ 'border', css.test__row, ]} mY={4}>
+          <Column className="border" columnSize={[ 12, { '#': '#', }, ]} pY={2}>
+            <div className="m-y-4">
+              <Label htmlFor="left1" mB={2}>Left 1</Label>
+              <Input id="left1" type="text" />
+            </div>
+            <div className="m-y-4">
+              <Label htmlFor="left2" mB={2}>Left 2</Label>
+              <Input id="left2" type="text" />
+            </div>
+          </Column>
+          <Column className="border" columnSize={[ 12, { '#': '#', }, ]} pY={2}>
+            <div className="m-y-4">
+              <Label htmlFor="right" mB={2}>Right</Label>
+              <Input id="right" type="text" />
+            </div>
+          </Column>
+        </Row>
       </Container>
     );
   }
