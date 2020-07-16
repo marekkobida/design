@@ -4,7 +4,7 @@ import decodeCommonParameters from '../helpers/decodeCommonParameters';
 
 type P = Parameters<typeof decodeCommonParameters>[0];
 
-class Text extends React.Component<P & Omit<JSX.IntrinsicElements['p'], keyof P>> {
+class Paragraph extends React.Component<P & Omit<JSX.IntrinsicElements['p'], keyof P>> {
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
@@ -12,4 +12,4 @@ class Text extends React.Component<P & Omit<JSX.IntrinsicElements['p'], keyof P>
   }
 }
 
-export default Text;
+export default Paragraph;

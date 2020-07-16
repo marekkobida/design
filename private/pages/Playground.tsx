@@ -2,14 +2,14 @@ import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
 import React from 'react';
 
+import Anchor from '../components/Anchor';
 import Column from '../components/Column';
 import Container from '../components/Container';
 import Heading from '../components/Heading';
 import Input from '../components/Input';
 import Label from '../components/Label';
-import Link from '../components/Link';
+import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
-import Text from '../components/Text';
 
 import css from './Playground.css';
 
@@ -54,8 +54,8 @@ class Playground extends Page {
           <Heading fontSize={4}>Heading</Heading>
           <Heading fontSize={5}>Heading</Heading>
           <Heading fontSize={6}>Heading</Heading>
-          <Link to="#">Link</Link>
-          <Text>Text</Text>
+          <Anchor to="#">Link</Anchor>
+          <Paragraph>Text</Paragraph>
         </div>
         <Row className={[ 'border', css.test__row, ]} mY={4}>
           <Column className="border" columnSize={[ 12, { '#': '#', }, ]} pY={2}>
