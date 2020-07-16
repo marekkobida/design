@@ -29,7 +29,7 @@ class Playground extends Page {
           <Column className="border" columnSize="width" pY={2}>Column 1</Column>
           <Column className="border" columnSize="width" pY={4}>Column 2</Column>
         </Row>
-        <Row className={[ 'border', css.test__row, ]} mY={4}>
+        <Row className={[ 'border', css.test__row, ]} flexDirection={[ 'column', { '#': 'row', }, ]} mY={4}>
           <Column className="border" pY={2}>1</Column>
           <Column className="border" pY={2}>2</Column>
           <Column className="border" pY={2}>3</Column>

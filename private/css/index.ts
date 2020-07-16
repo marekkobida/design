@@ -6,7 +6,7 @@ import CSS from './CSS';
 import Flex from './components/Flex';
 import Grid from './components/Grid';
 import Helpers from './components/Helpers';
-import Spaces from './components/Spaces';
+import Spacing from './components/Spacing';
 import Typography from './components/Typography';
 
 class Index extends CSS {
@@ -54,7 +54,7 @@ label {
 ${new Flex().css({ breakpoints: variables.breakpoints, })}
 ${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.columns, })}
 ${new Helpers().css({ breakpoints: variables.breakpoints, })}
-${new Spaces().css({ breakpoints: variables.breakpoints, spaces: variables.spaces, })}
+${new Spacing().css({ breakpoints: variables.breakpoints, spacing: variables.spacing, })}
 ${new Typography().css({ breakpoints: variables.breakpoints, })}
 `;
   }
