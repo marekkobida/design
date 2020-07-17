@@ -2,12 +2,9 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Flex extends CSS {
-  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
+  alignItems ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}flex {
-  display: flex !important;
-}
-.${breakpoint.name}align-items-baseline {
+      (breakpoint) => `.${breakpoint.name}align-items-baseline {
   align-items: baseline !important;
 }
 .${breakpoint.name}align-items-center {
@@ -36,8 +33,26 @@ class Flex extends CSS {
 }
 .${breakpoint.name}align-items-stretch {
   align-items: stretch !important;
+}`,
+      breakpoints
+    );
+  }
+
+  display ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}flex {
+  display: flex !important;
 }
-.${breakpoint.name}flex-direction-column {
+.${breakpoint.name}inline-flex {
+  display: inline-flex !important;
+}`,
+      breakpoints
+    );
+  }
+
+  flexDirection ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}flex-direction-column {
   flex-direction: column !important;
 }
 .${breakpoint.name}flex-direction-column-reverse {
@@ -48,8 +63,14 @@ class Flex extends CSS {
 }
 .${breakpoint.name}flex-direction-row-reverse {
   flex-direction: row-reverse !important;
-}
-.${breakpoint.name}flex-wrap-nowrap {
+}`,
+      breakpoints
+    );
+  }
+
+  flexWrap ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}flex-wrap-nowrap {
   flex-wrap: nowrap !important;
 }
 .${breakpoint.name}flex-wrap-wrap {
@@ -57,11 +78,14 @@ class Flex extends CSS {
 }
 .${breakpoint.name}flex-wrap-wrap-reverse {
   flex-wrap: wrap-reverse !important;
-}
-.${breakpoint.name}inline-flex {
-  display: inline-flex !important;
-}
-.${breakpoint.name}justify-content-center {
+}`,
+      breakpoints
+    );
+  }
+
+  justifyContent ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}justify-content-center {
   justify-content: center !important;
 }
 .${breakpoint.name}justify-content-end {
@@ -99,6 +123,14 @@ class Flex extends CSS {
 }`,
       breakpoints
     );
+  }
+
+  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return `${this.alignItems({ breakpoints, })}
+${this.display({ breakpoints, })}
+${this.flexDirection({ breakpoints, })}
+${this.flexWrap({ breakpoints, })}
+${this.justifyContent({ breakpoints, })}`;
   }
 }
 

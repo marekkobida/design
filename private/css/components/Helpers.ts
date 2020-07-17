@@ -2,8 +2,8 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Helpers extends CSS {
-  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }) {
-    const $ = this.forBreakpoints(
+  display ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}block {
   display: block !important;
 }
@@ -15,31 +15,10 @@ class Helpers extends CSS {
 }`,
       breakpoints
     );
+  }
 
-    const $$ = this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}absolute {
-  position: absolute !important;
-}
-.${breakpoint.name}bottom {
-  bottom: 0 !important;
-}
-.${breakpoint.name}left {
-  left: 0 !important;
-}
-.${breakpoint.name}relative {
-  position: relative !important;
-}
-.${breakpoint.name}right {
-  right: 0 !important;
-}
-.${breakpoint.name}top {
-  top: 0 !important;
-}`,
-      breakpoints
-    );
-
-    return `${$}
-${$$}
+  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+    return `${this.display({ breakpoints, })}
 .border {
   --border--border-color: var(--color);
   --border--border-width: 0.125rem;

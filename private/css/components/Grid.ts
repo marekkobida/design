@@ -2,16 +2,16 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Grid extends CSS {
-  createColumn () {
+  createColumn (): string {
     return `.column {
   flex: 1 0 0%;
 }`;
   }
 
-  createColumnOffsets ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
+  createColumnOffsets ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
     return this.forBreakpoints(
-      (breakpoint) => this.test(
-        (i) => `.${breakpoint.name}column_offset_${i} {
+      (breakpoint) => this.for(
+        ($, i) => `.${breakpoint.name}column_offset_${i} {
   margin-left: ${this.percentage(i, columns)};
 }`,
         columns
@@ -20,11 +20,11 @@ class Grid extends CSS {
     );
   }
 
-  createColumnSizes ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
+  createColumnSizes ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
     return this.forBreakpoints(
       (breakpoint) => {
-        const sizes = this.test(
-          (i) => `.${breakpoint.name}column_size_${i + 1} {
+        const sizes = this.for(
+          ($, i) => `.${breakpoint.name}column_size_${i + 1} {
   flex: 0 0 auto;
   width: ${this.percentage(i + 1, columns)};
 }`,
@@ -44,13 +44,13 @@ ${sizes}
     );
   }
 
-  createContainer () {
+  createContainer (): string {
     return `.container {
   max-width: 75rem;
 }`;
   }
 
-  css ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }) {
+  css ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
     return `${this.createColumn()}
 ${this.createColumnOffsets({ breakpoints, columns, })}
 ${this.createColumnSizes({ breakpoints, columns, })}

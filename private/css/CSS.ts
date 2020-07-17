@@ -4,12 +4,39 @@ import isNumber from '@redredsk/helpers/private/types/isNumber';
 import variables from '../variables.json';
 
 class CSS {
+  for<T extends any[]> (
+    $: (ii: T[0], i: number) => string,
+    to: T | number
+  ): string {
+    let To = 0;
+
+    if (isArray(to)) {
+      To = to.length;
+    }
+
+    if (isNumber(to)) {
+      To = to;
+    }
+
+    let $$: string[] = [];
+
+    for (let i = 0; i < To; i += 1) {
+      const b = $(isArray(to) ? to[i] : null, i);
+
+      if (b) {
+        $$ = [ ...$$, b, ];
+      }
+    }
+
+    return $$.join('\n');
+  }
+
   forBreakpoints (
     $: (breakpoint: { name: string; size?: string; }) => string,
     breakpoints: typeof variables.breakpoints
-  ) {
-    return this.test(
-      (i, breakpoint) => {
+  ): string {
+    return this.for(
+      (breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;
 
         if (breakpoint !== null) {
@@ -32,33 +59,6 @@ class CSS {
     }
 
     return `${$.toFixed(6)}%`;
-  }
-
-  test<T extends any[]> (
-    $: (i: number, ii: T[0]) => string,
-    to: T | number
-  ): string {
-    let To = 0;
-
-    if (isArray(to)) {
-      To = to.length;
-    }
-
-    if (isNumber(to)) {
-      To = to;
-    }
-
-    let $$: string[] = [];
-
-    for (let i = 0; i < To; i += 1) {
-      const b = $(i, isArray(to) ? to[i] : null);
-
-      if (b) {
-        $$ = [ ...$$, b, ];
-      }
-    }
-
-    return $$.join('\n');
   }
 }
 

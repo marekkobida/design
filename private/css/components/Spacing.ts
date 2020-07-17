@@ -2,53 +2,53 @@ import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Spacing extends CSS {
-  css ({ breakpoints, spacing, }: { breakpoints: typeof variables.breakpoints; spacing: typeof variables.spacing; }) {
+  css ({ breakpoints, spacing, }: { breakpoints: typeof variables.breakpoints; spacing: typeof variables.spacing; }): string {
     return this.forBreakpoints(
       (breakpoint) => {
-        const $ = (property: string, abbreviation: string) => this.test(
-          (i, space) => `.${breakpoint.name}${abbreviation}-${space.name} {
-  ${property}: ${space.size} !important;
+        const a = (property: string, abbreviation: string) => this.for(
+          ($) => `.${breakpoint.name}${abbreviation}-${$.name} {
+  ${property}: ${$.size} !important;
 }
-.${breakpoint.name}${abbreviation}-b-${space.name},
-.${breakpoint.name}${abbreviation}-y-${space.name} {
-  ${property}-bottom: ${space.size} !important;
+.${breakpoint.name}${abbreviation}-b-${$.name},
+.${breakpoint.name}${abbreviation}-y-${$.name} {
+  ${property}-bottom: ${$.size} !important;
 }
-.${breakpoint.name}${abbreviation}-l-${space.name},
-.${breakpoint.name}${abbreviation}-x-${space.name} {
-  ${property}-left: ${space.size} !important;
+.${breakpoint.name}${abbreviation}-l-${$.name},
+.${breakpoint.name}${abbreviation}-x-${$.name} {
+  ${property}-left: ${$.size} !important;
 }
-.${breakpoint.name}${abbreviation}-r-${space.name},
-.${breakpoint.name}${abbreviation}-x-${space.name} {
-  ${property}-right: ${space.size} !important;
+.${breakpoint.name}${abbreviation}-r-${$.name},
+.${breakpoint.name}${abbreviation}-x-${$.name} {
+  ${property}-right: ${$.size} !important;
 }
-.${breakpoint.name}${abbreviation}-t-${space.name},
-.${breakpoint.name}${abbreviation}-y-${space.name} {
-  ${property}-top: ${space.size} !important;
+.${breakpoint.name}${abbreviation}-t-${$.name},
+.${breakpoint.name}${abbreviation}-y-${$.name} {
+  ${property}-top: ${$.size} !important;
 }`,
           spacing
         );
 
-        const $$ = this.test(
-          (i, space) => {
-            if (space.name !== '0') {
-              return `.${breakpoint.name}m-\\!${space.name} {
-  margin: calc(${space.size} * -1) !important;
+        const b: string = this.for(
+          ($) => {
+            if ($.name !== '0') {
+              return `.${breakpoint.name}m-\\!${$.name} {
+  margin: calc(${$.size} * -1) !important;
 }
-.${breakpoint.name}m-b-\\!${space.name},
-.${breakpoint.name}m-y-\\!${space.name} {
-  margin-bottom: calc(${space.size} * -1) !important;
+.${breakpoint.name}m-b-\\!${$.name},
+.${breakpoint.name}m-y-\\!${$.name} {
+  margin-bottom: calc(${$.size} * -1) !important;
 }
-.${breakpoint.name}m-l-\\!${space.name},
-.${breakpoint.name}m-x-\\!${space.name} {
-  margin-left: calc(${space.size} * -1) !important;
+.${breakpoint.name}m-l-\\!${$.name},
+.${breakpoint.name}m-x-\\!${$.name} {
+  margin-left: calc(${$.size} * -1) !important;
 }
-.${breakpoint.name}m-r-\\!${space.name},
-.${breakpoint.name}m-x-\\!${space.name} {
-  margin-right: calc(${space.size} * -1) !important;
+.${breakpoint.name}m-r-\\!${$.name},
+.${breakpoint.name}m-x-\\!${$.name} {
+  margin-right: calc(${$.size} * -1) !important;
 }
-.${breakpoint.name}m-t-\\!${space.name},
-.${breakpoint.name}m-y-\\!${space.name} {
-  margin-top: calc(${space.size} * -1) !important;
+.${breakpoint.name}m-t-\\!${$.name},
+.${breakpoint.name}m-y-\\!${$.name} {
+  margin-top: calc(${$.size} * -1) !important;
 }`;
             }
 
@@ -57,9 +57,9 @@ class Spacing extends CSS {
           spacing
         );
 
-        return `${$('margin', 'm')}
-${$('padding', 'p')}
-${$$}
+        return `${a('margin', 'm')}
+${a('padding', 'p')}
+${b}
 .${breakpoint.name}m-\\# {
   margin: auto !important;
 }
