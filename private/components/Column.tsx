@@ -1,18 +1,19 @@
 import React from 'react';
 
-import decodeCommonParameters from '../helpers/decodeCommonParameters';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
-type P = Parameters<typeof decodeCommonParameters>[0] & {
+import DesignComponent from './DesignComponent';
+
+interface P {
   columnOffset?: EncodedResponsiveClassName<0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11>;
   columnSize?: EncodedResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
-};
+}
 
-class Column extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
-  static defaultProps: P = { pX: 2, };
+class Column extends DesignComponent<JSX.IntrinsicElements['div'] & P> {
+  static defaultProps: Column['props'] = { pX: 2, };
 
   render () {
-    const { className, columnOffset, columnSize, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { className, columnOffset, columnSize, ...notCommonParameters } = this.decodedCommonParameters;
 
     return (
       <div

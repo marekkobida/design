@@ -1,14 +1,12 @@
 import React from 'react';
 
-import decodeCommonParameters from '../helpers/decodeCommonParameters';
+import DesignComponent from './DesignComponent';
 
-type P = Parameters<typeof decodeCommonParameters>[0];
-
-class Row extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
-  static defaultProps: P = { flexWrap: 'wrap', mX: '!2', };
+class Row extends DesignComponent<JSX.IntrinsicElements['div']> {
+  static defaultProps: Row['props'] = { flexWrap: 'wrap', mX: '!2', };
 
   render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { className, ...notCommonParameters } = this.decodedCommonParameters;
 
     return <div {...notCommonParameters} className={[ 'flex', className, ]} />;
   }

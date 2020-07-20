@@ -50,7 +50,7 @@ type SelfPosition =
   | 'self-start'
   | 'start';
 
-type CommonParameters = {
+interface CommonParameters {
   alignItems?: EncodedResponsiveClassName<
     | 'baseline'
     | 'normal'
@@ -93,7 +93,7 @@ type CommonParameters = {
     | 'right'
     | 'start'
   >;
-};
+}
 
 function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
   const {

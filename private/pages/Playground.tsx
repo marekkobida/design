@@ -15,7 +15,7 @@ import css from './Playground.css';
 
 class Playground extends Page {
   constructor () {
-    super(-1, 'Playground');
+    super(-1, 'playground');
   }
 
   element () {

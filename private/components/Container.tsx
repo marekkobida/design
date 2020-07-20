@@ -1,14 +1,12 @@
 import React from 'react';
 
-import decodeCommonParameters from '../helpers/decodeCommonParameters';
+import DesignComponent from './DesignComponent';
 
-type P = Parameters<typeof decodeCommonParameters>[0];
-
-class Container extends React.Component<P & Omit<JSX.IntrinsicElements['div'], keyof P>> {
-  static defaultProps: P = { mX: '#', pX: 2, };
+class Container extends DesignComponent<JSX.IntrinsicElements['div']> {
+  static defaultProps: Container['props'] = { mX: '#', pX: 2, };
 
   render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { className, ...notCommonParameters } = this.decodedCommonParameters;
 
     return <div {...notCommonParameters} className={[ 'container', className, ]} />;
   }

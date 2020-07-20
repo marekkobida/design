@@ -1,12 +1,10 @@
 import React from 'react';
 
-import decodeCommonParameters from '../helpers/decodeCommonParameters';
+import DesignComponent from './DesignComponent';
 
-type P = Parameters<typeof decodeCommonParameters>[0];
-
-class Label extends React.Component<P & Omit<JSX.IntrinsicElements['label'], keyof P>> {
+class Label extends DesignComponent<JSX.IntrinsicElements['label']> {
   render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { className, ...notCommonParameters } = this.decodedCommonParameters;
 
     return <label {...notCommonParameters} className={className} />;
   }

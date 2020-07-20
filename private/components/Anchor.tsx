@@ -1,11 +1,11 @@
 import ServerRequest from '@redredsk/helpers/private/ServerRequest';
 import React from 'react';
 
-import decodeCommonParameters from '../helpers/decodeCommonParameters';
+import DesignComponent from './DesignComponent';
 
-type P = Parameters<typeof decodeCommonParameters>[0] & { to: string; };
+interface P { to: string; }
 
-class Anchor extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof P>> {
+class Anchor extends DesignComponent<JSX.IntrinsicElements['a'] & P> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
 
   onClick: Anchor['props']['onClick'] = (event) => {
@@ -17,7 +17,7 @@ class Anchor extends React.Component<P & Omit<JSX.IntrinsicElements['a'], keyof 
   }
 
   render () {
-    const { className, to, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { className, to, ...notCommonParameters } = this.decodedCommonParameters;
 
     return <a {...notCommonParameters} className={className} href={to} onClick={this.onClick} />;
   }
