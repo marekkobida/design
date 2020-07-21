@@ -2,7 +2,7 @@ import React from 'react';
 
 import DesignComponent from './DesignComponent';
 
-class Input extends DesignComponent<JSX.IntrinsicElements['input']> {
+class Input extends DesignComponent<React.ComponentPropsWithoutRef<'input'>> {
   static defaultProps: Input['props'] = { pX: 4, pY: 3, };
 
   render () {

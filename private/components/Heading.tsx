@@ -2,7 +2,7 @@ import React from 'react';
 
 import DesignComponent from './DesignComponent';
 
-class Heading extends DesignComponent<JSX.IntrinsicElements['h1']> {
+class Heading extends DesignComponent<React.ComponentPropsWithoutRef<'h1'>> {
   render () {
     const { className, ...notCommonParameters } = this.decodedCommonParameters;
 

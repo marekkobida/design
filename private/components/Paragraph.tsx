@@ -2,7 +2,7 @@ import React from 'react';
 
 import DesignComponent from './DesignComponent';
 
-class Paragraph extends DesignComponent<JSX.IntrinsicElements['p']> {
+class Paragraph extends DesignComponent<React.ComponentPropsWithoutRef<'p'>> {
   render () {
     const { className, ...notCommonParameters } = this.decodedCommonParameters;
 

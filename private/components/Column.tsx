@@ -9,7 +9,7 @@ interface P {
   columnSize?: EncodedResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
 }
 
-class Column extends DesignComponent<JSX.IntrinsicElements['div'] & P> {
+class Column extends DesignComponent<React.ComponentPropsWithoutRef<'div'> & P> {
   static defaultProps: Column['props'] = { pX: 2, };
 
   render () {

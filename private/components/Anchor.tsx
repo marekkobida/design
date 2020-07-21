@@ -5,7 +5,7 @@ import DesignComponent from './DesignComponent';
 
 interface P { to: string; }
 
-class Anchor extends DesignComponent<JSX.IntrinsicElements['a'] & P> {
+class Anchor extends DesignComponent<React.ComponentPropsWithoutRef<'a'> & P> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
 
   onClick: Anchor['props']['onClick'] = (event) => {

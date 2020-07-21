@@ -16,7 +16,17 @@ type ContentPosition =
   | 'flex-start'
   | 'start';
 
-type S = EncodedResponsiveClassName<
+// https://drafts.csswg.org/css-align-3/#typedef-self-position
+type SelfPosition =
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'self-end'
+  | 'self-start'
+  | 'start';
+
+type Spacing = EncodedResponsiveClassName<
   | '!0'
   | '!1'
   | '!16'
@@ -40,16 +50,6 @@ type S = EncodedResponsiveClassName<
   | 8
 >;
 
-// https://drafts.csswg.org/css-align-3/#typedef-self-position
-type SelfPosition =
-  | 'center'
-  | 'end'
-  | 'flex-end'
-  | 'flex-start'
-  | 'self-end'
-  | 'self-start'
-  | 'start';
-
 interface CommonParameters {
   alignItems?: EncodedResponsiveClassName<
     | 'baseline'
@@ -69,20 +69,20 @@ interface CommonParameters {
     | ContentDistribution
     | ContentPosition
   >;
-  m?: S;
-  mB?: S;
-  mL?: S;
-  mR?: S;
-  mT?: S;
-  mX?: S;
-  mY?: S;
-  p?: S;
-  pB?: S;
-  pL?: S;
-  pR?: S;
-  pT?: S;
-  pX?: S;
-  pY?: S;
+  m?: Spacing;
+  mB?: Spacing;
+  mL?: Spacing;
+  mR?: Spacing;
+  mT?: Spacing;
+  mX?: Spacing;
+  mY?: Spacing;
+  p?: Spacing;
+  pB?: Spacing;
+  pL?: Spacing;
+  pR?: Spacing;
+  pT?: Spacing;
+  pX?: Spacing;
+  pY?: Spacing;
   textAlign?: EncodedResponsiveClassName<
     | 'center'
     | 'end'
