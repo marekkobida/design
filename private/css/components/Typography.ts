@@ -74,12 +74,6 @@ p {
   margin-bottom: 0;
   margin-top: 0;
 }
-.font-size-1,
-.font-size-2,
-.font-size-3,
-.font-size-4,
-.font-size-5,
-.font-size-6,
 h1,
 h2,
 h3,

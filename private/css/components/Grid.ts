@@ -5,6 +5,8 @@ class Grid extends CSS {
   createColumn (): string {
     return `.column {
   flex: 1 0 0%;
+  padding-left: calc(var(--space) * 0.5);
+  padding-right: calc(var(--space) * 0.5);
 }`;
   }
 
@@ -46,7 +48,20 @@ ${sizes}
 
   createContainer (): string {
     return `.container {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 75rem;
+  padding-left: calc(var(--space) * 1);
+  padding-right: calc(var(--space) * 1);
+}`;
+  }
+
+  createRow (): string {
+    return `.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(calc(var(--space) * 0.5) * -1);
+  margin-right: calc(calc(var(--space) * 0.5) * -1);
 }`;
   }
 
@@ -54,7 +69,8 @@ ${sizes}
     return `${this.createColumn()}
 ${this.createColumnOffsets({ breakpoints, columns, })}
 ${this.createColumnSizes({ breakpoints, columns, })}
-${this.createContainer()}`;
+${this.createContainer()}
+${this.createRow()}`;
   }
 }
 

@@ -3,13 +3,13 @@ import React from 'react';
 
 import DesignComponent from './DesignComponent';
 
-interface P { to: string; }
-
-class Anchor extends DesignComponent<React.ComponentPropsWithoutRef<'a'> & P> {
+class Anchor extends DesignComponent<React.ComponentPropsWithoutRef<'a'>> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
 
   onClick: Anchor['props']['onClick'] = (event) => {
-    this.serverRequest.get('/statistics/statistics.json', { parameters: { url: this.props.to, }, });
+    if (this.props.href) {
+      this.serverRequest.get('/statistics/statistics.json', { parameters: { url: this.props.href, }, });
+    }
 
     if (this.props.onClick) {
       this.props.onClick(event);
@@ -17,9 +17,9 @@ class Anchor extends DesignComponent<React.ComponentPropsWithoutRef<'a'> & P> {
   }
 
   render () {
-    const { className, to, ...notCommonParameters } = this.decodedCommonParameters;
+    const { className, ...notCommonParameters } = this.decodedCommonParameters;
 
-    return <a {...notCommonParameters} className={className} href={to} onClick={this.onClick} />;
+    return <a {...notCommonParameters} className={className} onClick={this.onClick} />;
   }
 }
 

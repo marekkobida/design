@@ -357,6 +357,8 @@ button:not(:disabled) {
 }
 .column {
   flex: 1 0 0%;
+  padding-left: calc(var(--space) * 0.5);
+  padding-right: calc(var(--space) * 0.5);
 }
 .column_offset_0 {
   margin-left: 0;
@@ -640,7 +642,17 @@ button:not(:disabled) {
   }
 }
 .container {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 75rem;
+  padding-left: calc(var(--space) * 1);
+  padding-right: calc(var(--space) * 1);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(calc(var(--space) * 0.5) * -1);
+  margin-right: calc(calc(var(--space) * 0.5) * -1);
 }
 .block {
   display: block !important;
@@ -2438,12 +2450,6 @@ p {
   margin-bottom: 0;
   margin-top: 0;
 }
-.font-size-1,
-.font-size-2,
-.font-size-3,
-.font-size-4,
-.font-size-5,
-.font-size-6,
 h1,
 h2,
 h3,

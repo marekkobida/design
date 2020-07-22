@@ -10,8 +10,6 @@ interface P {
 }
 
 class Column extends DesignComponent<React.ComponentPropsWithoutRef<'div'> & P> {
-  static defaultProps: Column['props'] = { pX: 2, };
-
   render () {
     const { className, columnOffset, columnSize, ...notCommonParameters } = this.decodedCommonParameters;
 

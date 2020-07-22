@@ -2,13 +2,13 @@ import React from 'react';
 
 import DesignComponent from './DesignComponent';
 
-class Heading extends DesignComponent<React.ComponentPropsWithoutRef<'h1'>> {
-  static defaultProps: Heading['props'] = { fontSize: 1, };
+interface P { size: 1 | 2 | 3 | 4 | 5 | 6; }
 
+class Heading extends DesignComponent<React.ComponentPropsWithoutRef<'h1'> & P> {
   render () {
-    const { className, ...notCommonParameters } = this.decodedCommonParameters;
+    const { className, size, ...notCommonParameters } = this.decodedCommonParameters;
 
-    const H = `h${this.props.fontSize}` as 'h1';
+    const H = `h${size}` as 'h1';
 
     return <H {...notCommonParameters} className={className} />;
   }

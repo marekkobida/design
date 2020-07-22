@@ -51,13 +51,13 @@ class Playground extends Page {
           <Column columnOffset={2} columnSize={4} pY={4}>Column 2</Column>
         </Row>
         <div className="m-y-4">
-          <Anchor to="#">Anchor</Anchor>
-          <Heading fontSize={1} textAlign="left">Heading 1</Heading>
-          <Heading fontSize={2} textAlign="center">Heading 2</Heading>
-          <Heading fontSize={3} textAlign="right">Heading 3</Heading>
-          <Heading fontSize={4}>Heading 4</Heading>
-          <Heading fontSize={5}>Heading 5</Heading>
-          <Heading fontSize={6}>Heading 6</Heading>
+          <Anchor href="#">Anchor</Anchor>
+          <Heading size={1} textAlign="left">Heading 1</Heading>
+          <Heading size={2} textAlign="center">Heading 2</Heading>
+          <Heading size={3} textAlign="right">Heading 3</Heading>
+          <Heading size={4}>Heading 4</Heading>
+          <Heading size={5}>Heading 5</Heading>
+          <Heading size={6}>Heading 6</Heading>
           <Paragraph>Paragraph</Paragraph>
         </div>
         <Row mY={4}>
