@@ -11,10 +11,12 @@ import Input from '../components/Input';
 import Label from '../components/Label';
 import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
+import variables from '../variables.json';
 
 import css from './Playground.css';
 
 console.log(css);
+console.log(variables);
 
 class Playground extends Page {
   constructor () {

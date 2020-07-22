@@ -5,8 +5,8 @@ class Grid extends CSS {
   createColumn (): string {
     return `.column {
   flex: 1 0 0%;
-  padding-left: calc(var(--space) * 0.5);
-  padding-right: calc(var(--space) * 0.5);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }`;
   }
 
@@ -51,8 +51,8 @@ ${sizes}
   margin-left: auto;
   margin-right: auto;
   max-width: 75rem;
-  padding-left: calc(var(--space) * 1);
-  padding-right: calc(var(--space) * 1);
+  padding-left: 1rem;
+  padding-right: 1rem;
 }`;
   }
 
@@ -60,8 +60,8 @@ ${sizes}
     return `.row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(calc(var(--space) * 0.5) * -1);
-  margin-right: calc(calc(var(--space) * 0.5) * -1);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }`;
   }
 

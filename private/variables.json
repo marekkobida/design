@@ -59,10 +59,6 @@
     {
       "name": "--heading\\(line-height\\)",
       "value": "1.25"
-    },
-    {
-      "name": "--space",
-      "value": "1rem"
     }
   ],
   "breakpoints": [
@@ -84,39 +80,39 @@
     },
     {
       "name": "1",
-      "size": "calc(var(--space) * 0.25)"
+      "size": "0.25rem"
     },
     {
       "name": "2",
-      "size": "calc(var(--space) * 0.5)"
+      "size": "0.5rem"
     },
     {
       "name": "3",
-      "size": "calc(var(--space) * 0.75)"
+      "size": "0.75rem"
     },
     {
       "name": "4",
-      "size": "calc(var(--space) * 1)"
+      "size": "1rem"
     },
     {
       "name": "5",
-      "size": "calc(var(--space) * 1.25)"
+      "size": "1.25rem"
     },
     {
       "name": "6",
-      "size": "calc(var(--space) * 1.5)"
+      "size": "1.5rem"
     },
     {
       "name": "7",
-      "size": "calc(var(--space) * 1.75)"
+      "size": "1.75rem"
     },
     {
       "name": "8",
-      "size": "calc(var(--space) * 2)"
+      "size": "2rem"
     },
     {
       "name": "16",
-      "size": "calc(var(--space) * 4)"
+      "size": "4rem"
     }
   ]
 }
