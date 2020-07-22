@@ -1,19 +1,19 @@
 :root {
-  --body--background-color: 255, 255, 255;
-  --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
-  --body--font-size: 1rem;
-  --body--font-weight: 400;
-  --body--line-height: 1.5;
+  --body\(background-color\): 255, 255, 255;
+  --body\(font-family\): system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
+  --body\(font-size\): 1rem;
+  --body\(font-weight\): 400;
+  --body\(line-height\): 1.5;
   --color: 0, 0, 0;
-  --h1--font-size: 2.75rem;
-  --h2--font-size: 2.25rem;
-  --h3--font-size: 1.75rem;
-  --h4--font-size: 1.5rem;
-  --h5--font-size: 1.25rem;
-  --h6--font-size: 1rem;
-  --heading--font-family: inherit;
-  --heading--font-weight: 500;
-  --heading--line-height: 1.25;
+  --h1\(font-size\): 2.75rem;
+  --h2\(font-size\): 2.25rem;
+  --h3\(font-size\): 1.75rem;
+  --h4\(font-size\): 1.5rem;
+  --h5\(font-size\): 1.25rem;
+  --h6\(font-size\): 1rem;
+  --heading\(font-family\): inherit;
+  --heading\(font-weight\): 500;
+  --heading\(line-height\): 1.25;
   --space: 1rem;
 }
 *,
@@ -23,21 +23,24 @@
   color: rgb(var(--color));
 }
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  font-family: var(--body--font-family);
-  font-size: var(--body--font-size);
-  font-weight: var(--body--font-weight);
-  line-height: var(--body--line-height);
+  background-color: rgb(var(--body\(background-color\)));
+  font-family: var(--body\(font-family\));
+  font-size: var(--body\(font-size\));
+  font-weight: var(--body\(font-weight\));
+  line-height: var(--body\(line-height\));
   margin: 0;
 }
 button {
+  --button\(background-color\): 255, 255, 255;
+  --button\(border-color\): var(--color);
+  --button\(color\): var(--color);
   -moz-appearance: button;
   -webkit-appearance: button;
-  background-color: #fff;
-  border: 0.125rem solid rgba(var(--color), 0.25);
-  border-radius: 0;
+  background-color: rgb(var(--button\(background-color\)));
+  border: 0.125rem solid rgba(var(--button\(border-color\)), 0.25);
+  border-radius: 0.25rem;
+  color: rgb(var(--button\(color\)));
   display: inline-block;
   font-family: inherit;
   font-size: inherit;
@@ -46,7 +49,7 @@ button {
 }
 button:focus,
 button:hover {
-  border-color: rgba(var(--color), 0.75);
+  border-color: rgba(var(--button\(border-color\)), 0.75);
   outline: 0;
 }
 .align-items-baseline {
@@ -638,6 +641,9 @@ button:hover {
 .block {
   display: block !important;
 }
+.inline {
+  display: inline !important;
+}
 .inline-block {
   display: inline-block !important;
 }
@@ -647,6 +653,9 @@ button:hover {
 @media (min-width: 40rem) {
   .\#block {
     display: block !important;
+  }
+  .\#inline {
+    display: inline !important;
   }
   .\#inline-block {
     display: inline-block !important;
@@ -658,6 +667,9 @@ button:hover {
 @media (min-width: 64rem) {
   .\#\#block {
     display: block !important;
+  }
+  .\#\#inline {
+    display: inline !important;
   }
   .\#\#inline-block {
     display: inline-block !important;
@@ -672,10 +684,15 @@ button:hover {
   border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
 }
 input {
+  --input\(background-color\): 255, 255, 255;
+  --input\(border-color\): var(--color);
+  --input\(color\): var(--color);
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: #fff;
-  border: 0.125rem solid rgba(var(--color), 0.25);
+  background-color: rgb(var(--input\(background-color\)));
+  border: 0.125rem solid rgba(var(--input\(border-color\)), 0.25);
+  border-radius: 0.25rem;
+  color: rgb(var(--input\(color\)));
   display: block;
   font-family: inherit;
   font-size: inherit;
@@ -2428,35 +2445,35 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading--font-family);
-  font-weight: var(--heading--font-weight);
-  line-height: var(--heading--line-height);
+  font-family: var(--heading\(font-family\));
+  font-weight: var(--heading\(font-weight\));
+  line-height: var(--heading\(line-height\));
   margin-bottom: 0;
   margin-top: 0;
 }
 .font-size-1,
 h1 {
-  font-size: var(--h1--font-size);
+  font-size: var(--h1\(font-size\));
 }
 .font-size-2,
 h2 {
-  font-size: var(--h2--font-size);
+  font-size: var(--h2\(font-size\));
 }
 .font-size-3,
 h3 {
-  font-size: var(--h3--font-size);
+  font-size: var(--h3\(font-size\));
 }
 .font-size-4,
 h4 {
-  font-size: var(--h4--font-size);
+  font-size: var(--h4\(font-size\));
 }
 .font-size-5,
 h5 {
-  font-size: var(--h5--font-size);
+  font-size: var(--h5\(font-size\));
 }
 .font-size-6,
 h6 {
-  font-size: var(--h6--font-size);
+  font-size: var(--h6\(font-size\));
 }
 .font-weight-100 {
   font-weight: 100 !important;

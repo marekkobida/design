@@ -24,13 +24,12 @@ ${this.for(($) => `  ${$.name}: ${$.value};`, variables[':root'])}
   color: rgb(var(--color));
 }
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  font-family: var(--body--font-family);
-  font-size: var(--body--font-size);
-  font-weight: var(--body--font-weight);
-  line-height: var(--body--line-height);
+  background-color: rgb(var(--body\\(background-color\\)));
+  font-family: var(--body\\(font-family\\));
+  font-size: var(--body\\(font-size\\));
+  font-weight: var(--body\\(font-weight\\));
+  line-height: var(--body\\(line-height\\));
   margin: 0;
 }
 ${new Button().css()}

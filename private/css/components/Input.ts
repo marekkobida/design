@@ -3,10 +3,15 @@ import CSS from '../CSS';
 class Input extends CSS {
   css (): string {
     return `input {
+  --input\\(background-color\\): 255, 255, 255;
+  --input\\(border-color\\): var(--color);
+  --input\\(color\\): var(--color);
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: #fff;
-  border: 0.125rem solid rgba(var(--color), 0.25);
+  background-color: rgb(var(--input\\(background-color\\)));
+  border: 0.125rem solid rgba(var(--input\\(border-color\\)), 0.25);
+  border-radius: 0.25rem;
+  color: rgb(var(--input\\(color\\)));
   display: block;
   font-family: inherit;
   font-size: inherit;

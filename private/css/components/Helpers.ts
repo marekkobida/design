@@ -7,6 +7,9 @@ class Helpers extends CSS {
       (breakpoint) => `.${breakpoint.name}block {
   display: block !important;
 }
+.${breakpoint.name}inline {
+  display: inline !important;
+}
 .${breakpoint.name}inline-block {
   display: inline-block !important;
 }

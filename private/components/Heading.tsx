@@ -3,6 +3,8 @@ import React from 'react';
 import DesignComponent from './DesignComponent';
 
 class Heading extends DesignComponent<React.ComponentPropsWithoutRef<'h1'>> {
+  static defaultProps: Heading['props'] = { fontSize: 1, };
+
   render () {
     const { className, ...notCommonParameters } = this.decodedCommonParameters;
 

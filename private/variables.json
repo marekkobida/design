@@ -1,23 +1,23 @@
 {
   ":root": [
     {
-      "name": "--body--background-color",
+      "name": "--body\\(background-color\\)",
       "value": "255, 255, 255"
     },
     {
-      "name": "--body--font-family",
+      "name": "--body\\(font-family\\)",
       "value": "system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif"
     },
     {
-      "name": "--body--font-size",
+      "name": "--body\\(font-size\\)",
       "value": "1rem"
     },
     {
-      "name": "--body--font-weight",
+      "name": "--body\\(font-weight\\)",
       "value": "400"
     },
     {
-      "name": "--body--line-height",
+      "name": "--body\\(line-height\\)",
       "value": "1.5"
     },
     {
@@ -25,39 +25,39 @@
       "value": "0, 0, 0"
     },
     {
-      "name": "--h1--font-size",
+      "name": "--h1\\(font-size\\)",
       "value": "2.75rem"
     },
     {
-      "name": "--h2--font-size",
+      "name": "--h2\\(font-size\\)",
       "value": "2.25rem"
     },
     {
-      "name": "--h3--font-size",
+      "name": "--h3\\(font-size\\)",
       "value": "1.75rem"
     },
     {
-      "name": "--h4--font-size",
+      "name": "--h4\\(font-size\\)",
       "value": "1.5rem"
     },
     {
-      "name": "--h5--font-size",
+      "name": "--h5\\(font-size\\)",
       "value": "1.25rem"
     },
     {
-      "name": "--h6--font-size",
+      "name": "--h6\\(font-size\\)",
       "value": "1rem"
     },
     {
-      "name": "--heading--font-family",
+      "name": "--heading\\(font-family\\)",
       "value": "inherit"
     },
     {
-      "name": "--heading--font-weight",
+      "name": "--heading\\(font-weight\\)",
       "value": "500"
     },
     {
-      "name": "--heading--line-height",
+      "name": "--heading\\(line-height\\)",
       "value": "1.25"
     },
     {
