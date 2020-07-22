@@ -213,44 +213,6 @@ button:not(:disabled) {
     align-items: stretch !important;
   }
 }
-.flex {
-  display: flex !important;
-}
-.inline-flex {
-  display: inline-flex !important;
-}
-@media (min-width: 576px) {
-  .\#flex {
-    display: flex !important;
-  }
-  .\#inline-flex {
-    display: inline-flex !important;
-  }
-}
-@media (min-width: 768px) {
-  .\#\#flex {
-    display: flex !important;
-  }
-  .\#\#inline-flex {
-    display: inline-flex !important;
-  }
-}
-@media (min-width: 992px) {
-  .\#\#\#flex {
-    display: flex !important;
-  }
-  .\#\#\#inline-flex {
-    display: inline-flex !important;
-  }
-}
-@media (min-width: 1200px) {
-  .\#\#\#\#flex {
-    display: flex !important;
-  }
-  .\#\#\#\#inline-flex {
-    display: inline-flex !important;
-  }
-}
 .flex-direction-column {
   flex-direction: column !important;
 }
@@ -1052,8 +1014,14 @@ button:not(:disabled) {
 .display-block {
   display: block !important;
 }
+.display-flex {
+  display: flex !important;
+}
 .display-inline {
   display: inline !important;
+}
+.display-inline-flex {
+  display: inline-flex !important;
 }
 .display-inline-block {
   display: inline-block !important;
@@ -1065,8 +1033,14 @@ button:not(:disabled) {
   .\#display-block {
     display: block !important;
   }
+  .\#display-flex {
+    display: flex !important;
+  }
   .\#display-inline {
     display: inline !important;
+  }
+  .\#display-inline-flex {
+    display: inline-flex !important;
   }
   .\#display-inline-block {
     display: inline-block !important;
@@ -1079,8 +1053,14 @@ button:not(:disabled) {
   .\#\#display-block {
     display: block !important;
   }
+  .\#\#display-flex {
+    display: flex !important;
+  }
   .\#\#display-inline {
     display: inline !important;
+  }
+  .\#\#display-inline-flex {
+    display: inline-flex !important;
   }
   .\#\#display-inline-block {
     display: inline-block !important;
@@ -1093,8 +1073,14 @@ button:not(:disabled) {
   .\#\#\#display-block {
     display: block !important;
   }
+  .\#\#\#display-flex {
+    display: flex !important;
+  }
   .\#\#\#display-inline {
     display: inline !important;
+  }
+  .\#\#\#display-inline-flex {
+    display: inline-flex !important;
   }
   .\#\#\#display-inline-block {
     display: inline-block !important;
@@ -1107,8 +1093,14 @@ button:not(:disabled) {
   .\#\#\#\#display-block {
     display: block !important;
   }
+  .\#\#\#\#display-flex {
+    display: flex !important;
+  }
   .\#\#\#\#display-inline {
     display: inline !important;
+  }
+  .\#\#\#\#display-inline-flex {
+    display: inline-flex !important;
   }
   .\#\#\#\#display-inline-block {
     display: inline-block !important;

@@ -16,6 +16,21 @@ import css from './Playground.css';
 
 console.log(css);
 
+// TODO toto vymazať keď dokončíme testovanie
+class Test extends React.Component {
+  state = { height: 0, width: 0, };
+
+  componentDidMount () {
+    window.addEventListener('resize', () => this.setState(() => ({ height: window.innerHeight, width: window.innerWidth, })));
+
+    this.setState(() => ({ height: window.innerHeight, width: window.innerWidth, }));
+  }
+
+  render () {
+    return <div className="border m-y-4 p-x-4 p-y-2">{this.state.width}x{this.state.height}</div>;
+  }
+}
+
 class Playground extends Page {
   constructor () {
     super(-1, 'playground');
@@ -24,6 +39,7 @@ class Playground extends Page {
   element () {
     return (
       <Container>
+        <Test />
         <Row alignItems="center" justifyContent="center" mY={4}>
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
