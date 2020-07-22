@@ -1,27 +1,31 @@
-import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Helpers extends CSS {
-  display ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  display (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}display-block {
   display: block !important;
 }
+.${breakpoint.name}display-flex {
+  display: flex !important;
+}
 .${breakpoint.name}display-inline {
   display: inline !important;
+}
+.${breakpoint.name}display-inline-flex {
+  display: inline-flex !important;
 }
 .${breakpoint.name}display-inline-block {
   display: inline-block !important;
 }
 .${breakpoint.name}display-none {
   display: none !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
-    return `${this.display({ breakpoints, })}
+  css (): string {
+    return `${this.display()}
 .border {
   --border--border-color: var(--color);
   --border--border-width: 0.125rem;

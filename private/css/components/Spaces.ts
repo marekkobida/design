@@ -1,8 +1,7 @@
-import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Spaces extends CSS {
-  css ({ breakpoints, spaces, }: { breakpoints: typeof variables.breakpoints; spaces: typeof variables.spaces; }): string {
+  css (): string {
     return this.forBreakpoints(
       (breakpoint) => {
         const a = (property: string, abbreviation: string) => this.for(
@@ -25,7 +24,7 @@ class Spaces extends CSS {
 .${breakpoint.name}${abbreviation}-y-${$.name} {
   ${property}-top: ${$.size} !important;
 }`,
-          spaces
+          this.variables.spaces
         );
 
         const b: string = this.for(
@@ -54,7 +53,7 @@ class Spaces extends CSS {
 
             return '';
           },
-          spaces
+          this.variables.spaces
         );
 
         return `${a('margin', 'm')}
@@ -79,8 +78,7 @@ ${b}
 .${breakpoint.name}m-y-\\# {
   margin-top: auto !important;
 }`;
-      },
-      breakpoints
+      }
     );
   }
 }

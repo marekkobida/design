@@ -1,8 +1,7 @@
-import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Flex extends CSS {
-  alignItems ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  alignItems (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}align-items-baseline {
   align-items: baseline !important;
@@ -33,24 +32,11 @@ class Flex extends CSS {
 }
 .${breakpoint.name}align-items-stretch {
   align-items: stretch !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  display ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
-    return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}flex {
-  display: flex !important;
-}
-.${breakpoint.name}inline-flex {
-  display: inline-flex !important;
-}`,
-      breakpoints
-    );
-  }
-
-  flexDirection ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  flexDirection (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}flex-direction-column {
   flex-direction: column !important;
@@ -63,12 +49,11 @@ class Flex extends CSS {
 }
 .${breakpoint.name}flex-direction-row-reverse {
   flex-direction: row-reverse !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  flexWrap ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  flexWrap (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}flex-wrap-nowrap {
   flex-wrap: nowrap !important;
@@ -78,12 +63,11 @@ class Flex extends CSS {
 }
 .${breakpoint.name}flex-wrap-wrap-reverse {
   flex-wrap: wrap-reverse !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  justifyContent ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  justifyContent (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}justify-content-center {
   justify-content: center !important;
@@ -120,17 +104,15 @@ class Flex extends CSS {
 }
 .${breakpoint.name}justify-content-stretch {
   justify-content: stretch !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
-    return `${this.alignItems({ breakpoints, })}
-${this.display({ breakpoints, })}
-${this.flexDirection({ breakpoints, })}
-${this.flexWrap({ breakpoints, })}
-${this.justifyContent({ breakpoints, })}`;
+  css (): string {
+    return `${this.alignItems()}
+${this.flexDirection()}
+${this.flexWrap()}
+${this.justifyContent()}`;
   }
 }
 

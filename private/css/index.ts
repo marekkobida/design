@@ -1,7 +1,5 @@
 import writeFile from '@redredsk/helpers/private/writeFile';
 
-import variables from '../variables.json';
-
 import CSS from './CSS';
 import Button from './components/Button';
 import Flex from './components/Flex';
@@ -13,9 +11,9 @@ import Spaces from './components/Spaces';
 import Typography from './components/Typography';
 
 class Index extends CSS {
-  css () {
+  css (): string {
     return `:root {
-${this.for(($) => `  ${$.name}: ${$.value};`, variables[':root'])}
+${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
 }
 *,
 *::after,
@@ -33,13 +31,13 @@ body {
   margin: 0;
 }
 ${new Button().css()}
-${new Flex().css({ breakpoints: variables.breakpoints, })}
-${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.columns, })}
-${new Helpers().css({ breakpoints: variables.breakpoints, })}
+${new Flex().css()}
+${new Grid().css()}
+${new Helpers().css()}
 ${new Input().css()}
 ${new Label().css()}
-${new Spaces().css({ breakpoints: variables.breakpoints, spaces: variables.spaces, })}
-${new Typography().css({ breakpoints: variables.breakpoints, })}
+${new Spaces().css()}
+${new Typography().css()}
 `;
   }
 }

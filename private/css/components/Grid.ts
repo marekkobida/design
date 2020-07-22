@@ -1,4 +1,3 @@
-import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Grid extends CSS {
@@ -10,27 +9,26 @@ class Grid extends CSS {
 }`;
   }
 
-  createColumnOffsets ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
+  createColumnOffsets (): string {
     return this.forBreakpoints(
       (breakpoint) => this.for(
         ($, i) => `.${breakpoint.name}column_offset_${i} {
-  margin-left: ${this.percentage(i, columns)};
+  margin-left: ${this.percentage(i, this.variables.columns)};
 }`,
-        columns
-      ),
-      breakpoints
+        this.variables.columns
+      )
     );
   }
 
-  createColumnSizes ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
+  createColumnSizes (): string {
     return this.forBreakpoints(
       (breakpoint) => {
         const sizes = this.for(
           ($, i) => `.${breakpoint.name}column_size_${i + 1} {
   flex: 0 0 auto;
-  width: ${this.percentage(i + 1, columns)};
+  width: ${this.percentage(i + 1, this.variables.columns)};
 }`,
-          columns
+          this.variables.columns
         );
 
         return `.${breakpoint.name}column_size_\\# {
@@ -41,8 +39,7 @@ ${sizes}
   flex: 0 0 auto;
   width: auto;
 }`;
-      },
-      breakpoints
+      }
     );
   }
 
@@ -65,10 +62,10 @@ ${sizes}
 }`;
   }
 
-  css ({ breakpoints, columns, }: { breakpoints: typeof variables.breakpoints; columns: typeof variables.columns; }): string {
+  css (): string {
     return `${this.createColumn()}
-${this.createColumnOffsets({ breakpoints, columns, })}
-${this.createColumnSizes({ breakpoints, columns, })}
+${this.createColumnOffsets()}
+${this.createColumnSizes()}
 ${this.createContainer()}
 ${this.createRow()}`;
   }

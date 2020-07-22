@@ -1,4 +1,3 @@
-import variables from '../../variables.json';
 import CSS from '../CSS';
 
 class Typography extends CSS {
@@ -32,7 +31,7 @@ class Typography extends CSS {
 }`;
   }
 
-  textAlign ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  textAlign (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}text-align-center {
   text-align: center !important;
@@ -57,12 +56,11 @@ class Typography extends CSS {
 }
 .${breakpoint.name}text-align-start {
   text-align: start !important;
-}`,
-      breakpoints
+}`
     );
   }
 
-  css ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
+  css (): string {
     return `a {
   text-decoration: none;
 }
@@ -111,7 +109,7 @@ h6 {
   font-size: var(--h6\\(font-size\\));
 }
 ${this.fontWeight()}
-${this.textAlign({ breakpoints, })}`;
+${this.textAlign()}`;
   }
 }
 

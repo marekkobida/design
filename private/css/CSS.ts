@@ -4,10 +4,9 @@ import isNumber from '@redredsk/helpers/private/types/isNumber';
 import variables from '../variables.json';
 
 class CSS {
-  for<T extends any[]> (
-    $: (ii: T[0], i: number) => string,
-    to: T | number
-  ): string {
+  variables = variables;
+
+  for<T extends any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {
     let To = 0;
 
     if (isArray(to)) {
@@ -31,10 +30,7 @@ class CSS {
     return $$.join('\n');
   }
 
-  forBreakpoints (
-    $: (breakpoint: { name: string; size?: string; }) => string,
-    breakpoints: typeof variables.breakpoints
-  ): string {
+  forBreakpoints ($: (breakpoint: { name: string; size?: string; }) => string): string {
     return this.for(
       (breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;
@@ -47,7 +43,7 @@ class CSS {
 
         return $({ name: suffix, });
       },
-      breakpoints
+      this.variables.breakpoints
     );
   }
 
