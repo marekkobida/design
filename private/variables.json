@@ -65,11 +65,19 @@
     null,
     {
       "name": "\\#",
-      "size": "40rem"
+      "size": "576px"
     },
     {
       "name": "\\#\\#",
-      "size": "64rem"
+      "size": "768px"
+    },
+    {
+      "name": "\\#\\#\\#",
+      "size": "992px"
+    },
+    {
+      "name": "\\#\\#\\#\\#",
+      "size": "1200px"
     }
   ],
   "columns": 12,
