@@ -1049,71 +1049,71 @@ button:not(:disabled) {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
-.block {
+.display-block {
   display: block !important;
 }
-.inline {
+.display-inline {
   display: inline !important;
 }
-.inline-block {
+.display-inline-block {
   display: inline-block !important;
 }
-.none {
+.display-none {
   display: none !important;
 }
 @media (min-width: 576px) {
-  .\#block {
+  .\#display-block {
     display: block !important;
   }
-  .\#inline {
+  .\#display-inline {
     display: inline !important;
   }
-  .\#inline-block {
+  .\#display-inline-block {
     display: inline-block !important;
   }
-  .\#none {
+  .\#display-none {
     display: none !important;
   }
 }
 @media (min-width: 768px) {
-  .\#\#block {
+  .\#\#display-block {
     display: block !important;
   }
-  .\#\#inline {
+  .\#\#display-inline {
     display: inline !important;
   }
-  .\#\#inline-block {
+  .\#\#display-inline-block {
     display: inline-block !important;
   }
-  .\#\#none {
+  .\#\#display-none {
     display: none !important;
   }
 }
 @media (min-width: 992px) {
-  .\#\#\#block {
+  .\#\#\#display-block {
     display: block !important;
   }
-  .\#\#\#inline {
+  .\#\#\#display-inline {
     display: inline !important;
   }
-  .\#\#\#inline-block {
+  .\#\#\#display-inline-block {
     display: inline-block !important;
   }
-  .\#\#\#none {
+  .\#\#\#display-none {
     display: none !important;
   }
 }
 @media (min-width: 1200px) {
-  .\#\#\#\#block {
+  .\#\#\#\#display-block {
     display: block !important;
   }
-  .\#\#\#\#inline {
+  .\#\#\#\#display-inline {
     display: inline !important;
   }
-  .\#\#\#\#inline-block {
+  .\#\#\#\#display-inline-block {
     display: inline-block !important;
   }
-  .\#\#\#\#none {
+  .\#\#\#\#display-none {
     display: none !important;
   }
 }

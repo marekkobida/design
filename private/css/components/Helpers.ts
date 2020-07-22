@@ -4,16 +4,16 @@ import CSS from '../CSS';
 class Helpers extends CSS {
   display ({ breakpoints, }: { breakpoints: typeof variables.breakpoints; }): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}block {
+      (breakpoint) => `.${breakpoint.name}display-block {
   display: block !important;
 }
-.${breakpoint.name}inline {
+.${breakpoint.name}display-inline {
   display: inline !important;
 }
-.${breakpoint.name}inline-block {
+.${breakpoint.name}display-inline-block {
   display: inline-block !important;
 }
-.${breakpoint.name}none {
+.${breakpoint.name}display-none {
   display: none !important;
 }`,
       breakpoints

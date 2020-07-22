@@ -58,8 +58,24 @@ interface CommonParameters {
     | SelfPosition
   >;
   className?: EncodedClassName | EncodedClassName[];
-  flexDirection?: EncodedResponsiveClassName<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
-  flexWrap?: EncodedResponsiveClassName<'nowrap' | 'wrap' | 'wrap-reverse'>;
+  // TODO add all values
+  display?: EncodedResponsiveClassName<
+    | 'block'
+    | 'inline'
+    | 'inline-block'
+    | 'none'
+  >;
+  flexDirection?: EncodedResponsiveClassName<
+    | 'column'
+    | 'column-reverse'
+    | 'row'
+    | 'row-reverse'
+  >;
+  flexWrap?: EncodedResponsiveClassName<
+    | 'nowrap'
+    | 'wrap'
+    | 'wrap-reverse'
+  >;
   fontSize?: 1 | 2 | 3 | 4 | 5 | 6;
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   justifyContent?: EncodedResponsiveClassName<
@@ -99,6 +115,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
   const {
     alignItems,
     className,
+    display,
     flexDirection,
     flexWrap,
     fontSize,
@@ -125,6 +142,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
   return {
     className: [
       decodeResponsiveClassName('align-items-', alignItems),
+      decodeResponsiveClassName('display-', display),
       decodeResponsiveClassName('flex-direction-', flexDirection),
       decodeResponsiveClassName('flex-wrap-', flexWrap),
       fontSize && `font-size-${fontSize}`,
