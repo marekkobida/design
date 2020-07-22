@@ -28,7 +28,7 @@ class Playground extends Page {
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
         </Row>
-        <Row alignItems="end" flexDirection="row-reverse" justifyContent="end" mY={4}>
+        <Row alignItems="flex-end" flexDirection="row-reverse" justifyContent="flex-end" mY={4}>
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
         </Row>
@@ -63,18 +63,18 @@ class Playground extends Page {
         <Row mY={4}>
           <Column columnSize={[ 12, { '#': '#', }, ]} pY={2}>
             <div className="m-y-4">
-              <Label htmlFor="left1" mB={2}>Left 1</Label>
-              <Input id="left1" type="text" />
+              <Label htmlFor="a" mB={2}>Label</Label>
+              <Input id="a" type="text" />
             </div>
             <div className="m-y-4">
-              <Label htmlFor="left2" mB={2}>Left 2</Label>
-              <Input id="left2" type="text" />
+              <Label htmlFor="b" mB={2}>Label</Label>
+              <Input id="b" type="text" />
             </div>
           </Column>
           <Column columnSize={[ 12, { '#': '#', }, ]} pY={2}>
             <div className="m-y-4">
-              <Label htmlFor="right" mB={2}>Right</Label>
-              <Input id="right" type="text" />
+              <Label htmlFor="c" mB={2}>Label</Label>
+              <Input id="c" type="text" />
             </div>
             <div className="m-y-4">
               <Button type="button">Button</Button>

@@ -4,7 +4,7 @@ class Label extends CSS {
   css (): string {
     return `label {
   display: inline-block;
-  font-weight: var(--heading--font-weight);
+  font-weight: 500;
 }`;
   }
 }

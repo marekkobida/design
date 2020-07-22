@@ -77,7 +77,7 @@
     }
   ],
   "columns": 12,
-  "spacing": [
+  "spaces": [
     {
       "name": "0",
       "size": "0"

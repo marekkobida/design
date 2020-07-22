@@ -9,7 +9,7 @@ import Grid from './components/Grid';
 import Helpers from './components/Helpers';
 import Input from './components/Input';
 import Label from './components/Label';
-import Spacing from './components/Spacing';
+import Spaces from './components/Spaces';
 import Typography from './components/Typography';
 
 class Index extends CSS {
@@ -38,7 +38,7 @@ ${new Grid().css({ breakpoints: variables.breakpoints, columns: variables.column
 ${new Helpers().css({ breakpoints: variables.breakpoints, })}
 ${new Input().css()}
 ${new Label().css()}
-${new Spacing().css({ breakpoints: variables.breakpoints, spacing: variables.spacing, })}
+${new Spaces().css({ breakpoints: variables.breakpoints, spaces: variables.spaces, })}
 ${new Typography().css({ breakpoints: variables.breakpoints, })}
 `;
   }

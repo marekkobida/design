@@ -17,6 +17,7 @@ class Input extends CSS {
   font-size: inherit;
   line-height: inherit;
   margin: 0;
+  padding: 0.5rem 1rem;
   width: 100%;
 }
 input:focus {
