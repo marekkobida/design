@@ -723,7 +723,6 @@ input:focus {
 }
 label {
   display: inline-block;
-  font-weight: 500;
 }
 .m-0 {
   margin: 0 !important;
