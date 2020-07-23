@@ -1,32 +1,28 @@
 import { EncodedClassName, } from './decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 
+export type AlignItemsProperty =
+  | 'baseline'
+  | 'normal'
+  | 'stretch'
+  | SelfPosition;
+
 // https://drafts.csswg.org/css-align-3/#typedef-content-distribution
-type ContentDistribution =
+export type ContentDistribution =
   | 'space-around'
   | 'space-between'
   | 'space-evenly'
   | 'stretch';
 
 // https://drafts.csswg.org/css-align-3/#typedef-content-position
-type ContentPosition =
+export type ContentPosition =
   | 'center'
   | 'end'
   | 'flex-end'
   | 'flex-start'
   | 'start';
 
-// https://drafts.csswg.org/css-align-3/#typedef-self-position
-type SelfPosition =
-  | 'center'
-  | 'end'
-  | 'flex-end'
-  | 'flex-start'
-  | 'self-end'
-  | 'self-start'
-  | 'start';
-
-type Spacing = EncodedResponsiveClassName<
+export type S = EncodedResponsiveClassName<
   | '!0'
   | '!1'
   | '!16'
@@ -50,13 +46,31 @@ type Spacing = EncodedResponsiveClassName<
   | 8
 >;
 
+// https://drafts.csswg.org/css-align-3/#typedef-self-position
+export type SelfPosition =
+  | 'center'
+  | 'end'
+  | 'flex-end'
+  | 'flex-start'
+  | 'self-end'
+  | 'self-start'
+  | 'start';
+
 interface CommonParameters {
-  alignItems?: EncodedResponsiveClassName<
+  alignContent?: EncodedResponsiveClassName<
+    | 'baseline'
+    | 'normal'
+    | ContentDistribution
+    | ContentPosition
+    >;
+  alignItems?: EncodedResponsiveClassName<AlignItemsProperty>;
+  alignSelf?: EncodedResponsiveClassName<
+    | 'auto'
     | 'baseline'
     | 'normal'
     | 'stretch'
     | SelfPosition
-  >;
+    >;
   className?: EncodedClassName | EncodedClassName[];
   // TODO
   display?: EncodedResponsiveClassName<
@@ -87,20 +101,20 @@ interface CommonParameters {
     | ContentDistribution
     | ContentPosition
   >;
-  m?: Spacing;
-  mB?: Spacing;
-  mL?: Spacing;
-  mR?: Spacing;
-  mT?: Spacing;
-  mX?: Spacing;
-  mY?: Spacing;
-  p?: Spacing;
-  pB?: Spacing;
-  pL?: Spacing;
-  pR?: Spacing;
-  pT?: Spacing;
-  pX?: Spacing;
-  pY?: Spacing;
+  m?: S;
+  mB?: S;
+  mL?: S;
+  mR?: S;
+  mT?: S;
+  mX?: S;
+  mY?: S;
+  p?: S;
+  pB?: S;
+  pL?: S;
+  pR?: S;
+  pT?: S;
+  pX?: S;
+  pY?: S;
   textAlign?: EncodedResponsiveClassName<
     | 'center'
     | 'end'
@@ -114,7 +128,9 @@ interface CommonParameters {
 
 function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
   const {
+    alignContent,
     alignItems,
+    alignSelf,
     className,
     display,
     flexDirection,
@@ -142,7 +158,9 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
 
   return {
     className: [
+      decodeResponsiveClassName('align-content-', alignContent),
       decodeResponsiveClassName('align-items-', alignItems),
+      decodeResponsiveClassName('align-self-', alignSelf),
       decodeResponsiveClassName('display-', display),
       decodeResponsiveClassName('flex-direction-', flexDirection),
       decodeResponsiveClassName('flex-wrap-', flexWrap),

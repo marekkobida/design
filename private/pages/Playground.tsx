@@ -13,6 +13,7 @@ import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
 
 import css from './Playground.css';
+import Test from './components/Test';
 
 console.log(css);
 
@@ -27,6 +28,7 @@ class Playground extends Page {
         <div className="m-y-4">
           <Button onClick={() => { const element = document.documentElement; element.style.getPropertyValue('--color') ? element.style.removeProperty('--color') : element.style.setProperty('--color', '255, 0, 0'); }} type="button">test</Button>
         </div>
+        <Test />
         <Row alignItems="center" justifyContent="center" mY={4}>
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
@@ -79,14 +81,9 @@ class Playground extends Page {
               <Label htmlFor="c" mB={2}>Label</Label>
               <Input id="c" type="text" />
             </div>
-            <Row justifyContent="center" mY={4}>
-              <Column columnSize="width">
-                <Button type="button">Button</Button>
-              </Column>
-              <Column columnSize="width">
-                <Button disabled type="button">Button</Button>
-              </Column>
-            </Row>
+            <div className="m-y-4">
+              <Button type="button">Button</Button>
+            </div>
           </Column>
         </Row>
       </Container>
