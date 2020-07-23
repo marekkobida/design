@@ -16,21 +16,6 @@ import css from './Playground.css';
 
 console.log(css);
 
-// TODO toto vymazať keď dokončíme testovanie
-class Test extends React.Component {
-  state = { height: 0, width: 0, };
-
-  componentDidMount () {
-    window.addEventListener('resize', () => this.setState(() => ({ height: window.innerHeight, width: window.innerWidth, })));
-
-    this.setState(() => ({ height: window.innerHeight, width: window.innerWidth, }));
-  }
-
-  render () {
-    return <div className="border m-y-4 p-x-4 p-y-2">{this.state.width}x{this.state.height}</div>;
-  }
-}
-
 class Playground extends Page {
   constructor () {
     super(-1, 'playground');
@@ -39,7 +24,7 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Test />
+        <Button onClick={() => { const element = document.documentElement; element.style.getPropertyValue('--color') ? element.style.removeProperty('--color') : element.style.setProperty('--color', '255, 0, 0'); }} type="button">test</Button>
         <Row alignItems="center" justifyContent="center" mY={4}>
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
@@ -92,9 +77,14 @@ class Playground extends Page {
               <Label htmlFor="c" mB={2}>Label</Label>
               <Input id="c" type="text" />
             </div>
-            <div className="m-y-4">
-              <Button type="button">Button</Button>
-            </div>
+            <Row justifyContent="center" mY={4}>
+              <Column columnSize="width">
+                <Button type="button">Button</Button>
+              </Column>
+              <Column columnSize="width">
+                <Button disabled type="button">Button</Button>
+              </Column>
+            </Row>
           </Column>
         </Row>
       </Container>

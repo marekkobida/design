@@ -42,9 +42,6 @@ class Typography extends CSS {
 .${breakpoint.name}text-align-justify {
   text-align: justify !important;
 }
-.${breakpoint.name}text-align-justify-all {
-  text-align: justify-all !important;
-}
 .${breakpoint.name}text-align-left {
   text-align: left !important;
 }

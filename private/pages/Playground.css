@@ -1,8 +1,8 @@
 [class^="column"] {
-  border: 0.125rem solid rgba(var(--color), 0.25);
+  border: 0.125rem solid #A0A0A0;
 }
 
 [class^="row"] {
-  background-color: rgba(var(--color), 0.125);
-  border: 0.125rem solid rgba(var(--color), 0.25);
+  background-color: #DFDFDF;
+  border: 0.125rem solid #C0C0C0;
 }

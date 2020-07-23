@@ -58,11 +58,13 @@ interface CommonParameters {
     | SelfPosition
   >;
   className?: EncodedClassName | EncodedClassName[];
-  // TODO add all values
+  // TODO
   display?: EncodedResponsiveClassName<
     | 'block'
+    | 'flex'
     | 'inline'
     | 'inline-block'
+    | 'inline-flex'
     | 'none'
   >;
   flexDirection?: EncodedResponsiveClassName<
@@ -103,7 +105,6 @@ interface CommonParameters {
     | 'center'
     | 'end'
     | 'justify'
-    | 'justify-all'
     | 'left'
     | 'match-parent'
     | 'right'
