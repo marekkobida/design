@@ -24,7 +24,9 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Button onClick={() => { const element = document.documentElement; element.style.getPropertyValue('--color') ? element.style.removeProperty('--color') : element.style.setProperty('--color', '255, 0, 0'); }} type="button">test</Button>
+        <div className="m-y-4">
+          <Button onClick={() => { const element = document.documentElement; element.style.getPropertyValue('--color') ? element.style.removeProperty('--color') : element.style.setProperty('--color', '255, 0, 0'); }} type="button">test</Button>
+        </div>
         <Row alignItems="center" justifyContent="center" mY={4}>
           <Column columnSize="width" pY={2}>Column 1</Column>
           <Column columnSize="width" pY={4}>Column 2</Column>
