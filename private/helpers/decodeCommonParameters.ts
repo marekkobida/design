@@ -1,129 +1,57 @@
 import { EncodedClassName, } from './decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 
-export type AlignItemsProperty =
-  | 'baseline'
-  | 'normal'
-  | 'stretch'
-  | SelfPosition;
-
 // https://drafts.csswg.org/css-align-3/#typedef-content-distribution
-export type ContentDistribution =
-  | 'space-around'
-  | 'space-between'
-  | 'space-evenly'
-  | 'stretch';
+export const ContentDistribution = [ 'space-around', 'space-between', 'space-evenly', 'stretch', ] as const;
 
 // https://drafts.csswg.org/css-align-3/#typedef-content-position
-export type ContentPosition =
-  | 'center'
-  | 'end'
-  | 'flex-end'
-  | 'flex-start'
-  | 'start';
-
-export type S = EncodedResponsiveClassName<
-  | '!0'
-  | '!1'
-  | '!16'
-  | '!2'
-  | '!3'
-  | '!4'
-  | '!5'
-  | '!6'
-  | '!7'
-  | '!8'
-  | '#'
-  | 0
-  | 1
-  | 16
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
->;
+export const ContentPosition = [ 'center', 'end', 'flex-end', 'flex-start', 'start', ] as const;
 
 // https://drafts.csswg.org/css-align-3/#typedef-self-position
-export type SelfPosition =
-  | 'center'
-  | 'end'
-  | 'flex-end'
-  | 'flex-start'
-  | 'self-end'
-  | 'self-start'
-  | 'start';
+export const SelfPosition = [ 'center', 'end', 'flex-end', 'flex-start', 'self-end', 'self-start', 'start', ] as const;
 
-interface CommonParameters {
-  alignContent?: EncodedResponsiveClassName<
-    | 'baseline'
-    | 'normal'
-    | ContentDistribution
-    | ContentPosition
-    >;
-  alignItems?: EncodedResponsiveClassName<AlignItemsProperty>;
-  alignSelf?: EncodedResponsiveClassName<
-    | 'auto'
-    | 'baseline'
-    | 'normal'
-    | 'stretch'
-    | SelfPosition
-    >;
-  className?: EncodedClassName | EncodedClassName[];
-  // TODO
-  display?: EncodedResponsiveClassName<
-    | 'block'
-    | 'flex'
-    | 'inline'
-    | 'inline-block'
-    | 'inline-flex'
-    | 'none'
-  >;
-  flexDirection?: EncodedResponsiveClassName<
-    | 'column'
-    | 'column-reverse'
-    | 'row'
-    | 'row-reverse'
-  >;
-  flexWrap?: EncodedResponsiveClassName<
-    | 'nowrap'
-    | 'wrap'
-    | 'wrap-reverse'
-  >;
-  fontSize?: 1 | 2 | 3 | 4 | 5 | 6;
-  fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-  justifyContent?: EncodedResponsiveClassName<
-    | 'left'
-    | 'normal'
-    | 'right'
-    | ContentDistribution
-    | ContentPosition
-  >;
-  m?: S;
-  mB?: S;
-  mL?: S;
-  mR?: S;
-  mT?: S;
-  mX?: S;
-  mY?: S;
-  p?: S;
-  pB?: S;
-  pL?: S;
-  pR?: S;
-  pT?: S;
-  pX?: S;
-  pY?: S;
-  textAlign?: EncodedResponsiveClassName<
-    | 'center'
-    | 'end'
-    | 'justify'
-    | 'left'
-    | 'match-parent'
-    | 'right'
-    | 'start'
-  >;
+export const AlignContentProperty = [ 'baseline', 'normal', ...ContentDistribution, ...ContentPosition, ] as const;
+
+export const AlignItemsProperty = [ 'baseline', 'normal', 'stretch', ...SelfPosition, ] as const;
+
+export const AlignSelfProperty = [ 'auto', 'baseline', 'normal', 'stretch', ...SelfPosition, ] as const;
+
+export const DisplayProperty = [ 'block', 'flex', 'inline', 'inline-block', 'inline-flex', 'none', ] as const;
+
+export const FlexDirectionProperty = [ 'column', 'column-reverse', 'row', 'row-reverse', ] as const;
+
+export const FlexWrapProperty = [ 'nowrap', 'wrap', 'wrap-reverse', ] as const;
+
+export const JustifyContentProperty = [ 'left', 'normal', 'right', ...ContentDistribution, ...ContentPosition, ] as const;
+
+const S = [ '!0', '!1', '!16', '!2', '!3', '!4', '!5', '!6', '!7', '!8', '#', 0, 1, 16, 2, 3, 4, 5, 6, 7, 8, ] as const;
+
+export const TextAlignProperty = [ 'center', 'end', 'justify', 'left', 'match-parent', 'right', 'start', ] as const;
+
+export interface CommonParameters {
+  alignContent?: EncodedResponsiveClassName<typeof AlignContentProperty[number]>;
+  alignItems?: EncodedResponsiveClassName<typeof AlignItemsProperty[number]>;
+  alignSelf?: EncodedResponsiveClassName<typeof AlignSelfProperty[number] >;
+  className?: EncodedClassName;
+  display?: EncodedResponsiveClassName<typeof DisplayProperty[number]>;
+  flexDirection?: EncodedResponsiveClassName<typeof FlexDirectionProperty[number]>;
+  flexWrap?: EncodedResponsiveClassName<typeof FlexWrapProperty[number]>;
+  justifyContent?: EncodedResponsiveClassName<typeof JustifyContentProperty[number]>;
+  m?: EncodedResponsiveClassName<typeof S[number]>;
+  mB?: EncodedResponsiveClassName<typeof S[number]>;
+  mL?: EncodedResponsiveClassName<typeof S[number]>;
+  mR?: EncodedResponsiveClassName<typeof S[number]>;
+  mT?: EncodedResponsiveClassName<typeof S[number]>;
+  mX?: EncodedResponsiveClassName<typeof S[number]>;
+  mY?: EncodedResponsiveClassName<typeof S[number]>;
+  p?: EncodedResponsiveClassName<typeof S[number]>;
+  pB?: EncodedResponsiveClassName<typeof S[number]>;
+  pL?: EncodedResponsiveClassName<typeof S[number]>;
+  pR?: EncodedResponsiveClassName<typeof S[number]>;
+  pT?: EncodedResponsiveClassName<typeof S[number]>;
+  pX?: EncodedResponsiveClassName<typeof S[number]>;
+  pY?: EncodedResponsiveClassName<typeof S[number]>;
+  textAlign?: EncodedResponsiveClassName<typeof TextAlignProperty[number]>;
 }
 
 function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
@@ -135,8 +63,6 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
     display,
     flexDirection,
     flexWrap,
-    fontSize,
-    fontWeight,
     justifyContent,
     m,
     mB,
@@ -164,8 +90,6 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
       decodeResponsiveClassName('display-', display),
       decodeResponsiveClassName('flex-direction-', flexDirection),
       decodeResponsiveClassName('flex-wrap-', flexWrap),
-      fontSize && `font-size-${fontSize}`,
-      fontWeight && `font-weight-${fontWeight}`,
       decodeResponsiveClassName('justify-content-', justifyContent),
       decodeResponsiveClassName('m-', m),
       decodeResponsiveClassName('m-b-', mB),

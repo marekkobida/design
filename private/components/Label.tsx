@@ -1,10 +1,10 @@
 import React from 'react';
 
-import DesignComponent from './DesignComponent';
+import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 
-class Label extends DesignComponent<React.ComponentPropsWithoutRef<'label'>> {
+class Label extends React.Component<React.ComponentPropsWithRef<'label'> & CommonParameters> {
   render () {
-    const { className, ...notCommonParameters } = this.decodedCommonParameters;
+    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
     return <label {...notCommonParameters} className={className} />;
   }

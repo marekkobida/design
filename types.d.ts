@@ -2,7 +2,7 @@ import { EncodedClassName, } from './private/helpers/decodeClassName';
 
 declare module 'react' {
   interface P {
-    className?: EncodedClassName | EncodedClassName[];
+    className?: EncodedClassName;
   }
 
   namespace JSX {

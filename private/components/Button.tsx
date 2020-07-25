@@ -1,10 +1,10 @@
 import React from 'react';
 
-import DesignComponent from './DesignComponent';
+import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 
-class Button extends DesignComponent<React.ComponentPropsWithoutRef<'button'>> {
+class Button extends React.Component<React.ComponentPropsWithRef<'button'> & CommonParameters> {
   render () {
-    const { className, ...notCommonParameters } = this.decodedCommonParameters;
+    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
     return <button {...notCommonParameters} className={className} />;
   }

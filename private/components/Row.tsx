@@ -1,10 +1,10 @@
 import React from 'react';
 
-import DesignComponent from './DesignComponent';
+import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 
-class Row extends DesignComponent<React.ComponentPropsWithoutRef<'div'>> {
+class Row extends React.Component<React.ComponentPropsWithRef<'div'> & CommonParameters> {
   render () {
-    const { className, ...notCommonParameters } = this.decodedCommonParameters;
+    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
     return <div {...notCommonParameters} className={[ 'row', className, ]} />;
   }

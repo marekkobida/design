@@ -25,60 +25,31 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <div className="m-y-4">
-          <Button onClick={() => { const element = document.documentElement; element.style.getPropertyValue('--color') ? element.style.removeProperty('--color') : element.style.setProperty('--color', '255, 0, 0'); }} type="button">test</Button>
-        </div>
         <Test />
-        <Row alignItems="center" justifyContent="center" mY={4}>
-          <Column columnSize="width" pY={2}>Column 1</Column>
-          <Column columnSize="width" pY={4}>Column 2</Column>
-        </Row>
-        <Row alignItems="flex-end" flexDirection="row-reverse" justifyContent="flex-end" mY={4}>
-          <Column columnSize="width" pY={2}>Column 1</Column>
-          <Column columnSize="width" pY={4}>Column 2</Column>
-        </Row>
-        <Row flexDirection={[ 'column', { '#': 'row', }, ]} mY={4}>
-          <Column pY={2}>1</Column>
-          <Column pY={2}>2</Column>
-          <Column pY={2}>3</Column>
-          <Column pY={2}>4</Column>
-          <Column pY={2}>5</Column>
-          <Column pY={2}>6</Column>
-          <Column pY={2}>7</Column>
-          <Column pY={2}>8</Column>
-          <Column pY={2}>9</Column>
-          <Column pY={2}>10</Column>
-          <Column pY={2}>11</Column>
-          <Column pY={2}>12</Column>
-        </Row>
-        <Row alignItems="center" mY={4}>
-          <Column columnOffset={1} columnSize={4} pY={2}>Column 1</Column>
-          <Column columnOffset={2} columnSize={4} pY={4}>Column 2</Column>
-        </Row>
         <div className="m-y-4">
           <Anchor href="#">Anchor</Anchor>
-          <Heading size={1} textAlign="left">Heading 1</Heading>
-          <Heading size={2} textAlign="center">Heading 2</Heading>
-          <Heading size={3} textAlign="right">Heading 3</Heading>
+          <Heading size={1}>Heading 1</Heading>
+          <Heading size={2}>Heading 2</Heading>
+          <Heading size={3}>Heading 3</Heading>
           <Heading size={4}>Heading 4</Heading>
           <Heading size={5}>Heading 5</Heading>
           <Heading size={6}>Heading 6</Heading>
           <Paragraph>Paragraph</Paragraph>
         </div>
         <Row mY={4}>
-          <Column columnSize={[ 12, { '#': '#', }, ]} pY={2}>
+          <Column columnSize={[ 12, { '#': 6, }, ]} pY={3}>
             <div className="m-y-4">
-              <Label htmlFor="a" mB={2}>Label</Label>
+              <Label htmlFor="a" mB={3}>Label</Label>
               <Input id="a" type="text" />
             </div>
             <div className="m-y-4">
-              <Label htmlFor="b" mB={2}>Label</Label>
+              <Label htmlFor="b" mB={3}>Label</Label>
               <Input id="b" type="text" />
             </div>
           </Column>
-          <Column columnSize={[ 12, { '#': '#', }, ]} pY={2}>
+          <Column columnSize={[ 12, { '#': 6, }, ]} pY={3}>
             <div className="m-y-4">
-              <Label htmlFor="c" mB={2}>Label</Label>
+              <Label htmlFor="c" mB={3}>Label</Label>
               <Input id="c" type="text" />
             </div>
             <div className="m-y-4">

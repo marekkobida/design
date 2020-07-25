@@ -1,6 +1,44 @@
 import CSS from '../CSS';
 
 class Flex extends CSS {
+  alignContent (): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}align-content-baseline {
+  align-content: baseline !important;
+}
+.${breakpoint.name}align-content-center {
+  align-content: center !important;
+}
+.${breakpoint.name}align-content-end {
+  align-content: end !important;
+}
+.${breakpoint.name}align-content-flex-end {
+  align-content: flex-end !important;
+}
+.${breakpoint.name}align-content-flex-start {
+  align-content: flex-start !important;
+}
+.${breakpoint.name}align-content-normal {
+  align-content: normal !important;
+}
+.${breakpoint.name}align-content-space-around {
+  align-content: space-around !important;
+}
+.${breakpoint.name}align-content-space-between {
+  align-content: space-between !important;
+}
+.${breakpoint.name}align-content-space-evenly {
+  align-content: space-evenly !important;
+}
+.${breakpoint.name}align-content-start {
+  align-content: start !important;
+}
+.${breakpoint.name}align-content-stretch {
+  align-content: stretch !important;
+}`
+    );
+  }
+
   alignItems (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}align-items-baseline {
@@ -109,7 +147,8 @@ class Flex extends CSS {
   }
 
   css (): string {
-    return `${this.alignItems()}
+    return `${this.alignContent()}
+${this.alignItems()}
 ${this.flexDirection()}
 ${this.flexWrap()}
 ${this.justifyContent()}`;
