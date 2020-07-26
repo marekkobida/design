@@ -28,11 +28,11 @@ interface S {
 class Test extends React.Component<unknown, S> {
   state: S = {
     properties: {
-      alignItems: 'center',
-      flexDirection: 'row',
-      flexWrap: 'nowrap',
+      alignItems: 'baseline',
+      flexDirection: 'row-reverse',
+      flexWrap: 'wrap-reverse',
       justifyContent: 'center',
-      textAlign: 'left',
+      textAlign: 'center',
     },
   };
 
@@ -55,7 +55,7 @@ class Test extends React.Component<unknown, S> {
                     name={propertyName}
                     onClick={() => this.setState((state) => ({ ...state, properties: { ...state.properties, [propertyName]: property, }, }))}
                     type="radio"
-                    value={`${propertyName}-${property}`}
+                    value={property}
                   />
                   <Label htmlFor={`${propertyName}-${property}`}>{property}</Label>
                 </div>
@@ -69,15 +69,15 @@ class Test extends React.Component<unknown, S> {
     return (
       <div className="m-y-4">
         <Row>{$}</Row>
-        <Row {...this.state.properties}>
+        <Row {...this.state.properties} style={{ overflow: 'auto', }}>
           <Column columnSize="width">
-            <div className="border p-4">1</div>
+            <div className="p-4" style={{ backgroundColor: '#000', color: '#fff', }}>1</div>
           </Column>
           <Column columnSize="width">
-            <div className="border p-8">2<br />3</div>
+            <div className="p-8" style={{ backgroundColor: '#000', color: '#fff', }}>2<br />3<br />4</div>
           </Column>
-          <Column columnSize="width">
-            <div className="border p-4">4</div>
+          <Column columnSize={12}>
+            <div className="p-4" style={{ backgroundColor: '#000', color: '#fff', }}>5</div>
           </Column>
         </Row>
       </div>
