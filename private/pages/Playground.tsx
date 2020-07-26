@@ -37,22 +37,22 @@ class Playground extends Page {
           <Paragraph>Paragraph</Paragraph>
         </div>
         <Row mY={4}>
-          <Column columnSize={[ 12, { '#': 6, }, ]} pY={3}>
-            <div className="m-y-4">
+          <Column columnSize={[ 12, { '#': 6, }, ]}>
+            <div className="m-y-2">
               <Label htmlFor="a" mB={3}>Label</Label>
               <Input id="a" type="text" />
             </div>
-            <div className="m-y-4">
+            <div className="m-y-2">
               <Label htmlFor="b" mB={3}>Label</Label>
               <Input id="b" type="text" />
             </div>
           </Column>
-          <Column columnSize={[ 12, { '#': 6, }, ]} pY={3}>
-            <div className="m-y-4">
+          <Column columnSize={[ 12, { '#': 6, }, ]}>
+            <div className="m-y-2">
               <Label htmlFor="c" mB={3}>Label</Label>
               <Input id="c" type="text" />
             </div>
-            <div className="m-y-4">
+            <div className="m-y-2">
               <Button type="button">Button</Button>
             </div>
           </Column>

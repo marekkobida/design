@@ -43,11 +43,11 @@ class Test extends React.Component<unknown, S> {
       $ = [
         ...$,
         (
-          <Column columnSize={6} key={propertyName} pY={3}>
-            <Heading size={6}>{propertyName}</Heading>
+          <Column columnSize={6} key={propertyName}>
+            <Heading mY={2} size={6}>{propertyName}</Heading>
             {
               properties[propertyName].map((property) => (
-                <div className="align-items-center display-inline-flex p-1" key={property}>
+                <div className="align-items-center display-inline-flex p-2" key={property}>
                   <Input
                     defaultChecked={property === this.state.properties[propertyName]}
                     id={`${propertyName}-${property}`}
@@ -74,10 +74,10 @@ class Test extends React.Component<unknown, S> {
             <div className="border p-4">1</div>
           </Column>
           <Column columnSize="width">
-            <div className="border p-8">2</div>
+            <div className="border p-8">2<br />3</div>
           </Column>
           <Column columnSize="width">
-            <div className="border p-4">3</div>
+            <div className="border p-4">4</div>
           </Column>
         </Row>
       </div>
