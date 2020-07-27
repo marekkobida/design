@@ -84,6 +84,26 @@ class Helpers extends CSS {
   --border--border-width: 0.125rem;
   border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
 }
+.border-bottom {
+  --border--border-color: var(--color);
+  --border--border-width: 0.125rem;
+  border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+}
+.border-left {
+  --border--border-color: var(--color);
+  --border--border-width: 0.125rem;
+  border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+}
+.border-right {
+  --border--border-color: var(--color);
+  --border--border-width: 0.125rem;
+  border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+}
+.border-top {
+  --border--border-color: var(--color);
+  --border--border-width: 0.125rem;
+  border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+}
 ${this.display()}
 ${a('margin', 'm')}
 ${a('padding', 'p')}

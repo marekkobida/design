@@ -6,6 +6,7 @@ import Anchor from '../components/Anchor';
 import Button from '../components/Button';
 import Column from '../components/Column';
 import Container from '../components/Container';
+import Div from '../components/Div';
 import Heading from '../components/Heading';
 import Input from '../components/Input';
 import Label from '../components/Label';
@@ -25,8 +26,8 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Test />
-        <div className="m-y-4">
+        <Test mY={4} />
+        <Div mY={4}>
           <Anchor href="#">Anchor</Anchor>
           <Heading size={1}>Heading 1</Heading>
           <Heading size={2}>Heading 2</Heading>
@@ -35,26 +36,26 @@ class Playground extends Page {
           <Heading size={5}>Heading 5</Heading>
           <Heading size={6}>Heading 6</Heading>
           <Paragraph>Paragraph</Paragraph>
-        </div>
+        </Div>
         <Row mY={4}>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
-            <div className="m-y-2">
+            <Div mY={2}>
               <Label htmlFor="a" mB={3}>Label</Label>
               <Input id="a" type="text" />
-            </div>
-            <div className="m-y-2">
+            </Div>
+            <Div mY={2}>
               <Label htmlFor="b" mB={3}>Label</Label>
               <Input id="b" type="text" />
-            </div>
+            </Div>
           </Column>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
-            <div className="m-y-2">
+            <Div mY={2}>
               <Label htmlFor="c" mB={3}>Label</Label>
               <Input id="c" type="text" />
-            </div>
-            <div className="m-y-2">
+            </Div>
+            <Div mY={2}>
               <Button type="button">Button</Button>
-            </div>
+            </Div>
           </Column>
         </Row>
       </Container>

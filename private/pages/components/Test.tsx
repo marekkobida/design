@@ -2,14 +2,15 @@
 import React from 'react';
 
 import Column from '../../components/Column';
+import Div from '../../components/Div';
 import Heading from '../../components/Heading';
 import Input from '../../components/Input';
 import Label from '../../components/Label';
 import Row from '../../components/Row';
-import { AlignContentProperty, AlignItemsProperty, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
+import { AlignContentProperty, AlignItemsProperty, CommonParameters, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
 
-function test<R extends { [propertyName: string]: readonly string[]; }> (obj: R): R & { [propertyName: string]: readonly string[]; } {
-  return obj;
+function test<T extends { [propertyName: string]: readonly string[]; }> (t: T): T & { [propertyName: string]: readonly string[]; } {
+  return t;
 }
 
 const properties = test({
@@ -22,12 +23,13 @@ const properties = test({
 });
 
 interface S {
-  properties: { [propertyName in keyof typeof properties]?: typeof properties[propertyName][number] };
+  properties: { [propertyName in keyof typeof properties]: typeof properties[propertyName][number] };
 }
 
-class Test extends React.Component<unknown, S> {
+class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & CommonParameters, S> {
   state: S = {
     properties: {
+      alignContent: 'center',
       alignItems: 'baseline',
       flexDirection: 'row-reverse',
       flexWrap: 'wrap-reverse',
@@ -47,18 +49,18 @@ class Test extends React.Component<unknown, S> {
             <Heading mY={2} size={6}>{propertyName}</Heading>
             {
               properties[propertyName].map((property) => (
-                <div className="align-items-center display-inline-flex p-2" key={property}>
+                <Div alignSelf="center" className="display-inline-flex" key={property} p={2}>
                   <Input
                     defaultChecked={property === this.state.properties[propertyName]}
                     id={`${propertyName}-${property}`}
-                    mR={1}
+                    mR={2}
                     name={propertyName}
                     onClick={() => this.setState((state) => ({ ...state, properties: { ...state.properties, [propertyName]: property, }, }))}
                     type="radio"
                     value={property}
                   />
                   <Label htmlFor={`${propertyName}-${property}`}>{property}</Label>
-                </div>
+                </Div>
               ))
             }
           </Column>
@@ -67,20 +69,16 @@ class Test extends React.Component<unknown, S> {
     }
 
     return (
-      <div className="m-y-4">
+      <Div {...this.props}>
         <Row>{$}</Row>
-        <Row {...this.state.properties} style={{ overflow: 'auto', }}>
-          <Column columnSize="width">
-            <div className="p-4" style={{ backgroundColor: '#000', color: '#fff', }}>1</div>
-          </Column>
-          <Column columnSize="width">
-            <div className="p-8" style={{ backgroundColor: '#000', color: '#fff', }}>2<br />3<br />4</div>
-          </Column>
-          <Column columnSize={12}>
-            <div className="p-4" style={{ backgroundColor: '#000', color: '#fff', }}>5</div>
-          </Column>
-        </Row>
-      </div>
+        <Div style={{ paddingBottom: '50%', position: 'relative', }}>
+          <Row {...this.state.properties} style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}>
+            <Column columnSize="width">1</Column>
+            <Column columnSize="width">2<br />3<br />4</Column>
+            <Column columnSize={12}>5</Column>
+          </Row>
+        </Div>
+      </Div>
     );
   }
 }

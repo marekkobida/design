@@ -1,5 +1,6 @@
 import React from 'react';
 
+import decodeClassName from '../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from '../helpers/decodeResponsiveClassName';
 
@@ -15,12 +16,12 @@ class Column extends React.Component<React.ComponentPropsWithRef<'div'> & P & Co
     return (
       <div
         {...notCommonParameters}
-        className={[
+        className={decodeClassName([
           'column',
           decodeResponsiveClassName('column_offset_', columnOffset),
           decodeResponsiveClassName('column_size_', columnSize),
           className,
-        ]}
+        ])}
       />
     );
   }

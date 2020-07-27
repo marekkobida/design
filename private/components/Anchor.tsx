@@ -1,6 +1,7 @@
 import ServerRequest from '@redredsk/helpers/private/ServerRequest';
 import React from 'react';
 
+import decodeClassName from '../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 
 class Anchor extends React.Component<React.ComponentPropsWithRef<'a'> & CommonParameters> {
@@ -19,7 +20,7 @@ class Anchor extends React.Component<React.ComponentPropsWithRef<'a'> & CommonPa
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <a {...notCommonParameters} className={className} onClick={this.onClick} />;
+    return <a {...notCommonParameters} className={decodeClassName(className)} onClick={this.onClick} />;
   }
 }
 
