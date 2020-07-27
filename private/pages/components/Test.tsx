@@ -29,12 +29,12 @@ interface S {
 class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & CommonParameters, S> {
   state: S = {
     properties: {
-      alignContent: 'center',
+      alignContent: 'space-between',
       alignItems: 'baseline',
-      flexDirection: 'row-reverse',
-      flexWrap: 'wrap-reverse',
-      justifyContent: 'center',
-      textAlign: 'center',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      textAlign: 'left',
     },
     t: false,
   };
@@ -85,12 +85,11 @@ class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & Commo
         {this.state.t && <Row>{$}</Row>}
         <Div style={{ paddingBottom: '50%', position: 'relative', }}>
           <Row {...this.state.properties} style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}>
-            <Column columnSize="width">width</Column>
-            <Column columnSize={6}>
-              <Heading size={1}>6</Heading>
-            </Column>
             <Column columnSize="#">#</Column>
-            <Column columnSize={12}>12</Column>
+            <Column columnSize="width">width</Column>
+            <Column columnSize={12}>Šírka 12. stĺpcov</Column>
+            <Column columnSize={4}>Šírka 4. stĺpcov</Column>
+            <Column columnSize={4}>Šírka 4. stĺpcov</Column>
           </Row>
         </Div>
       </Div>
