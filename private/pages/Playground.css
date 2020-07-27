@@ -1,3 +1,7 @@
+:root {
+  --color: 128, 0, 0;
+}
+
 [class^="column"] {
   border: 0.125rem solid rgba(var(--color), 0.25);
 }

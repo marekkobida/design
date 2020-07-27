@@ -85,11 +85,12 @@ class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & Commo
         {this.state.t && <Row>{$}</Row>}
         <Div style={{ paddingBottom: '50%', position: 'relative', }}>
           <Row {...this.state.properties} style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}>
-            <Column columnSize="width">Column</Column>
-            <Column columnSize="width">
-              <Heading size={1}>Column</Heading>
+            <Column columnSize="width">width</Column>
+            <Column columnSize={6}>
+              <Heading size={1}>6</Heading>
             </Column>
-            <Column columnSize={12}>Column</Column>
+            <Column columnSize="#">#</Column>
+            <Column columnSize={12}>12</Column>
           </Row>
         </Div>
       </Div>
