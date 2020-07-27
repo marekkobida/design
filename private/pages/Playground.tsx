@@ -2,6 +2,7 @@ import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
 import React from 'react';
 
+import $ from '../../package.json';
 import Anchor from '../components/Anchor';
 import Button from '../components/Button';
 import Column from '../components/Column';
@@ -26,6 +27,10 @@ class Playground extends Page {
   element () {
     return (
       <Container>
+        <Row mY={4}>
+          <Column columnSize="width">{$.name}</Column>
+          <Column columnSize="width" mL="#">{$.version}</Column>
+        </Row>
         <Test mY={4} />
         <Div mY={4}>
           <Anchor href="#">Anchor</Anchor>

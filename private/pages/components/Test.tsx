@@ -73,7 +73,7 @@ class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & Commo
 
     return (
       <Div {...this.props}>
-        <Div alignItems="center" className="border display-flex" p={2}>
+        <Div alignItems="center" className="display-flex" mY={2}>
           <Input
             id="t"
             mR={2}
