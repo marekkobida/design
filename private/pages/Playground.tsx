@@ -2,7 +2,6 @@ import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
 import React from 'react';
 
-import $ from '../../package.json';
 import Anchor from '../components/Anchor';
 import Button from '../components/Button';
 import Column from '../components/Column';
@@ -27,12 +26,8 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Row mY={4}>
-          <Column columnSize="width">{$.name}</Column>
-          <Column columnSize="width" mL="#">{$.version}</Column>
-        </Row>
-        <Test mY={4} />
-        <Div mY={4}>
+        <Test mY={8} />
+        <Div mY={8}>
           <Anchor href="#">Anchor</Anchor>
           <Heading size={1}>Heading 1</Heading>
           <Heading size={2}>Heading 2</Heading>
@@ -42,11 +37,11 @@ class Playground extends Page {
           <Heading size={6}>Heading 6</Heading>
           <Paragraph>Paragraph</Paragraph>
         </Div>
-        <Row mY={4}>
+        <Row mY={8}>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
             <Div mY={2}>
               <Label htmlFor="a" mB={2}>Label</Label>
-              <Input id="a" type="text" />
+              <Input id="a" placeholder="Input" type="text" />
             </Div>
             <Div mY={2}>
               <Label htmlFor="b" mB={2}>Label</Label>
@@ -60,7 +55,7 @@ class Playground extends Page {
           <Column columnSize={[ 12, { '#': 6, }, ]}>
             <Div mY={2}>
               <Label htmlFor="d" mB={2}>Label</Label>
-              <Input id="d" type="text" />
+              <Input id="d" placeholder="Input" type="text" />
             </Div>
             <Div mY={2}>
               <Button type="button">Button</Button>
