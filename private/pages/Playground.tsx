@@ -22,102 +22,86 @@ class Playground extends Page {
 
   element () {
     interface S {
-      testComponents: {
-        [id: string]: {
-          component: any;
-          isActive: boolean;
-          properties: {
-            [propertyName: string]: string;
-          };
-        };
-      };
+      availableComponents: Test['props']['availableComponents'];
     }
 
-    class $ extends React.Component<{}, S> {
-      state: S = { testComponents: {}, }
+    class $ extends React.Component<unknown, S> {
+      state: S = { availableComponents: {}, }
 
-      test = (component: any): void => {
-        const id = component.props.id;
+      addComponentAsAvailable = (component) => {
+        const { id, } = component.props;
 
-        this.setState((state) => ({
-          ...state,
-          testComponents: {
-            ...state.testComponents,
-            [id]: {
-              component,
-              isActive: false,
-              properties: {},
-            },
-          },
-        }));
+        this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { component, id, isActive: false, properties: {}, }, }, }));
       }
 
-      test1 = (event) => {
-        const { id, } = event.currentTarget;
+      // update testComponent properties by id
+      t1: Test['props']['t1'] = (id, properties) => {
+        this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { ...s.availableComponents[id], properties, }, }, }));
+      }
 
-        this.setState((state) => ({
-          ...state,
-          testComponents: {
-            ...state.testComponents,
-            [id]: {
-              ...state.testComponents[id],
-              isActive: !state.testComponents[id].isActive,
-            },
-          },
-        }));
+      // make testComponent active (onClick property)
+      t2: Test['props']['t2'] = (id) => {
+        return () => {
+          this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { ...s.availableComponents[id], isActive: !s.availableComponents[id].isActive, }, }, }));
+        };
       }
 
       render () {
         return (
-          <Container>
-            <Test parent={this} testComponents={this.state.testComponents} />
-            <Div style={{ paddingBottom: '50%', position: 'relative', }}>
-              <Row
-                {...this.state.testComponents['testComponent']?.properties}
-                className="border"
-                id="testComponent"
-                onClick={this.test1}
-                ref={this.test}
-                style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}
-              >
-                <Column className="border" columnSize="#">"#"</Column>
-                <Column className="border" columnSize="width">"width"</Column>
-                <Column className="border" columnSize={12}>12</Column>
-                <Column className="border" columnSize={4}>4</Column>
-                <Column className="border" columnSize={4}>4</Column>
-              </Row>
-            </Div>
-            <Anchor href="#">Anchor</Anchor>
-            <Heading size={1}>Heading 1</Heading>
-            <Heading size={2}>Heading 2</Heading>
-            <Heading size={3}>Heading 3</Heading>
-            <Heading size={4}>Heading 4</Heading>
-            <Heading size={5}>Heading 5</Heading>
-            <Heading size={6}>Heading 6</Heading>
-            <Paragraph>Paragraph</Paragraph>
-            <Row className="border">
-              <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
-                <Div mY={2}>
-                  <Label htmlFor="a" mB={2}>Label</Label>
-                  <Input id="a" placeholder="Input" type="text" />
-                </Div>
-                <Div mY={2}>
-                  <Label htmlFor="b" mB={2}>Label</Label>
-                  <Input id="b" type="radio" />
-                </Div>
-                <Div mY={2}>
-                  <Label htmlFor="c" mB={2}>Label</Label>
-                  <Input id="c" type="checkbox" />
-                </Div>
+          <Container style={{ maxWidth: 'inherit', }}>
+            <Row>
+              <Column columnSize={[ 12, { '#': 3, }, ]}>
+                <Test availableComponents={this.state.availableComponents} t1={this.t1} t2={this.t2} />
               </Column>
-              <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
-                <Div mY={2}>
-                  <Label htmlFor="d" mB={2}>Label</Label>
-                  <Input id="d" placeholder="Input" type="text" />
+              <Column columnSize={[ 12, { '#': '#', }, ]}>
+                <Div style={{ paddingBottom: '50%', position: 'relative', }}>
+                  <Row
+                    alignContent="center"
+                    id="layout"
+                    ref={this.addComponentAsAvailable}
+                    style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}
+                    {...this.state.availableComponents['layout']?.properties}
+                  >
+                    <Column columnSize="#">"#"</Column>
+                    <Column columnSize="width">"width"</Column>
+                    <Column columnSize={12}>12</Column>
+                    <Column columnSize={4}>4</Column>
+                    <Column columnSize={4}>4</Column>
+                  </Row>
                 </Div>
-                <Div mY={2}>
-                  <Button type="button">Button</Button>
-                </Div>
+                <Anchor href="#">Anchor</Anchor>
+                <Heading size={1}>Heading 1</Heading>
+                <Heading size={2}>Heading 2</Heading>
+                <Heading size={3}>Heading 3</Heading>
+                <Heading size={4}>Heading 4</Heading>
+                <Heading size={5}>Heading 5</Heading>
+                <Heading size={6}>Heading 6</Heading>
+                <Paragraph>Paragraph</Paragraph>
+                <Row id="test" ref={this.addComponentAsAvailable} {...this.state.availableComponents['test']?.properties}>
+                  <Column columnSize={[ 12, { '#': 6, }, ]}>
+                    <Div mY={2}>
+                      <Label htmlFor="a" mB={2}>Label</Label>
+                      <Input id="a" placeholder="Input" type="text" />
+                    </Div>
+                    <Div mY={2}>
+                      <Label htmlFor="b" mB={2}>Label</Label>
+                      <Input id="b" type="radio" />
+                    </Div>
+                    <Div mY={2}>
+                      <Label htmlFor="c" mB={2}>Label</Label>
+                      <Input id="c" type="checkbox" />
+                    </Div>
+                  </Column>
+                  <Column columnSize={[ 12, { '#': 6, }, ]}>
+                    <Div mY={2}>
+                      <Label htmlFor="d" mB={2}>Label</Label>
+                      <Input id="d" placeholder="Input" type="text" />
+                    </Div>
+                    <Div mY={2}>
+                      <Button type="button">Button</Button>
+                    </Div>
+                  </Column>
+                </Row>
               </Column>
             </Row>
           </Container>

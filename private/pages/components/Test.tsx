@@ -8,11 +8,11 @@ import Label from '../../components/Label';
 import Row from '../../components/Row';
 import { AlignContentProperty, AlignItemsProperty, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
 
-function test<T extends { [propertyName: string]: readonly string[]; }> (t: T): T & { [propertyName: string]: readonly string[]; } {
+function test<T extends { [propertyName: string]: readonly (number | string)[]; }> (t: T): T & { [propertyName: string]: readonly (number | string)[]; } {
   return t;
 }
 
-const properties = test({
+const availableProperties = test({
   alignContent: AlignContentProperty,
   alignItems: AlignItemsProperty,
   flexDirection: FlexDirectionProperty,
@@ -21,71 +21,90 @@ const properties = test({
   textAlign: TextAlignProperty,
 });
 
-interface S {
-  properties: { [propertyName in keyof typeof properties]?: typeof properties[propertyName][number] };
+interface P {
+  availableComponents: {
+    [id: string]: {
+      component: unknown;
+      id: string;
+      isActive: boolean;
+      properties: S['properties'];
+    };
+  };
+  t1: (id: string, properties: S['properties']) => void;
+  t2: (id: string) => () => void;
 }
 
-class Test extends React.Component<{}, S> {
+interface S {
+  properties: { [propertyName in keyof typeof availableProperties]?: typeof availableProperties[propertyName][number] };
+}
+
+class Test extends React.Component<P, S> {
   state: S = { properties: {}, };
 
-  componentDidUpdate (prevProps) {
-    if (prevProps !== this.props) {
-      let lastActived;
+  componentDidUpdate (prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: any) {
+    let prevLast;
+    let currentLast;
 
-      for (const testComponentId in this.props.testComponents) {
-        if (this.props.testComponents[testComponentId].isActive) {
-          lastActived = this.props.testComponents[testComponentId];
+    for (const a in prevProps.availableComponents) {
+      if (prevProps.availableComponents[a].isActive) {
+        prevLast = prevProps.availableComponents[a];
+      }
+    }
+
+    for (const a in this.props.availableComponents) {
+      if (this.props.availableComponents[a].isActive) {
+        currentLast = this.props.availableComponents[a];
+      }
+    }
+
+    if (prevLast === undefined && currentLast?.isActive === true) {
+      this.setState((state) => ({ ...state, properties: {}, }));
+      for (const b in currentLast.component.props) {
+        if (b in availableProperties) {
+          this.test(currentLast.component.props[b], b)();
         }
       }
+    }
 
-      if (lastActived) {
-        // toto musí ťahať z lastActived.component.props
-        console.log('lastActived', lastActived.properties);
-        this.setState((state) => ({ ...state, properties: lastActived.properties, }));
+    if (prevLast && currentLast) {
+      if (prevLast.id !== currentLast.id) {
+        this.setState((state) => ({ ...state, properties: {}, }));
+        for (const b in currentLast.component.props) {
+          if (b in availableProperties) {
+            this.test(currentLast.component.props[b], b)();
+          }
+        }
       }
     }
   }
 
-  test (property, propertyName) {
+  test = (property, propertyName) => {
     return () => {
       this.setState((state) => {
         state = { ...state, properties: { ...state.properties, [propertyName]: property, }, };
 
-        this.test1(state);
+        for (const testComponentId in this.props.availableComponents) {
+          if (this.props.availableComponents[testComponentId].isActive) {
+            this.props.t1(testComponentId, state.properties);
+          }
+        }
 
         return state;
       });
     };
   }
 
-  test1 (state) {
-    for (const testComponentId in this.props.testComponents) {
-      if (this.props.testComponents[testComponentId].isActive) {
-        this.props.parent.setState((parentState) => ({
-          ...parentState,
-          testComponents: {
-            ...parentState.testComponents,
-            [testComponentId]: {
-              ...parentState.testComponents[testComponentId],
-              properties: state.properties,
-            },
-          },
-        }));
-      }
-    }
-  }
-
   render () {
-    let columns: React.ReactNode[] = [];
+    let $: React.ReactNode[] = [];
 
-    for (const propertyName in properties) {
-      columns = [
-        ...columns,
+    for (const propertyName in availableProperties) {
+      $ = [
+        ...$,
         (
-          <Column className="border" columnSize={6} key={propertyName}>
-            <Heading mY={2} size={6}>{propertyName}</Heading>
+          <Div className="border p-2" key={propertyName}>
+            <Heading size={6}>{propertyName}</Heading>
             {
-              properties[propertyName].map((property) => (
+              availableProperties[propertyName].map((property) => (
                 <Div alignItems="center" className="display-inline-flex" key={property} p={2}>
                   <Input
                     checked={property === this.state.properties[propertyName]}
@@ -100,12 +119,34 @@ class Test extends React.Component<{}, S> {
                 </Div>
               ))
             }
-          </Column>
+          </Div>
         ),
       ];
     }
 
-    return <Row className="border">{columns}</Row>;
+    let cmp = [];
+
+    for (const a in this.props.availableComponents) {
+      cmp = [ ...cmp, this.props.availableComponents[a].id, ];
+    }
+
+    return (
+      <>
+        <Div display="flex">
+          {
+            cmp.map((id) => (
+              <Div key={id} p={2}>
+                <Div alignItems="center" display="flex">
+                  <Input id={id} mR={2} name={id} onClick={this.props.t2(id)} type="checkbox" value={id} />
+                  <Label htmlFor={id}>{id}</Label>
+                </Div>
+              </Div>
+            ))
+          }
+        </Div>
+        {$}
+      </>
+    );
   }
 }
 
