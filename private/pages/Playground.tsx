@@ -15,102 +15,54 @@ import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
 import Select from '../components/Select';
 
-import Test from './components/Test';
-
 class Playground extends Page {
   constructor () {
     super(-1, 'playground');
   }
 
   element () {
-    interface S {
-      availableComponents: Test['props']['availableComponents'];
-    }
-
-    class $ extends React.Component<unknown, S> {
-      state: S = { availableComponents: {}, }
-
-      addComponentAsAvailable = (component) => {
-        const { id, } = component.props;
-
-        this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { component, id, isActive: false, properties: {}, }, }, }));
-      }
-
-      // update testComponent properties by id
-      t1: Test['props']['t1'] = (id, properties) => {
-        this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { ...s.availableComponents[id], properties, }, }, }));
-      }
-
-      // make testComponent active (onClick property)
-      t2: Test['props']['t2'] = (id) => {
-        return () => {
-          this.setState((s) => ({ ...s, availableComponents: { ...s.availableComponents, [id]: { ...s.availableComponents[id], isActive: !s.availableComponents[id].isActive, }, }, }));
-        };
-      }
-
+    class $ extends React.Component {
       render () {
         return (
-          <Container style={{ maxWidth: 'inherit', }}>
+          <Container>
+            <Anchor href="#">Anchor</Anchor>
+            <Heading headingSize={1}>Heading 1</Heading>
+            <Heading headingSize={2}>Heading 2</Heading>
+            <Heading headingSize={3}>Heading 3</Heading>
+            <Heading headingSize={4}>Heading 4</Heading>
+            <Heading headingSize={5}>Heading 5</Heading>
+            <Heading headingSize={6}>Heading 6</Heading>
+            <Paragraph>Paragraph</Paragraph>
             <Row>
-              <Column columnSize={[ 12, { '#': 2, }, ]}>
-                <Test availableComponents={this.state.availableComponents} t1={this.t1} t2={this.t2} />
-              </Column>
-              <Column columnSize={[ 12, { '#': '#', }, ]}>
-                <Div style={{ paddingBottom: '50%', position: 'relative', }}>
-                  <Row
-                    alignContent="center"
-                    id="layout"
-                    ref={this.addComponentAsAvailable}
-                    style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}
-                    {...this.state.availableComponents['layout']?.properties}
-                  >
-                    <Column columnSize="#">"#"</Column>
-                    <Column columnSize="width">"width"</Column>
-                    <Column columnSize={12}>12</Column>
-                    <Column columnSize={4}>4</Column>
-                    <Column columnSize={4}>4</Column>
-                  </Row>
+              <Column columnSize={[ 12, { '#': 6, }, ]}>
+                <Div mY={2}>
+                  <Label htmlFor="a" mB={2}>Label</Label>
+                  <Input id="a" placeholder="Input" type="text" />
                 </Div>
-                <Anchor href="#">Anchor</Anchor>
-                <Heading headingSize={1}>Heading 1</Heading>
-                <Heading headingSize={2}>Heading 2</Heading>
-                <Heading headingSize={3}>Heading 3</Heading>
-                <Heading headingSize={4}>Heading 4</Heading>
-                <Heading headingSize={5}>Heading 5</Heading>
-                <Heading headingSize={6}>Heading 6</Heading>
-                <Paragraph>Paragraph</Paragraph>
-                <Row id="test" ref={this.addComponentAsAvailable} {...this.state.availableComponents['test']?.properties}>
-                  <Column columnSize={[ 12, { '#': 6, }, ]}>
-                    <Div mY={2}>
-                      <Label htmlFor="a" mB={2}>Label</Label>
-                      <Input id="a" placeholder="Input" type="text" />
-                    </Div>
-                    <Div mY={2}>
-                      <Label htmlFor="b" mB={2}>Label</Label>
-                      <Input id="b" type="radio" />
-                    </Div>
-                    <Div mY={2}>
-                      <Label htmlFor="c" mB={2}>Label</Label>
-                      <Input id="c" type="checkbox" />
-                    </Div>
-                  </Column>
-                  <Column columnSize={[ 12, { '#': 6, }, ]}>
-                    <Div mY={2}>
-                      <Label htmlFor="d" mB={2}>Label</Label>
-                      <Input id="d" placeholder="Input" type="text" />
-                    </Div>
-                    <Div>
-                      <Label htmlFor="e" mB={2}>Label</Label>
-                      <Select id="e">
-                        <Option>Option 1</Option>
-                        <Option>Option 2</Option>
-                      </Select>
-                    </Div>
-                    <Div mY={2}>
-                      <Button type="button">Button</Button>
-                    </Div>
-                  </Column>
-                </Row>
+                <Div mY={2}>
+                  <Label htmlFor="b" mB={2}>Label</Label>
+                  <Input id="b" type="radio" />
+                </Div>
+                <Div mY={2}>
+                  <Label htmlFor="c" mB={2}>Label</Label>
+                  <Input id="c" type="checkbox" />
+                </Div>
+              </Column>
+              <Column columnSize={[ 12, { '#': 6, }, ]}>
+                <Div mY={2}>
+                  <Label htmlFor="d" mB={2}>Label</Label>
+                  <Input id="d" placeholder="Input" type="text" />
+                </Div>
+                <Div>
+                  <Label htmlFor="e" mB={2}>Label</Label>
+                  <Select id="e">
+                    <Option>Option</Option>
+                    <Option>Option</Option>
+                  </Select>
+                </Div>
+                <Div mY={2}>
+                  <Button type="button">Button</Button>
+                </Div>
               </Column>
             </Row>
           </Container>

@@ -6,7 +6,7 @@ class Button extends CSS {
   --button\\(background-color\\): var(--color);
   --button\\(border-color\\): var(--color);
   --button\\(color\\): 255, 255, 255;
-  -webkit-appearance: button;
+  appearance: button;
   background-color: rgba(var(--color), 0.5);
   border: 0;
   border-radius: 0.1875rem;
@@ -16,7 +16,7 @@ class Button extends CSS {
   font-size: inherit;
   line-height: inherit;
   margin: 0;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   transition: background-color 0.125s ease-in-out;
 }
 button:focus,
