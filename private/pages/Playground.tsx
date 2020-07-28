@@ -13,7 +13,6 @@ import Label from '../components/Label';
 import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
 
-import css from './Playground.css';
 import Test from './components/Test';
 
 class Playground extends Page {
@@ -22,74 +21,111 @@ class Playground extends Page {
   }
 
   element () {
-    return (
-      <>
-        <Div className={css.test} pX={3}>
-          <Row alignItems="center">
-            <Column columnSize="width" mL="#">
-              <Row alignItems="center">
-                <Column>
-                  <Anchor href="#" pY={2}>Anchor</Anchor>
-                </Column>
-                <Column>
-                  <Anchor href="#" pY={2}>Anchor</Anchor>
-                </Column>
-                <Column>
-                  <Button type="button">Button</Button>
-                </Column>
+    interface S {
+      testComponents: {
+        [id: string]: {
+          component: any;
+          isActive: boolean;
+          properties: {
+            [propertyName: string]: string;
+          };
+        };
+      };
+    }
+
+    class $ extends React.Component<{}, S> {
+      state: S = { testComponents: {}, }
+
+      test = (component: any): void => {
+        const id = component.props.id;
+
+        this.setState((state) => ({
+          ...state,
+          testComponents: {
+            ...state.testComponents,
+            [id]: {
+              component,
+              isActive: false,
+              properties: {},
+            },
+          },
+        }));
+      }
+
+      test1 = (event) => {
+        const { id, } = event.currentTarget;
+
+        this.setState((state) => ({
+          ...state,
+          testComponents: {
+            ...state.testComponents,
+            [id]: {
+              ...state.testComponents[id],
+              isActive: !state.testComponents[id].isActive,
+            },
+          },
+        }));
+      }
+
+      render () {
+        return (
+          <Container>
+            <Test parent={this} testComponents={this.state.testComponents} />
+            <Div style={{ paddingBottom: '50%', position: 'relative', }}>
+              <Row
+                {...this.state.testComponents['testComponent']?.properties}
+                className="border"
+                id="testComponent"
+                onClick={this.test1}
+                ref={this.test}
+                style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}
+              >
+                <Column className="border" columnSize="#">"#"</Column>
+                <Column className="border" columnSize="width">"width"</Column>
+                <Column className="border" columnSize={12}>12</Column>
+                <Column className="border" columnSize={4}>4</Column>
+                <Column className="border" columnSize={4}>4</Column>
               </Row>
-            </Column>
-          </Row>
-          <Row alignItems="center">
-            <Column columnSize="width">
-              <Anchor className="border-bottom display-block" href="#" pY={4}>Anchor</Anchor>
-            </Column>
-            <Column columnSize="width">
-              <Anchor className="display-block" href="#" pY={4}>Anchor</Anchor>
-            </Column>
-            <Column columnSize="width">
-              <Anchor className="display-block" href="#" pY={4}>Anchor</Anchor>
-            </Column>
-          </Row>
-        </Div>
-        <Container>
-          <Test />
-          <Anchor href="#">Anchor</Anchor>
-          <Heading size={1}>Heading 1</Heading>
-          <Heading size={2}>Heading 2</Heading>
-          <Heading size={3}>Heading 3</Heading>
-          <Heading size={4}>Heading 4</Heading>
-          <Heading size={5}>Heading 5</Heading>
-          <Heading size={6}>Heading 6</Heading>
-          <Paragraph>Paragraph</Paragraph>
-          <Row className="border">
-            <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
-              <Div mY={2}>
-                <Label htmlFor="a" mB={2}>Label</Label>
-                <Input id="a" placeholder="Input" type="text" />
-              </Div>
-              <Div mY={2}>
-                <Label htmlFor="b" mB={2}>Label</Label>
-                <Input id="b" type="radio" />
-              </Div>
-              <Div mY={2}>
-                <Label htmlFor="c" mB={2}>Label</Label>
-                <Input id="c" type="checkbox" />
-              </Div>
-            </Column>
-            <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
-              <Div mY={2}>
-                <Label htmlFor="d" mB={2}>Label</Label>
-                <Input id="d" placeholder="Input" type="text" />
-              </Div>
-              <Div mY={2}>
-                <Button type="button">Button</Button>
-              </Div>
-            </Column>
-          </Row>
-        </Container>
-      </>
-    );
+            </Div>
+            <Anchor href="#">Anchor</Anchor>
+            <Heading size={1}>Heading 1</Heading>
+            <Heading size={2}>Heading 2</Heading>
+            <Heading size={3}>Heading 3</Heading>
+            <Heading size={4}>Heading 4</Heading>
+            <Heading size={5}>Heading 5</Heading>
+            <Heading size={6}>Heading 6</Heading>
+            <Paragraph>Paragraph</Paragraph>
+            <Row className="border">
+              <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
+                <Div mY={2}>
+                  <Label htmlFor="a" mB={2}>Label</Label>
+                  <Input id="a" placeholder="Input" type="text" />
+                </Div>
+                <Div mY={2}>
+                  <Label htmlFor="b" mB={2}>Label</Label>
+                  <Input id="b" type="radio" />
+                </Div>
+                <Div mY={2}>
+                  <Label htmlFor="c" mB={2}>Label</Label>
+                  <Input id="c" type="checkbox" />
+                </Div>
+              </Column>
+              <Column className="border" columnSize={[ 12, { '#': 6, }, ]}>
+                <Div mY={2}>
+                  <Label htmlFor="d" mB={2}>Label</Label>
+                  <Input id="d" placeholder="Input" type="text" />
+                </Div>
+                <Div mY={2}>
+                  <Button type="button">Button</Button>
+                </Div>
+              </Column>
+            </Row>
+          </Container>
+        );
+      }
+    }
+
+    return <$ />;
   }
 
   template = template();

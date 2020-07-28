@@ -6,7 +6,7 @@ import Heading from '../../components/Heading';
 import Input from '../../components/Input';
 import Label from '../../components/Label';
 import Row from '../../components/Row';
-import { AlignContentProperty, AlignItemsProperty, CommonParameters, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
+import { AlignContentProperty, AlignItemsProperty, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
 
 function test<T extends { [propertyName: string]: readonly string[]; }> (t: T): T & { [propertyName: string]: readonly string[]; } {
   return t;
@@ -22,27 +22,65 @@ const properties = test({
 });
 
 interface S {
-  properties: { [propertyName in keyof typeof properties]: typeof properties[propertyName][number] };
+  properties: { [propertyName in keyof typeof properties]?: typeof properties[propertyName][number] };
 }
 
-class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & CommonParameters, S> {
-  state: S = {
-    properties: {
-      alignContent: 'space-between',
-      alignItems: 'baseline',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between',
-      textAlign: 'left',
-    },
-  };
+class Test extends React.Component<{}, S> {
+  state: S = { properties: {}, };
+
+  componentDidUpdate (prevProps) {
+    if (prevProps !== this.props) {
+      let lastActived;
+
+      for (const testComponentId in this.props.testComponents) {
+        if (this.props.testComponents[testComponentId].isActive) {
+          lastActived = this.props.testComponents[testComponentId];
+        }
+      }
+
+      if (lastActived) {
+        // toto musí ťahať z lastActived.component.props
+        console.log('lastActived', lastActived.properties);
+        this.setState((state) => ({ ...state, properties: lastActived.properties, }));
+      }
+    }
+  }
+
+  test (property, propertyName) {
+    return () => {
+      this.setState((state) => {
+        state = { ...state, properties: { ...state.properties, [propertyName]: property, }, };
+
+        this.test1(state);
+
+        return state;
+      });
+    };
+  }
+
+  test1 (state) {
+    for (const testComponentId in this.props.testComponents) {
+      if (this.props.testComponents[testComponentId].isActive) {
+        this.props.parent.setState((parentState) => ({
+          ...parentState,
+          testComponents: {
+            ...parentState.testComponents,
+            [testComponentId]: {
+              ...parentState.testComponents[testComponentId],
+              properties: state.properties,
+            },
+          },
+        }));
+      }
+    }
+  }
 
   render () {
-    let $: React.ReactNode[] = [];
+    let columns: React.ReactNode[] = [];
 
     for (const propertyName in properties) {
-      $ = [
-        ...$,
+      columns = [
+        ...columns,
         (
           <Column className="border" columnSize={6} key={propertyName}>
             <Heading mY={2} size={6}>{propertyName}</Heading>
@@ -50,11 +88,11 @@ class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & Commo
               properties[propertyName].map((property) => (
                 <Div alignItems="center" className="display-inline-flex" key={property} p={2}>
                   <Input
-                    defaultChecked={property === this.state.properties[propertyName]}
+                    checked={property === this.state.properties[propertyName]}
                     id={`${propertyName}-${property}`}
                     mR={2}
                     name={propertyName}
-                    onClick={() => this.setState((state) => ({ ...state, properties: { ...state.properties, [propertyName]: property, }, }))}
+                    onClick={this.test(property, propertyName)}
                     type="radio"
                     value={property}
                   />
@@ -67,20 +105,7 @@ class Test extends React.Component<React.ComponentPropsWithoutRef<'div'> & Commo
       ];
     }
 
-    return (
-      <Div {...this.props}>
-        <Row className="border">{$}</Row>
-        <Div style={{ paddingBottom: '50%', position: 'relative', }}>
-          <Row {...this.state.properties} className="border" style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0, }}>
-            <Column className="border" columnSize="#">"#"</Column>
-            <Column className="border" columnSize="width">"width"</Column>
-            <Column className="border" columnSize={12}>12</Column>
-            <Column className="border" columnSize={4}>4</Column>
-            <Column className="border" columnSize={4}>4</Column>
-          </Row>
-        </Div>
-      </Div>
-    );
+    return <Row className="border">{columns}</Row>;
   }
 }
 
