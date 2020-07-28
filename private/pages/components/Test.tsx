@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Column from '../../components/Column';
 import Div from '../../components/Div';
 import Heading from '../../components/Heading';
 import Input from '../../components/Input';
 import Label from '../../components/Label';
-import Row from '../../components/Row';
 import { AlignContentProperty, AlignItemsProperty, FlexDirectionProperty, FlexWrapProperty, JustifyContentProperty, TextAlignProperty, } from '../../helpers/decodeCommonParameters';
 
 function test<T extends { [propertyName: string]: readonly (number | string)[]; }> (t: T): T & { [propertyName: string]: readonly (number | string)[]; } {
@@ -41,7 +39,7 @@ interface S {
 class Test extends React.Component<P, S> {
   state: S = { properties: {}, };
 
-  componentDidUpdate (prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: any) {
+  componentDidUpdate (prevProps: Readonly<P>) {
     let prevLast;
     let currentLast;
 

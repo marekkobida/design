@@ -10,8 +10,10 @@ import Div from '../components/Div';
 import Heading from '../components/Heading';
 import Input from '../components/Input';
 import Label from '../components/Label';
+import Option from '../components/Option';
 import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
+import Select from '../components/Select';
 
 import Test from './components/Test';
 
@@ -50,7 +52,7 @@ class Playground extends Page {
         return (
           <Container style={{ maxWidth: 'inherit', }}>
             <Row>
-              <Column columnSize={[ 12, { '#': 3, }, ]}>
+              <Column columnSize={[ 12, { '#': 2, }, ]}>
                 <Test availableComponents={this.state.availableComponents} t1={this.t1} t2={this.t2} />
               </Column>
               <Column columnSize={[ 12, { '#': '#', }, ]}>
@@ -70,12 +72,12 @@ class Playground extends Page {
                   </Row>
                 </Div>
                 <Anchor href="#">Anchor</Anchor>
-                <Heading size={1}>Heading 1</Heading>
-                <Heading size={2}>Heading 2</Heading>
-                <Heading size={3}>Heading 3</Heading>
-                <Heading size={4}>Heading 4</Heading>
-                <Heading size={5}>Heading 5</Heading>
-                <Heading size={6}>Heading 6</Heading>
+                <Heading headingSize={1}>Heading 1</Heading>
+                <Heading headingSize={2}>Heading 2</Heading>
+                <Heading headingSize={3}>Heading 3</Heading>
+                <Heading headingSize={4}>Heading 4</Heading>
+                <Heading headingSize={5}>Heading 5</Heading>
+                <Heading headingSize={6}>Heading 6</Heading>
                 <Paragraph>Paragraph</Paragraph>
                 <Row id="test" ref={this.addComponentAsAvailable} {...this.state.availableComponents['test']?.properties}>
                   <Column columnSize={[ 12, { '#': 6, }, ]}>
@@ -96,6 +98,13 @@ class Playground extends Page {
                     <Div mY={2}>
                       <Label htmlFor="d" mB={2}>Label</Label>
                       <Input id="d" placeholder="Input" type="text" />
+                    </Div>
+                    <Div>
+                      <Label htmlFor="e" mB={2}>Label</Label>
+                      <Select id="e">
+                        <Option>Option 1</Option>
+                        <Option>Option 2</Option>
+                      </Select>
                     </Div>
                     <Div mY={2}>
                       <Button type="button">Button</Button>
