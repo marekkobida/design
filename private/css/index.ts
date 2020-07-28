@@ -7,6 +7,7 @@ import Grid from './components/Grid';
 import Helpers from './components/Helpers';
 import Input from './components/Input';
 import Label from './components/Label';
+import Select from './components/Select';
 import Typography from './components/Typography';
 
 class Index extends CSS {
@@ -35,6 +36,7 @@ ${new Grid().css()}
 ${new Helpers().css()}
 ${new Input().css()}
 ${new Label().css()}
+${new Select().css()}
 ${new Typography().css()}
 `;
   }
