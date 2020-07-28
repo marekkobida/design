@@ -5,7 +5,7 @@ import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeComm
 
 interface P { size: 1 | 2 | 3 | 4 | 5 | 6; }
 
-class Heading extends React.Component<React.ComponentPropsWithRef<'h1'> & P & CommonParameters> {
+class Heading extends React.Component<React.ComponentPropsWithoutRef<'h1'> & P & CommonParameters> {
   render () {
     const { className, size, ...notCommonParameters } = decodeCommonParameters(this.props);
 
