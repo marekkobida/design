@@ -4,24 +4,20 @@ class Button extends CSS {
   css (): string {
     return `button {
   --button\\(background-color\\): var(--color);
-  --button\\(border-color\\): var(--color);
+  --button\\(border-radius\\): ${this.test(2)};
   --button\\(color\\): 255, 255, 255;
+  --button\\(focus\\)\\(background-color\\): 64, 64, 64;
   appearance: button;
-  background-color: rgba(var(--color), 0.5);
+  background-color: rgb(var(--button\\(background-color\\)));
   border: 0;
-  border-radius: 0.1875rem;
+  border-radius: var(--button\\(border-radius\\));
   color: rgb(var(--button\\(color\\)));
   display: inline-block;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.125s ease-in-out;
+  padding: ${this.test(8)} ${this.test(16)};
 }
 button:focus,
 button:hover {
-  background-color: rgba(var(--color), 0.75);
+  background-color: rgb(var(--button\\(focus\\)\\(background-color\\)));
   outline: 0;
 }
 button:not(:disabled) {

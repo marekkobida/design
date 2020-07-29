@@ -30,26 +30,31 @@ body {
   line-height: var(--body\(line-height\));
   margin: 0;
 }
-button {
-  --button\(background-color\): var(--color);
-  --button\(border-color\): var(--color);
-  --button\(color\): 255, 255, 255;
-  appearance: button;
-  background-color: rgba(var(--color), 0.5);
-  border: 0;
-  border-radius: 0.1875rem;
-  color: rgb(var(--button\(color\)));
-  display: inline-block;
+button,
+input,
+select {
   font-family: inherit;
   font-size: inherit;
+  font-weight: inherit;
   line-height: inherit;
   margin: 0;
+}
+button {
+  --button\(background-color\): var(--color);
+  --button\(border-radius\): 0.125rem;
+  --button\(color\): 255, 255, 255;
+  --button\(focus\)\(background-color\): 64, 64, 64;
+  appearance: button;
+  background-color: rgb(var(--button\(background-color\)));
+  border: 0;
+  border-radius: var(--button\(border-radius\));
+  color: rgb(var(--button\(color\)));
+  display: inline-block;
   padding: 0.5rem 1rem;
-  transition: background-color 0.125s ease-in-out;
 }
 button:focus,
 button:hover {
-  background-color: rgba(var(--color), 0.75);
+  background-color: rgb(var(--button\(focus\)\(background-color\)));
   outline: 0;
 }
 button:not(:disabled) {
@@ -3659,35 +3664,34 @@ button:not(:disabled) {
 }
 input {
   --input\(background-color\): 255, 255, 255;
-  --input\(border-color\): var(--color);
+  --input\(border-color\): 64, 64, 64;
+  --input\(border-radius\): 0.125rem;
+  --input\(border-width\): 0.125rem;
+  --input\(color\): var(--color);
+  --input\(focus\)\(border-color\): 128, 128, 128;
   appearance: none;
   background-color: rgb(var(--input\(background-color\)));
-  border: 0.125rem solid rgba(var(--input\(border-color\)), 0.5);
-  border-radius: 0.1875rem;
+  border: var(--input\(border-width\)) solid rgb(var(--input\(border-color\)));
+  border-radius: var(--input\(border-radius\));
+  color: --input\(color\);
   display: block;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  margin: 0;
-  transition: border-color 0.125s ease-in-out;
 }
 input::placeholder {
-  color: rgba(var(--input\(border-color\)), 0.25);
+  color: rgba(var(--input\(color\)), 0.5);
 }
 input:focus {
-  border-color: rgba(var(--color), 0.75);
+  border-color: rgb(var(--input\(focus\)\(border-color\)));
   outline: 0;
 }
 input[type="checkbox"],
 input[type="radio"] {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  border-color: rgba(var(--color), 0.75);
-  border-width: 0.1875rem;
+  border-color: rgb(var(--input\(focus\)\(border-color\)));
+  border-width: calc(var(--input\(border-width\)) * 2);
 }
 input[type="radio"] {
   border-radius: 50%;
@@ -3702,32 +3706,27 @@ label {
 select {
   --select\(background-color\): 255, 255, 255;
   --select\(background-size\): 1.5rem;
-  --select\(border-color\): var(--color);
+  --select\(border-color\): 64, 64, 64;
   --select\(border-radius\): 0.125rem;
   --select\(border-width\): 0.125rem;
+  --select\(focus\)\(border-color\): 128, 128, 128;
   --select\(padding-bottom\): 0.5rem;
   --select\(padding-left\): 1rem;
   --select\(padding-right\): 2rem;
   --select\(padding-top\): 0.5rem;
   appearance: none;
   background-color: rgb(var(--select\(background-color\)));
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none'%3E%3Cpath d='M16 24L32 40L48 24' stroke='%23000' stroke-width='8' style='fill: var(--color)'/%3E%3C/svg%3E");
   background-position: right calc((var(--select\(padding-right\)) - var(--select\(background-size\))) / 2) center;
   background-repeat: no-repeat;
   background-size: var(--select\(background-size\));
-  border: var(--select\(border-width\)) solid rgba(var(--select\(border-color\)), 0.5);
+  border: var(--select\(border-width\)) solid rgb(var(--select\(border-color\)));
   border-radius: var(--select\(border-radius\));
   display: block;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  margin: 0;
   padding: var(--select\(padding-top\)) var(--select\(padding-right\)) var(--select\(padding-bottom\)) var(--select\(padding-left\));
   width: 100%;
 }
 select:focus {
-  border-color: rgba(var(--color), 0.75);
+  border-color: rgb(var(--select\(focus\)\(border-color\)));
   outline: 0;
 }
 a {

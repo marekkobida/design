@@ -37,16 +37,24 @@ class Playground extends Page {
               <Column columnSize={[ 12, { '#': 6, }, ]}>
                 <Div mY={2}>
                   <Label htmlFor="a" mB={2}>Label</Label>
-                  <Input id="a" placeholder="Input" type="text" />
+                  <Input defaultValue="Marek Kobida" id="a" placeholder="Input" type="text" />
                 </Div>
-                <Div mY={2}>
-                  <Label htmlFor="b" mB={2}>Label</Label>
-                  <Input id="b" type="radio" />
-                </Div>
-                <Div mY={2}>
-                  <Label htmlFor="c" mB={2}>Label</Label>
-                  <Input id="c" type="checkbox" />
-                </Div>
+                <Row alignItems="center" mY={2}>
+                  <Column columnSize="width">
+                    <Input id="b" type="radio" />
+                  </Column>
+                  <Column columnSize="width">
+                    <Label htmlFor="b">Label</Label>
+                  </Column>
+                </Row>
+                <Row alignItems="center" mY={2}>
+                  <Column columnSize="width">
+                    <Input id="c" type="checkbox" />
+                  </Column>
+                  <Column columnSize="width">
+                    <Label htmlFor="c">Label</Label>
+                  </Column>
+                </Row>
               </Column>
               <Column columnSize={[ 12, { '#': 6, }, ]}>
                 <Div mY={2}>

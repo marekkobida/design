@@ -4,41 +4,40 @@ class Input extends CSS {
   css (): string {
     return `input {
   --input\\(background-color\\): 255, 255, 255;
-  --input\\(border-color\\): var(--color);
+  --input\\(border-color\\): 64, 64, 64;
+  --input\\(border-radius\\): ${this.test(2)};
+  --input\\(border-width\\): ${this.test(2)};
+  --input\\(color\\): var(--color);
+  --input\\(focus\\)\\(border-color\\): 128, 128, 128;
   appearance: none;
   background-color: rgb(var(--input\\(background-color\\)));
-  border: 0.125rem solid rgba(var(--input\\(border-color\\)), 0.5);
-  border-radius: 0.1875rem;
+  border: var(--input\\(border-width\\)) solid rgb(var(--input\\(border-color\\)));
+  border-radius: var(--input\\(border-radius\\));
+  color: --input\\(color\\);
   display: block;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  margin: 0;
-  transition: border-color 0.125s ease-in-out;
 }
 input::placeholder {
-  color: rgba(var(--input\\(border-color\\)), 0.25);
+  color: rgba(var(--input\\(color\\)), 0.5);
 }
 input:focus {
-  border-color: rgba(var(--color), 0.75);
+  border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
   outline: 0;
 }
 input[type="checkbox"],
 input[type="radio"] {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: ${this.test(20)};
+  width: ${this.test(20)};
 }
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  border-color: rgba(var(--color), 0.75);
-  border-width: 0.1875rem;
+  border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
+  border-width: calc(var(--input\\(border-width\\)) * 2);
 }
 input[type="radio"] {
   border-radius: 50%;
 }
 input[type="text"] {
-  padding: 0.5rem 1rem;
+  padding: ${this.test(8)} ${this.test(16)};
   width: 100%;
 }`;
   }

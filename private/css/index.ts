@@ -30,6 +30,15 @@ body {
   line-height: var(--body\\(line-height\\));
   margin: 0;
 }
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+}
 ${new Button().css()}
 ${new Flex().css()}
 ${new Grid().css()}
