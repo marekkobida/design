@@ -35,11 +35,11 @@ class Playground extends Page {
             <Paragraph>Paragraph</Paragraph>
             <Row>
               <Column columnSize={[ 12, { '#': 6, }, ]}>
-                <Div mY={2}>
+                <Div mY={4}>
                   <Label htmlFor="a" mB={2}>Label</Label>
-                  <Input defaultValue="Marek Kobida" id="a" placeholder="Input" type="text" />
+                  <Input id="a" placeholder="Input" type="text" />
                 </Div>
-                <Row alignItems="center" mY={2}>
+                <Row alignItems="center" mY={4}>
                   <Column columnSize="width">
                     <Input id="b" type="radio" />
                   </Column>
@@ -47,7 +47,7 @@ class Playground extends Page {
                     <Label htmlFor="b">Label</Label>
                   </Column>
                 </Row>
-                <Row alignItems="center" mY={2}>
+                <Row alignItems="center" mY={4}>
                   <Column columnSize="width">
                     <Input id="c" type="checkbox" />
                   </Column>
@@ -57,18 +57,18 @@ class Playground extends Page {
                 </Row>
               </Column>
               <Column columnSize={[ 12, { '#': 6, }, ]}>
-                <Div mY={2}>
+                <Div mY={4}>
                   <Label htmlFor="d" mB={2}>Label</Label>
                   <Input id="d" placeholder="Input" type="text" />
                 </Div>
-                <Div>
+                <Div mY={4}>
                   <Label htmlFor="e" mB={2}>Label</Label>
                   <Select id="e">
                     <Option>Option</Option>
                     <Option>Option</Option>
                   </Select>
                 </Div>
-                <Div mY={2}>
+                <Div mY={4}>
                   <Button type="button">Button</Button>
                 </Div>
               </Column>
