@@ -80,19 +80,19 @@ class Helpers extends CSS {
         );
 
         return `.border {
-  border: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
+  border: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 .border-bottom {
-  border-bottom: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
+  border-bottom: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 .border-left {
-  border-left: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
+  border-left: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 .border-right {
-  border-right: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
+  border-right: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 .border-top {
-  border-top: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
+  border-top: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 ${this.display()}
 ${a('margin', 'm')}

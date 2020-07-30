@@ -50,11 +50,11 @@
     },
     {
       "name": "--button\\(focus\\)\\(background-color\\)",
-      "value": "128, 128, 128"
+      "value": "0, 0, 255"
     },
     {
       "name": "--button\\(focus\\)\\(border-color\\)",
-      "value": "128, 128, 128"
+      "value": "0, 0, 255"
     },
     {
       "name": "--color",
@@ -114,7 +114,11 @@
     },
     {
       "name": "--input\\(checked\\)\\(background-color\\)",
-      "value": "var(--color)"
+      "value": "0, 0, 255"
+    },
+    {
+      "name": "--input\\(checked\\)\\(border-color\\)",
+      "value": "0, 0, 255"
     },
     {
       "name": "--input\\(color\\)",
@@ -122,7 +126,7 @@
     },
     {
       "name": "--input\\(focus\\)\\(border-color\\)",
-      "value": "128, 128, 128"
+      "value": "0, 0, 255"
     },
     {
       "name": "--select\\(background-color\\)",
@@ -142,11 +146,7 @@
     },
     {
       "name": "--select\\(focus\\)\\(border-color\\)",
-      "value": "128, 128, 128"
-    },
-    {
-      "name": "--input\\(placeholder\\)\\(color\\)",
-      "value": "128, 128, 128"
+      "value": "0, 0, 255"
     }
   ],
   "breakpoints": [

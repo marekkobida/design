@@ -9,13 +9,14 @@ class Input extends CSS {
   border-radius: var(--input\\(border-radius\\));
   color: rgb(var(--input\\(color\\)));
   display: block;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 input::placeholder {
-  color: rgb(var(--input\\(placeholder\\)\\(color\\)));
+  color: rgb(var(--input\\(color\\)), 0.25);
 }
 input:focus {
   border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
+  box-shadow: 0 0 0 0.125rem rgba(var(--input\\(focus\\)\\(border-color\\)), 0.25);
   outline: 0;
 }
 input[type="checkbox"],
@@ -29,6 +30,7 @@ input[type="radio"] {
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
   background-color: rgb(var(--input\\(checked\\)\\(background-color\\)));
+  border-color: rgb(var(--input\\(checked\\)\\(border-color\\)));
 }
 input[type="checkbox"]:checked {
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");

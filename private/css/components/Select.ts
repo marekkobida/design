@@ -15,11 +15,12 @@ class Select extends CSS {
   display: block;
   /*       | pT                 | pB              | pR                   | pT                                                                         | pB            | pL */
   padding: ${this.test(8)} calc(${this.test(8)} + ${this.test(12)} * 2 + ${this.test(8)} + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) ${this.test(8)} ${this.test(12)};
-  transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }
 select:focus {
   border-color: rgb(var(--select\\(focus\\)\\(border-color\\)));
+  box-shadow: 0 0 0 0.125rem rgba(var(--select\\(focus\\)\\(border-color\\)), 0.25);
   outline: 0;
 }`;
   }
