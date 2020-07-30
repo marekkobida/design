@@ -12,7 +12,7 @@ class Select extends CSS {
   border: var(--select\\(border-width\\)) solid rgb(var(--select\\(border-color\\)));
   border-radius: var(--select\\(border-radius\\));
   display: block;
-  padding: var(--select\\(padding-top\\)) calc(var(--select\\(padding-bottom\\)) + var(--select\\(padding-right\\)) + var(--select\\(padding-top\\)) + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) var(--select\\(padding-bottom\\)) var(--select\\(padding-left\\));
+  padding: var(--select\\(padding-top\\)) calc(var(--select\\(padding-bottom\\)) + var(--select\\(padding-right\\)) * 2 + var(--select\\(padding-top\\)) + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) var(--select\\(padding-bottom\\)) var(--select\\(padding-left\\));
   width: 100%;
 }
 select:focus {

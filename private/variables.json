@@ -21,6 +21,34 @@
       "value": "1.5"
     },
     {
+      "name": "--button\\(background-color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--button\\(border-color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--button\\(border-radius\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--button\\(border-width\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--button\\(color\\)",
+      "value": "255, 255, 255"
+    },
+    {
+      "name": "--button\\(focus\\)\\(background-color\\)",
+      "value": "128, 128, 128"
+    },
+    {
+      "name": "--button\\(focus\\)\\(border-color\\)",
+      "value": "128, 128, 128"
+    },
+    {
       "name": "--color",
       "value": "0, 0, 0"
     },
@@ -59,6 +87,70 @@
     {
       "name": "--heading\\(line-height\\)",
       "value": "1.25"
+    },
+    {
+      "name": "--input\\(background-color\\)",
+      "value": "255, 255, 255"
+    },
+    {
+      "name": "--input\\(border-color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--input\\(border-radius\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--input\\(border-width\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--input\\(checked\\)\\(background-color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--input\\(color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--input\\(focus\\)\\(border-color\\)",
+      "value": "128, 128, 128"
+    },
+    {
+      "name": "--select\\(background-color\\)",
+      "value": "255, 255, 255"
+    },
+    {
+      "name": "--select\\(border-color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--select\\(border-radius\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--select\\(border-width\\)",
+      "value": "0.125rem"
+    },
+    {
+      "name": "--select\\(focus\\)\\(border-color\\)",
+      "value": "128, 128, 128"
+    },
+    {
+      "name": "--select\\(padding-bottom\\)",
+      "value": "0.5rem"
+    },
+    {
+      "name": "--select\\(padding-left\\)",
+      "value": "0.75rem"
+    },
+    {
+      "name": "--select\\(padding-right\\)",
+      "value": "0.75rem"
+    },
+    {
+      "name": "--select\\(padding-top\\)",
+      "value": "0.5rem"
     }
   ],
   "breakpoints": [
