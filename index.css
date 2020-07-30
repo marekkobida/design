@@ -11,8 +11,8 @@
   --button\(border-radius\): 0.125rem;
   --button\(border-width\): var(--border\(border-width\));
   --button\(color\): 255, 255, 255;
-  --button\(focus\)\(background-color\): 128, 128, 128;
-  --button\(focus\)\(border-color\): 128, 128, 128;
+  --button\(focus\)\(background-color\): 0, 0, 255;
+  --button\(focus\)\(border-color\): 0, 0, 255;
   --color: 0, 0, 0;
   --h1\(font-size\): 2.75rem;
   --h2\(font-size\): 2.25rem;
@@ -27,15 +27,15 @@
   --input\(border-color\): var(--color);
   --input\(border-radius\): 0.125rem;
   --input\(border-width\): var(--border\(border-width\));
-  --input\(checked\)\(background-color\): var(--color);
+  --input\(checked\)\(background-color\): 0, 0, 255;
+  --input\(checked\)\(border-color\): 0, 0, 255;
   --input\(color\): var(--color);
-  --input\(focus\)\(border-color\): 128, 128, 128;
+  --input\(focus\)\(border-color\): 0, 0, 255;
   --select\(background-color\): 255, 255, 255;
   --select\(border-color\): var(--color);
   --select\(border-radius\): 0.125rem;
   --select\(border-width\): 0.125rem;
-  --select\(focus\)\(border-color\): 128, 128, 128;
-  --input\(placeholder\)\(color\): 128, 128, 128;
+  --select\(focus\)\(border-color\): 0, 0, 255;
 }
 *,
 *::after,
@@ -69,7 +69,10 @@ button {
   color: rgb(var(--button\(color\)));
   display: inline-block;
   padding: 0.5rem 0.75rem;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+button:focus {
+  box-shadow: 0 0 0 0.125rem rgba(var(--select\(focus\)\(border-color\)), 0.25);
 }
 button:focus,
 button:hover {
@@ -3649,13 +3652,14 @@ input {
   border-radius: var(--input\(border-radius\));
   color: rgb(var(--input\(color\)));
   display: block;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 input::placeholder {
-  color: rgb(var(--input\(placeholder\)\(color\)));
+  color: rgb(var(--input\(color\)), 0.25);
 }
 input:focus {
   border-color: rgb(var(--input\(focus\)\(border-color\)));
+  box-shadow: 0 0 0 0.125rem rgba(var(--input\(focus\)\(border-color\)), 0.25);
   outline: 0;
 }
 input[type="checkbox"],
@@ -3669,6 +3673,7 @@ input[type="radio"] {
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
   background-color: rgb(var(--input\(checked\)\(background-color\)));
+  border-color: rgb(var(--input\(checked\)\(border-color\)));
 }
 input[type="checkbox"]:checked {
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
@@ -3699,11 +3704,12 @@ select {
   display: block;
   /*       | pT                 | pB              | pR                   | pT                                                                         | pB            | pL */
   padding: 0.5rem calc(0.5rem + 0.75rem * 2 + 0.5rem + var(--body\(font-size\)) * var(--body\(line-height\))) 0.5rem 0.75rem;
-  transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }
 select:focus {
   border-color: rgb(var(--select\(focus\)\(border-color\)));
+  box-shadow: 0 0 0 0.125rem rgba(var(--select\(focus\)\(border-color\)), 0.25);
   outline: 0;
 }
 a {
