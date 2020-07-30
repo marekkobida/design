@@ -80,29 +80,19 @@ class Helpers extends CSS {
         );
 
         return `.border {
-  --border--border-color: var(--color);
-  --border--border-width: ${this.test(2)};
-  border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
 }
 .border-bottom {
-  --border--border-color: var(--color);
-  --border--border-width: ${this.test(2)};
-  border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-bottom: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
 }
 .border-left {
-  --border--border-color: var(--color);
-  --border--border-width: ${this.test(2)};
-  border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-left: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
 }
 .border-right {
-  --border--border-color: var(--color);
-  --border--border-width: ${this.test(2)};
-  border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-right: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
 }
 .border-top {
-  --border--border-color: var(--color);
-  --border--border-width: ${this.test(2)};
-  border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-top: var(--border\\(border-width\\)) solid rgba(var(--border\\(border-color\\)), 0.25) !important;
 }
 ${this.display()}
 ${a('margin', 'm')}

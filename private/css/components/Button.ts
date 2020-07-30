@@ -10,6 +10,7 @@ class Button extends CSS {
   color: rgb(var(--button\\(color\\)));
   display: inline-block;
   padding: ${this.test(8)} ${this.test(12)};
+  transition: background-color 0.25s, border-color 0.25s;
 }
 button:focus,
 button:hover {

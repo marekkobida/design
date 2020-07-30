@@ -12,7 +12,7 @@ class Input extends CSS {
   transition: background-color 0.25s, border-color 0.25s;
 }
 input::placeholder {
-  color: rgba(var(--input\\(color\\)), 0.5);
+  color: rgb(var(--input\\(placeholder\\)\\(color\\)));
 }
 input:focus {
   border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
@@ -31,13 +31,13 @@ input[type="radio"]:checked {
   background-color: rgb(var(--input\\(checked\\)\\(background-color\\)));
 }
 input[type="checkbox"]:checked {
-  background-image: url(~@redredsk/design/private/checkbox.svg);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
 }
 input[type="radio"] {
   border-radius: 50%;
 }
 input[type="radio"]:checked {
-  background-image: url(~@redredsk/design/private/radio.svg);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 input[type="text"] {
   padding: ${this.test(8)} ${this.test(12)};

@@ -4,10 +4,12 @@
   --body\(font-size\): 1rem;
   --body\(font-weight\): 400;
   --body\(line-height\): 1.5;
+  --border\(border-color\): var(--color);
+  --border\(border-width\): 0.125rem;
   --button\(background-color\): var(--color);
   --button\(border-color\): var(--color);
   --button\(border-radius\): 0.125rem;
-  --button\(border-width\): 0.125rem;
+  --button\(border-width\): var(--border\(border-width\));
   --button\(color\): 255, 255, 255;
   --button\(focus\)\(background-color\): 128, 128, 128;
   --button\(focus\)\(border-color\): 128, 128, 128;
@@ -24,7 +26,7 @@
   --input\(background-color\): 255, 255, 255;
   --input\(border-color\): var(--color);
   --input\(border-radius\): 0.125rem;
-  --input\(border-width\): 0.125rem;
+  --input\(border-width\): var(--border\(border-width\));
   --input\(checked\)\(background-color\): var(--color);
   --input\(color\): var(--color);
   --input\(focus\)\(border-color\): 128, 128, 128;
@@ -33,10 +35,7 @@
   --select\(border-radius\): 0.125rem;
   --select\(border-width\): 0.125rem;
   --select\(focus\)\(border-color\): 128, 128, 128;
-  --select\(padding-bottom\): 0.5rem;
-  --select\(padding-left\): 0.75rem;
-  --select\(padding-right\): 0.75rem;
-  --select\(padding-top\): 0.5rem;
+  --input\(placeholder\)\(color\): 128, 128, 128;
 }
 *,
 *::after,
@@ -70,6 +69,7 @@ button {
   color: rgb(var(--button\(color\)));
   display: inline-block;
   padding: 0.5rem 0.75rem;
+  transition: background-color 0.25s, border-color 0.25s;
 }
 button:focus,
 button:hover {
@@ -985,29 +985,19 @@ button:not(:disabled) {
   margin-right: -0.75rem;
 }
 .border {
-  --border--border-color: var(--color);
-  --border--border-width: 0.125rem;
-  border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
 }
 .border-bottom {
-  --border--border-color: var(--color);
-  --border--border-width: 0.125rem;
-  border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-bottom: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
 }
 .border-left {
-  --border--border-color: var(--color);
-  --border--border-width: 0.125rem;
-  border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-left: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
 }
 .border-right {
-  --border--border-color: var(--color);
-  --border--border-width: 0.125rem;
-  border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-right: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
 }
 .border-top {
-  --border--border-color: var(--color);
-  --border--border-width: 0.125rem;
-  border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+  border-top: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
 }
 .display-block {
   display: block !important;
@@ -1659,29 +1649,19 @@ button:not(:disabled) {
 }
 @media (min-width: 36rem) {
   .border {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-bottom {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-bottom: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-left {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-left: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-right {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-right: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-top {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-top: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .display-block {
     display: block !important;
@@ -2334,29 +2314,19 @@ button:not(:disabled) {
 }
 @media (min-width: 48rem) {
   .border {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-bottom {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-bottom: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-left {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-left: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-right {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-right: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-top {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-top: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .display-block {
     display: block !important;
@@ -3009,29 +2979,19 @@ button:not(:disabled) {
 }
 @media (min-width: 60rem) {
   .border {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-bottom {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-bottom: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-bottom: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-left {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-left: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-left: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-right {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-right: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-right: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .border-top {
-    --border--border-color: var(--color);
-    --border--border-width: 0.125rem;
-    border-top: var(--border--border-width) solid rgba(var(--border--border-color), 0.25) !important;
+    border-top: var(--border\(border-width\)) solid rgba(var(--border\(border-color\)), 0.25) !important;
   }
   .display-block {
     display: block !important;
@@ -3692,7 +3652,7 @@ input {
   transition: background-color 0.25s, border-color 0.25s;
 }
 input::placeholder {
-  color: rgba(var(--input\(color\)), 0.5);
+  color: rgb(var(--input\(placeholder\)\(color\)));
 }
 input:focus {
   border-color: rgb(var(--input\(focus\)\(border-color\)));
@@ -3711,13 +3671,13 @@ input[type="radio"]:checked {
   background-color: rgb(var(--input\(checked\)\(background-color\)));
 }
 input[type="checkbox"]:checked {
-  background-image: url(~@redredsk/design/private/checkbox.svg);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
 }
 input[type="radio"] {
   border-radius: 50%;
 }
 input[type="radio"]:checked {
-  background-image: url(~@redredsk/design/private/radio.svg);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 input[type="text"] {
   padding: 0.5rem 0.75rem;
@@ -3729,14 +3689,17 @@ label {
 select {
   appearance: none;
   background-color: rgb(var(--select\(background-color\)));
-  background-image: url(~@redredsk/design/private/select.svg);
-  background-position: right var(--select\(padding-right\)) center;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
+  /*                         | pR */
+  background-position: right 0.75rem center;
   background-repeat: no-repeat;
   background-size: contain;
   border: var(--select\(border-width\)) solid rgb(var(--select\(border-color\)));
   border-radius: var(--select\(border-radius\));
   display: block;
-  padding: var(--select\(padding-top\)) calc(var(--select\(padding-bottom\)) + var(--select\(padding-right\)) * 2 + var(--select\(padding-top\)) + var(--body\(font-size\)) * var(--body\(line-height\))) var(--select\(padding-bottom\)) var(--select\(padding-left\));
+  /*       | pT                 | pB              | pR                   | pT                                                                         | pB            | pL */
+  padding: 0.5rem calc(0.5rem + 0.75rem * 2 + 0.5rem + var(--body\(font-size\)) * var(--body\(line-height\))) 0.5rem 0.75rem;
+  transition: background-color 0.25s, border-color 0.25s;
   width: 100%;
 }
 select:focus {
