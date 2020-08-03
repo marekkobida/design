@@ -4,7 +4,7 @@ import React from 'react';
 import decodeClassName from '../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 
-class Anchor extends React.Component<React.ComponentPropsWithoutRef<'a'> & CommonParameters> {
+class Anchor extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'a'>, keyof CommonParameters>> {
   serverRequest: ServerRequest = new ServerRequest('http://127.0.0.1:1337');
 
   onClick: Anchor['props']['onClick'] = (event) => {

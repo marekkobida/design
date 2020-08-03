@@ -9,7 +9,7 @@ interface P {
   columnSize?: EncodedResponsiveClassName<'#' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'width'>;
 }
 
-class Column extends React.Component<React.ComponentPropsWithoutRef<'div'> & P & CommonParameters> {
+class Column extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters> & P> {
   render () {
     const { className, columnOffset, columnSize, ...notCommonParameters } = decodeCommonParameters(this.props);
 
