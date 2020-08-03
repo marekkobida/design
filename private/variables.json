@@ -145,8 +145,20 @@
       "value": "0.125rem"
     },
     {
+      "name": "--select\\(color\\)",
+      "value": "var(--color)"
+    },
+    {
+      "name": "--select\\(focus\\)\\(background-color\\)",
+      "value": "var(--select\\(background-color\\))"
+    },
+    {
       "name": "--select\\(focus\\)\\(border-color\\)",
       "value": "0, 0, 255"
+    },
+    {
+      "name": "--select\\(focus\\)\\(color\\)",
+      "value": "var(--select\\(color\\))"
     }
   ],
   "breakpoints": [

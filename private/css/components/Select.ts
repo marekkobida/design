@@ -12,6 +12,7 @@ class Select extends CSS {
   background-size: contain;
   border: var(--select\\(border-width\\)) solid rgb(var(--select\\(border-color\\)));
   border-radius: var(--select\\(border-radius\\));
+  color: rgb(var(--select\\(color\\)));
   display: block;
   /*       | pT                 | pB              | pR                   | pT                                                                         | pB            | pL */
   padding: ${this.test(8)} calc(${this.test(8)} + ${this.test(12)} * 2 + ${this.test(8)} + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) ${this.test(8)} ${this.test(12)};
@@ -19,8 +20,10 @@ class Select extends CSS {
   width: 100%;
 }
 select:focus {
+  background-color: rgb(var(--select\\(focus\\)\\(background-color\\)));
   border-color: rgb(var(--select\\(focus\\)\\(border-color\\)));
-  box-shadow: 0 0 0 0.125rem rgba(var(--select\\(focus\\)\\(border-color\\)), 0.25);
+  box-shadow: 0 0 0 var(--select\\(border-width\\)) rgba(var(--select\\(focus\\)\\(border-color\\)), 0.25);
+  color: rgb(var(--select\\(focus\\)\\(color\\)));
   outline: 0;
 }`;
   }

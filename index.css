@@ -35,7 +35,10 @@
   --select\(border-color\): var(--color);
   --select\(border-radius\): 0.125rem;
   --select\(border-width\): 0.125rem;
+  --select\(color\): var(--color);
+  --select\(focus\)\(background-color\): var(--select\(background-color\));
   --select\(focus\)\(border-color\): 0, 0, 255;
+  --select\(focus\)\(color\): var(--select\(color\));
   --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -3711,6 +3714,7 @@ select {
   background-size: contain;
   border: var(--select\(border-width\)) solid rgb(var(--select\(border-color\)));
   border-radius: var(--select\(border-radius\));
+  color: rgb(var(--select\(color\)));
   display: block;
   /*       | pT                 | pB              | pR                   | pT                                                                         | pB            | pL */
   padding: 0.5rem calc(0.5rem + 0.75rem * 2 + 0.5rem + var(--body\(font-size\)) * var(--body\(line-height\))) 0.5rem 0.75rem;
@@ -3718,8 +3722,10 @@ select {
   width: 100%;
 }
 select:focus {
+  background-color: rgb(var(--select\(focus\)\(background-color\)));
   border-color: rgb(var(--select\(focus\)\(border-color\)));
-  box-shadow: 0 0 0 0.125rem rgba(var(--select\(focus\)\(border-color\)), 0.25);
+  box-shadow: 0 0 0 var(--select\(border-width\)) rgba(var(--select\(focus\)\(border-color\)), 0.25);
+  color: rgb(var(--select\(focus\)\(color\)));
   outline: 0;
 }
 a {
