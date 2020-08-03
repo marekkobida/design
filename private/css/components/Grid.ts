@@ -47,7 +47,7 @@ ${sizes}
     return `.container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 60rem;
+  max-width: 72rem;
   padding-left: ${this.test(12)};
   padding-right: ${this.test(12)};
 }`;

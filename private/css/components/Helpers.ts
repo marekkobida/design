@@ -79,19 +79,19 @@ class Helpers extends CSS {
           this.variables.spaces
         );
 
-        return `.border {
+        return `.${breakpoint.name}border {
   border: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
-.border-bottom {
+.${breakpoint.name}border-bottom {
   border-bottom: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
-.border-left {
+.${breakpoint.name}border-left {
   border-left: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
-.border-right {
+.${breakpoint.name}border-right {
   border-right: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
-.border-top {
+.${breakpoint.name}border-top {
   border-top: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
 ${this.display()}

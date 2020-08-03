@@ -14,6 +14,7 @@ class Index extends CSS {
   css (): string {
     return `:root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
+${this.for(($) => `  --space-${$.name}: ${$.size};`, this.variables['spaces'])}
 }
 *,
 *::after,

@@ -53,15 +53,17 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
 }
 
 function decodeClassName (...encodedClassNames: EncodedClassName[]): DecodedClassName | undefined {
-  const decodedClassNames = $(...encodedClassNames);
-
-  for (const i in decodedClassNames) {
-    const decodedClassName = decodedClassNames[i];
-
-    decodedClassNames[i] = css[decodedClassName] || decodedClassName;
-  }
+  let decodedClassNames = $(...encodedClassNames);
 
   if (decodedClassNames.length > 0) {
+    decodedClassNames = decodedClassNames.sort((a, b) => a.localeCompare(b));
+
+    for (const i in decodedClassNames) {
+      const decodedClassName = decodedClassNames[i];
+
+      decodedClassNames[i] = css[decodedClassName] || decodedClassName;
+    }
+
     return decodedClassNames.join(' ');
   }
 }

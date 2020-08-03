@@ -36,6 +36,16 @@
   --select\(border-radius\): 0.125rem;
   --select\(border-width\): 0.125rem;
   --select\(focus\)\(border-color\): 0, 0, 255;
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-16: 4rem;
 }
 *,
 *::after,
@@ -977,7 +987,7 @@ button:not(:disabled) {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 60rem;
+  max-width: 72rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -1651,19 +1661,19 @@ button:not(:disabled) {
   margin-top: auto !important;
 }
 @media (min-width: 36rem) {
-  .border {
+  .\#border {
     border: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-bottom {
+  .\#border-bottom {
     border-bottom: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-left {
+  .\#border-left {
     border-left: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-right {
+  .\#border-right {
     border-right: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-top {
+  .\#border-top {
     border-top: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
   .display-block {
@@ -2316,19 +2326,19 @@ button:not(:disabled) {
   }
 }
 @media (min-width: 48rem) {
-  .border {
+  .\#\#border {
     border: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-bottom {
+  .\#\#border-bottom {
     border-bottom: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-left {
+  .\#\#border-left {
     border-left: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-right {
+  .\#\#border-right {
     border-right: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-top {
+  .\#\#border-top {
     border-top: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
   .display-block {
@@ -2981,19 +2991,19 @@ button:not(:disabled) {
   }
 }
 @media (min-width: 60rem) {
-  .border {
+  .\#\#\#border {
     border: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-bottom {
+  .\#\#\#border-bottom {
     border-bottom: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-left {
+  .\#\#\#border-left {
     border-left: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-right {
+  .\#\#\#border-right {
     border-right: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
-  .border-top {
+  .\#\#\#border-top {
     border-top: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
   }
   .display-block {
