@@ -14,6 +14,7 @@ import Option from '../components/Option';
 import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
 import Select from '../components/Select';
+import TextArea from '../components/TextArea';
 
 class Playground extends Page {
   constructor () {
@@ -64,16 +65,29 @@ class Playground extends Page {
               <Input id="d" placeholder="Input" type="text" />
             </Div>
             <Div mY={4}>
-              <Label htmlFor="e" mB={2}>Label</Label>
-              <Select id="e">
+              <Label htmlFor="f" mB={2}>Label</Label>
+              <Select id="f">
                 <Option>Option</Option>
                 <Option>Option</Option>
               </Select>
             </Div>
+            <Div mY={4}>
+              <Label htmlFor="g" mB={2}>Label</Label>
+              <TextArea id="g" placeholder="TextArea" rows={3} />
+            </Div>
+            <Div mY={4}>
+              <Input className="button" type="button" value={'[type="button"]'} />
+            </Div>
+            <Div mY={4} textAlign="center">
+              <Input className="button" type="reset" value={'[type="reset"]'} />
+            </Div>
+            <Div mY={4} textAlign="right">
+              <Input className="button" type="submit" value={'[type="submit"]'} />
+            </Div>
             <Div mY={4} textAlign="center">
               <Button type="button">Button</Button>
             </Div>
-            <Div mY={4} textAlign="center">
+            <Div mY={4}>
               <Anchor className="button" href="#">Anchor</Anchor>
             </Div>
           </Column>
