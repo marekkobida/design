@@ -53,11 +53,9 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
 }
 
 function decodeClassName (...encodedClassNames: EncodedClassName[]): DecodedClassName | undefined {
-  let decodedClassNames = $(...encodedClassNames);
+  const decodedClassNames = $(...encodedClassNames);
 
   if (decodedClassNames.length > 0) {
-    decodedClassNames = decodedClassNames.sort((a, b) => a.localeCompare(b));
-
     for (const i in decodedClassNames) {
       const decodedClassName = decodedClassNames[i];
 
