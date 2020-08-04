@@ -7,15 +7,15 @@ class Select extends CSS {
   background-color: rgb(var(--select\\(background-color\\)));
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
   /*                         | pR */
-  background-position: right var(--space-3) center;
+  background-position: right var(--size-3) center;
   background-repeat: no-repeat;
   background-size: contain;
   border: var(--select\\(border-width\\)) solid rgb(var(--select\\(border-color\\)));
   border-radius: var(--select\\(border-radius\\));
   color: rgb(var(--select\\(color\\)));
   display: block;
-  /*       | pT                | pB             | pR                 | pT                                                                        | pB           | pL */
-  padding: var(--space-2) calc(var(--space-2) + var(--space-3) * 2 + var(--space-2) + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) var(--space-2) var(--space-3);
+  /*       | pT               | pB            | pR                | pT                                                                       | pB          | pL */
+  padding: var(--size-2) calc(var(--size-2) + var(--size-3) * 2 + var(--size-2) + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) var(--size-2) var(--size-3);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }

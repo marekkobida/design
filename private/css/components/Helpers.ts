@@ -24,7 +24,7 @@ class Helpers extends CSS {
 .${breakpoint.name}${abbreviation}-y-${$.name} {
   ${property}-top: ${$.size} !important;
 }`,
-          this.variables.spaces
+          this.variables.sizes
         );
 
         const b: string = this.for(
@@ -53,7 +53,7 @@ class Helpers extends CSS {
 
             return '';
           },
-          this.variables.spaces
+          this.variables.sizes
         );
 
         return `.${breakpoint.name}border {

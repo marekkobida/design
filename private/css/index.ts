@@ -17,7 +17,7 @@ class Index extends CSS {
 }
 :root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
-${this.for(($) => `  --space-${$.name}: ${$.size};`, this.variables['spaces'])}
+${this.for(($) => `  --size-${$.name}: ${$.size};`, this.variables['sizes'])}
 }
 body {
   -webkit-text-size-adjust: 100%;

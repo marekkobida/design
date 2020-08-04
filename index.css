@@ -46,16 +46,16 @@
   --select\(focus\)\(background-color\): var(--input\(focus\)\(background-color\));
   --select\(focus\)\(border-color\): var(--input\(focus\)\(border-color\));
   --select\(focus\)\(color\): var(--input\(focus\)\(color\));
-  --space-0: 0;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-7: 1.75rem;
-  --space-8: 2rem;
-  --space-16: 4rem;
+  --size-0: 0;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-7: 1.75rem;
+  --size-8: 2rem;
+  --size-16: 4rem;
 }
 body {
   -webkit-text-size-adjust: 100%;
@@ -89,7 +89,7 @@ textarea {
   border-radius: var(--button\(border-radius\));
   color: rgb(var(--button\(color\)));
   display: inline-block;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--size-2) var(--size-3);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .button:focus {
@@ -613,8 +613,8 @@ textarea {
 }
 .column {
   flex: 1 0 0%;
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
+  padding-left: var(--size-3);
+  padding-right: var(--size-3);
 }
 .column_offset_0 {
   margin-left: 0;
@@ -996,14 +996,14 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   max-width: 72rem;
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
+  padding-left: var(--size-3);
+  padding-right: var(--size-3);
 }
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(var(--space-3) * -1);
-  margin-right: calc(var(--space-3) * -1);
+  margin-left: calc(var(--size-3) * -1);
+  margin-right: calc(var(--size-3) * -1);
 }
 .border {
   border: var(--border\(border-width\)) solid rgb(var(--border\(border-color\))) !important;
@@ -3445,8 +3445,8 @@ input[type="checkbox"], input[type="radio"] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: var(--space-6);
-  width: var(--space-6);
+  height: var(--size-6);
+  width: var(--size-6);
 }
 input[type="checkbox"]:checked {
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
@@ -3462,7 +3462,7 @@ input[type="radio"]:checked {
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 input[type="text"], textarea {
-  padding: var(--space-2) var(--space-3);
+  padding: var(--size-2) var(--size-3);
   width: 100%;
 }
 label {
@@ -3474,7 +3474,7 @@ select {
   background-color: rgb(var(--select\(background-color\)));
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
   /*                         | pR */
-  background-position: right var(--space-3) center;
+  background-position: right var(--size-3) center;
   background-repeat: no-repeat;
   background-size: contain;
   border: var(--select\(border-width\)) solid rgb(var(--select\(border-color\)));
@@ -3482,7 +3482,7 @@ select {
   color: rgb(var(--select\(color\)));
   display: block;
   /*       | pT                | pB             | pR                 | pT                                                                        | pB           | pL */
-  padding: var(--space-2) calc(var(--space-2) + var(--space-3) * 2 + var(--space-2) + var(--body\(font-size\)) * var(--body\(line-height\))) var(--space-2) var(--space-3);
+  padding: var(--size-2) calc(var(--size-2) + var(--size-3) * 2 + var(--size-2) + var(--body\(font-size\)) * var(--body\(line-height\))) var(--size-2) var(--size-3);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }

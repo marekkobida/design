@@ -193,7 +193,7 @@
     }
   ],
   "columns": 12,
-  "spaces": [
+  "sizes": [
     {
       "name": "0",
       "size": "0"
