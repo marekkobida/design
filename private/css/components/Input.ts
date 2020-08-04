@@ -2,7 +2,7 @@ import CSS from '../CSS';
 
 class Input extends CSS {
   css (): string {
-    return `input {
+    return `input, textarea {
   appearance: none;
   background-color: rgb(var(--input\\(background-color\\)));
   border: var(--input\\(border-width\\)) solid rgb(var(--input\\(border-color\\)));
@@ -11,10 +11,10 @@ class Input extends CSS {
   display: block;
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: rgba(var(--input\\(color\\)), 0.25);
 }
-input:focus {
+input:focus, textarea:focus {
   border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
   box-shadow: 0 0 0 var(--input\\(border-width\\)) rgba(var(--input\\(focus\\)\\(border-color\\)), 0.25);
   color: rgb(var(--input\\(focus\\)\\(color\\)));
@@ -40,7 +40,7 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-input[type="text"] {
+input[type="text"], textarea {
   padding: var(--space-2) var(--space-3);
   width: 100%;
 }`;

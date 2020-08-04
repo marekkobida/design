@@ -32,7 +32,7 @@ body {
 button, [type="button"], [type="reset"], [type="submit"] {
   appearance: button;
 }
-button, input, select {
+button, input, select, textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -41,6 +41,9 @@ button, input, select {
 }
 button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
   cursor: pointer;
+}
+textarea {
+  resize: vertical;
 }
 ${new Button().css()}
 ${new Flex().css()}

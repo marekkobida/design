@@ -16,6 +16,7 @@
 1. [Row](private/components/Row.tsx)
 1. [Select](private/components/Select.tsx)
 1. [Span](private/components/Span.tsx)
+1. [TextArea](private/components/TextArea.tsx)
 
 ---
 
