@@ -7,7 +7,7 @@ class Input extends React.Component<CommonParameters & Omit<React.ComponentProps
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <input {...notCommonParameters} className={decodeClassName(className)} />;
+    return <input {...notCommonParameters} className={decodeClassName([ 'input', className, ])} />;
   }
 }
 
