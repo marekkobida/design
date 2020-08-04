@@ -5,6 +5,7 @@ class Label extends CSS {
     return `label {
   color: rgb(var(--label\\(color\\)));
   display: inline-block;
+  margin-bottom: var(--size-2);
 }`;
   }
 }

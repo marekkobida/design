@@ -7,7 +7,7 @@ class Button extends React.Component<CommonParameters & Omit<React.ComponentProp
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <button {...notCommonParameters} className={decodeClassName([ 'button', className, ])} />;
+    return <button {...notCommonParameters} className={decodeClassName(className)} />;
   }
 }
 

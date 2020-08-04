@@ -35,7 +35,7 @@ class Playground extends Page {
         <Row>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
             <Div mY={4}>
-              <Label htmlFor="a" mB={2}>Label</Label>
+              <Label htmlFor="a">Label</Label>
               <Input id="a" placeholder="Input" type="text" />
             </Div>
             <Div mY={4}>
@@ -61,28 +61,28 @@ class Playground extends Page {
           </Column>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
             <Div mY={4}>
-              <Label htmlFor="d" mB={2}>Label</Label>
+              <Label htmlFor="d">Label</Label>
               <Input id="d" placeholder="Input" type="text" />
             </Div>
             <Div mY={4}>
-              <Label htmlFor="f" mB={2}>Label</Label>
+              <Label htmlFor="f">Label</Label>
               <Select id="f">
                 <Option>Option</Option>
                 <Option>Option</Option>
               </Select>
             </Div>
             <Div mY={4}>
-              <Label htmlFor="g" mB={2}>Label</Label>
+              <Label htmlFor="g">Label</Label>
               <TextArea id="g" placeholder="TextArea" rows={3} />
             </Div>
             <Div mY={4}>
-              <Input className="button" type="button" value={'[type="button"]'} />
+              <Input type="button" value={'[type="button"]'} />
             </Div>
             <Div mY={4} textAlign="center">
-              <Input className="button" type="reset" value={'[type="reset"]'} />
+              <Input type="reset" value={'[type="reset"]'} />
             </Div>
             <Div mY={4} textAlign="right">
-              <Input className="button" type="submit" value={'[type="submit"]'} />
+              <Input type="submit" value={'[type="submit"]'} />
             </Div>
             <Div mY={4} textAlign="center">
               <Button type="button">Button</Button>
