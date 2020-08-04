@@ -5,6 +5,10 @@
       "value": "255, 255, 255"
     },
     {
+      "name": "--body\\(color\\)",
+      "value": "0, 0, 0"
+    },
+    {
       "name": "--body\\(font-family\\)",
       "value": "system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif"
     },
@@ -22,7 +26,7 @@
     },
     {
       "name": "--border\\(border-color\\)",
-      "value": "var(--color)"
+      "value": "128, 128, 128"
     },
     {
       "name": "--border\\(border-width\\)",
@@ -30,11 +34,11 @@
     },
     {
       "name": "--button\\(background-color\\)",
-      "value": "var(--color)"
+      "value": "128, 128, 128"
     },
     {
       "name": "--button\\(border-color\\)",
-      "value": "var(--color)"
+      "value": "var(--button\\(background-color\\))"
     },
     {
       "name": "--button\\(border-radius\\)",
@@ -50,15 +54,15 @@
     },
     {
       "name": "--button\\(focus\\)\\(background-color\\)",
-      "value": "0, 0, 255"
+      "value": "0, 0, 0"
     },
     {
       "name": "--button\\(focus\\)\\(border-color\\)",
-      "value": "0, 0, 255"
+      "value": "var(--button\\(focus\\)\\(background-color\\))"
     },
     {
-      "name": "--color",
-      "value": "0, 0, 0"
+      "name": "--button\\(focus\\)\\(color\\)",
+      "value": "var(--button\\(color\\))"
     },
     {
       "name": "--h1\\(font-size\\)",
@@ -86,7 +90,7 @@
     },
     {
       "name": "--heading\\(font-family\\)",
-      "value": "inherit"
+      "value": "var(--body\\(font-family\\))"
     },
     {
       "name": "--heading\\(font-weight\\)",
@@ -102,7 +106,7 @@
     },
     {
       "name": "--input\\(border-color\\)",
-      "value": "var(--color)"
+      "value": "128, 128, 128"
     },
     {
       "name": "--input\\(border-radius\\)",
@@ -114,51 +118,63 @@
     },
     {
       "name": "--input\\(checked\\)\\(background-color\\)",
-      "value": "0, 0, 255"
+      "value": "var(--input\\(focus\\)\\(border-color\\))"
     },
     {
       "name": "--input\\(checked\\)\\(border-color\\)",
-      "value": "0, 0, 255"
+      "value": "var(--input\\(focus\\)\\(border-color\\))"
     },
     {
       "name": "--input\\(color\\)",
-      "value": "var(--color)"
+      "value": "var(--body\\(color\\))"
+    },
+    {
+      "name": "--input\\(focus\\)\\(background-color\\)",
+      "value": "var(--input\\(background-color\\))"
     },
     {
       "name": "--input\\(focus\\)\\(border-color\\)",
-      "value": "0, 0, 255"
+      "value": "0, 0, 0"
+    },
+    {
+      "name": "--input\\(focus\\)\\(color\\)",
+      "value": "var(--input\\(color\\))"
+    },
+    {
+      "name": "--label\\(color\\)",
+      "value": "var(--body\\(color\\))"
     },
     {
       "name": "--select\\(background-color\\)",
-      "value": "255, 255, 255"
+      "value": "var(--input\\(background-color\\))"
     },
     {
       "name": "--select\\(border-color\\)",
-      "value": "var(--color)"
+      "value": "var(--input\\(border-color\\))"
     },
     {
       "name": "--select\\(border-radius\\)",
-      "value": "0.125rem"
+      "value": "var(--input\\(border-radius\\))"
     },
     {
       "name": "--select\\(border-width\\)",
-      "value": "0.125rem"
+      "value": "var(--input\\(border-width\\))"
     },
     {
       "name": "--select\\(color\\)",
-      "value": "var(--color)"
+      "value": "var(--input\\(color\\))"
     },
     {
       "name": "--select\\(focus\\)\\(background-color\\)",
-      "value": "var(--select\\(background-color\\))"
+      "value": "var(--input\\(focus\\)\\(background-color\\))"
     },
     {
       "name": "--select\\(focus\\)\\(border-color\\)",
-      "value": "0, 0, 255"
+      "value": "var(--input\\(focus\\)\\(border-color\\))"
     },
     {
       "name": "--select\\(focus\\)\\(color\\)",
-      "value": "var(--select\\(color\\))"
+      "value": "var(--input\\(focus\\)\\(color\\))"
     }
   ],
   "breakpoints": [

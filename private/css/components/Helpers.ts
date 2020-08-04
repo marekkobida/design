@@ -1,29 +1,6 @@
 import CSS from '../CSS';
 
 class Helpers extends CSS {
-  display (): string {
-    return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}display-block {
-  display: block !important;
-}
-.${breakpoint.name}display-flex {
-  display: flex !important;
-}
-.${breakpoint.name}display-inline {
-  display: inline !important;
-}
-.${breakpoint.name}display-inline-flex {
-  display: inline-flex !important;
-}
-.${breakpoint.name}display-inline-block {
-  display: inline-block !important;
-}
-.${breakpoint.name}display-none {
-  display: none !important;
-}`
-    );
-  }
-
   css (): string {
     return this.forBreakpoints(
       (breakpoint) => {
@@ -94,7 +71,24 @@ class Helpers extends CSS {
 .${breakpoint.name}border-top {
   border-top: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
 }
-${this.display()}
+.${breakpoint.name}display-block {
+  display: block !important;
+}
+.${breakpoint.name}display-flex {
+  display: flex !important;
+}
+.${breakpoint.name}display-inline {
+  display: inline !important;
+}
+.${breakpoint.name}display-inline-flex {
+  display: inline-flex !important;
+}
+.${breakpoint.name}display-inline-block {
+  display: inline-block !important;
+}
+.${breakpoint.name}display-none {
+  display: none !important;
+}
 ${a('margin', 'm')}
 ${a('padding', 'p')}
 ${b}

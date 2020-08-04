@@ -37,22 +37,26 @@ class Playground extends Page {
               <Label htmlFor="a" mB={2}>Label</Label>
               <Input id="a" placeholder="Input" type="text" />
             </Div>
-            <Row alignItems="center" mY={4}>
-              <Column columnSize="width">
-                <Input id="b" type="radio" />
-              </Column>
-              <Column columnSize="width">
-                <Label htmlFor="b">Label</Label>
-              </Column>
-            </Row>
-            <Row alignItems="center" mY={4}>
-              <Column columnSize="width">
-                <Input id="c" type="checkbox" />
-              </Column>
-              <Column columnSize="width">
-                <Label htmlFor="c">Label</Label>
-              </Column>
-            </Row>
+            <Div mY={4}>
+              <Row alignItems="center">
+                <Column columnSize="width">
+                  <Input id="b" type="radio" />
+                </Column>
+                <Column columnSize="width">
+                  <Label htmlFor="b">Label</Label>
+                </Column>
+              </Row>
+            </Div>
+            <Div mY={4}>
+              <Row alignItems="center">
+                <Column columnSize="width">
+                  <Input id="c" type="checkbox" />
+                </Column>
+                <Column columnSize="width">
+                  <Label htmlFor="c">Label</Label>
+                </Column>
+              </Row>
+            </Div>
           </Column>
           <Column columnSize={[ 12, { '#': 6, }, ]}>
             <Div mY={4}>
@@ -66,8 +70,11 @@ class Playground extends Page {
                 <Option>Option</Option>
               </Select>
             </Div>
-            <Div mY={4}>
+            <Div mY={4} textAlign="center">
               <Button type="button">Button</Button>
+            </Div>
+            <Div mY={4} textAlign="center">
+              <Anchor className="button" href="#">Anchor</Anchor>
             </Div>
           </Column>
         </Row>

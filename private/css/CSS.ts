@@ -56,10 +56,6 @@ class CSS {
 
     return `${$.toFixed(6)}%`;
   }
-
-  test (px: number): string {
-    return `${px / 16}rem`;
-  }
 }
 
 export default CSS;

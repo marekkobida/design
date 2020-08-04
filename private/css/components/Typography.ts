@@ -28,60 +28,43 @@ class Typography extends CSS {
   }
 
   css (): string {
-    return `a {
-  text-decoration: none;
-}
-a:focus,
-a:hover {
-  text-decoration: underline;
-}
-p {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+    return `.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading\\(font-family\\));
   font-weight: var(--heading\\(font-weight\\));
   line-height: var(--heading\\(line-height\\));
   margin-bottom: 0;
   margin-top: 0;
 }
-.h1,
-h1 {
+.h1, h1 {
   font-size: var(--h1\\(font-size\\));
 }
-.h2,
-h2 {
+.h2, h2 {
   font-size: var(--h2\\(font-size\\));
 }
-.h3,
-h3 {
+.h3, h3 {
   font-size: var(--h3\\(font-size\\));
 }
-.h4,
-h4 {
+.h4, h4 {
   font-size: var(--h4\\(font-size\\));
 }
-.h5,
-h5 {
+.h5, h5 {
   font-size: var(--h5\\(font-size\\));
 }
-.h6,
-h6 {
+.h6, h6 {
   font-size: var(--h6\\(font-size\\));
 }
-${this.textAlign()}`;
+${this.textAlign()}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  text-decoration: underline;
+}
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}`;
   }
 }
 
