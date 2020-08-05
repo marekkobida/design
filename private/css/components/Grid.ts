@@ -1,7 +1,7 @@
 import CSS from '../CSS';
 
 class Grid extends CSS {
-  createColumn (): string {
+  column (): string {
     return `.column {
   flex: 1 0 0%;
   padding-left: var(--size-3);
@@ -9,7 +9,7 @@ class Grid extends CSS {
 }`;
   }
 
-  createColumnOffsets (): string {
+  columnOffsets (): string {
     return this.forBreakpoints(
       (breakpoint) => this.for(
         ($, i) => `.${breakpoint.name}column_offset_${i} {
@@ -20,7 +20,7 @@ class Grid extends CSS {
     );
   }
 
-  createColumnSizes (): string {
+  columnSizes (): string {
     return this.forBreakpoints(
       (breakpoint) => {
         const sizes = this.for(
@@ -43,7 +43,7 @@ ${sizes}
     );
   }
 
-  createContainer (): string {
+  container (): string {
     return `.container {
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +53,7 @@ ${sizes}
 }`;
   }
 
-  createRow (): string {
+  row (): string {
     return `.row {
   display: flex;
   flex-wrap: wrap;
@@ -63,11 +63,11 @@ ${sizes}
   }
 
   css (): string {
-    return `${this.createColumn()}
-${this.createColumnOffsets()}
-${this.createColumnSizes()}
-${this.createContainer()}
-${this.createRow()}`;
+    return `${this.column()}
+${this.columnOffsets()}
+${this.columnSizes()}
+${this.container()}
+${this.row()}`;
   }
 }
 

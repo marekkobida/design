@@ -3,11 +3,9 @@ import writeFile from '@redredsk/helpers/private/writeFile';
 import CSS from './CSS';
 import Button from './components/Button';
 import Flex from './components/Flex';
+import Form from './components/Form';
 import Grid from './components/Grid';
 import Helpers from './components/Helpers';
-import Input from './components/Input';
-import Label from './components/Label';
-import Select from './components/Select';
 import Typography from './components/Typography';
 
 class Index extends CSS {
@@ -47,11 +45,9 @@ textarea {
 }
 ${new Button().css()}
 ${new Flex().css()}
+${new Form().css()}
 ${new Grid().css()}
 ${new Helpers().css()}
-${new Input().css()}
-${new Label().css()}
-${new Select().css()}
 ${new Typography().css()}
 `;
   }
