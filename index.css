@@ -66,6 +66,9 @@ body {
   line-height: var(--body\(line-height\));
   margin: 0;
 }
+button {
+  border-radius: 0; /* Microsoft Edge */
+}
 button, [type="button"], [type="reset"], [type="submit"] {
   appearance: button;
 }
