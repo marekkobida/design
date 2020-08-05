@@ -1,6 +1,6 @@
 import CSS from '../CSS';
 
-class Grid extends CSS {
+class Layout extends CSS {
   column (): string {
     return `.column {
   flex: 1 0 0%;
@@ -71,4 +71,4 @@ ${this.row()}`;
   }
 }
 
-export default Grid;
+export default Layout;
