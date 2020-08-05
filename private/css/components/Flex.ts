@@ -74,6 +74,44 @@ class Flex extends CSS {
     );
   }
 
+  alignSelf (): string {
+    return this.forBreakpoints(
+      (breakpoint) => `.${breakpoint.name}align-self-auto {
+  align-self: auto !important;
+}
+.${breakpoint.name}align-self-baseline {
+  align-self: baseline !important;
+}
+.${breakpoint.name}align-self-center {
+  align-self: center !important;
+}
+.${breakpoint.name}align-self-end {
+  align-self: end !important;
+}
+.${breakpoint.name}align-self-flex-end {
+  align-self: flex-end !important;
+}
+.${breakpoint.name}align-self-flex-start {
+  align-self: flex-start !important;
+}
+.${breakpoint.name}align-self-normal {
+  align-self: normal !important;
+}
+.${breakpoint.name}align-self-self-end {
+  align-self: self-end !important;
+}
+.${breakpoint.name}align-self-self-start {
+  align-self: self-start !important;
+}
+.${breakpoint.name}align-self-start {
+  align-self: start !important;
+}
+.${breakpoint.name}align-self-stretch {
+  align-self: stretch !important;
+}`
+    );
+  }
+
   flexDirection (): string {
     return this.forBreakpoints(
       (breakpoint) => `.${breakpoint.name}flex-direction-column {
@@ -149,6 +187,7 @@ class Flex extends CSS {
   css (): string {
     return `${this.alignContent()}
 ${this.alignItems()}
+${this.alignSelf()}
 ${this.flexDirection()}
 ${this.flexWrap()}
 ${this.justifyContent()}`;

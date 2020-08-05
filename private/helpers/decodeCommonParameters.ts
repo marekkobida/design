@@ -1,13 +1,13 @@
 import { EncodedClassName, } from './decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 
-// https://drafts.csswg.org/css-align-3/#typedef-content-distribution
+// https://drafts.csswg.org/css-align/#typedef-content-distribution
 export const ContentDistribution = [ 'space-around', 'space-between', 'space-evenly', 'stretch', ] as const;
 
-// https://drafts.csswg.org/css-align-3/#typedef-content-position
+// https://drafts.csswg.org/css-align/#typedef-content-position
 export const ContentPosition = [ 'center', 'end', 'flex-end', 'flex-start', 'start', ] as const;
 
-// https://drafts.csswg.org/css-align-3/#typedef-self-position
+// https://drafts.csswg.org/css-align/#typedef-self-position
 export const SelfPosition = [ 'center', 'end', 'flex-end', 'flex-start', 'self-end', 'self-start', 'start', ] as const;
 
 export const AlignContentProperty = [ 'baseline', 'normal', ...ContentDistribution, ...ContentPosition, ] as const;
@@ -16,7 +16,19 @@ export const AlignItemsProperty = [ 'baseline', 'normal', 'stretch', ...SelfPosi
 
 export const AlignSelfProperty = [ 'auto', 'baseline', 'normal', 'stretch', ...SelfPosition, ] as const;
 
-export const DisplayProperty = [ 'block', 'flex', 'inline', 'inline-block', 'inline-flex', 'none', ] as const;
+// https://drafts.csswg.org/css-display/#typedef-display-box
+export const DisplayBox = [ 'none', ];
+
+// https://drafts.csswg.org/css-display/#typedef-display-inside
+export const DisplayInside = [ 'flex', 'grid', ];
+
+// https://drafts.csswg.org/css-display/#typedef-display-legacy
+export const DisplayLegacy = [ 'inline-block', 'inline-flex', 'inline-grid', ];
+
+// https://drafts.csswg.org/css-display/#typedef-display-outside
+export const DisplayOutside = [ 'block', 'inline', ];
+
+export const DisplayProperty = [ ...DisplayBox, ...DisplayInside, ...DisplayLegacy, ...DisplayOutside, ] as const;
 
 export const FlexDirectionProperty = [ 'column', 'column-reverse', 'row', 'row-reverse', ] as const;
 

@@ -77,14 +77,20 @@ class Helpers extends CSS {
 .${breakpoint.name}display-flex {
   display: flex !important;
 }
+.${breakpoint.name}display-grid {
+  display: grid !important;
+}
 .${breakpoint.name}display-inline {
   display: inline !important;
+}
+.${breakpoint.name}display-inline-block {
+  display: inline-block !important;
 }
 .${breakpoint.name}display-inline-flex {
   display: inline-flex !important;
 }
-.${breakpoint.name}display-inline-block {
-  display: inline-block !important;
+.${breakpoint.name}display-inline-grid {
+  display: inline-grid !important;
 }
 .${breakpoint.name}display-none {
   display: none !important;
