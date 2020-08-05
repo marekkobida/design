@@ -7,7 +7,7 @@ class Label extends React.Component<CommonParameters & Omit<React.ComponentProps
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <label {...notCommonParameters} className={decodeClassName(className)} />;
+    return <label {...notCommonParameters} className={decodeClassName([ 'label', className, ])} />;
   }
 }
 

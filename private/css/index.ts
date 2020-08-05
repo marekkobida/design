@@ -13,12 +13,6 @@ class Index extends CSS {
     return `*, *::after, *::before {
   box-sizing: border-box;
 }
-:matches(button, [type="button"], [type="reset"], [type="submit"]) {
-  appearance: button;
-}
-:matches(button, [type="button"], [type="reset"], [type="submit"]):not(:disabled) {
-  cursor: pointer;
-}
 :root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
 ${this.for(($) => `  --size-${$.name}: ${$.size};`, this.variables['sizes'])}
@@ -33,12 +27,18 @@ body {
   line-height: var(--body\\(line-height\\));
   margin: 0;
 }
+button, [type="button"], [type="reset"], [type="submit"] {
+  appearance: button;
+}
 button, input, select, textarea {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
   margin: 0;
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+  cursor: pointer;
 }
 textarea {
   resize: vertical;

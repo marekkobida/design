@@ -4,8 +4,10 @@ class Layout extends CSS {
   column (): string {
     return `.column {
   flex: 1 0 0%;
-  padding-left: var(--size-3);
-  padding-right: var(--size-3);
+  padding-bottom: calc(var(--y) / 2);
+  padding-left: calc(var(--x) / 2);
+  padding-right: calc(var(--x) / 2);
+  padding-top: calc(var(--y) / 2);
 }`;
   }
 
@@ -47,18 +49,22 @@ ${sizes}
     return `.container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 72rem;
-  padding-left: var(--size-3);
-  padding-right: var(--size-3);
+  max-width: 60rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }`;
   }
 
   row (): string {
     return `.row {
+  --x: 1.5rem;
+  --y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(var(--size-3) * -1);
-  margin-right: calc(var(--size-3) * -1);
+  margin-bototm: calc(var(--y) / -2);
+  margin-left: calc(var(--x) / -2);
+  margin-right: calc(var(--x) / -2);
+  margin-top: calc(var(--y) / -2);
 }`;
   }
 
