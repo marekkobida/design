@@ -7,7 +7,7 @@ class Select extends React.Component<CommonParameters & Omit<React.ComponentProp
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <select {...notCommonParameters} className={decodeClassName([ 'select', className, ])} />;
+    return <select {...notCommonParameters} className={decodeClassName(className)} />;
   }
 }
 

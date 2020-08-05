@@ -7,7 +7,7 @@ class TextArea extends React.Component<CommonParameters & Omit<React.ComponentPr
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <textarea {...notCommonParameters} className={decodeClassName([ 'textarea', className, ])} />;
+    return <textarea {...notCommonParameters} className={decodeClassName(className)} />;
   }
 }
 
