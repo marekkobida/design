@@ -767,7 +767,8 @@ textarea {
   border-color: rgb(var(--input--checked--border-color));
 }
 .input, .input-checkbox, .input-radio, .textarea {
-  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: rgb(var(--input--background-color));
   border: var(--input--border-width) solid rgb(var(--input--border-color));
   border-radius: var(--input--border-radius);
@@ -784,14 +785,8 @@ textarea {
   color: rgb(var(--input--focus--color));
   outline: 0;
 }
-.input-checkbox:checked {
-  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 15L14 21L24 11' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
-}
 .input-radio {
   border-radius: 50%;
-}
-.input-radio:checked {
-  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 .input, .textarea {
   padding: var(--size-2) var(--size-3);
@@ -805,17 +800,11 @@ textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: rgb(var(--select--background-color));
-  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
-  /*                         | pR */
-  background-position: right var(--size-3) center;
-  background-repeat: no-repeat;
-  background-size: contain;
   border: var(--select--border-width) solid rgb(var(--select--border-color));
   border-radius: var(--select--border-radius);
   color: rgb(var(--select--color));
   display: block;
-  /*       | pT               | pB            | pR                | pT                                                                       | pB          | pL */
-  padding: var(--size-2) calc(var(--size-2) + var(--size-3) * 2 + var(--size-2) + var(--body--font-size) * var(--body--line-height)) var(--size-2) var(--size-3);
+  padding: var(--size-2) var(--size-3);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }
