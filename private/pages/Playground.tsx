@@ -2,19 +2,19 @@ import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
 import React from 'react';
 
-import Anchor from '../components/Anchor';
-import Button from '../components/Button';
 import Column from '../components/Column';
 import Container from '../components/Container';
-import Div from '../components/Div';
-import Form from '../components/Form';
-import Heading from '../components/Heading';
-import Input from '../components/Input';
-import Label from '../components/Label';
-import Option from '../components/Option';
-import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
-import Select from '../components/Select';
+import Anchor from '../htmlComponents/Anchor';
+import Button from '../htmlComponents/Button';
+import Div from '../htmlComponents/Div';
+import Form from '../htmlComponents/Form';
+import Heading from '../htmlComponents/Heading';
+import Input from '../htmlComponents/Input';
+import Label from '../htmlComponents/Label';
+import Option from '../htmlComponents/Option';
+import Paragraph from '../htmlComponents/Paragraph';
+import Select from '../htmlComponents/Select';
 
 class Playground extends Page {
   constructor () {

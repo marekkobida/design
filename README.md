@@ -1,23 +1,26 @@
 <h1 align="center">@redredsk/design</h1>
 <p align="center">Copyright 2020 Marek Kobida</p>
 
-## components 
+## components
 
-1. [Anchor](private/components/Anchor.tsx)
-1. [Button](private/components/Button.tsx)
 1. [Column](private/components/Column.tsx)
 1. [Container](private/components/Container.tsx)
-1. [Div](private/components/Div.tsx)
-1. [Form](private/components/Form.tsx)
-1. [Heading](private/components/Heading.tsx)
-1. [Input](private/components/Input.tsx)
-1. [Label](private/components/Label.tsx)
-1. [Option](private/components/Option.tsx)
-1. [Paragraph](private/components/Paragraph.tsx)
 1. [Row](private/components/Row.tsx)
-1. [Select](private/components/Select.tsx)
-1. [Span](private/components/Span.tsx)
-1. [TextArea](private/components/TextArea.tsx)
+
+## htmlComponents
+
+1. [Anchor](private/htmlComponents/Anchor.tsx)
+1. [Button](private/htmlComponents/Button.tsx)
+1. [Div](private/htmlComponents/Div.tsx)
+1. [Form](private/htmlComponents/Form.tsx)
+1. [Heading](private/htmlComponents/Heading.tsx)
+1. [Input](private/htmlComponents/Input.tsx)
+1. [Label](private/htmlComponents/Label.tsx)
+1. [Option](private/htmlComponents/Option.tsx)
+1. [Paragraph](private/htmlComponents/Paragraph.tsx)
+1. [Select](private/htmlComponents/Select.tsx)
+1. [Span](private/htmlComponents/Span.tsx)
+1. [TextArea](private/htmlComponents/TextArea.tsx)
 
 ---
 
