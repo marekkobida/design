@@ -49,7 +49,8 @@ class Form extends CSS {
   display: inline-block;
 }
 .select {
-  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: rgb(var(--select--background-color));
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
   /*                         | pR */

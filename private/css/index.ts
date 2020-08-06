@@ -33,7 +33,8 @@ button {
   border-radius: 0; /* Microsoft Edge */
 }
 button, [type="button"], [type="reset"], [type="submit"] {
-  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
 }
 button, input, select, textarea {
   font-family: inherit;
