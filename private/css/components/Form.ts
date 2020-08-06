@@ -3,9 +3,6 @@ import CSS from '../CSS';
 class Form extends CSS {
   css (): string {
     return `.input-checkbox, .input-radio {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   height: var(--size-6);
   width: var(--size-6);
 }
