@@ -82,7 +82,7 @@ class Helpers extends CSS {
 }`;
 
         const d = this.for(
-          ($, i) => `.${breakpoint.name}w-${i + 1}\\/12 {
+          ($, i) => `.${breakpoint.name}width-${i + 1}\\/12 {
   width: ${this.percentage(i + 1, 12)};
 }`,
           11
@@ -96,19 +96,19 @@ class Helpers extends CSS {
         );
 
         return `.${breakpoint.name}border {
-  border: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
+  border: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .${breakpoint.name}border-bottom {
-  border-bottom: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
+  border-bottom: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .${breakpoint.name}border-left {
-  border-left: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
+  border-left: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .${breakpoint.name}border-right {
-  border-right: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
+  border-right: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .${breakpoint.name}border-top {
-  border-top: var(--border\\(border-width\\)) solid rgb(var(--border\\(border-color\\))) !important;
+  border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 ${c}
 ${a('margin', 'm')}
@@ -116,13 +116,13 @@ ${a('padding', 'p')}
 ${b}
 ${d}
 ${e}
-.${breakpoint.name}w-0 {
+.${breakpoint.name}width-0 {
   width: 0;
 }
-.${breakpoint.name}w-100 {
+.${breakpoint.name}width-100 {
   width: 100%;
 }
-.${breakpoint.name}w-auto {
+.${breakpoint.name}width-auto {
   width: auto;
 }
 .${breakpoint.name}m-\\# {

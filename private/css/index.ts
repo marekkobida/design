@@ -21,12 +21,12 @@ ${this.for(($) => `  --size-${$.name}: ${$.size};`, this.variables['sizes'])}
 }
 body {
   -webkit-text-size-adjust: 100%;
-  background-color: rgb(var(--body\\(background-color\\)));
-  color: rgb(var(--body\\(color\\)));
-  font-family: var(--body\\(font-family\\));
-  font-size: var(--body\\(font-size\\));
-  font-weight: var(--body\\(font-weight\\));
-  line-height: var(--body\\(line-height\\));
+  background-color: rgb(var(--body--background-color));
+  color: rgb(var(--body--color));
+  font-family: var(--body--font-family);
+  font-size: var(--body--font-size);
+  font-weight: var(--body--font-weight);
+  line-height: var(--body--line-height);
   margin: 0;
 }
 button {

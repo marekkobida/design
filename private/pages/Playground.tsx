@@ -49,15 +49,15 @@ class Playground extends Page {
         </Div>
         <Form mY={4}>
           <Row mT="!4">
-            <Column mT={4} w="100">
+            <Column mT={4} width="100">
               <Label htmlFor="a" mB={2}>Label</Label>
               <Input className="input" id="a" placeholder="Input" type="text" />
             </Column>
-            <Column mT={4} w="6/12">
+            <Column mT={4} width="6/12">
               <Label htmlFor="b" mB={2}>Label</Label>
               <Input className="input-checkbox" id="b" type="checkbox" />
             </Column>
-            <Column mT={4} w="6/12">
+            <Column mT={4} width="6/12">
               <Label htmlFor="c" mB={2}>Label</Label>
               <Input className="input-radio" id="c" type="radio" />
             </Column>

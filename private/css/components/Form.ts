@@ -10,25 +10,25 @@ class Form extends CSS {
   width: var(--size-6);
 }
 .input-checkbox:checked, .input-radio:checked {
-  background-color: rgb(var(--input\\(checked\\)\\(background-color\\)));
-  border-color: rgb(var(--input\\(checked\\)\\(border-color\\)));
+  background-color: rgb(var(--input--checked--background-color));
+  border-color: rgb(var(--input--checked--border-color));
 }
 .input, .input-checkbox, .input-radio, .textarea {
   appearance: none;
-  background-color: rgb(var(--input\\(background-color\\)));
-  border: var(--input\\(border-width\\)) solid rgb(var(--input\\(border-color\\)));
-  border-radius: var(--input\\(border-radius\\));
-  color: rgb(var(--input\\(color\\)));
+  background-color: rgb(var(--input--background-color));
+  border: var(--input--border-width) solid rgb(var(--input--border-color));
+  border-radius: var(--input--border-radius);
+  color: rgb(var(--input--color));
   display: block;
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .input::placeholder, .textarea::placeholder {
-  color: rgba(var(--input\\(color\\)), 0.25);
+  color: rgba(var(--input--color), 0.25);
 }
 .input:focus, .textarea:focus {
-  border-color: rgb(var(--input\\(focus\\)\\(border-color\\)));
-  box-shadow: 0 0 0 var(--input\\(border-width\\)) rgba(var(--input\\(focus\\)\\(border-color\\)), 0.25);
-  color: rgb(var(--input\\(focus\\)\\(color\\)));
+  border-color: rgb(var(--input--focus--border-color));
+  box-shadow: 0 0 0 var(--input--border-width) rgba(var(--input--focus--border-color), 0.25);
+  color: rgb(var(--input--focus--color));
   outline: 0;
 }
 .input-checkbox:checked {
@@ -45,31 +45,31 @@ class Form extends CSS {
   width: 100%;
 }
 .label {
-  color: rgb(var(--label\\(color\\)));
+  color: rgb(var(--label--color));
   display: inline-block;
 }
 .select {
   appearance: none;
-  background-color: rgb(var(--select\\(background-color\\)));
+  background-color: rgb(var(--select--background-color));
   background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 12L16 20L24 12' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
   /*                         | pR */
   background-position: right var(--size-3) center;
   background-repeat: no-repeat;
   background-size: contain;
-  border: var(--select\\(border-width\\)) solid rgb(var(--select\\(border-color\\)));
-  border-radius: var(--select\\(border-radius\\));
-  color: rgb(var(--select\\(color\\)));
+  border: var(--select--border-width) solid rgb(var(--select--border-color));
+  border-radius: var(--select--border-radius);
+  color: rgb(var(--select--color));
   display: block;
   /*       | pT               | pB            | pR                | pT                                                                       | pB          | pL */
-  padding: var(--size-2) calc(var(--size-2) + var(--size-3) * 2 + var(--size-2) + var(--body\\(font-size\\)) * var(--body\\(line-height\\))) var(--size-2) var(--size-3);
+  padding: var(--size-2) calc(var(--size-2) + var(--size-3) * 2 + var(--size-2) + var(--body--font-size) * var(--body--line-height)) var(--size-2) var(--size-3);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }
 .select:focus {
-  background-color: rgb(var(--select\\(focus\\)\\(background-color\\)));
-  border-color: rgb(var(--select\\(focus\\)\\(border-color\\)));
-  box-shadow: 0 0 0 var(--select\\(border-width\\)) rgba(var(--select\\(focus\\)\\(border-color\\)), 0.25);
-  color: rgb(var(--select\\(focus\\)\\(color\\)));
+  background-color: rgb(var(--select--focus--background-color));
+  border-color: rgb(var(--select--focus--border-color));
+  box-shadow: 0 0 0 var(--select--border-width) rgba(var(--select--focus--border-color), 0.25);
+  color: rgb(var(--select--focus--color));
   outline: 0;
 }`;
   }
