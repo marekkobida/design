@@ -11,8 +11,10 @@ import Form from '../components/Form';
 import Heading from '../components/Heading';
 import Input from '../components/Input';
 import Label from '../components/Label';
+import Option from '../components/Option';
 import Paragraph from '../components/Paragraph';
 import Row from '../components/Row';
+import Select from '../components/Select';
 
 class Playground extends Page {
   constructor () {
@@ -53,13 +55,19 @@ class Playground extends Page {
               <Label htmlFor="a" mB={2}>Label</Label>
               <Input className="input" id="a" placeholder="Input" type="text" />
             </Column>
-            <Column mT={4} width="6/12">
+            <Column mT={4} width="100">
               <Label htmlFor="b" mB={2}>Label</Label>
-              <Input className="input-checkbox" id="b" type="checkbox" />
+              <Select id="b">
+                <Option>Option</Option>
+              </Select>
             </Column>
             <Column mT={4} width="6/12">
               <Label htmlFor="c" mB={2}>Label</Label>
-              <Input className="input-radio" id="c" type="radio" />
+              <Input className="input-checkbox" id="c" type="checkbox" />
+            </Column>
+            <Column mT={4} width="6/12">
+              <Label htmlFor="d" mB={2}>Label</Label>
+              <Input className="input-radio" id="d" type="radio" />
             </Column>
             <Column mT={4}>
               <Button type="button">Button</Button>
