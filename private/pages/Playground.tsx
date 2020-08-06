@@ -72,7 +72,7 @@ class Playground extends Page {
             <Column mT={4}>
               <Button type="button">Button</Button>
             </Column>
-            <Column mL="#" mT={4}>
+            <Column mL="auto" mT={4}>
               <Button type="button">Button</Button>
             </Column>
           </Row>

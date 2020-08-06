@@ -1434,23 +1434,23 @@ textarea {
 .width-auto {
   width: auto;
 }
-.m-\# {
+.m-auto {
   margin: auto !important;
 }
-.m-b-\#,
-.m-y-\# {
+.m-b-auto,
+.m-y-auto {
   margin-bottom: auto !important;
 }
-.m-l-\#,
-.m-x-\# {
+.m-l-auto,
+.m-x-auto {
   margin-left: auto !important;
 }
-.m-r-\#,
-.m-x-\# {
+.m-r-auto,
+.m-x-auto {
   margin-right: auto !important;
 }
-.m-t-\#,
-.m-y-\# {
+.m-t-auto,
+.m-y-auto {
   margin-top: auto !important;
 }
 @media (min-width: 36rem) {
@@ -2062,23 +2062,23 @@ textarea {
   .\#width-auto {
     width: auto;
   }
-  .\#m-\# {
+  .\#m-auto {
     margin: auto !important;
   }
-  .\#m-b-\#,
-  .\#m-y-\# {
+  .\#m-b-auto,
+  .\#m-y-auto {
     margin-bottom: auto !important;
   }
-  .\#m-l-\#,
-  .\#m-x-\# {
+  .\#m-l-auto,
+  .\#m-x-auto {
     margin-left: auto !important;
   }
-  .\#m-r-\#,
-  .\#m-x-\# {
+  .\#m-r-auto,
+  .\#m-x-auto {
     margin-right: auto !important;
   }
-  .\#m-t-\#,
-  .\#m-y-\# {
+  .\#m-t-auto,
+  .\#m-y-auto {
     margin-top: auto !important;
   }
 }
@@ -2691,23 +2691,23 @@ textarea {
   .\#\#width-auto {
     width: auto;
   }
-  .\#\#m-\# {
+  .\#\#m-auto {
     margin: auto !important;
   }
-  .\#\#m-b-\#,
-  .\#\#m-y-\# {
+  .\#\#m-b-auto,
+  .\#\#m-y-auto {
     margin-bottom: auto !important;
   }
-  .\#\#m-l-\#,
-  .\#\#m-x-\# {
+  .\#\#m-l-auto,
+  .\#\#m-x-auto {
     margin-left: auto !important;
   }
-  .\#\#m-r-\#,
-  .\#\#m-x-\# {
+  .\#\#m-r-auto,
+  .\#\#m-x-auto {
     margin-right: auto !important;
   }
-  .\#\#m-t-\#,
-  .\#\#m-y-\# {
+  .\#\#m-t-auto,
+  .\#\#m-y-auto {
     margin-top: auto !important;
   }
 }
@@ -3320,23 +3320,23 @@ textarea {
   .\#\#\#width-auto {
     width: auto;
   }
-  .\#\#\#m-\# {
+  .\#\#\#m-auto {
     margin: auto !important;
   }
-  .\#\#\#m-b-\#,
-  .\#\#\#m-y-\# {
+  .\#\#\#m-b-auto,
+  .\#\#\#m-y-auto {
     margin-bottom: auto !important;
   }
-  .\#\#\#m-l-\#,
-  .\#\#\#m-x-\# {
+  .\#\#\#m-l-auto,
+  .\#\#\#m-x-auto {
     margin-left: auto !important;
   }
-  .\#\#\#m-r-\#,
-  .\#\#\#m-x-\# {
+  .\#\#\#m-r-auto,
+  .\#\#\#m-x-auto {
     margin-right: auto !important;
   }
-  .\#\#\#m-t-\#,
-  .\#\#\#m-y-\# {
+  .\#\#\#m-t-auto,
+  .\#\#\#m-y-auto {
     margin-top: auto !important;
   }
 }

@@ -125,23 +125,23 @@ ${e}
 .${breakpoint.name}width-auto {
   width: auto;
 }
-.${breakpoint.name}m-\\# {
+.${breakpoint.name}m-auto {
   margin: auto !important;
 }
-.${breakpoint.name}m-b-\\#,
-.${breakpoint.name}m-y-\\# {
+.${breakpoint.name}m-b-auto,
+.${breakpoint.name}m-y-auto {
   margin-bottom: auto !important;
 }
-.${breakpoint.name}m-l-\\#,
-.${breakpoint.name}m-x-\\# {
+.${breakpoint.name}m-l-auto,
+.${breakpoint.name}m-x-auto {
   margin-left: auto !important;
 }
-.${breakpoint.name}m-r-\\#,
-.${breakpoint.name}m-x-\\# {
+.${breakpoint.name}m-r-auto,
+.${breakpoint.name}m-x-auto {
   margin-right: auto !important;
 }
-.${breakpoint.name}m-t-\\#,
-.${breakpoint.name}m-y-\\# {
+.${breakpoint.name}m-t-auto,
+.${breakpoint.name}m-y-auto {
   margin-top: auto !important;
 }`;
       }
