@@ -5,13 +5,15 @@ import Button from './components/Button';
 import Flex from './components/Flex';
 import Form from './components/Form';
 import Helpers from './components/Helpers';
-import Layout from './components/Layout';
 import Typography from './components/Typography';
 
 class Index extends CSS {
   css (): string {
     return `*, *::after, *::before {
   box-sizing: border-box;
+}
+.container {
+  max-width: 60rem;
 }
 :root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
@@ -50,7 +52,6 @@ ${new Button().css()}
 ${new Flex().css()}
 ${new Form().css()}
 ${new Helpers().css()}
-${new Layout().css()}
 ${new Typography().css()}
 `;
   }

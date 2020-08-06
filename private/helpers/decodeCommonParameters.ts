@@ -40,6 +40,8 @@ const S = [ '!0', '!1', '!16', '!2', '!3', '!4', '!5', '!6', '!7', '!8', '#', 0,
 
 export const TextAlignProperty = [ 'center', 'end', 'justify', 'left', 'match-parent', 'right', 'start', ] as const;
 
+const W = [ '0', '1/12', '10/12', '100', '11/12', '2/12', '3/12', '4/12', '5/12', '6/12', '7/12', '8/12', '9/12', 'auto', ] as const;
+
 export interface CommonParameters {
   alignContent?: EncodedResponsiveClassName<typeof AlignContentProperty[number]>;
   alignItems?: EncodedResponsiveClassName<typeof AlignItemsProperty[number]>;
@@ -64,6 +66,7 @@ export interface CommonParameters {
   pX?: EncodedResponsiveClassName<typeof S[number]>;
   pY?: EncodedResponsiveClassName<typeof S[number]>;
   textAlign?: EncodedResponsiveClassName<typeof TextAlignProperty[number]>;
+  w?: EncodedResponsiveClassName<typeof W[number]>;
 }
 
 function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
@@ -91,6 +94,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
     pX,
     pY,
     textAlign,
+    w,
     ...notCommonParameters
   } = parameters;
 
@@ -118,6 +122,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
       decodeResponsiveClassName('p-x-', pX),
       decodeResponsiveClassName('p-y-', pY),
       decodeResponsiveClassName('text-align-', textAlign),
+      decodeResponsiveClassName('w-', w),
       className,
     ],
     ...notCommonParameters,
