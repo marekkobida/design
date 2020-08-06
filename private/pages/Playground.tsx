@@ -4,11 +4,15 @@ import React from 'react';
 
 import Anchor from '../components/Anchor';
 import Button from '../components/Button';
+import Column from '../components/Column';
 import Container from '../components/Container';
 import Div from '../components/Div';
+import Form from '../components/Form';
 import Heading from '../components/Heading';
 import Input from '../components/Input';
+import Label from '../components/Label';
 import Paragraph from '../components/Paragraph';
+import Row from '../components/Row';
 
 class Playground extends Page {
   constructor () {
@@ -18,29 +22,53 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Anchor href="#">Anchor</Anchor>
-        <Heading headingSize={1}>Heading 1</Heading>
-        <Heading headingSize={2}>Heading 2</Heading>
-        <Heading headingSize={3}>Heading 3</Heading>
-        <Heading headingSize={4}>Heading 4</Heading>
-        <Heading headingSize={5}>Heading 5</Heading>
-        <Heading headingSize={6}>Heading 6</Heading>
-        <Paragraph>Paragraph</Paragraph>
         <Div mY={4}>
-          <Input className="button" type="button" value={'[type="button"]'} />
-        </Div>
-        <Div mY={4} textAlign="center">
-          <Input className="button" type="reset" value={'[type="reset"]'} />
-        </Div>
-        <Div mY={4} textAlign="right">
-          <Input className="button" type="submit" value={'[type="submit"]'} />
-        </Div>
-        <Div mY={4} textAlign="center">
-          <Button type="button">Button</Button>
+          <Anchor href="#">Anchor</Anchor>
+          <Heading headingSize={1}>Heading 1</Heading>
+          <Heading headingSize={2}>Heading 2</Heading>
+          <Heading headingSize={3}>Heading 3</Heading>
+          <Heading headingSize={4}>Heading 4</Heading>
+          <Heading headingSize={5}>Heading 5</Heading>
+          <Heading headingSize={6}>Heading 6</Heading>
+          <Paragraph>Paragraph</Paragraph>
         </Div>
         <Div mY={4}>
           <Anchor className="button" href="#">Anchor</Anchor>
         </Div>
+        <Div mY={4} textAlign="center">
+          <Button type="button">Button</Button>
+        </Div>
+        <Div mY={4} textAlign="right">
+          <Input className="button" type="button" value={'input[type="button"]'} />
+        </Div>
+        <Div mY={4} textAlign="center">
+          <Input className="button" type="reset" value={'input[type="reset"]'} />
+        </Div>
+        <Div mY={4}>
+          <Input className="button" type="submit" value={'input[type="submit"]'} />
+        </Div>
+        <Form mY={4}>
+          <Row mT="!4">
+            <Column mT={4} w="100">
+              <Label htmlFor="a" mB={2}>Label</Label>
+              <Input className="input" id="a" placeholder="Input" type="text" />
+            </Column>
+            <Column mT={4} w="6/12">
+              <Label htmlFor="b" mB={2}>Label</Label>
+              <Input className="input-checkbox" id="b" type="checkbox" />
+            </Column>
+            <Column mT={4} w="6/12">
+              <Label htmlFor="c" mB={2}>Label</Label>
+              <Input className="input-radio" id="c" type="radio" />
+            </Column>
+            <Column mT={4}>
+              <Button type="button">Button</Button>
+            </Column>
+            <Column mL="#" mT={4}>
+              <Button type="button">Button</Button>
+            </Column>
+          </Row>
+        </Form>
       </Container>
     );
   }
