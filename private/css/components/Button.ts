@@ -8,7 +8,7 @@ class Button extends CSS {
   border-radius: var(--button--border-radius);
   color: rgb(var(--button--color));
   display: inline-block;
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-2) var(--size-4);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .button:focus {

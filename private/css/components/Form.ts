@@ -33,7 +33,7 @@ class Form extends CSS {
   border-radius: 50%;
 }
 .input, .textarea {
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-2) var(--size-4);
   width: 100%;
 }
 .label {
@@ -48,7 +48,7 @@ class Form extends CSS {
   border-radius: var(--select--border-radius);
   color: rgb(var(--select--color));
   display: block;
-  padding: var(--size-2) var(--size-3);
+  padding: var(--size-2) var(--size-4);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
   width: 100%;
 }
