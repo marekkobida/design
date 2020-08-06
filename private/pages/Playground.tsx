@@ -5,6 +5,7 @@ import React from 'react';
 import Column from '../components/Column';
 import Container from '../components/Container';
 import Row from '../components/Row';
+import Test from '../components/Test';
 import Anchor from '../htmlComponents/Anchor';
 import Button from '../htmlComponents/Button';
 import Div from '../htmlComponents/Div';
@@ -24,6 +25,17 @@ class Playground extends Page {
   element () {
     return (
       <Container>
+        <Test>
+          {
+            ($) => (
+              <>
+                <Heading headingSize={6} mB={2}>Heading 6</Heading>
+                <Paragraph onClick={() => $('A')}>A</Paragraph>
+                <Paragraph onClick={() => $('B')}>B</Paragraph>
+              </>
+            )
+          }
+        </Test>
         <Div mY={4}>
           <Anchor href="#">Anchor</Anchor>
           <Heading headingSize={1}>Heading 1</Heading>

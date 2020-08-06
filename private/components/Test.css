@@ -1,0 +1,18 @@
+.relative {
+  position: relative;
+}
+
+.test {
+  background-color: rgb(var(--input--background-color));
+  border: var(--input--border-width) solid rgb(var(--input--border-color));
+  border-radius: var(--input--border-radius);
+  bottom: 0;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.25);
+  color: rgb(var(--input--color));
+  left: 0;
+  padding: var(--size-2) var(--size-4);
+  position: absolute;
+  right: 0;
+  transform: translateY(100%);
+  z-index: 1;
+}
