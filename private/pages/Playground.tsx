@@ -16,6 +16,7 @@ import Label from '../htmlComponents/Label';
 import Option from '../htmlComponents/Option';
 import Paragraph from '../htmlComponents/Paragraph';
 import Select from '../htmlComponents/Select';
+import TextArea from '../htmlComponents/TextArea';
 
 class Playground extends Page {
   constructor () {
@@ -25,17 +26,30 @@ class Playground extends Page {
   element () {
     return (
       <Container>
-        <Test>
-          {
-            ($) => (
-              <>
-                <Heading headingSize={6} mB={2}>Heading 6</Heading>
-                <Paragraph onClick={() => $('A')}>A</Paragraph>
-                <Paragraph onClick={() => $('B')}>B</Paragraph>
-              </>
-            )
-          }
-        </Test>
+        <Form mY={4}>
+          <Label htmlFor="test" mB={2}>Label</Label>
+          <Test className="input" id="test" placeholder="Input" test={(parameters) => JSON.stringify(parameters)} type="text">
+            {
+              (addParameter) => (
+                <Div className="border" style={{ backgroundColor: '#fff', borderRadius: '0.125rem', }}>
+                  <Row>
+                    <Column width={[ '100', { '#': '6/12', }, ]}>
+                      <Heading headingSize={6} pX={4} pY={2}>Name</Heading>
+                      <Div onClick={() => addParameter('name', 'Marek Kobida', true)} pX={4} pY={2}>Marek Kobida</Div>
+                      <Div onClick={() => addParameter('name', 'Peter Masár', true)} pX={4} pY={2}>Peter Masár</Div>
+                    </Column>
+                    <Column width={[ '100', { '#': '6/12', }, ]}>
+                      <Heading headingSize={6} pX={4} pY={2}>Size</Heading>
+                      <Div onClick={() => addParameter('size', 1)} pX={4} pY={2}>1</Div>
+                      <Div onClick={() => addParameter('size', 2)} pX={4} pY={2}>2</Div>
+                    </Column>
+                  </Row>
+                </Div>
+              )
+            }
+          </Test>
+          <Button mT={4} type="submit">Button</Button>
+        </Form>
         <Div mY={4}>
           <Anchor href="#">Anchor</Anchor>
           <Heading headingSize={1}>Heading 1</Heading>
@@ -73,13 +87,17 @@ class Playground extends Page {
                 <Option>Option</Option>
               </Select>
             </Column>
-            <Column mT={4} width="6/12">
+            <Column mT={4} width="100">
               <Label htmlFor="c" mB={2}>Label</Label>
-              <Input className="input-checkbox" id="c" type="checkbox" />
+              <TextArea id="c" placeholder="TextArea" rows={3} />
             </Column>
             <Column mT={4} width="6/12">
               <Label htmlFor="d" mB={2}>Label</Label>
-              <Input className="input-radio" id="d" type="radio" />
+              <Input className="input-checkbox" id="d" type="checkbox" />
+            </Column>
+            <Column mT={4} width="6/12">
+              <Label htmlFor="e" mB={2}>Label</Label>
+              <Input className="input-radio" id="e" type="radio" />
             </Column>
             <Column mT={4}>
               <Button type="button">Button</Button>
