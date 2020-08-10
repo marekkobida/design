@@ -116,6 +116,12 @@ ${a('padding', 'p')}
 ${b}
 ${d}
 ${e}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 .${breakpoint.name}width-0 {
   width: 0;
 }

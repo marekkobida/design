@@ -1411,6 +1411,12 @@ textarea {
 .m-l-11\/12 {
   margin-left: 91.666667%;
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 .width-0 {
   width: 0;
 }
@@ -2038,6 +2044,12 @@ textarea {
   }
   .\#m-l-11\/12 {
     margin-left: 91.666667%;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
   }
   .\#width-0 {
     width: 0;
@@ -2668,6 +2680,12 @@ textarea {
   .\#\#m-l-11\/12 {
     margin-left: 91.666667%;
   }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
   .\#\#width-0 {
     width: 0;
   }
@@ -3296,6 +3314,12 @@ textarea {
   }
   .\#\#\#m-l-11\/12 {
     margin-left: 91.666667%;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
   }
   .\#\#\#width-0 {
     width: 0;
