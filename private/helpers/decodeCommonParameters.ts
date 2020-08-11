@@ -47,7 +47,7 @@ const $width = [ '0', '1/12', '10/12', '100', '11/12', '2/12', '3/12', '4/12', '
 export interface CommonParameters {
   alignContent?: EncodedResponsiveClassName<typeof AlignContentProperty[number]>;
   alignItems?: EncodedResponsiveClassName<typeof AlignItemsProperty[number]>;
-  alignSelf?: EncodedResponsiveClassName<typeof AlignSelfProperty[number] >;
+  alignSelf?: EncodedResponsiveClassName<typeof AlignSelfProperty[number]>;
   className?: EncodedClassName;
   display?: EncodedResponsiveClassName<typeof DisplayProperty[number]>;
   flexDirection?: EncodedResponsiveClassName<typeof FlexDirectionProperty[number]>;
