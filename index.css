@@ -6,7 +6,7 @@
 }
 :root {
   --body--background-color: 255, 255, 255;
-  --body--color: 0, 0, 0;
+  --body--color: 255, 0, 0;
   --body--font-family: system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif;
   --body--font-size: 1rem;
   --body--font-weight: 400;

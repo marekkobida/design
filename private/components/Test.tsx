@@ -1,7 +1,6 @@
 import React from 'react';
 
 import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
 import Div from '../htmlComponents/Div';
 import Input from '../htmlComponents/Input';
 
@@ -15,7 +14,7 @@ interface S {
   parameters: [string, number | string][];
 }
 
-class Test extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'input'>, keyof CommonParameters> & P, S> {
+class Test extends React.Component<Input['props'] & P, S> {
   div: React.RefObject<HTMLDivElement> = React.createRef();
 
   state: S = { isActive: false, parameters: [], };
@@ -70,19 +69,13 @@ class Test extends React.Component<CommonParameters & Omit<React.ComponentPropsW
   }
 
   render () {
-    const { children, className, test, ...notCommonParameters } = decodeCommonParameters(this.props);
+    const { children, test, ...$ } = this.props;
 
     return (
       <div className={decodeClassName('relative')} ref={this.div}>
-        <Input
-          {...notCommonParameters}
-          className={decodeClassName(className)}
-          onFocus={() => this.setState((state) => ({ ...state, isActive: true, }))}
-          readOnly
-          value={test(this.state.parameters)}
-        />
+        <Input {...$} onClick={() => this.setState((state) => ({ ...state, isActive: true, }))} readOnly value={test(this.state.parameters)} />
         {this.state.parameters.map((parameter, i) => <Input key={i} name={parameter[0]} readOnly type="hidden" value={parameter[1]} />)}
-        {this.state.isActive && <Div className="absolute" width="100">{children(this.addParameter)}</Div>}
+        {this.state.isActive && <Div className="absolute" p={2} width="100">{children(this.addParameter)}</Div>}
       </div>
     );
   }

@@ -61,18 +61,15 @@ class Playground extends Page {
           <Paragraph>Paragraph</Paragraph>
         </Div>
         <Div mY={4}>
-          <Anchor className="button" href="#">Anchor</Anchor>
-        </Div>
-        <Div mY={4} textAlign="center">
           <Button type="button">Button</Button>
         </Div>
-        <Div mY={4} textAlign="right">
+        <Div mY={4} textAlign="center">
           <Input className="button" type="button" value={'input[type="button"]'} />
         </Div>
-        <Div mY={4} textAlign="center">
+        <Div mY={4} textAlign="right">
           <Input className="button" type="reset" value={'input[type="reset"]'} />
         </Div>
-        <Div mY={4}>
+        <Div mY={4} textAlign="center">
           <Input className="button" type="submit" value={'input[type="submit"]'} />
         </Div>
         <Form mY={4}>
@@ -97,13 +94,15 @@ class Playground extends Page {
             </Column>
             <Column mT={4} width="6/12">
               <Label htmlFor="e" mB={2}>Label</Label>
-              <Input className="input-radio" id="e" type="radio" />
+              <Input className="input-checkbox" defaultChecked id="e" type="checkbox" />
             </Column>
-            <Column mT={4}>
-              <Button type="button">Button</Button>
+            <Column mT={4} width="6/12">
+              <Label htmlFor="f" mB={2}>Label</Label>
+              <Input className="input-radio" id="f" type="radio" />
             </Column>
-            <Column mL="auto" mT={4}>
-              <Button type="button">Button</Button>
+            <Column mT={4} width="6/12">
+              <Label htmlFor="g" mB={2}>Label</Label>
+              <Input className="input-radio" defaultChecked id="g" type="radio" />
             </Column>
           </Row>
         </Form>
