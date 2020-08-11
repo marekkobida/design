@@ -6,6 +6,7 @@
 1. [Column](private/components/Column.tsx)
 1. [Container](private/components/Container.tsx)
 1. [Row](private/components/Row.tsx)
+1. [Test](private/components/Test.tsx)
 
 ## htmlComponents
 
