@@ -95,22 +95,7 @@ class Helpers extends CSS {
           11
         );
 
-        return `.${breakpoint.name}border {
-  border: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.${breakpoint.name}border-bottom {
-  border-bottom: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.${breakpoint.name}border-left {
-  border-left: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.${breakpoint.name}border-right {
-  border-right: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.${breakpoint.name}border-top {
-  border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-${c}
+        return `${c}
 ${a('margin', 'm')}
 ${a('padding', 'p')}
 ${b}

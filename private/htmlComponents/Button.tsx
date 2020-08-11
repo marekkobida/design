@@ -9,7 +9,7 @@ class Button extends React.Component<CommonParameters & Omit<React.ComponentProp
   render () {
     const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
 
-    return <button {...notCommonParameters} className={decodeClassName('border-radius button', className)} />;
+    return <button {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
   }
 }
 

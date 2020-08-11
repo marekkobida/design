@@ -1,15 +1,12 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import Div from '../htmlComponents/Div';
 
-class Column extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters>> {
+class Column extends React.Component<Div['props']> {
   static defaultProps = { pX: 2, };
 
   render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    return <div {...notCommonParameters} className={decodeClassName(className)} />;
+    return <Div {...this.props} />;
   }
 }
 

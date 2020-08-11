@@ -12,12 +12,43 @@ class Index extends CSS {
     return `*, *::after, *::before {
   box-sizing: border-box;
 }
+.absolute {
+  position: absolute;
+}
+.border {
+  border: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
+}
+.border-bottom {
+  border-bottom: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
+}
+.border-left {
+  border-left: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
+}
+.border-radius {
+  border-radius: 0.125rem;
+}
+.border-right {
+  border-right: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
+}
+.border-top {
+  border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
+}
 .container {
   max-width: 60rem;
+}
+.relative {
+  position: relative;
 }
 :root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
 ${this.for(($) => `  --size-${$.name}: ${$.size};`, this.variables['sizes'])}
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  text-decoration: underline;
 }
 body {
   -webkit-text-size-adjust: 100%;
@@ -48,23 +79,6 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 }
 textarea {
   resize: vertical;
-}
-/* TODO */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:focus, a:hover {
-  text-decoration: underline;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.border-radius {
-  border-radius: 0.125rem;
 }
 ${new Button().css()}
 ${new Flex().css()}
