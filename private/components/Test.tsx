@@ -1,3 +1,4 @@
+// TODO
 import React from 'react';
 
 import decodeClassName from '../helpers/decodeClassName';
@@ -35,47 +36,47 @@ class Test extends React.Component<Input['props'] & P, S> {
 
   addParameter: Parameters<P['children']>[0] = (left, right, $ = false) => {
     this.setState((state) => {
-      let existuje = false;
+      let index = -1;
 
       for (let i = 0; i < state.parameters.length; i += 1) {
         const defaultValue = state.parameters[i];
 
         if ($) {
           if (defaultValue[0] === left && defaultValue[1] === right) {
-            existuje = i;
+            index = i;
           }
         } else if (defaultValue[0] === left) {
-          existuje = i;
+          index = i;
         }
       }
 
-      if (typeof existuje === 'number') {
+      if (index !== -1) {
         let s = {
           ...state,
-          parameters: state.parameters.filter((defaultValue, i) => i !== existuje),
+          parameters: state.parameters.filter((defaultValue, i) => i !== index),
         };
 
         if (!$) {
-          if (this.state.parameters[existuje][1] !== right) {
+          if (this.state.parameters[index][1] !== right) {
             s = { ...s, parameters: [ ...s.parameters, [ left, right, ], ], };
           }
         }
 
         return s;
-      } else {
-        return { ...state, parameters: [ ...state.parameters, [ left, right, ], ], };
       }
+
+      return { ...state, parameters: [ ...state.parameters, [ left, right, ], ], };
     });
   }
 
   render () {
-    const { children, test, ...$ } = this.props;
+    const { children, test, ...commonParameters } = this.props;
 
     return (
       <div className={decodeClassName('relative')} ref={this.div}>
-        <Input {...$} onClick={() => this.setState((state) => ({ ...state, isActive: true, }))} readOnly value={test(this.state.parameters)} />
+        <Input {...commonParameters} onClick={() => this.setState((state) => ({ ...state, isActive: true, }))} readOnly value={test(this.state.parameters)} />
         {this.state.parameters.map((parameter, i) => <Input key={i} name={parameter[0]} readOnly type="hidden" value={parameter[1]} />)}
-        {this.state.isActive && <Div className="absolute" p={2} width="100">{children(this.addParameter)}</Div>}
+        {this.state.isActive && <Div className="absolute" width="100">{children(this.addParameter)}</Div>}
       </div>
     );
   }
