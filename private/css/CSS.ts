@@ -36,7 +36,7 @@ class CSS {
         const suffix = breakpoint === null ? '' : breakpoint.name;
 
         if (breakpoint !== null) {
-          return `@media (min-width: ${breakpoint.size}) {
+          return `@media (min-width: ${breakpoint.size}rem) {
   ${$({ name: suffix, size: breakpoint.size, }).replace(/\n/g, '\n  ')}
 }`;
         }

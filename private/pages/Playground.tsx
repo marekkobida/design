@@ -16,7 +16,12 @@ import Label from '../htmlComponents/Label';
 import Option from '../htmlComponents/Option';
 import Paragraph from '../htmlComponents/Paragraph';
 import Select from '../htmlComponents/Select';
+import Table from '../htmlComponents/Table';
+import TableCell from '../htmlComponents/TableCell';
+import TableHeaderCell from '../htmlComponents/TableHeaderCell';
+import TableRow from '../htmlComponents/TableRow';
 import TextArea from '../htmlComponents/TextArea';
+import variables from '../variables.json';
 
 class Playground extends Page {
   constructor () {
@@ -26,6 +31,52 @@ class Playground extends Page {
   element () {
     return (
       <Container>
+        <Table mY={4}>
+          <TableRow>
+            <TableHeaderCell>name</TableHeaderCell>
+            <TableHeaderCell>value</TableHeaderCell>
+          </TableRow>
+          {
+            variables[':root'].map((variable) => (
+              <TableRow key={variable.name}>
+                <TableCell>{variable.name}</TableCell>
+                <TableCell>{variable.value}</TableCell>
+              </TableRow>
+            ))
+          }
+        </Table>
+        <Table mY={4}>
+          <TableRow>
+            <TableHeaderCell>name</TableHeaderCell>
+            <TableHeaderCell>size (rem)</TableHeaderCell>
+            <TableHeaderCell>size (px)</TableHeaderCell>
+          </TableRow>
+          {
+            variables.breakpoints.map((breakpoint) => breakpoint && (
+              <TableRow key={breakpoint.name}>
+                <TableCell>{breakpoint.name}</TableCell>
+                <TableCell>{breakpoint.size}</TableCell>
+                <TableCell>{breakpoint.size * 16}</TableCell>
+              </TableRow>
+            ))
+          }
+        </Table>
+        <Table mY={4}>
+          <TableRow>
+            <TableHeaderCell>name</TableHeaderCell>
+            <TableHeaderCell>size (rem)</TableHeaderCell>
+            <TableHeaderCell>size (px)</TableHeaderCell>
+          </TableRow>
+          {
+            variables.sizes.map((size) => (
+              <TableRow key={size.name}>
+                <TableCell>{size.name}</TableCell>
+                <TableCell>{size.size}</TableCell>
+                <TableCell>{size.size * 16}</TableCell>
+              </TableRow>
+            ))
+          }
+        </Table>
         <Div mY={4}>
           <Anchor href="#">Anchor</Anchor>
           <Heading headingSize={1}>Heading 1</Heading>

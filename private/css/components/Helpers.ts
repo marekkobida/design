@@ -6,23 +6,23 @@ class Helpers extends CSS {
       (breakpoint) => {
         const a = (property: string, abbreviation: string) => this.for(
           ($) => `.${breakpoint.name}${abbreviation}-${$.name} {
-  ${property}: ${$.size} !important;
+  ${property}: ${$.size}rem !important;
 }
 .${breakpoint.name}${abbreviation}-b-${$.name},
 .${breakpoint.name}${abbreviation}-y-${$.name} {
-  ${property}-bottom: ${$.size} !important;
+  ${property}-bottom: ${$.size}rem !important;
 }
 .${breakpoint.name}${abbreviation}-l-${$.name},
 .${breakpoint.name}${abbreviation}-x-${$.name} {
-  ${property}-left: ${$.size} !important;
+  ${property}-left: ${$.size}rem !important;
 }
 .${breakpoint.name}${abbreviation}-r-${$.name},
 .${breakpoint.name}${abbreviation}-x-${$.name} {
-  ${property}-right: ${$.size} !important;
+  ${property}-right: ${$.size}rem !important;
 }
 .${breakpoint.name}${abbreviation}-t-${$.name},
 .${breakpoint.name}${abbreviation}-y-${$.name} {
-  ${property}-top: ${$.size} !important;
+  ${property}-top: ${$.size}rem !important;
 }`,
           this.variables.sizes
         );
@@ -31,23 +31,23 @@ class Helpers extends CSS {
           ($) => {
             if ($.name !== '0') {
               return `.${breakpoint.name}m-\\!${$.name} {
-  margin: calc(${$.size} * -1) !important;
+  margin: calc(${$.size}rem * -1) !important;
 }
 .${breakpoint.name}m-b-\\!${$.name},
 .${breakpoint.name}m-y-\\!${$.name} {
-  margin-bottom: calc(${$.size} * -1) !important;
+  margin-bottom: calc(${$.size}rem * -1) !important;
 }
 .${breakpoint.name}m-l-\\!${$.name},
 .${breakpoint.name}m-x-\\!${$.name} {
-  margin-left: calc(${$.size} * -1) !important;
+  margin-left: calc(${$.size}rem * -1) !important;
 }
 .${breakpoint.name}m-r-\\!${$.name},
 .${breakpoint.name}m-x-\\!${$.name} {
-  margin-right: calc(${$.size} * -1) !important;
+  margin-right: calc(${$.size}rem * -1) !important;
 }
 .${breakpoint.name}m-t-\\!${$.name},
 .${breakpoint.name}m-y-\\!${$.name} {
-  margin-top: calc(${$.size} * -1) !important;
+  margin-top: calc(${$.size}rem * -1) !important;
 }`;
             }
 

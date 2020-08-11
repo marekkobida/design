@@ -41,7 +41,7 @@ class Index extends CSS {
 }
 :root {
 ${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
-${this.for(($) => `  --size-${$.name}: ${$.size};`, this.variables['sizes'])}
+${this.for(($) => `  --size-${$.name}: ${$.size}rem;`, this.variables['sizes'])}
 }
 a {
   color: inherit;
@@ -76,6 +76,9 @@ button, input, select, textarea {
 }
 button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
   cursor: pointer;
+}
+table {
+  border-collapse: collapse;
 }
 textarea {
   resize: vertical;

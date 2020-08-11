@@ -169,53 +169,53 @@
     null,
     {
       "name": "\\#",
-      "size": "36rem"
+      "size": 36
     },
     {
       "name": "\\#\\#",
-      "size": "48rem"
+      "size": 48
     },
     {
       "name": "\\#\\#\\#",
-      "size": "60rem"
+      "size": 60
     }
   ],
   "sizes": [
     {
-      "name": "0",
-      "size": "0"
+      "name": 0,
+      "size": 0
     },
     {
-      "name": "1",
-      "size": "0.25rem"
+      "name": 1,
+      "size": 0.25
     },
     {
-      "name": "2",
-      "size": "0.5rem"
+      "name": 2,
+      "size": 0.5
     },
     {
-      "name": "3",
-      "size": "0.75rem"
+      "name": 3,
+      "size": 0.75
     },
     {
-      "name": "4",
-      "size": "1rem"
+      "name": 4,
+      "size": 1
     },
     {
-      "name": "5",
-      "size": "1.25rem"
+      "name": 5,
+      "size": 1.25
     },
     {
-      "name": "6",
-      "size": "1.5rem"
+      "name": 6,
+      "size": 1.5
     },
     {
-      "name": "7",
-      "size": "1.75rem"
+      "name": 7,
+      "size": 1.75
     },
     {
-      "name": "8",
-      "size": "2rem"
+      "name": 8,
+      "size": 2
     }
   ]
 }
