@@ -5,10 +5,7 @@ class Button extends CSS {
     return `.button {
   background-color: rgb(var(--button--background-color));
   border: var(--button--border-width) solid rgb(var(--button--border-color));
-  border-radius: var(--button--border-radius);
   color: rgb(var(--button--color));
-  display: inline-block;
-  padding: var(--size-2) var(--size-4);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .button:focus {

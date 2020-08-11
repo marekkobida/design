@@ -41,10 +41,6 @@
       "value": "var(--button--background-color)"
     },
     {
-      "name": "--button--border-radius",
-      "value": "0.125rem"
-    },
-    {
       "name": "--button--border-width",
       "value": "var(--border--border-width)"
     },
@@ -109,10 +105,6 @@
       "value": "128, 128, 128"
     },
     {
-      "name": "--input--border-radius",
-      "value": "0.125rem"
-    },
-    {
       "name": "--input--border-width",
       "value": "var(--border--border-width)"
     },
@@ -151,10 +143,6 @@
     {
       "name": "--select--border-color",
       "value": "var(--input--border-color)"
-    },
-    {
-      "name": "--select--border-radius",
-      "value": "var(--input--border-radius)"
     },
     {
       "name": "--select--border-width",

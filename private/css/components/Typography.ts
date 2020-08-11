@@ -32,8 +32,6 @@ class Typography extends CSS {
   font-family: var(--heading--font-family);
   font-weight: var(--heading--font-weight);
   line-height: var(--heading--line-height);
-  margin-bottom: 0;
-  margin-top: 0;
 }
 .h1, h1 {
   font-size: var(--h1--font-size);
@@ -53,18 +51,7 @@ class Typography extends CSS {
 .h6, h6 {
   font-size: var(--h6--font-size);
 }
-${this.textAlign()}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:focus, a:hover {
-  text-decoration: underline;
-}
-p {
-  margin-bottom: 0;
-  margin-top: 0;
-}`;
+${this.textAlign()}`;
   }
 }
 

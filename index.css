@@ -15,7 +15,6 @@
   --border--border-width: 0.125rem;
   --button--background-color: 128, 128, 128;
   --button--border-color: var(--button--background-color);
-  --button--border-radius: 0.125rem;
   --button--border-width: var(--border--border-width);
   --button--color: 255, 255, 255;
   --button--focus--background-color: 0, 0, 0;
@@ -32,7 +31,6 @@
   --heading--line-height: 1.25;
   --input--background-color: 255, 255, 255;
   --input--border-color: 128, 128, 128;
-  --input--border-radius: 0.125rem;
   --input--border-width: var(--border--border-width);
   --input--checked--background-color: var(--input--focus--border-color);
   --input--checked--border-color: var(--input--focus--border-color);
@@ -43,7 +41,6 @@
   --label--color: var(--body--color);
   --select--background-color: var(--input--background-color);
   --select--border-color: var(--input--border-color);
-  --select--border-radius: var(--input--border-radius);
   --select--border-width: var(--input--border-width);
   --select--color: var(--input--color);
   --select--focus--background-color: var(--input--focus--background-color);
@@ -89,13 +86,27 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 textarea {
   resize: vertical;
 }
+/* TODO */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  text-decoration: underline;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.border-radius {
+  border-radius: 0.125rem;
+}
 .button {
   background-color: rgb(var(--button--background-color));
   border: var(--button--border-width) solid rgb(var(--button--border-color));
-  border-radius: var(--button--border-radius);
   color: rgb(var(--button--color));
-  display: inline-block;
-  padding: var(--size-2) var(--size-4);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .button:focus {
@@ -755,10 +766,6 @@ textarea {
     justify-content: stretch !important;
   }
 }
-.input-checkbox, .input-radio {
-  height: var(--size-6);
-  width: var(--size-6);
-}
 .input-checkbox:checked, .input-radio:checked {
   background-color: rgb(var(--input--checked--background-color));
   border-color: rgb(var(--input--checked--border-color));
@@ -768,9 +775,7 @@ textarea {
   -webkit-appearance: none;
   background-color: rgb(var(--input--background-color));
   border: var(--input--border-width) solid rgb(var(--input--border-color));
-  border-radius: var(--input--border-radius);
   color: rgb(var(--input--color));
-  display: block;
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .input::placeholder, .textarea::placeholder {
@@ -785,25 +790,16 @@ textarea {
 .input-radio {
   border-radius: 50%;
 }
-.input, .textarea {
-  padding: var(--size-2) var(--size-4);
-  width: 100%;
-}
 .label {
   color: rgb(var(--label--color));
-  display: inline-block;
 }
 .select {
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: rgb(var(--select--background-color));
   border: var(--select--border-width) solid rgb(var(--select--border-color));
-  border-radius: var(--select--border-radius);
   color: rgb(var(--select--color));
-  display: block;
-  padding: var(--size-2) var(--size-4);
   transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
-  width: 100%;
 }
 .select:focus {
   background-color: rgb(var(--select--focus--background-color));
@@ -1410,12 +1406,6 @@ textarea {
 }
 .m-l-11\/12 {
   margin-left: 91.666667%;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
 }
 .width-0 {
   width: 0;
@@ -2044,12 +2034,6 @@ textarea {
   }
   .\#m-l-11\/12 {
     margin-left: 91.666667%;
-  }
-  .absolute {
-    position: absolute;
-  }
-  .relative {
-    position: relative;
   }
   .\#width-0 {
     width: 0;
@@ -2680,12 +2664,6 @@ textarea {
   .\#\#m-l-11\/12 {
     margin-left: 91.666667%;
   }
-  .absolute {
-    position: absolute;
-  }
-  .relative {
-    position: relative;
-  }
   .\#\#width-0 {
     width: 0;
   }
@@ -3315,12 +3293,6 @@ textarea {
   .\#\#\#m-l-11\/12 {
     margin-left: 91.666667%;
   }
-  .absolute {
-    position: absolute;
-  }
-  .relative {
-    position: relative;
-  }
   .\#\#\#width-0 {
     width: 0;
   }
@@ -3354,8 +3326,6 @@ textarea {
   font-family: var(--heading--font-family);
   font-weight: var(--heading--font-weight);
   line-height: var(--heading--line-height);
-  margin-bottom: 0;
-  margin-top: 0;
 }
 .h1, h1 {
   font-size: var(--h1--font-size);
@@ -3464,15 +3434,4 @@ textarea {
   .\#\#\#text-align-start {
     text-align: start !important;
   }
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:focus, a:hover {
-  text-decoration: underline;
-}
-p {
-  margin-bottom: 0;
-  margin-top: 0;
 }

@@ -49,6 +49,23 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 textarea {
   resize: vertical;
 }
+/* TODO */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  text-decoration: underline;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.border-radius {
+  border-radius: 0.125rem;
+}
 ${new Button().css()}
 ${new Flex().css()}
 ${new Form().css()}

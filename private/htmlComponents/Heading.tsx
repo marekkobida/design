@@ -6,6 +6,8 @@ import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeComm
 interface P { headingSize: 1 | 2 | 3 | 4 | 5 | 6; }
 
 class Heading extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof CommonParameters> & P> {
+  static defaultProps = { mY: 0, };
+
   render () {
     const { className, headingSize, ...notCommonParameters } = decodeCommonParameters(this.props);
 
