@@ -21,7 +21,7 @@ import TableCell from '../htmlComponents/TableCell';
 import TableHeaderCell from '../htmlComponents/TableHeaderCell';
 import TableRow from '../htmlComponents/TableRow';
 import TextArea from '../htmlComponents/TextArea';
-import variables from '../variables.json';
+import variables from '../variables';
 
 class Playground extends Page {
   constructor () {
