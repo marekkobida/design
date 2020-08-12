@@ -8,6 +8,8 @@
 1. [Row](private/components/Row.tsx)
 1. [Test](private/components/Test.tsx)
 
+---
+
 ## htmlComponents
 
 1. [Anchor](private/htmlComponents/Anchor.tsx)
@@ -30,3 +32,7 @@
 1. [decodeClassName](private/helpers/decodeClassName.ts)
 1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
 1. [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
+
+---
+
+[variables](private/variables.ts)
