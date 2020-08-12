@@ -1,4 +1,10 @@
-const variables = {
+interface Variables {
+  ':root': { name: string; value: string; }[];
+  breakpoints: (null | { name: string; size: number; })[];
+  sizes: { name: string; size: number; }[];
+}
+
+const variables: Variables = {
   ':root': [
     {
       name: 'body--background-color',
@@ -182,39 +188,39 @@ const variables = {
   ],
   sizes: [
     {
-      name: 0,
+      name: '0',
       size: 0,
     },
     {
-      name: 1,
+      name: '1',
       size: 0.25,
     },
     {
-      name: 2,
+      name: '2',
       size: 0.5,
     },
     {
-      name: 3,
+      name: '3',
       size: 0.75,
     },
     {
-      name: 4,
+      name: '4',
       size: 1,
     },
     {
-      name: 5,
+      name: '5',
       size: 1.25,
     },
     {
-      name: 6,
+      name: '6',
       size: 1.5,
     },
     {
-      name: 7,
+      name: '7',
       size: 1.75,
     },
     {
-      name: 8,
+      name: '8',
       size: 2,
     },
   ],
