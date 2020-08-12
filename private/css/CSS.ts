@@ -30,7 +30,7 @@ class CSS {
     return $$.join('\n');
   }
 
-  forBreakpoints ($: (breakpoint: { name: string; size?: string; }) => string): string {
+  forBreakpoints ($: (breakpoint: { name: string; size?: number; }) => string): string {
     return this.for(
       (breakpoint) => {
         const suffix = breakpoint === null ? '' : breakpoint.name;

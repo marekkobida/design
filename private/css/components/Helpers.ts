@@ -29,7 +29,7 @@ class Helpers extends CSS {
 
         const b: string = this.for(
           ($) => {
-            if ($.name !== '0') {
+            if ($.name !== 0) {
               return `.${breakpoint.name}m-\\!${$.name} {
   margin: calc(${$.size}rem * -1) !important;
 }

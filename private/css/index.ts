@@ -40,7 +40,7 @@ class Index extends CSS {
   position: relative;
 }
 :root {
-${this.for(($) => `  ${$.name}: ${$.value};`, this.variables[':root'])}
+${this.for(($) => `  --${$.name}: ${$.value};`, this.variables[':root'])}
 ${this.for(($) => `  --size-${$.name}: ${$.size}rem;`, this.variables['sizes'])}
 }
 a {

@@ -1195,25 +1195,6 @@ select:focus {
 .p-y-8 {
   padding-top: 2rem !important;
 }
-.m-\!0 {
-  margin: calc(0rem * -1) !important;
-}
-.m-b-\!0,
-.m-y-\!0 {
-  margin-bottom: calc(0rem * -1) !important;
-}
-.m-l-\!0,
-.m-x-\!0 {
-  margin-left: calc(0rem * -1) !important;
-}
-.m-r-\!0,
-.m-x-\!0 {
-  margin-right: calc(0rem * -1) !important;
-}
-.m-t-\!0,
-.m-y-\!0 {
-  margin-top: calc(0rem * -1) !important;
-}
 .m-\!1 {
   margin: calc(0.25rem * -1) !important;
 }
@@ -1826,25 +1807,6 @@ select:focus {
   .\#p-t-8,
   .\#p-y-8 {
     padding-top: 2rem !important;
-  }
-  .\#m-\!0 {
-    margin: calc(0rem * -1) !important;
-  }
-  .\#m-b-\!0,
-  .\#m-y-\!0 {
-    margin-bottom: calc(0rem * -1) !important;
-  }
-  .\#m-l-\!0,
-  .\#m-x-\!0 {
-    margin-left: calc(0rem * -1) !important;
-  }
-  .\#m-r-\!0,
-  .\#m-x-\!0 {
-    margin-right: calc(0rem * -1) !important;
-  }
-  .\#m-t-\!0,
-  .\#m-y-\!0 {
-    margin-top: calc(0rem * -1) !important;
   }
   .\#m-\!1 {
     margin: calc(0.25rem * -1) !important;
@@ -2460,25 +2422,6 @@ select:focus {
   .\#\#p-y-8 {
     padding-top: 2rem !important;
   }
-  .\#\#m-\!0 {
-    margin: calc(0rem * -1) !important;
-  }
-  .\#\#m-b-\!0,
-  .\#\#m-y-\!0 {
-    margin-bottom: calc(0rem * -1) !important;
-  }
-  .\#\#m-l-\!0,
-  .\#\#m-x-\!0 {
-    margin-left: calc(0rem * -1) !important;
-  }
-  .\#\#m-r-\!0,
-  .\#\#m-x-\!0 {
-    margin-right: calc(0rem * -1) !important;
-  }
-  .\#\#m-t-\!0,
-  .\#\#m-y-\!0 {
-    margin-top: calc(0rem * -1) !important;
-  }
   .\#\#m-\!1 {
     margin: calc(0.25rem * -1) !important;
   }
@@ -3092,25 +3035,6 @@ select:focus {
   .\#\#\#p-t-8,
   .\#\#\#p-y-8 {
     padding-top: 2rem !important;
-  }
-  .\#\#\#m-\!0 {
-    margin: calc(0rem * -1) !important;
-  }
-  .\#\#\#m-b-\!0,
-  .\#\#\#m-y-\!0 {
-    margin-bottom: calc(0rem * -1) !important;
-  }
-  .\#\#\#m-l-\!0,
-  .\#\#\#m-x-\!0 {
-    margin-left: calc(0rem * -1) !important;
-  }
-  .\#\#\#m-r-\!0,
-  .\#\#\#m-x-\!0 {
-    margin-right: calc(0rem * -1) !important;
-  }
-  .\#\#\#m-t-\!0,
-  .\#\#\#m-y-\!0 {
-    margin-top: calc(0rem * -1) !important;
   }
   .\#\#\#m-\!1 {
     margin: calc(0.25rem * -1) !important;
