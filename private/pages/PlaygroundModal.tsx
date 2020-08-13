@@ -13,6 +13,34 @@ class PlaygroundModal extends Page {
   }
 
 
+  // TEST -DATA PRE IMG GALERIU
+  modalGalery () {
+    const { isShowing, toggleModal,  } = useModal();
+    const sampleGalleryData = [
+      'https://koala.sk/FileHandler.ashx?FileID=220554&amp;FormatID=41&amp;TimeStamp=20171123153913',
+      'https://koala.sk/FileHandler.ashx?FileID=363700&amp;FormatID=41&amp;TimeStamp=20171123153913',
+      'https://koala.sk/FileHandler.ashx?FileID=43558&amp;FormatID=41&amp;TimeStamp=20171123153913',
+    ];
+
+    return (
+      <div
+        onKeyUp={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
+        onKeyDown={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
+      >
+        <button className="button-default" onClick={toggleModal}>Show Modal</button>
+        <Modal
+          isShowing={isShowing}
+          hide={toggleModal}
+          content = {sampleGalleryData}
+        >
+          sdsdsd
+        </Modal>
+      </div>
+    );
+  }
+
+
+  // MODAL 1
   modaltest1 () {
     const { isShowing, toggleModal,  } = useModal();
     // avoid tab navigate away, if modal is open
@@ -31,6 +59,7 @@ class PlaygroundModal extends Page {
     );
   }
 
+  // MODAL 2
   modaltest2 () {
     const { isShowing, toggleModal, } = useModal();
     return (
@@ -52,10 +81,10 @@ class PlaygroundModal extends Page {
   element () {
     return (
       <Container>
-        Huh ?
-
+        <this.modalGalery />
+        <br /><br />
         <this.modaltest1 />
-       Lorep Gipsumsddsd
+        <br /><br />
         <this.modaltest2 />
       </Container>
     );

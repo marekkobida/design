@@ -1,16 +1,54 @@
 
 import React, { ReactEventHandler, } from 'react';
 import ReactDOM from 'react-dom';
+import { useState, } from 'react';
 
 //
 type P = {
-  isShowing: any;
+  index: Number,
+  isShowing: boolean;
   hide: React.EventHandler<any>;
-  content: any;
-  avoidBlur: any;
+  content: any; /* komponent alebo array stringov pr eimg gla */
+
 }
 
-const Modal = ({ content, isShowing, hide,  }:P) => isShowing
+
+const ModalGallery = (images: Array<string>, index: Number) => {
+  const [ count, setCount, ] = useState(0);
+  const [ mode, setMode, ] = useState(false);
+
+  let selectedImg = index || count;
+  // Min/Max
+  if (selectedImg < 0) { selectedImg = 0; }
+  if (selectedImg >= images.length) { selectedImg = images.length - 1; }
+
+  return (<>
+    {
+      <div
+        onClick={()=>{
+          setCount(selectedImg = (selectedImg == images.length - 1) ? 0 : selectedImg + 1);
+        }}
+        style={{
+          backgroundImage: 'url(' + images[selectedImg] + ')',
+          backgroundSize: mode ? 'cover' : 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          width: '30vw',
+          height: '30vh',
+        }} />
+    }
+
+    <div>IMG COUNTER: {selectedImg + 1}/{images.length}</div>
+    <div onClick={()=>{ setMode(!mode); }}>ZOOM </div>
+
+    <span onClick={()=>{ setCount(selectedImg - 1); }}>{' [<] '}</span>
+    <span onClick={()=>{ setCount(selectedImg + 1); }}>{' [>] '}</span>
+
+  </>);
+};
+
+
+const Modal = ({ content, isShowing, hide, index, }:P) => isShowing
   ? ReactDOM.createPortal(
     <React.Fragment>
       <div
@@ -59,7 +97,14 @@ const Modal = ({ content, isShowing, hide,  }:P) => isShowing
             </button>
           </div>
           <div className="modal-body">
-            {content}
+
+
+            { // zobrazi priamo alebo galeriu ak je to array
+              Array.isArray(content)
+                ? ModalGallery(content, index)
+                : content}
+
+
           </div>
 
         </div>
