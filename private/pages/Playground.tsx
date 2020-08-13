@@ -41,9 +41,9 @@ class Playground extends Page {
           <TableSection $="tbody">
             {
               variables[':root'].map((variable) => (
-                <TableRow key={variable.name}>
-                  <TableCell>{variable.name}</TableCell>
-                  <TableCell>{variable.value}</TableCell>
+                <TableRow key={variable.left}>
+                  <TableCell>{variable.left}</TableCell>
+                  <TableCell>{variable.right}</TableCell>
                 </TableRow>
               ))
             }
@@ -60,10 +60,10 @@ class Playground extends Page {
           <TableSection $="tbody">
             {
               variables.breakpoints.map((breakpoint) => breakpoint && (
-                <TableRow key={breakpoint.name}>
-                  <TableCell>{breakpoint.name}</TableCell>
-                  <TableCell>{breakpoint.size}</TableCell>
-                  <TableCell>{breakpoint.size * 16}</TableCell>
+                <TableRow key={breakpoint.left}>
+                  <TableCell>{breakpoint.left}</TableCell>
+                  <TableCell>{breakpoint.right}</TableCell>
+                  <TableCell>{breakpoint.right * 16}</TableCell>
                 </TableRow>
               ))
             }
@@ -80,10 +80,10 @@ class Playground extends Page {
           <TableSection $="tbody">
             {
               variables.sizes.map((size) => (
-                <TableRow key={size.name}>
-                  <TableCell>{size.name}</TableCell>
-                  <TableCell>{size.size}</TableCell>
-                  <TableCell>{size.size * 16}</TableCell>
+                <TableRow key={size.left}>
+                  <TableCell>{size.left}</TableCell>
+                  <TableCell>{size.right}</TableCell>
+                  <TableCell>{size.right * 16}</TableCell>
                 </TableRow>
               ))
             }

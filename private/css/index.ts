@@ -40,8 +40,8 @@ class Index extends CSS {
   position: relative;
 }
 :root {
-${this.for(($) => `  --${$.name}: ${$.value};`, this.variables[':root'])}
-${this.for(($) => `  --size-${$.name}: ${$.size}rem;`, this.variables['sizes'])}
+${this.for(($) => `  --${$.left}: ${$.right};`, this.variables[':root'])}
+${this.for(($) => `  --size-${$.left}: ${$.right}rem;`, this.variables['sizes'])}
 }
 a {
   color: inherit;

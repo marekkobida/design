@@ -1,227 +1,227 @@
 interface Variables {
-  ':root': { name: string; value: string; }[];
-  breakpoints: (null | { name: string; size: number; })[];
-  sizes: { name: string; size: number; }[];
+  ':root':     { left: string; right: string; }[];
+  breakpoints: (null | { left: string; right: number; })[];
+  sizes:       { left: string; right: number; }[];
 }
 
 const variables: Variables = {
   ':root': [
     {
-      name: 'body--background-color',
-      value: '255, 255, 255',
+      left: 'body--background-color',
+      right: '255, 255, 255',
     },
     {
-      name: 'body--color',
-      value: '0, 0, 0',
+      left: 'body--color',
+      right: '0, 0, 0',
     },
     {
-      name: 'body--font-family',
-      value: 'system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif',
+      left: 'body--font-family',
+      right: 'system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif',
     },
     {
-      name: 'body--font-size',
-      value: '1rem',
+      left: 'body--font-size',
+      right: '1rem',
     },
     {
-      name: 'body--font-weight',
-      value: '400',
+      left: 'body--font-weight',
+      right: '400',
     },
     {
-      name: 'body--line-height',
-      value: '1.5',
+      left: 'body--line-height',
+      right: '1.5',
     },
     {
-      name: 'border--border-color',
-      value: '128, 128, 128',
+      left: 'border--border-color',
+      right: '128, 128, 128',
     },
     {
-      name: 'border--border-width',
-      value: '0.125rem',
+      left: 'border--border-width',
+      right: '0.125rem',
     },
     {
-      name: 'button--background-color',
-      value: '128, 128, 128',
+      left: 'button--background-color',
+      right: '128, 128, 128',
     },
     {
-      name: 'button--border-color',
-      value: 'var(--button--background-color)',
+      left: 'button--border-color',
+      right: 'var(--button--background-color)',
     },
     {
-      name: 'button--border-width',
-      value: 'var(--border--border-width)',
+      left: 'button--border-width',
+      right: 'var(--border--border-width)',
     },
     {
-      name: 'button--color',
-      value: '255, 255, 255',
+      left: 'button--color',
+      right: '255, 255, 255',
     },
     {
-      name: 'button--focus--background-color',
-      value: '0, 0, 0',
+      left: 'button--focus--background-color',
+      right: '0, 0, 0',
     },
     {
-      name: 'button--focus--border-color',
-      value: 'var(--button--focus--background-color)',
+      left: 'button--focus--border-color',
+      right: 'var(--button--focus--background-color)',
     },
     {
-      name: 'button--focus--color',
-      value: 'var(--button--color)',
+      left: 'button--focus--color',
+      right: 'var(--button--color)',
     },
     {
-      name: 'h1--font-size',
-      value: '2.75rem',
+      left: 'h1--font-size',
+      right: '2.75rem',
     },
     {
-      name: 'h2--font-size',
-      value: '2.25rem',
+      left: 'h2--font-size',
+      right: '2.25rem',
     },
     {
-      name: 'h3--font-size',
-      value: '1.75rem',
+      left: 'h3--font-size',
+      right: '1.75rem',
     },
     {
-      name: 'h4--font-size',
-      value: '1.5rem',
+      left: 'h4--font-size',
+      right: '1.5rem',
     },
     {
-      name: 'h5--font-size',
-      value: '1.25rem',
+      left: 'h5--font-size',
+      right: '1.25rem',
     },
     {
-      name: 'h6--font-size',
-      value: '1rem',
+      left: 'h6--font-size',
+      right: '1rem',
     },
     {
-      name: 'heading--font-family',
-      value: 'var(--body--font-family)',
+      left: 'heading--font-family',
+      right: 'var(--body--font-family)',
     },
     {
-      name: 'heading--font-weight',
-      value: '500',
+      left: 'heading--font-weight',
+      right: '500',
     },
     {
-      name: 'heading--line-height',
-      value: '1.25',
+      left: 'heading--line-height',
+      right: '1.25',
     },
     {
-      name: 'input--background-color',
-      value: '255, 255, 255',
+      left: 'input--background-color',
+      right: '255, 255, 255',
     },
     {
-      name: 'input--border-color',
-      value: '128, 128, 128',
+      left: 'input--border-color',
+      right: '128, 128, 128',
     },
     {
-      name: 'input--border-width',
-      value: 'var(--border--border-width)',
+      left: 'input--border-width',
+      right: 'var(--border--border-width)',
     },
     {
-      name: 'input--checked--background-color',
-      value: 'var(--input--focus--border-color)',
+      left: 'input--checked--background-color',
+      right: 'var(--input--focus--border-color)',
     },
     {
-      name: 'input--checked--border-color',
-      value: 'var(--input--focus--border-color)',
+      left: 'input--checked--border-color',
+      right: 'var(--input--focus--border-color)',
     },
     {
-      name: 'input--color',
-      value: 'var(--body--color)',
+      left: 'input--color',
+      right: 'var(--body--color)',
     },
     {
-      name: 'input--focus--background-color',
-      value: 'var(--input--background-color)',
+      left: 'input--focus--background-color',
+      right: 'var(--input--background-color)',
     },
     {
-      name: 'input--focus--border-color',
-      value: '0, 0, 0',
+      left: 'input--focus--border-color',
+      right: '0, 0, 0',
     },
     {
-      name: 'input--focus--color',
-      value: 'var(--input--color)',
+      left: 'input--focus--color',
+      right: 'var(--input--color)',
     },
     {
-      name: 'label--color',
-      value: 'var(--body--color)',
+      left: 'label--color',
+      right: 'var(--body--color)',
     },
     {
-      name: 'select--background-color',
-      value: 'var(--input--background-color)',
+      left: 'select--background-color',
+      right: 'var(--input--background-color)',
     },
     {
-      name: 'select--border-color',
-      value: 'var(--input--border-color)',
+      left: 'select--border-color',
+      right: 'var(--input--border-color)',
     },
     {
-      name: 'select--border-width',
-      value: 'var(--input--border-width)',
+      left: 'select--border-width',
+      right: 'var(--input--border-width)',
     },
     {
-      name: 'select--color',
-      value: 'var(--input--color)',
+      left: 'select--color',
+      right: 'var(--input--color)',
     },
     {
-      name: 'select--focus--background-color',
-      value: 'var(--input--focus--background-color)',
+      left: 'select--focus--background-color',
+      right: 'var(--input--focus--background-color)',
     },
     {
-      name: 'select--focus--border-color',
-      value: 'var(--input--focus--border-color)',
+      left: 'select--focus--border-color',
+      right: 'var(--input--focus--border-color)',
     },
     {
-      name: 'select--focus--color',
-      value: 'var(--input--focus--color)',
+      left: 'select--focus--color',
+      right: 'var(--input--focus--color)',
     },
   ],
   breakpoints: [
     null,
     {
-      name: '\\#',
-      size: 36,
+      left: '\\#',
+      right: 36,
     },
     {
-      name: '\\#\\#',
-      size: 48,
+      left: '\\#\\#',
+      right: 48,
     },
     {
-      name: '\\#\\#\\#',
-      size: 60,
+      left: '\\#\\#\\#',
+      right: 60,
     },
   ],
   sizes: [
     {
-      name: '0',
-      size: 0,
+      left: '0',
+      right: 0,
     },
     {
-      name: '1',
-      size: 0.25,
+      left: '1',
+      right: 0.25,
     },
     {
-      name: '2',
-      size: 0.5,
+      left: '2',
+      right: 0.5,
     },
     {
-      name: '3',
-      size: 0.75,
+      left: '3',
+      right: 0.75,
     },
     {
-      name: '4',
-      size: 1,
+      left: '4',
+      right: 1,
     },
     {
-      name: '5',
-      size: 1.25,
+      left: '5',
+      right: 1.25,
     },
     {
-      name: '6',
-      size: 1.5,
+      left: '6',
+      right: 1.5,
     },
     {
-      name: '7',
-      size: 1.75,
+      left: '7',
+      right: 1.75,
     },
     {
-      name: '8',
-      size: 2,
+      left: '8',
+      right: 2,
     },
   ],
 };

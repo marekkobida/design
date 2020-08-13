@@ -3,25 +3,25 @@ import CSS from '../CSS';
 class Typography extends CSS {
   textAlign (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}text-align-center {
+      (breakpoint) => `.${breakpoint.left}text-align-center {
   text-align: center !important;
 }
-.${breakpoint.name}text-align-end {
+.${breakpoint.left}text-align-end {
   text-align: end !important;
 }
-.${breakpoint.name}text-align-justify {
+.${breakpoint.left}text-align-justify {
   text-align: justify !important;
 }
-.${breakpoint.name}text-align-left {
+.${breakpoint.left}text-align-left {
   text-align: left !important;
 }
-.${breakpoint.name}text-align-match-parent {
+.${breakpoint.left}text-align-match-parent {
   text-align: match-parent !important;
 }
-.${breakpoint.name}text-align-right {
+.${breakpoint.left}text-align-right {
   text-align: right !important;
 }
-.${breakpoint.name}text-align-start {
+.${breakpoint.left}text-align-start {
   text-align: start !important;
 }`
     );

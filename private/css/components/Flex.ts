@@ -3,37 +3,37 @@ import CSS from '../CSS';
 class Flex extends CSS {
   alignContent (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}align-content-baseline {
+      (breakpoint) => `.${breakpoint.left}align-content-baseline {
   align-content: baseline !important;
 }
-.${breakpoint.name}align-content-center {
+.${breakpoint.left}align-content-center {
   align-content: center !important;
 }
-.${breakpoint.name}align-content-end {
+.${breakpoint.left}align-content-end {
   align-content: end !important;
 }
-.${breakpoint.name}align-content-flex-end {
+.${breakpoint.left}align-content-flex-end {
   align-content: flex-end !important;
 }
-.${breakpoint.name}align-content-flex-start {
+.${breakpoint.left}align-content-flex-start {
   align-content: flex-start !important;
 }
-.${breakpoint.name}align-content-normal {
+.${breakpoint.left}align-content-normal {
   align-content: normal !important;
 }
-.${breakpoint.name}align-content-space-around {
+.${breakpoint.left}align-content-space-around {
   align-content: space-around !important;
 }
-.${breakpoint.name}align-content-space-between {
+.${breakpoint.left}align-content-space-between {
   align-content: space-between !important;
 }
-.${breakpoint.name}align-content-space-evenly {
+.${breakpoint.left}align-content-space-evenly {
   align-content: space-evenly !important;
 }
-.${breakpoint.name}align-content-start {
+.${breakpoint.left}align-content-start {
   align-content: start !important;
 }
-.${breakpoint.name}align-content-stretch {
+.${breakpoint.left}align-content-stretch {
   align-content: stretch !important;
 }`
     );
@@ -41,34 +41,34 @@ class Flex extends CSS {
 
   alignItems (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}align-items-baseline {
+      (breakpoint) => `.${breakpoint.left}align-items-baseline {
   align-items: baseline !important;
 }
-.${breakpoint.name}align-items-center {
+.${breakpoint.left}align-items-center {
   align-items: center !important;
 }
-.${breakpoint.name}align-items-end {
+.${breakpoint.left}align-items-end {
   align-items: end !important;
 }
-.${breakpoint.name}align-items-flex-end {
+.${breakpoint.left}align-items-flex-end {
   align-items: flex-end !important;
 }
-.${breakpoint.name}align-items-flex-start {
+.${breakpoint.left}align-items-flex-start {
   align-items: flex-start !important;
 }
-.${breakpoint.name}align-items-normal {
+.${breakpoint.left}align-items-normal {
   align-items: normal !important;
 }
-.${breakpoint.name}align-items-self-end {
+.${breakpoint.left}align-items-self-end {
   align-items: self-end !important;
 }
-.${breakpoint.name}align-items-self-start {
+.${breakpoint.left}align-items-self-start {
   align-items: self-start !important;
 }
-.${breakpoint.name}align-items-start {
+.${breakpoint.left}align-items-start {
   align-items: start !important;
 }
-.${breakpoint.name}align-items-stretch {
+.${breakpoint.left}align-items-stretch {
   align-items: stretch !important;
 }`
     );
@@ -76,37 +76,37 @@ class Flex extends CSS {
 
   alignSelf (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}align-self-auto {
+      (breakpoint) => `.${breakpoint.left}align-self-auto {
   align-self: auto !important;
 }
-.${breakpoint.name}align-self-baseline {
+.${breakpoint.left}align-self-baseline {
   align-self: baseline !important;
 }
-.${breakpoint.name}align-self-center {
+.${breakpoint.left}align-self-center {
   align-self: center !important;
 }
-.${breakpoint.name}align-self-end {
+.${breakpoint.left}align-self-end {
   align-self: end !important;
 }
-.${breakpoint.name}align-self-flex-end {
+.${breakpoint.left}align-self-flex-end {
   align-self: flex-end !important;
 }
-.${breakpoint.name}align-self-flex-start {
+.${breakpoint.left}align-self-flex-start {
   align-self: flex-start !important;
 }
-.${breakpoint.name}align-self-normal {
+.${breakpoint.left}align-self-normal {
   align-self: normal !important;
 }
-.${breakpoint.name}align-self-self-end {
+.${breakpoint.left}align-self-self-end {
   align-self: self-end !important;
 }
-.${breakpoint.name}align-self-self-start {
+.${breakpoint.left}align-self-self-start {
   align-self: self-start !important;
 }
-.${breakpoint.name}align-self-start {
+.${breakpoint.left}align-self-start {
   align-self: start !important;
 }
-.${breakpoint.name}align-self-stretch {
+.${breakpoint.left}align-self-stretch {
   align-self: stretch !important;
 }`
     );
@@ -114,16 +114,16 @@ class Flex extends CSS {
 
   flexDirection (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}flex-direction-column {
+      (breakpoint) => `.${breakpoint.left}flex-direction-column {
   flex-direction: column !important;
 }
-.${breakpoint.name}flex-direction-column-reverse {
+.${breakpoint.left}flex-direction-column-reverse {
   flex-direction: column-reverse !important;
 }
-.${breakpoint.name}flex-direction-row {
+.${breakpoint.left}flex-direction-row {
   flex-direction: row !important;
 }
-.${breakpoint.name}flex-direction-row-reverse {
+.${breakpoint.left}flex-direction-row-reverse {
   flex-direction: row-reverse !important;
 }`
     );
@@ -131,13 +131,13 @@ class Flex extends CSS {
 
   flexWrap (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}flex-wrap-nowrap {
+      (breakpoint) => `.${breakpoint.left}flex-wrap-nowrap {
   flex-wrap: nowrap !important;
 }
-.${breakpoint.name}flex-wrap-wrap {
+.${breakpoint.left}flex-wrap-wrap {
   flex-wrap: wrap !important;
 }
-.${breakpoint.name}flex-wrap-wrap-reverse {
+.${breakpoint.left}flex-wrap-wrap-reverse {
   flex-wrap: wrap-reverse !important;
 }`
     );
@@ -145,40 +145,40 @@ class Flex extends CSS {
 
   justifyContent (): string {
     return this.forBreakpoints(
-      (breakpoint) => `.${breakpoint.name}justify-content-center {
+      (breakpoint) => `.${breakpoint.left}justify-content-center {
   justify-content: center !important;
 }
-.${breakpoint.name}justify-content-end {
+.${breakpoint.left}justify-content-end {
   justify-content: end !important;
 }
-.${breakpoint.name}justify-content-flex-end {
+.${breakpoint.left}justify-content-flex-end {
   justify-content: flex-end !important;
 }
-.${breakpoint.name}justify-content-flex-start {
+.${breakpoint.left}justify-content-flex-start {
   justify-content: flex-start !important;
 }
-.${breakpoint.name}justify-content-left {
+.${breakpoint.left}justify-content-left {
   justify-content: left !important;
 }
-.${breakpoint.name}justify-content-normal {
+.${breakpoint.left}justify-content-normal {
   justify-content: normal !important;
 }
-.${breakpoint.name}justify-content-right {
+.${breakpoint.left}justify-content-right {
   justify-content: right !important;
 }
-.${breakpoint.name}justify-content-space-around {
+.${breakpoint.left}justify-content-space-around {
   justify-content: space-around !important;
 }
-.${breakpoint.name}justify-content-space-between {
+.${breakpoint.left}justify-content-space-between {
   justify-content: space-between !important;
 }
-.${breakpoint.name}justify-content-space-evenly {
+.${breakpoint.left}justify-content-space-evenly {
   justify-content: space-evenly !important;
 }
-.${breakpoint.name}justify-content-start {
+.${breakpoint.left}justify-content-start {
   justify-content: start !important;
 }
-.${breakpoint.name}justify-content-stretch {
+.${breakpoint.left}justify-content-stretch {
   justify-content: stretch !important;
 }`
     );

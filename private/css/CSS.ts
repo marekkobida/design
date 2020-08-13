@@ -30,18 +30,18 @@ class CSS {
     return $$.join('\n');
   }
 
-  forBreakpoints ($: (breakpoint: { name: string; size?: number; }) => string): string {
+  forBreakpoints ($: (breakpoint: { left: string; right?: number; }) => string): string {
     return this.for(
       (breakpoint) => {
-        const suffix = breakpoint === null ? '' : breakpoint.name;
+        const suffix = breakpoint === null ? '' : breakpoint.left;
 
         if (breakpoint !== null) {
-          return `@media (min-width: ${breakpoint.size}rem) {
-  ${$({ name: suffix, size: breakpoint.size, }).replace(/\n/g, '\n  ')}
+          return `@media (min-width: ${breakpoint.right}rem) {
+  ${$({ left: suffix, right: breakpoint.right, }).replace(/\n/g, '\n  ')}
 }`;
         }
 
-        return $({ name: suffix, });
+        return $({ left: suffix, });
       },
       this.variables.breakpoints
     );
