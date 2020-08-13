@@ -30,11 +30,11 @@ const ModalGallery = (images: Array<string>, index: Number) => {
         }}
         style={{
           backgroundImage: 'url(' + images[selectedImg] + ')',
-          backgroundSize: mode ? 'cover' : 'contain',
-          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
-          width: '30vw',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: mode ? 'contain' : 'cover',
           height: '30vh',
+          width: '80vw',
         }} />
     }
 
@@ -48,7 +48,7 @@ const ModalGallery = (images: Array<string>, index: Number) => {
 };
 
 
-const Modal = ({ content, isShowing, hide, index, }:P) => isShowing
+const Modal = ({ children, content, isShowing, hide, index, }:P) => isShowing
   ? ReactDOM.createPortal(
     <React.Fragment>
       <div
@@ -97,14 +97,10 @@ const Modal = ({ content, isShowing, hide, index, }:P) => isShowing
             </button>
           </div>
           <div className="modal-body">
-
-
             { // zobrazi priamo alebo galeriu ak je to array
-              Array.isArray(content)
-                ? ModalGallery(content, index)
-                : content}
-
-
+              Array.isArray(children)
+                ? ModalGallery(children, index)
+                : children}
           </div>
 
         </div>

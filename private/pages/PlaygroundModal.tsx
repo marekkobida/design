@@ -15,26 +15,16 @@ class PlaygroundModal extends Page {
 
   // TEST -DATA PRE IMG GALERIU
   modalGalery () {
-    const { isShowing, toggleModal,  } = useModal();
+    const { isShowing, toggleModal, stopTab, } = useModal();
     const sampleGalleryData = [
       'https://koala.sk/FileHandler.ashx?FileID=220554&amp;FormatID=41&amp;TimeStamp=20171123153913',
       'https://koala.sk/FileHandler.ashx?FileID=363700&amp;FormatID=41&amp;TimeStamp=20171123153913',
       'https://koala.sk/FileHandler.ashx?FileID=43558&amp;FormatID=41&amp;TimeStamp=20171123153913',
     ];
-
     return (
-      <div
-        onKeyUp={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-        onKeyDown={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-      >
-        <button className="button-default" onClick={toggleModal}>Show Modal</button>
-        <Modal
-          isShowing={isShowing}
-          hide={toggleModal}
-          content = {sampleGalleryData}
-        >
-          sdsdsd
-        </Modal>
+      <div onKeyUp={stopTab} onKeyDown={stopTab}>
+        <button className="button-default" onClick={toggleModal}>Modal Galery</button>
+        <Modal isShowing={isShowing} hide={toggleModal}>{sampleGalleryData}</Modal>
       </div>
     );
   }
@@ -42,37 +32,27 @@ class PlaygroundModal extends Page {
 
   // MODAL 1
   modaltest1 () {
-    const { isShowing, toggleModal,  } = useModal();
+    const { isShowing, stopTab, toggleModal,  } = useModal();
     // avoid tab navigate away, if modal is open
     return (
-      <div
-        onKeyUp={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-        onKeyDown={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-      >
-        <button className="button-default" onClick={toggleModal}>Show Modal</button>
-        <Modal
-          isShowing={isShowing}
-          hide={toggleModal}
-          content = {<>Nazdaaar jakozecoze sdsdsssd</>}
-        />
+      <div onKeyUp={stopTab} onKeyDown={stopTab}>
+        <button className="button-default" onClick={toggleModal}>Modal Text 1</button>
+        <Modal isShowing={isShowing} hide={toggleModal}>
+          Lorem Ypslum odór same gipsu est
+        </Modal>
       </div>
     );
   }
 
   // MODAL 2
   modaltest2 () {
-    const { isShowing, toggleModal, } = useModal();
+    const { isShowing, stopTab, toggleModal, } = useModal();
     return (
-      <div
-        onKeyUp={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-        onKeyDown={(e)=>{ if (isShowing === true && e.which == 9) { e.preventDefault(); } }}
-      >
-        <button className="button-default" onClick={toggleModal}>Show Modal</button>
-        <Modal
-          isShowing={isShowing}
-          hide={toggleModal}
-          content={<>Nazdaaar<br />v2<br />v2</>}
-        />
+      <div onKeyUp={stopTab} onKeyDown={stopTab}>
+        <button className="button-default" onClick={toggleModal}>Modal Text 1</button>
+        <Modal isShowing={isShowing} hide={toggleModal}>
+          Nazdaaar<br />v2<br />v2
+        </Modal>
       </div>
     );
   }
