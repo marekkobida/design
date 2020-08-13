@@ -10,6 +10,14 @@
 
 ---
 
+## helpers
+
+1. [decodeClassName](private/helpers/decodeClassName.ts)
+1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
+1. [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
+
+---
+
 ## htmlComponents
 
 1. [Anchor](private/htmlComponents/Anchor.tsx)
@@ -24,14 +32,6 @@
 1. [Select](private/htmlComponents/Select.tsx)
 1. [Span](private/htmlComponents/Span.tsx)
 1. [TextArea](private/htmlComponents/TextArea.tsx)
-
----
-
-## helpers
-
-1. [decodeClassName](private/helpers/decodeClassName.ts)
-1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
-1. [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
 
 ---
 
