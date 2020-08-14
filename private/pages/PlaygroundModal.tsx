@@ -17,9 +17,18 @@ class PlaygroundModal extends Page {
   modalGalery () {
     const { isShowing, toggleModal, stopTab, } = useModal();
     const sampleGalleryData = [
-      'https://koala.sk/FileHandler.ashx?FileID=220554&amp;FormatID=41&amp;TimeStamp=20171123153913',
-      'https://koala.sk/FileHandler.ashx?FileID=363700&amp;FormatID=41&amp;TimeStamp=20171123153913',
-      'https://koala.sk/FileHandler.ashx?FileID=43558&amp;FormatID=41&amp;TimeStamp=20171123153913',
+      { id: '751888', w: '1718', h: '1080', alt: 'Lorem', thmb: '/FileHandler.ashx?FileID=751888&FormatID=41&TimeStamp=20181203104721', },
+      { id: '751883', w: '1620', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=751883&FormatID=41&TimeStamp=20181203104716', },
+      { id: '754618', w: '1620', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=754618&FormatID=41&TimeStamp=20181214135517', },
+      { id: '751885', w: '1626', h: '1080', alt: 'Ipsum', thmb: '/FileHandler.ashx?FileID=751885&FormatID=41&TimeStamp=20181203104717', },
+      { id: '751886', w: '1626', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=751886&FormatID=41&TimeStamp=20181203104719', },
+      { id: '751887', w: '717', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=751887&FormatID=41&TimeStamp=20181203104720', },
+      { id: '751889', w: '1620', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=751889&FormatID=41&TimeStamp=20181203104721', },
+      { id: '751890', w: '1509', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=751890&FormatID=41&TimeStamp=20181203104723', },
+      { id: '754615', w: '1718', h: '1080', alt: 'Niekedy iba', thmb: '/FileHandler.ashx?FileID=754615&FormatID=41&TimeStamp=20181214135440', },
+      { id: '754616', w: '1920', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=754616&FormatID=41&TimeStamp=20181214135453', },
+      { id: '754617', w: '1920', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=754617&FormatID=41&TimeStamp=20181214135506', },
+      { id: '984910', w: '810', h: '1080', alt: '', thmb: '/FileHandler.ashx?FileID=984910&FormatID=41&TimeStamp=20200114100452', },
     ];
     return (
       <div onKeyUp={stopTab} onKeyDown={stopTab}>
@@ -38,7 +47,7 @@ class PlaygroundModal extends Page {
       <div onKeyUp={stopTab} onKeyDown={stopTab}>
         <button className="button-default" onClick={toggleModal}>Modal Text 1</button>
         <Modal isShowing={isShowing} hide={toggleModal}>
-          Lorem Ypslum odór same gipsu est
+          {'Lorem Ypslum odór same gipsu est'}<br />sdsd
         </Modal>
       </div>
     );
