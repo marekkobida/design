@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import decodeClassName from '../../helpers/decodeClassName';
+import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
 interface P { headingSize: 1 | 2 | 3 | 4 | 5 | 6; }
 

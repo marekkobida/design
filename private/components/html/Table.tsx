@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import decodeClassName from '../../helpers/decodeClassName';
+import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
 class Table extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'table'>, keyof CommonParameters>> {
   static defaultProps = { width: '100', };

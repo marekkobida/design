@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import decodeClassName from '../../helpers/decodeClassName';
+import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
 class Paragraph extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'p'>, keyof CommonParameters>> {
   static defaultProps = { mY: 0, };

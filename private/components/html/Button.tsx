@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import decodeClassName from '../../helpers/decodeClassName';
+import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
 class Button extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'button'>, keyof CommonParameters>> {
   static defaultProps = { display: 'inline-block', pX: 4, pY: 2, };

@@ -2,8 +2,9 @@
 import React from 'react';
 
 import decodeClassName from '../helpers/decodeClassName';
-import Div from '../htmlComponents/Div';
-import Input from '../htmlComponents/Input';
+
+import Div from './html/Div';
+import Input from './html/Input';
 
 interface P {
   children: (addParameter: (left: string, right: number | string, $?: boolean) => void) => React.ReactNode;

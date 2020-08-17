@@ -1,7 +1,7 @@
 import React from 'react';
 
-import decodeClassName from '../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../helpers/decodeCommonParameters';
+import decodeClassName from '../../helpers/decodeClassName';
+import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
 class TableCell extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'td'>, keyof CommonParameters>> {
   render () {

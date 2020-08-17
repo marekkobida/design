@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Div from '../htmlComponents/Div';
+import Div from './html/Div';
 
 class Column extends React.Component<Div['props']> {
   static defaultProps = { pX: 2, };
