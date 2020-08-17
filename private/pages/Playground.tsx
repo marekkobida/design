@@ -1,27 +1,30 @@
-import Column from '@redredsk/design/private/components/Column';
-import Container from '@redredsk/design/private/components/Container';
-import Row from '@redredsk/design/private/components/Row';
 import Test from '@redredsk/design/private/components/Test';
-import variables from '@redredsk/design/private/variables';
 import Page from '@redredsk/pages/private/Page';
 import template from '@redredsk/pages/private/template';
-import Anchor from 'packages/design/private/components/html/Anchor';
-import Button from 'packages/design/private/components/html/Button';
-import Div from 'packages/design/private/components/html/Div';
-import Form from 'packages/design/private/components/html/Form';
-import Heading from 'packages/design/private/components/html/Heading';
-import Input from 'packages/design/private/components/html/Input';
-import Label from 'packages/design/private/components/html/Label';
-import Option from 'packages/design/private/components/html/Option';
-import Paragraph from 'packages/design/private/components/html/Paragraph';
-import Select from 'packages/design/private/components/html/Select';
-import Table from 'packages/design/private/components/html/Table';
-import TableCell from 'packages/design/private/components/html/TableCell';
-import TableHeaderCell from 'packages/design/private/components/html/TableHeaderCell';
-import TableRow from 'packages/design/private/components/html/TableRow';
-import TableSection from 'packages/design/private/components/html/TableSection';
-import TextArea from 'packages/design/private/components/html/TextArea';
 import React from 'react';
+
+import {
+  Anchor,
+  Button,
+  Column,
+  Container,
+  Div,
+  Form,
+  Heading,
+  Input,
+  Label,
+  Option,
+  Paragraph,
+  Row,
+  Select,
+  Table,
+  TableCell,
+  TableHeaderCell,
+  TableRow,
+  TableSection,
+  TextArea,
+} from '../components';
+import variables from '../variables';
 
 class Playground extends Page {
   constructor () {

@@ -1,13 +1,23 @@
 <h1 align="center">@redredsk/design</h1>
 <p align="center">Copyright 2020 Marek Kobida</p>
 
+## dependencies
+
+1. [@redredsk/helpers](https://github.com/redredsk/helpers)
+
+---
+
 ## components
+
+`import * as helpers from '@redredsk/design/private/components';`
 
 1. [Column](private/components/Column.tsx)
 1. [Container](private/components/Container.tsx)
 1. [Row](private/components/Row.tsx)
 
 ### html
+
+`import * as helpers from '@redredsk/design/private/components/html';`
 
 1. [Anchor](private/components/html/Anchor.tsx)
 1. [Button](private/components/html/Button.tsx)
