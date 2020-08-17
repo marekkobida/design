@@ -1,7 +1,4 @@
-import isArray from '@redredsk/helpers/private/types/isArray';
-import isNumber from '@redredsk/helpers/private/types/isNumber';
-import isObject from '@redredsk/helpers/private/types/isObject';
-import isString from '@redredsk/helpers/private/types/isString';
+import * as helpers from '@redredsk/helpers/private';
 
 import css from '../../index.css';
 
@@ -24,17 +21,17 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   }
 
   for (const encodedClassName of encodedClassNames) {
-    if (isArray(encodedClassName)) {
+    if (helpers.types.isArray(encodedClassName)) {
       for (const decodedClassName of $(...encodedClassName)) {
         addDecodedClassName(decodedClassName);
       }
     }
 
-    if (isNumber(encodedClassName)) {
+    if (helpers.types.isNumber(encodedClassName)) {
       addDecodedClassName(`${encodedClassName}`);
     }
 
-    if (isObject(encodedClassName)) {
+    if (helpers.types.isObject(encodedClassName)) {
       for (const decodedClassName in encodedClassName) {
         if (encodedClassName[decodedClassName]) {
           addDecodedClassName(decodedClassName);
@@ -42,7 +39,7 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
       }
     }
 
-    if (isString(encodedClassName)) {
+    if (helpers.types.isString(encodedClassName)) {
       for (const decodedClassName of encodedClassName.split(' ')) {
         addDecodedClassName(decodedClassName);
       }
