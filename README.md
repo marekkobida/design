@@ -3,29 +3,29 @@
 
 ## components
 
-- [Column](private/components/Column.tsx)
-- [Container](private/components/Container.tsx)
-- [Row](private/components/Row.tsx)
+1. [Column](private/components/Column.tsx)
+1. [Container](private/components/Container.tsx)
+1. [Row](private/components/Row.tsx)
 
 ### html
 
-- [Anchor](private/components/html/Anchor.tsx)
-- [Button](private/components/html/Button.tsx)
-- [Div](private/components/html/Div.tsx)
-- [Form](private/components/html/Form.tsx)
-- [Heading](private/components/html/Heading.tsx)
-- [Input](private/components/html/Input.tsx)
-- [Label](private/components/html/Label.tsx)
-- [Option](private/components/html/Option.tsx)
-- [Paragraph](private/components/html/Paragraph.tsx)
-- [Select](private/components/html/Select.tsx)
-- [Span](private/components/html/Span.tsx)
-- [TextArea](private/components/html/TextArea.tsx)
+1. [Anchor](private/components/html/Anchor.tsx)
+1. [Button](private/components/html/Button.tsx)
+1. [Div](private/components/html/Div.tsx)
+1. [Form](private/components/html/Form.tsx)
+1. [Heading](private/components/html/Heading.tsx)
+1. [Input](private/components/html/Input.tsx)
+1. [Label](private/components/html/Label.tsx)
+1. [Option](private/components/html/Option.tsx)
+1. [Paragraph](private/components/html/Paragraph.tsx)
+1. [Select](private/components/html/Select.tsx)
+1. [Span](private/components/html/Span.tsx)
+1. [TextArea](private/components/html/TextArea.tsx)
 
 ---
 
 ## helpers
 
-- [decodeClassName](private/helpers/decodeClassName.ts)
-- [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
-- [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
+1. [decodeClassName](private/helpers/decodeClassName.ts)
+1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
+1. [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
