@@ -20,6 +20,11 @@
 1. [Paragraph](private/components/html/Paragraph.tsx)
 1. [Select](private/components/html/Select.tsx)
 1. [Span](private/components/html/Span.tsx)
+1. [Table](private/components/html/Table.tsx)
+1. [TableCell](private/components/html/TableCell.tsx)
+1. [TableHeaderCell](private/components/html/TableHeaderCell.tsx)
+1. [TableRow](private/components/html/TableRow.tsx)
+1. [TableSection](private/components/html/TableSection.tsx)
 1. [TextArea](private/components/html/TextArea.tsx)
 
 ---
