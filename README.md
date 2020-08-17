@@ -36,6 +36,8 @@
 
 ## helpers
 
+`import * as helpers from '@redredsk/design/private/helpers';`
+
 1. [decodeClassName](private/helpers/decodeClassName.ts)
 1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
 1. [decodeResponsiveClassName](private/helpers/decodeResponsiveClassName.ts)
