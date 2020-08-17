@@ -16,7 +16,7 @@ const variables: Variables = {
     },
     {
       left: 'body--font-family',
-      right: 'system-ui, -apple-system, Segoe UI, Helvetica Neue, sans-serif',
+      right: 'system-ui, -apple-system, \"Segoe UI\", \"Helvetica Neue\", sans-serif',
     },
     {
       left: 'body--font-size',
