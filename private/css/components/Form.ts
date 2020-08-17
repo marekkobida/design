@@ -6,6 +6,13 @@ class Form extends CSS {
   background-color: rgb(var(--input--checked--background-color));
   border-color: rgb(var(--input--checked--border-color));
 }
+input[type="checkbox"]:focus, input[type="radio"]:focus {
+  box-shadow: 0 0 0 var(--input--border-width) rgba(var(--input--checked--border-color), 0.25);
+  outline: 0;
+}
+input[type="radio"] {
+  border-radius: 50%;
+}
 input[type="text"], input[type="checkbox"], input[type="radio"], textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -17,18 +24,11 @@ input[type="text"], input[type="checkbox"], input[type="radio"], textarea {
 input[type="text"]::placeholder, textarea::placeholder {
   color: rgba(var(--input--color), 0.25);
 }
-input[type="checkbox"]:focus, input[type="radio"]:focus {
-  box-shadow: 0 0 0 var(--input--border-width) rgba(var(--input--checked--border-color), 0.25);
-  outline: 0;
-}
 input[type="text"]:focus, textarea:focus {
   border-color: rgb(var(--input--focus--border-color));
   box-shadow: 0 0 0 var(--input--border-width) rgba(var(--input--focus--border-color), 0.25);
   color: rgb(var(--input--focus--color));
   outline: 0;
-}
-input[type="radio"] {
-  border-radius: 50%;
 }
 label {
   color: rgb(var(--label--color));

@@ -83,14 +83,14 @@ class Helpers extends CSS {
 
         const d = this.for(
           ($, i) => `.${breakpoint.left}width-${i + 1}\\/12 {
-  width: ${this.percentage(i + 1, 12)};
+  width: ${this.percentage(i + 1, 12)} !important;
 }`,
           11
         );
 
         const e = this.for(
           ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
-  margin-left: ${this.percentage(i + 1, 12)};
+  margin-left: ${this.percentage(i + 1, 12)} !important;
 }`,
           11
         );
@@ -102,13 +102,13 @@ ${b}
 ${d}
 ${e}
 .${breakpoint.left}width-0 {
-  width: 0;
+  width: 0 !important;
 }
 .${breakpoint.left}width-100 {
-  width: 100%;
+  width: 100% !important;
 }
 .${breakpoint.left}width-auto {
-  width: auto;
+  width: auto !important;
 }
 .${breakpoint.left}m-auto {
   margin: auto !important;
