@@ -59,7 +59,7 @@ function helpers (): string {
         variables.sizes
       );
 
-      const e = f(
+      const c = f(
         ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
   margin-left: ${percentage(i + 1, 12)} !important;
 }`,
@@ -69,7 +69,7 @@ function helpers (): string {
       return `${a('margin', 'm')}
 ${a('padding', 'p')}
 ${b}
-${e}
+${c}
 .${breakpoint.left}m-auto {
   margin: auto !important;
 }
