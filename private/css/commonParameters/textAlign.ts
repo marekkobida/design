@@ -5,9 +5,7 @@ import fb from '../fb';
 function textAlign (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}text-align-${$} {
-  text-align: ${$} !important;
-}`,
+      ($) => `.${breakpoint}text-align-${$} {\n  text-align: ${$} !important;\n}`,
       TextAlignProperty
     )
   );

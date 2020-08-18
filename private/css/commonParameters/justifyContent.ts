@@ -5,9 +5,7 @@ import fb from '../fb';
 function justifyContent (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}justify-content-${$} {
-  justify-content: ${$} !important;
-}`,
+      ($) => `.${breakpoint}justify-content-${$} {\n  justify-content: ${$} !important;\n}`,
       JustifyContentProperty
     )
   );

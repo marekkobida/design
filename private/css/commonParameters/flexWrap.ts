@@ -5,9 +5,7 @@ import fb from '../fb';
 function flexWrap (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}flex-wrap-${$} {
-  flex-wrap: ${$} !important;
-}`,
+      ($) => `.${breakpoint}flex-wrap-${$} {\n  flex-wrap: ${$} !important;\n}`,
       FlexWrapProperty
     )
   );

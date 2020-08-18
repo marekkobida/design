@@ -5,9 +5,7 @@ import fb from '../fb';
 function display (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}display-${$} {
-  display: ${$} !important;
-}`,
+      ($) => `.${breakpoint}display-${$} {\n  display: ${$} !important;\n}`,
       DisplayProperty
     )
   );

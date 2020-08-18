@@ -5,9 +5,7 @@ import fb from '../fb';
 function alignItems (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}align-items-${$} {
-  align-items: ${$} !important;
-}`,
+      ($) => `.${breakpoint}align-items-${$} {\n  align-items: ${$} !important;\n}`,
       AlignItemsProperty
     )
   );
