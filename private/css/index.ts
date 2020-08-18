@@ -3,15 +3,7 @@ import writeFile from '@redredsk/helpers/private/writeFile';
 import variables from '../variables';
 
 import button from './button';
-import alignContent from './commonParameters/alignContent';
-import alignItems from './commonParameters/alignItems';
-import alignSelf from './commonParameters/alignSelf';
-import display from './commonParameters/display';
-import flexDirection from './commonParameters/flexDirection';
-import flexWrap from './commonParameters/flexWrap';
-import justifyContent from './commonParameters/justifyContent';
-import textAlign from './commonParameters/textAlign';
-import width from './commonParameters/width';
+import * as commonParameters from './commonParameters';
 import f from './f';
 import form from './form';
 import helpers from './helpers';
@@ -115,17 +107,17 @@ table {
 textarea {
   resize: vertical;
 }
-${alignContent()}
-${alignItems()}
-${alignSelf()}
+${commonParameters.alignContent()}
+${commonParameters.alignItems()}
+${commonParameters.alignSelf()}
 ${button()}
-${display()}
-${flexDirection()}
-${flexWrap()}
+${commonParameters.display()}
+${commonParameters.flexDirection()}
+${commonParameters.flexWrap()}
 ${form()}
 ${helpers()}
-${justifyContent()}
-${textAlign()}
-${width()}
+${commonParameters.justifyContent()}
+${commonParameters.textAlign()}
+${commonParameters.width()}
 `
 );
