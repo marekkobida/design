@@ -2,7 +2,6 @@ import variables from '../variables';
 
 import f from './f';
 import fb from './fb';
-import percentage from './percentage';
 
 function helpers (): string {
   return fb(
@@ -61,7 +60,7 @@ function helpers (): string {
 
       const c = f(
         ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
-  margin-left: ${percentage(i + 1, 12)} !important;
+  margin-left: ${(i + 1) / 12 * 100}% !important;
 }`,
         11
       );

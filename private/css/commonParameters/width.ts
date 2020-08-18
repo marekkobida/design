@@ -1,13 +1,12 @@
 import f from '../f';
 import fb from '../fb';
-import percentage from '../percentage';
 
 function width (): string {
   return fb(
     (breakpoint) => {
       const $ = f(
         ($, i) => `.${breakpoint.left}width-${i + 1}\\/12 {
-  width: ${percentage(i + 1, 12)} !important;
+  width: ${(i + 1) / 12 * 100}% !important;
 }`,
         11
       );
