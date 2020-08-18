@@ -1,6 +1,7 @@
 import writeFile from '@redredsk/helpers/private/writeFile';
 
-import CSS from './CSS';
+import variables from '../variables';
+
 import button from './button';
 import alignContent from './commonParameters/alignContent';
 import alignItems from './commonParameters/alignItems';
@@ -11,12 +12,13 @@ import flexWrap from './commonParameters/flexWrap';
 import justifyContent from './commonParameters/justifyContent';
 import textAlign from './commonParameters/textAlign';
 import width from './commonParameters/width';
+import f from './f';
 import form from './form';
 import helpers from './helpers';
 
-class Index extends CSS {
-  css (): string {
-    return `*, *::after, *::before {
+writeFile(
+  './packages/design/index.css',
+  `*, *::after, *::before {
   box-sizing: border-box;
 }
 .absolute {
@@ -70,8 +72,8 @@ class Index extends CSS {
   position: relative;
 }
 :root {
-${this.for(($) => `  --${$.left}: ${$.right};`, this.variables[':root'])}
-${this.for(($) => `  --size-${$.left}: ${$.right}rem;`, this.variables['sizes'])}
+${f(($) => `  --${$.left}: ${$.right};`, variables[':root'])}
+${f(($) => `  --size-${$.left}: ${$.right}rem;`, variables['sizes'])}
 }
 a {
   color: inherit;
@@ -125,8 +127,5 @@ ${helpers()}
 ${justifyContent()}
 ${textAlign()}
 ${width()}
-`;
-  }
-}
-
-writeFile('./packages/design/index.css', new Index().css());
+`
+);
