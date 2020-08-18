@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function textAlign () {
+function textAlign (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}text-align-center {
   text-align: center !important;

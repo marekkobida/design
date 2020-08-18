@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function flexWrap () {
+function flexWrap (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}flex-wrap-nowrap {
   flex-wrap: nowrap !important;

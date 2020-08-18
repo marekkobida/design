@@ -1,6 +1,7 @@
 import writeFile from '@redredsk/helpers/private/writeFile';
 
 import CSS from './CSS';
+import button from './button';
 import alignContent from './commonParameters/alignContent';
 import alignItems from './commonParameters/alignItems';
 import alignSelf from './commonParameters/alignSelf';
@@ -10,9 +11,8 @@ import flexWrap from './commonParameters/flexWrap';
 import justifyContent from './commonParameters/justifyContent';
 import textAlign from './commonParameters/textAlign';
 import width from './commonParameters/width';
-import Button from './components/Button';
-import Form from './components/Form';
-import Helpers from './components/Helpers';
+import form from './form';
+import helpers from './helpers';
 
 class Index extends CSS {
   css (): string {
@@ -116,15 +116,15 @@ textarea {
 ${alignContent()}
 ${alignItems()}
 ${alignSelf()}
+${button()}
 ${display()}
 ${flexDirection()}
 ${flexWrap()}
+${form()}
+${helpers()}
 ${justifyContent()}
 ${textAlign()}
 ${width()}
-${new Button().css()}
-${new Form().css()}
-${new Helpers().css()}
 `;
   }
 }

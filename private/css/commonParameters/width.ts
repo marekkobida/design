@@ -2,7 +2,7 @@ import f from '../f';
 import fb from '../fb';
 import percentage from '../percentage';
 
-function width () {
+function width (): string {
   return fb(
     (breakpoint) => {
       const $ = f(

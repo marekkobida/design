@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function display () {
+function display (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}display-block {
   display: block !important;

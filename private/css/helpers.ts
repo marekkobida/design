@@ -1,11 +1,14 @@
-import CSS from '../CSS';
+import variables from '../variables';
 
-class Helpers extends CSS {
-  css (): string {
-    return this.forBreakpoints(
-      (breakpoint) => {
-        const a = (property: string, abbreviation: string) => this.for(
-          ($) => `.${breakpoint.left}${abbreviation}-${$.left} {
+import f from './f';
+import fb from './fb';
+import percentage from './percentage';
+
+function helpers (): string {
+  return fb(
+    (breakpoint) => {
+      const a = (property: string, abbreviation: string) => f(
+        ($) => `.${breakpoint.left}${abbreviation}-${$.left} {
   ${property}: ${$.right}rem !important;
 }
 .${breakpoint.left}${abbreviation}-b-${$.left},
@@ -24,13 +27,13 @@ class Helpers extends CSS {
 .${breakpoint.left}${abbreviation}-y-${$.left} {
   ${property}-top: ${$.right}rem !important;
 }`,
-          this.variables.sizes
-        );
+        variables.sizes
+      );
 
-        const b: string = this.for(
-          ($) => {
-            if ($.left !== '0') {
-              return `.${breakpoint.left}m-\\!${$.left} {
+      const b: string = f(
+        ($) => {
+          if ($.left !== '0') {
+            return `.${breakpoint.left}m-\\!${$.left} {
   margin: calc(${$.right}rem * -1) !important;
 }
 .${breakpoint.left}m-b-\\!${$.left},
@@ -49,21 +52,21 @@ class Helpers extends CSS {
 .${breakpoint.left}m-y-\\!${$.left} {
   margin-top: calc(${$.right}rem * -1) !important;
 }`;
-            }
+          }
 
-            return '';
-          },
-          this.variables.sizes
-        );
+          return '';
+        },
+        variables.sizes
+      );
 
-        const e = this.for(
-          ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
-  margin-left: ${this.percentage(i + 1, 12)} !important;
+      const e = f(
+        ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
+  margin-left: ${percentage(i + 1, 12)} !important;
 }`,
-          11
-        );
+        11
+      );
 
-        return `${a('margin', 'm')}
+      return `${a('margin', 'm')}
 ${a('padding', 'p')}
 ${b}
 ${e}
@@ -86,9 +89,8 @@ ${e}
 .${breakpoint.left}m-y-auto {
   margin-top: auto !important;
 }`;
-      }
-    );
-  }
+    }
+  );
 }
 
-export default Helpers;
+export default helpers;

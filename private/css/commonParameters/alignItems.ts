@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function alignItems () {
+function alignItems (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}align-items-baseline {
   align-items: baseline !important;

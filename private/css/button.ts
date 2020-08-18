@@ -1,8 +1,5 @@
-import CSS from '../CSS';
-
-class Button extends CSS {
-  css (): string {
-    return `.button, button {
+function button (): string {
+  return `.button, button {
   background-color: rgb(var(--button--background-color));
   border: var(--button--border-width) solid rgb(var(--button--border-color));
   color: rgb(var(--button--color));
@@ -17,7 +14,6 @@ class Button extends CSS {
 .button:focus, button:focus {
   box-shadow: 0 0 0 var(--button--border-width) rgba(var(--select--focus--border-color), 0.25);
 }`;
-  }
 }
 
-export default Button;
+export default button;

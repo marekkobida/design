@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function justifyContent () {
+function justifyContent (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}justify-content-center {
   justify-content: center !important;

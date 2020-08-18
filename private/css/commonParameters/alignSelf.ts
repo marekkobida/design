@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function alignSelf () {
+function alignSelf (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}align-self-auto {
   align-self: auto !important;

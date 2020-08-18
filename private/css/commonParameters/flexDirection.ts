@@ -1,6 +1,6 @@
 import fb from '../fb';
 
-function flexDirection () {
+function flexDirection (): string {
   return fb(
     (breakpoint) => `.${breakpoint.left}flex-direction-column {
   flex-direction: column !important;
