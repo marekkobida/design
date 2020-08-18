@@ -2,25 +2,25 @@ import fb from '../fb';
 
 function textAlign (): string {
   return fb(
-    (breakpoint) => `.${breakpoint.left}text-align-center {
+    (breakpoint) => `.${breakpoint}text-align-center {
   text-align: center !important;
 }
-.${breakpoint.left}text-align-end {
+.${breakpoint}text-align-end {
   text-align: end !important;
 }
-.${breakpoint.left}text-align-justify {
+.${breakpoint}text-align-justify {
   text-align: justify !important;
 }
-.${breakpoint.left}text-align-left {
+.${breakpoint}text-align-left {
   text-align: left !important;
 }
-.${breakpoint.left}text-align-match-parent {
+.${breakpoint}text-align-match-parent {
   text-align: match-parent !important;
 }
-.${breakpoint.left}text-align-right {
+.${breakpoint}text-align-right {
   text-align: right !important;
 }
-.${breakpoint.left}text-align-start {
+.${breakpoint}text-align-start {
   text-align: start !important;
 }`
   );

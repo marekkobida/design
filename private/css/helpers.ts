@@ -7,23 +7,23 @@ function helpers (): string {
   return fb(
     (breakpoint) => {
       const a = (property: string, abbreviation: string) => f(
-        ($) => `.${breakpoint.left}${abbreviation}-${$.left} {
+        ($) => `.${breakpoint}${abbreviation}-${$.left} {
   ${property}: ${$.right}rem !important;
 }
-.${breakpoint.left}${abbreviation}-b-${$.left},
-.${breakpoint.left}${abbreviation}-y-${$.left} {
+.${breakpoint}${abbreviation}-b-${$.left},
+.${breakpoint}${abbreviation}-y-${$.left} {
   ${property}-bottom: ${$.right}rem !important;
 }
-.${breakpoint.left}${abbreviation}-l-${$.left},
-.${breakpoint.left}${abbreviation}-x-${$.left} {
+.${breakpoint}${abbreviation}-l-${$.left},
+.${breakpoint}${abbreviation}-x-${$.left} {
   ${property}-left: ${$.right}rem !important;
 }
-.${breakpoint.left}${abbreviation}-r-${$.left},
-.${breakpoint.left}${abbreviation}-x-${$.left} {
+.${breakpoint}${abbreviation}-r-${$.left},
+.${breakpoint}${abbreviation}-x-${$.left} {
   ${property}-right: ${$.right}rem !important;
 }
-.${breakpoint.left}${abbreviation}-t-${$.left},
-.${breakpoint.left}${abbreviation}-y-${$.left} {
+.${breakpoint}${abbreviation}-t-${$.left},
+.${breakpoint}${abbreviation}-y-${$.left} {
   ${property}-top: ${$.right}rem !important;
 }`,
         variables.sizes
@@ -32,23 +32,23 @@ function helpers (): string {
       const b: string = f(
         ($) => {
           if ($.left !== '0') {
-            return `.${breakpoint.left}m-\\!${$.left} {
+            return `.${breakpoint}m-\\!${$.left} {
   margin: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint.left}m-b-\\!${$.left},
-.${breakpoint.left}m-y-\\!${$.left} {
+.${breakpoint}m-b-\\!${$.left},
+.${breakpoint}m-y-\\!${$.left} {
   margin-bottom: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint.left}m-l-\\!${$.left},
-.${breakpoint.left}m-x-\\!${$.left} {
+.${breakpoint}m-l-\\!${$.left},
+.${breakpoint}m-x-\\!${$.left} {
   margin-left: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint.left}m-r-\\!${$.left},
-.${breakpoint.left}m-x-\\!${$.left} {
+.${breakpoint}m-r-\\!${$.left},
+.${breakpoint}m-x-\\!${$.left} {
   margin-right: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint.left}m-t-\\!${$.left},
-.${breakpoint.left}m-y-\\!${$.left} {
+.${breakpoint}m-t-\\!${$.left},
+.${breakpoint}m-y-\\!${$.left} {
   margin-top: calc(${$.right}rem * -1) !important;
 }`;
           }
@@ -59,7 +59,7 @@ function helpers (): string {
       );
 
       const c = f(
-        ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {
+        ($, i) => `.${breakpoint}m-l-${i + 1}\\/12 {
   margin-left: ${(i + 1) / 12 * 100}% !important;
 }`,
         11
@@ -69,23 +69,23 @@ function helpers (): string {
 ${a('padding', 'p')}
 ${b}
 ${c}
-.${breakpoint.left}m-auto {
+.${breakpoint}m-auto {
   margin: auto !important;
 }
-.${breakpoint.left}m-b-auto,
-.${breakpoint.left}m-y-auto {
+.${breakpoint}m-b-auto,
+.${breakpoint}m-y-auto {
   margin-bottom: auto !important;
 }
-.${breakpoint.left}m-l-auto,
-.${breakpoint.left}m-x-auto {
+.${breakpoint}m-l-auto,
+.${breakpoint}m-x-auto {
   margin-left: auto !important;
 }
-.${breakpoint.left}m-r-auto,
-.${breakpoint.left}m-x-auto {
+.${breakpoint}m-r-auto,
+.${breakpoint}m-x-auto {
   margin-right: auto !important;
 }
-.${breakpoint.left}m-t-auto,
-.${breakpoint.left}m-y-auto {
+.${breakpoint}m-t-auto,
+.${breakpoint}m-y-auto {
   margin-top: auto !important;
 }`;
     }

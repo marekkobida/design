@@ -2,28 +2,28 @@ import fb from '../fb';
 
 function display (): string {
   return fb(
-    (breakpoint) => `.${breakpoint.left}display-block {
+    (breakpoint) => `.${breakpoint}display-block {
   display: block !important;
 }
-.${breakpoint.left}display-flex {
+.${breakpoint}display-flex {
   display: flex !important;
 }
-.${breakpoint.left}display-grid {
+.${breakpoint}display-grid {
   display: grid !important;
 }
-.${breakpoint.left}display-inline {
+.${breakpoint}display-inline {
   display: inline !important;
 }
-.${breakpoint.left}display-inline-block {
+.${breakpoint}display-inline-block {
   display: inline-block !important;
 }
-.${breakpoint.left}display-inline-flex {
+.${breakpoint}display-inline-flex {
   display: inline-flex !important;
 }
-.${breakpoint.left}display-inline-grid {
+.${breakpoint}display-inline-grid {
   display: inline-grid !important;
 }
-.${breakpoint.left}display-none {
+.${breakpoint}display-none {
   display: none !important;
 }`
   );

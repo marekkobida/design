@@ -2,40 +2,40 @@ import fb from '../fb';
 
 function justifyContent (): string {
   return fb(
-    (breakpoint) => `.${breakpoint.left}justify-content-center {
+    (breakpoint) => `.${breakpoint}justify-content-center {
   justify-content: center !important;
 }
-.${breakpoint.left}justify-content-end {
+.${breakpoint}justify-content-end {
   justify-content: end !important;
 }
-.${breakpoint.left}justify-content-flex-end {
+.${breakpoint}justify-content-flex-end {
   justify-content: flex-end !important;
 }
-.${breakpoint.left}justify-content-flex-start {
+.${breakpoint}justify-content-flex-start {
   justify-content: flex-start !important;
 }
-.${breakpoint.left}justify-content-left {
+.${breakpoint}justify-content-left {
   justify-content: left !important;
 }
-.${breakpoint.left}justify-content-normal {
+.${breakpoint}justify-content-normal {
   justify-content: normal !important;
 }
-.${breakpoint.left}justify-content-right {
+.${breakpoint}justify-content-right {
   justify-content: right !important;
 }
-.${breakpoint.left}justify-content-space-around {
+.${breakpoint}justify-content-space-around {
   justify-content: space-around !important;
 }
-.${breakpoint.left}justify-content-space-between {
+.${breakpoint}justify-content-space-between {
   justify-content: space-between !important;
 }
-.${breakpoint.left}justify-content-space-evenly {
+.${breakpoint}justify-content-space-evenly {
   justify-content: space-evenly !important;
 }
-.${breakpoint.left}justify-content-start {
+.${breakpoint}justify-content-start {
   justify-content: start !important;
 }
-.${breakpoint.left}justify-content-stretch {
+.${breakpoint}justify-content-stretch {
   justify-content: stretch !important;
 }`
   );

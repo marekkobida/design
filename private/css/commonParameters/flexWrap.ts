@@ -2,13 +2,13 @@ import fb from '../fb';
 
 function flexWrap (): string {
   return fb(
-    (breakpoint) => `.${breakpoint.left}flex-wrap-nowrap {
+    (breakpoint) => `.${breakpoint}flex-wrap-nowrap {
   flex-wrap: nowrap !important;
 }
-.${breakpoint.left}flex-wrap-wrap {
+.${breakpoint}flex-wrap-wrap {
   flex-wrap: wrap !important;
 }
-.${breakpoint.left}flex-wrap-wrap-reverse {
+.${breakpoint}flex-wrap-wrap-reverse {
   flex-wrap: wrap-reverse !important;
 }`
   );
