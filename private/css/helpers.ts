@@ -35,20 +35,16 @@ function helpers (): string {
             return `.${breakpoint}m-\\!${$.left} {
   margin: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint}m-b-\\!${$.left},
-.${breakpoint}m-y-\\!${$.left} {
+.${breakpoint}m-b-\\!${$.left}, .${breakpoint}m-y-\\!${$.left} {
   margin-bottom: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint}m-l-\\!${$.left},
-.${breakpoint}m-x-\\!${$.left} {
+.${breakpoint}m-l-\\!${$.left}, .${breakpoint}m-x-\\!${$.left} {
   margin-left: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint}m-r-\\!${$.left},
-.${breakpoint}m-x-\\!${$.left} {
+.${breakpoint}m-r-\\!${$.left}, .${breakpoint}m-x-\\!${$.left} {
   margin-right: calc(${$.right}rem * -1) !important;
 }
-.${breakpoint}m-t-\\!${$.left},
-.${breakpoint}m-y-\\!${$.left} {
+.${breakpoint}m-t-\\!${$.left}, .${breakpoint}m-y-\\!${$.left} {
   margin-top: calc(${$.right}rem * -1) !important;
 }`;
           }
@@ -72,20 +68,16 @@ ${c}
 .${breakpoint}m-auto {
   margin: auto !important;
 }
-.${breakpoint}m-b-auto,
-.${breakpoint}m-y-auto {
+.${breakpoint}m-b-auto, .${breakpoint}m-y-auto {
   margin-bottom: auto !important;
 }
-.${breakpoint}m-l-auto,
-.${breakpoint}m-x-auto {
+.${breakpoint}m-l-auto, .${breakpoint}m-x-auto {
   margin-left: auto !important;
 }
-.${breakpoint}m-r-auto,
-.${breakpoint}m-x-auto {
+.${breakpoint}m-r-auto, .${breakpoint}m-x-auto {
   margin-right: auto !important;
 }
-.${breakpoint}m-t-auto,
-.${breakpoint}m-y-auto {
+.${breakpoint}m-t-auto, .${breakpoint}m-y-auto {
   margin-top: auto !important;
 }`;
     }
