@@ -1,6 +1,6 @@
 import * as helpers from '@redredsk/helpers/private';
 
-function f<T extends any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {
+function f<T extends readonly any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {
   let To = 0;
 
   if (helpers.types.isArray(to)) {

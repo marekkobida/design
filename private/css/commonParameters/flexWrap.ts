@@ -1,16 +1,15 @@
+import { FlexWrapProperty, } from '../../helpers/decodeCommonParameters';
+import f from '../f';
 import fb from '../fb';
 
 function flexWrap (): string {
   return fb(
-    (breakpoint) => `.${breakpoint}flex-wrap-nowrap {
-  flex-wrap: nowrap !important;
-}
-.${breakpoint}flex-wrap-wrap {
-  flex-wrap: wrap !important;
-}
-.${breakpoint}flex-wrap-wrap-reverse {
-  flex-wrap: wrap-reverse !important;
-}`
+    (breakpoint) => f(
+      ($) => `.${breakpoint}flex-wrap-${$} {
+  flex-wrap: ${$} !important;
+}`,
+      FlexWrapProperty
+    )
   );
 }
 
