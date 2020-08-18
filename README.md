@@ -1,6 +1,8 @@
 <h1 align="center">@redredsk/design</h1>
 <p align="center">Copyright 2020 Marek Kobida</p>
 
+`npm install https://github.com/redredsk/design --save`
+
 ## components
 
 `import { Column, } from '@redredsk/design/private/components';`

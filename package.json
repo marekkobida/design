@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "@redredsk/helpers": "git+https://github.com/redredsk/helpers.git"
+  },
   "name": "@redredsk/design",
   "version": "1.0.0"
 }
