@@ -38,7 +38,7 @@
 
 ### commonParameters
 
-`import * as helpers from '@redredsk/design/private/css/commonParameters';`
+`import * as commonParameters from '@redredsk/design/private/css/commonParameters';`
 
 1. [alignContent](private/css/commonParameters/alignContent.ts)
 1. [alignItems](private/css/commonParameters/alignItems.ts)
