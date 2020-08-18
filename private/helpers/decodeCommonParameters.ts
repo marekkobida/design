@@ -17,16 +17,16 @@ export const AlignItemsProperty = [ 'baseline', 'normal', 'stretch', ...SelfPosi
 export const AlignSelfProperty = [ 'auto', 'baseline', 'normal', 'stretch', ...SelfPosition, ] as const;
 
 // https://drafts.csswg.org/css-display/#typedef-display-box
-export const DisplayBox = [ 'none', ];
+export const DisplayBox = [ 'none', ] as const;
 
 // https://drafts.csswg.org/css-display/#typedef-display-inside
-export const DisplayInside = [ 'flex', 'grid', ];
+export const DisplayInside = [ 'flex', 'grid', ] as const;
 
 // https://drafts.csswg.org/css-display/#typedef-display-legacy
-export const DisplayLegacy = [ 'inline-block', 'inline-flex', 'inline-grid', ];
+export const DisplayLegacy = [ 'inline-block', 'inline-flex', 'inline-grid', ] as const;
 
 // https://drafts.csswg.org/css-display/#typedef-display-outside
-export const DisplayOutside = [ 'block', 'inline', ];
+export const DisplayOutside = [ 'block', 'inline', ] as const;
 
 export const DisplayProperty = [ ...DisplayBox, ...DisplayInside, ...DisplayLegacy, ...DisplayOutside, ] as const;
 
