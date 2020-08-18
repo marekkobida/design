@@ -1,11 +1,18 @@
 import writeFile from '@redredsk/helpers/private/writeFile';
 
 import CSS from './CSS';
+import alignContent from './commonParameters/alignContent';
+import alignItems from './commonParameters/alignItems';
+import alignSelf from './commonParameters/alignSelf';
+import display from './commonParameters/display';
+import flexDirection from './commonParameters/flexDirection';
+import flexWrap from './commonParameters/flexWrap';
+import justifyContent from './commonParameters/justifyContent';
+import textAlign from './commonParameters/textAlign';
+import width from './commonParameters/width';
 import Button from './components/Button';
-import Flex from './components/Flex';
 import Form from './components/Form';
 import Helpers from './components/Helpers';
-import Typography from './components/Typography';
 
 class Index extends CSS {
   css (): string {
@@ -35,6 +42,29 @@ class Index extends CSS {
 }
 .container {
   max-width: 60rem;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading--font-family);
+  font-weight: var(--heading--font-weight);
+  line-height: var(--heading--line-height);
+}
+.h1, h1 {
+  font-size: var(--h1--font-size);
+}
+.h2, h2 {
+  font-size: var(--h2--font-size);
+}
+.h3, h3 {
+  font-size: var(--h3--font-size);
+}
+.h4, h4 {
+  font-size: var(--h4--font-size);
+}
+.h5, h5 {
+  font-size: var(--h5--font-size);
+}
+.h6, h6 {
+  font-size: var(--h6--font-size);
 }
 .relative {
   position: relative;
@@ -83,11 +113,18 @@ table {
 textarea {
   resize: vertical;
 }
+${alignContent()}
+${alignItems()}
+${alignSelf()}
+${display()}
+${flexDirection()}
+${flexWrap()}
+${justifyContent()}
+${textAlign()}
+${width()}
 ${new Button().css()}
-${new Flex().css()}
 ${new Form().css()}
 ${new Helpers().css()}
-${new Typography().css()}
 `;
   }
 }
