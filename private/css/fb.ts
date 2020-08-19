@@ -2,14 +2,14 @@ import variables from '../variables';
 
 import f from './f';
 
-function fb ($: (suffix: string) => string): string {
+function fb ($: (breakpoint: { left: string; right?: number; }) => string): string {
   return f(
     (breakpoint) => {
       if (breakpoint !== null) {
-        return `@media (min-width: ${breakpoint.right}rem) {\n  ${$(breakpoint.left).replace(/\n/g, '\n  ')}\n}`;
+        return `@media (min-width: ${breakpoint.right}rem) {\n  ${$(breakpoint).replace(/\n/g, '\n  ')}\n}`;
       }
 
-      return $('');
+      return $({ left: '', });
     },
     variables.breakpoints
   );

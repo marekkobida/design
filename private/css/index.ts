@@ -5,8 +5,13 @@ import variables from '../variables';
 import button from './button';
 import * as commonParameters from './commonParameters';
 import f from './f';
+import fb from './fb';
 import form from './form';
 import helpers from './helpers';
+
+function container () {
+  return fb((breakpoint) => breakpoint.right ? `.container {\n  max-width: ${breakpoint.right}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
+}
 
 writeFile(
   './packages/design/index.css',
@@ -34,9 +39,7 @@ writeFile(
 .border-top {
   border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
-.container {
-  max-width: 64rem;
-}
+${container()}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading--font-family);
   font-weight: var(--heading--font-weight);

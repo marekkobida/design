@@ -5,7 +5,7 @@ import fb from '../fb';
 function flex (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}flex-${$} {\n  flex: ${$} !important;\n}`,
+      ($) => `.${breakpoint.left}flex-${$} {\n  flex: ${$} !important;\n}`,
       FlexProperty
     )
   );

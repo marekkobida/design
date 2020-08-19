@@ -23,7 +23,22 @@
   border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .container {
-  max-width: 64rem;
+  width: 100% !important;
+}
+@media (min-width: 40rem) {
+  .container {
+    max-width: 40rem !important;
+  }
+}
+@media (min-width: 48rem) {
+  .container {
+    max-width: 48rem !important;
+  }
+}
+@media (min-width: 64rem) {
+  .container {
+    max-width: 64rem !important;
+  }
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading--font-family);

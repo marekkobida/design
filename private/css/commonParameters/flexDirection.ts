@@ -5,7 +5,7 @@ import fb from '../fb';
 function flexDirection (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint}flex-direction-${$} {\n  flex-direction: ${$} !important;\n}`,
+      ($) => `.${breakpoint.left}flex-direction-${$} {\n  flex-direction: ${$} !important;\n}`,
       FlexDirectionProperty
     )
   );
