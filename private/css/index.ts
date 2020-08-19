@@ -1,5 +1,3 @@
-import writeFile from '@redredsk/helpers/private/writeFile';
-
 import variables from '../variables';
 
 import button from './button';
@@ -22,9 +20,7 @@ function container () {
   return fb((breakpoint) => breakpoint.right ? `.container {\n  max-width: ${breakpoint.right}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
 }
 
-writeFile(
-  './packages/design/index.css',
-  `*, *::after, *::before {
+process.stdout.write(`*, *::after, *::before {
   box-sizing: border-box;
 }
 .absolute {
@@ -132,5 +128,4 @@ ${helpers()}
 ${justifyContent()}
 ${textAlign()}
 ${width()}
-`
-);
+`);
