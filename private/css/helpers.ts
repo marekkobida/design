@@ -55,9 +55,7 @@ function helpers (): string {
       );
 
       const c = f(
-        ($, i) => `.${breakpoint}m-l-${i + 1}\\/12 {
-  margin-left: ${(i + 1) / 12 * 100}% !important;
-}`,
+        ($, i) => `.${breakpoint}m-l-${i + 1}\\/12 {\n  margin-left: ${(i + 1) / 12 * 100}% !important;\n}`,
         11
       );
 
