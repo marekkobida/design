@@ -6,9 +6,7 @@ function fb ($: (suffix: string) => string): string {
   return f(
     (breakpoint) => {
       if (breakpoint !== null) {
-        return `@media (min-width: ${breakpoint.right}rem) {
-  ${$(breakpoint.left).replace(/\n/g, '\n  ')}
-}`;
+        return `@media (min-width: ${breakpoint.right}rem) {\n  ${$(breakpoint.left).replace(/\n/g, '\n  ')}\n}`;
       }
 
       return $('');

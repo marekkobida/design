@@ -205,7 +205,7 @@ const variables: Variables = {
     null,
     {
       left: '\\#',
-      right: 36,
+      right: 40,
     },
     {
       left: '\\#\\#',
@@ -213,7 +213,7 @@ const variables: Variables = {
     },
     {
       left: '\\#\\#\\#',
-      right: 60,
+      right: 64,
     },
   ],
   sizes: [

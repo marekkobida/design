@@ -35,7 +35,7 @@ writeFile(
   border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
 .container {
-  max-width: 60rem;
+  max-width: 64rem;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading--font-family);
@@ -112,6 +112,7 @@ ${commonParameters.alignItems()}
 ${commonParameters.alignSelf()}
 ${button()}
 ${commonParameters.display()}
+${commonParameters.flex()}
 ${commonParameters.flexDirection()}
 ${commonParameters.flexWrap()}
 ${form()}

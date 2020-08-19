@@ -32,6 +32,8 @@ export const DisplayProperty = [ ...DisplayBox, ...DisplayInside, ...DisplayLega
 
 export const FlexDirectionProperty = [ 'column', 'column-reverse', 'row', 'row-reverse', ] as const;
 
+export const FlexProperty = [ 'none', 1, ] as const;
+
 export const FlexWrapProperty = [ 'nowrap', 'wrap', 'wrap-reverse', ] as const;
 
 export const JustifyContentProperty = [ 'left', 'normal', 'right', ...ContentDistribution, ...ContentPosition, ] as const;
@@ -50,6 +52,7 @@ export interface CommonParameters {
   alignSelf?: EncodedResponsiveClassName<typeof AlignSelfProperty[number]>;
   className?: EncodedClassName;
   display?: EncodedResponsiveClassName<typeof DisplayProperty[number]>;
+  flex?: EncodedResponsiveClassName<typeof FlexProperty[number]>;
   flexDirection?: EncodedResponsiveClassName<typeof FlexDirectionProperty[number]>;
   flexWrap?: EncodedResponsiveClassName<typeof FlexWrapProperty[number]>;
   justifyContent?: EncodedResponsiveClassName<typeof JustifyContentProperty[number]>;
@@ -78,6 +81,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
     alignSelf,
     className,
     display,
+    flex,
     flexDirection,
     flexWrap,
     justifyContent,
@@ -106,6 +110,7 @@ function decodeCommonParameters<Parameters extends CommonParameters> (parameters
       decodeResponsiveClassName('align-items-', alignItems),
       decodeResponsiveClassName('align-self-', alignSelf),
       decodeResponsiveClassName('display-', display),
+      decodeResponsiveClassName('flex-', flex),
       decodeResponsiveClassName('flex-direction-', flexDirection),
       decodeResponsiveClassName('flex-wrap-', flexWrap),
       decodeResponsiveClassName('justify-content-', justifyContent),
