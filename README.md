@@ -3,16 +3,11 @@
 
 ## components
 
-`import { Column, } from '@redredsk/design/private/components';`
-
 1. [Column](private/components/Column.tsx)
 1. [Container](private/components/Container.tsx)
 1. [Row](private/components/Row.tsx)
-1. all from [html](#html)
 
 ### html
-
-`import { Anchor, } from '@redredsk/design/private/components/html';`
 
 1. [Anchor](private/components/html/Anchor.tsx)
 1. [Button](private/components/html/Button.tsx)
@@ -38,12 +33,11 @@
 
 ### commonParameters
 
-`import * as commonParameters from '@redredsk/design/private/css/commonParameters';`
-
 1. [alignContent](private/css/commonParameters/alignContent.ts)
 1. [alignItems](private/css/commonParameters/alignItems.ts)
 1. [alignSelf](private/css/commonParameters/alignSelf.ts)
 1. [display](private/css/commonParameters/display.ts)
+1. [flex](private/css/commonParameters/flex.ts)
 1. [flexDirection](private/css/commonParameters/flexDirection.ts)
 1. [flexWrap](private/css/commonParameters/flexWrap.ts)
 1. [justifyContent](private/css/commonParameters/justifyContent.ts)
@@ -53,8 +47,6 @@
 ---
 
 ## helpers
-
-`import * as helpers from '@redredsk/design/private/helpers';`
 
 1. [decodeClassName](private/helpers/decodeClassName.ts)
 1. [decodeCommonParameters](private/helpers/decodeCommonParameters.ts)
