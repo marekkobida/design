@@ -87,6 +87,8 @@ a:focus, a:hover {
   text-decoration: underline;
 }
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   background-color: rgb(var(--body--background-color));
   color: rgb(var(--body--color));
