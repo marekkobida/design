@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import * as helpers from '@redredsk/helpers/private';
 
 function f<T extends readonly any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {

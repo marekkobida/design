@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import { FlexProperty, } from '../../helpers/decodeCommonParameters';
 import f from '../f';
 import fb from '../fb';

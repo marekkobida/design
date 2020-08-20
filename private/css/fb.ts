@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import variables from '../variables';
 
 import f from './f';

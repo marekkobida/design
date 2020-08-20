@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import React from 'react';
 
 import Div from './html/Div';

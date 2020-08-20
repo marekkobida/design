@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 function button (): string {
   return `.button, button {
   background-color: rgb(var(--button--background-color));

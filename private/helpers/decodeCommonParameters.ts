@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import { EncodedClassName, } from './decodeClassName';
 import decodeResponsiveClassName, { EncodedResponsiveClassName, } from './decodeResponsiveClassName';
 

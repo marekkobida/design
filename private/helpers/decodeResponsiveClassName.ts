@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 import * as helpers from '@redredsk/helpers/private';
 
 export type DecodedResponsiveClassName = string;

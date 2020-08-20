@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 Marek Kobida
+ */
+
 interface Variables {
 
   ':root':      { left: string; right: string; }[];
