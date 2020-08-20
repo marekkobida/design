@@ -1,4 +1,4 @@
-<h1 align="center">@redredsk/design</h1>
+<h1 align="center">design</h1>
 <p align="center">Copyright 2020 Marek Kobida</p>
 
 ## components
