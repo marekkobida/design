@@ -23,7 +23,7 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
   if (helpers.types.isArray(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName[0]}`);
 
-    // [ T, { [breakpointName: string]: T }, ]
+    // [ T, { [breakpointName: string]: T; }, ]
     if (helpers.types.isObject(encodedResponsiveClassName[1])) {
       for (const breakpointName in encodedResponsiveClassName[1]) {
         addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`);
@@ -36,7 +36,7 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
   }
 
-  // { [breakpointName: string]: T }
+  // { [breakpointName: string]: T; }
   if (helpers.types.isObject(encodedResponsiveClassName)) {
     for (const breakpointName in encodedResponsiveClassName) {
       addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`);
