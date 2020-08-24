@@ -9,7 +9,7 @@ import fb from '../fb';
 function alignSelf (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}align-self-${$} {\n  align-self: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}align-self-${$} {\n  align-self: ${$} !important;\n}`,
       AlignSelfProperty
     )
   );

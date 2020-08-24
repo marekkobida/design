@@ -5,8 +5,8 @@
 interface Variables {
 
   ':root':      { left: string; right: string; }[];
-  breakpoints:  (null | { left: string; right: number; })[];
-  sizes:        { left: string; right: number; }[];
+  breakpoints:  (null | { name: string; size: number; })[];
+  sizes:        { name: string; size: number; }[];
 
 }
 
@@ -208,54 +208,54 @@ const variables: Variables = {
   breakpoints: [
     null,
     {
-      left: '\\#',
-      right: 40,
+      name: '\\#',
+      size: 40,
     },
     {
-      left: '\\#\\#',
-      right: 48,
+      name: '\\#\\#',
+      size: 48,
     },
     {
-      left: '\\#\\#\\#',
-      right: 64,
+      name: '\\#\\#\\#',
+      size: 64,
     },
   ],
   sizes: [
     {
-      left: '0',
-      right: 0,
+      name: '0',
+      size: 0,
     },
     {
-      left: '1',
-      right: 0.25,
+      name: '1',
+      size: 0.25,
     },
     {
-      left: '2',
-      right: 0.5,
+      name: '2',
+      size: 0.5,
     },
     {
-      left: '3',
-      right: 0.75,
+      name: '3',
+      size: 0.75,
     },
     {
-      left: '4',
-      right: 1,
+      name: '4',
+      size: 1,
     },
     {
-      left: '5',
-      right: 1.25,
+      name: '5',
+      size: 1.25,
     },
     {
-      left: '6',
-      right: 1.5,
+      name: '6',
+      size: 1.5,
     },
     {
-      left: '7',
-      right: 1.75,
+      name: '7',
+      size: 1.75,
     },
     {
-      left: '8',
-      right: 2,
+      name: '8',
+      size: 2,
     },
   ],
 };

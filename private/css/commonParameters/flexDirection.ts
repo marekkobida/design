@@ -9,7 +9,7 @@ import fb from '../fb';
 function flexDirection (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}flex-direction-${$} {\n  flex-direction: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}flex-direction-${$} {\n  flex-direction: ${$} !important;\n}`,
       FlexDirectionProperty
     )
   );

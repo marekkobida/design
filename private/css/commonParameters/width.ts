@@ -9,18 +9,18 @@ function width (): string {
   return fb(
     (breakpoint) => {
       const $ = f(
-        ($, i) => `.${breakpoint.left}width-${i + 1}\\/12 {\n  width: ${(i + 1) / 12 * 100}% !important;\n}`,
+        ($, i) => `.${breakpoint.name}width-${i + 1}\\/12 {\n  width: ${(i + 1) / 12 * 100}% !important;\n}`,
         11
       );
 
       return `${$}
-.${breakpoint.left}width-0 {
+.${breakpoint.name}width-0 {
   width: 0 !important;
 }
-.${breakpoint.left}width-100 {
+.${breakpoint.name}width-100 {
   width: 100% !important;
 }
-.${breakpoint.left}width-auto {
+.${breakpoint.name}width-auto {
   width: auto !important;
 }`;
     }

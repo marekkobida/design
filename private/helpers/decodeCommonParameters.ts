@@ -44,11 +44,11 @@ export const JustifyContentProperty = [ 'left', 'normal', 'right', ...ContentDis
 
 export const TextAlignProperty = [ 'center', 'end', 'justify', 'left', 'match-parent', 'right', 'start', ] as const;
 
-const $s = [ '!0', '!1', '!2', '!3', '!4', '!5', '!6', '!7', '!8', 'auto', 0, 1, 2, 3, 4, 5, 6, 7, 8, ] as const;
+const $s = [ 0, '!0', '!1', '!2', '!3', '!4', '!5', '!6', '!7', '!8', 'auto', 1, 2, 3, 4, 5, 6, 7, 8, ] as const;
 
-const $mL = [ '1/12', '10/12', '11/12', '2/12', '3/12', '4/12', '5/12', '6/12', '7/12', '8/12', '9/12', ...$s, ] as const;
+const $mL = [ '1/12', '2/12', '3/12', '4/12', '5/12', '6/12', '7/12', '8/12', '9/12', '10/12', '11/12', ...$s, ] as const;
 
-const $width = [ '0', '1/12', '10/12', '100', '11/12', '2/12', '3/12', '4/12', '5/12', '6/12', '7/12', '8/12', '9/12', 'auto', ] as const;
+const $width = [ '0', '1/12', '2/12', '3/12', '4/12', '5/12', '6/12', '7/12', '8/12', '9/12', '10/12', '11/12', '100', 'auto', ] as const;
 
 export interface CommonParameters {
   alignContent?: EncodedResponsiveClassName<typeof AlignContentProperty[number]>;
@@ -78,7 +78,7 @@ export interface CommonParameters {
   width?: EncodedResponsiveClassName<typeof $width[number]>;
 }
 
-function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): { className: EncodedClassName[]; } & Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> {
+function decodeCommonParameters<Parameters extends CommonParameters> (parameters: Parameters): Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> & { className: EncodedClassName[]; } {
   const {
     alignContent,
     alignItems,

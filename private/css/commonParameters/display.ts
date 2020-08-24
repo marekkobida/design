@@ -9,7 +9,7 @@ import fb from '../fb';
 function display (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}display-${$} {\n  display: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}display-${$} {\n  display: ${$} !important;\n}`,
       DisplayProperty
     )
   );

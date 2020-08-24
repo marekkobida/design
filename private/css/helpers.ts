@@ -11,45 +11,45 @@ function helpers (): string {
   return fb(
     (breakpoint) => {
       const a = (property: string, abbreviation: string) => f(
-        ($) => `.${breakpoint.left}${abbreviation}-${$.left} {
-  ${property}: ${$.right}rem !important;
+        ($) => `.${breakpoint.name}${abbreviation}-${$.name} {
+  ${property}: ${$.size}rem !important;
 }
-.${breakpoint.left}${abbreviation}-b-${$.left},
-.${breakpoint.left}${abbreviation}-y-${$.left} {
-  ${property}-bottom: ${$.right}rem !important;
+.${breakpoint.name}${abbreviation}-b-${$.name},
+.${breakpoint.name}${abbreviation}-y-${$.name} {
+  ${property}-bottom: ${$.size}rem !important;
 }
-.${breakpoint.left}${abbreviation}-l-${$.left},
-.${breakpoint.left}${abbreviation}-x-${$.left} {
-  ${property}-left: ${$.right}rem !important;
+.${breakpoint.name}${abbreviation}-l-${$.name},
+.${breakpoint.name}${abbreviation}-x-${$.name} {
+  ${property}-left: ${$.size}rem !important;
 }
-.${breakpoint.left}${abbreviation}-r-${$.left},
-.${breakpoint.left}${abbreviation}-x-${$.left} {
-  ${property}-right: ${$.right}rem !important;
+.${breakpoint.name}${abbreviation}-r-${$.name},
+.${breakpoint.name}${abbreviation}-x-${$.name} {
+  ${property}-right: ${$.size}rem !important;
 }
-.${breakpoint.left}${abbreviation}-t-${$.left},
-.${breakpoint.left}${abbreviation}-y-${$.left} {
-  ${property}-top: ${$.right}rem !important;
+.${breakpoint.name}${abbreviation}-t-${$.name},
+.${breakpoint.name}${abbreviation}-y-${$.name} {
+  ${property}-top: ${$.size}rem !important;
 }`,
         variables.sizes
       );
 
       const b: string = f(
         ($) => {
-          if ($.left !== '0') {
-            return `.${breakpoint.left}m-\\!${$.left} {
-  margin: calc(${$.right}rem * -1) !important;
+          if ($.name !== '0') {
+            return `.${breakpoint.name}m-\\!${$.name} {
+  margin: calc(${$.size}rem * -1) !important;
 }
-.${breakpoint.left}m-b-\\!${$.left}, .${breakpoint.left}m-y-\\!${$.left} {
-  margin-bottom: calc(${$.right}rem * -1) !important;
+.${breakpoint.name}m-b-\\!${$.name}, .${breakpoint.name}m-y-\\!${$.name} {
+  margin-bottom: calc(${$.size}rem * -1) !important;
 }
-.${breakpoint.left}m-l-\\!${$.left}, .${breakpoint.left}m-x-\\!${$.left} {
-  margin-left: calc(${$.right}rem * -1) !important;
+.${breakpoint.name}m-l-\\!${$.name}, .${breakpoint.name}m-x-\\!${$.name} {
+  margin-left: calc(${$.size}rem * -1) !important;
 }
-.${breakpoint.left}m-r-\\!${$.left}, .${breakpoint.left}m-x-\\!${$.left} {
-  margin-right: calc(${$.right}rem * -1) !important;
+.${breakpoint.name}m-r-\\!${$.name}, .${breakpoint.name}m-x-\\!${$.name} {
+  margin-right: calc(${$.size}rem * -1) !important;
 }
-.${breakpoint.left}m-t-\\!${$.left}, .${breakpoint.left}m-y-\\!${$.left} {
-  margin-top: calc(${$.right}rem * -1) !important;
+.${breakpoint.name}m-t-\\!${$.name}, .${breakpoint.name}m-y-\\!${$.name} {
+  margin-top: calc(${$.size}rem * -1) !important;
 }`;
           }
 
@@ -59,7 +59,7 @@ function helpers (): string {
       );
 
       const c = f(
-        ($, i) => `.${breakpoint.left}m-l-${i + 1}\\/12 {\n  margin-left: ${(i + 1) / 12 * 100}% !important;\n}`,
+        ($, i) => `.${breakpoint.name}m-l-${i + 1}\\/12 {\n  margin-left: ${(i + 1) / 12 * 100}% !important;\n}`,
         11
       );
 
@@ -67,19 +67,19 @@ function helpers (): string {
 ${a('padding', 'p')}
 ${b}
 ${c}
-.${breakpoint.left}m-auto {
+.${breakpoint.name}m-auto {
   margin: auto !important;
 }
-.${breakpoint.left}m-b-auto, .${breakpoint.left}m-y-auto {
+.${breakpoint.name}m-b-auto, .${breakpoint.name}m-y-auto {
   margin-bottom: auto !important;
 }
-.${breakpoint.left}m-l-auto, .${breakpoint.left}m-x-auto {
+.${breakpoint.name}m-l-auto, .${breakpoint.name}m-x-auto {
   margin-left: auto !important;
 }
-.${breakpoint.left}m-r-auto, .${breakpoint.left}m-x-auto {
+.${breakpoint.name}m-r-auto, .${breakpoint.name}m-x-auto {
   margin-right: auto !important;
 }
-.${breakpoint.left}m-t-auto, .${breakpoint.left}m-y-auto {
+.${breakpoint.name}m-t-auto, .${breakpoint.name}m-y-auto {
   margin-top: auto !important;
 }`;
     }

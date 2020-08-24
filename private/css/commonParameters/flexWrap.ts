@@ -9,7 +9,7 @@ import fb from '../fb';
 function flexWrap (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}flex-wrap-${$} {\n  flex-wrap: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}flex-wrap-${$} {\n  flex-wrap: ${$} !important;\n}`,
       FlexWrapProperty
     )
   );

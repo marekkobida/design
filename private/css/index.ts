@@ -21,7 +21,7 @@ import form from './form';
 import helpers from './helpers';
 
 function container () {
-  return fb((breakpoint) => breakpoint.right ? `.container {\n  max-width: ${breakpoint.right}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
+  return fb((breakpoint) => breakpoint.size ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
 }
 
 process.stdout.write(`*, *::after, *::before {
@@ -77,7 +77,6 @@ ${container()}
 }
 :root {
 ${f(($) => `  --${$.left}: ${$.right};`, variables[':root'])}
-${f(($) => `  --size-${$.left}: ${$.right}rem;`, variables['sizes'])}
 }
 a {
   color: inherit;

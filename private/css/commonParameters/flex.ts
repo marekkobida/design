@@ -9,7 +9,7 @@ import fb from '../fb';
 function flex (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}flex-${$} {\n  flex: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}flex-${$} {\n  flex: ${$} !important;\n}`,
       FlexProperty
     )
   );

@@ -9,7 +9,7 @@ import fb from '../fb';
 function justifyContent (): string {
   return fb(
     (breakpoint) => f(
-      ($) => `.${breakpoint.left}justify-content-${$} {\n  justify-content: ${$} !important;\n}`,
+      ($) => `.${breakpoint.name}justify-content-${$} {\n  justify-content: ${$} !important;\n}`,
       JustifyContentProperty
     )
   );
