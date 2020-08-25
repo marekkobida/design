@@ -2,7 +2,10 @@
  * Copyright 2020 Marek Kobida
  */
 
-import * as helpers from '@redredsk/helpers/private';
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
+import isObject from '@redredsk/helpers/private/types/isObject';
+import isString from '@redredsk/helpers/private/types/isString';
 
 export type DecodedResponsiveClassName = string;
 
@@ -20,11 +23,11 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
   }
 
   // [ T, ]
-  if (helpers.types.isArray(encodedResponsiveClassName)) {
+  if (isArray(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName[0]}`);
 
     // [ T, { [breakpointName: string]: T; }, ]
-    if (helpers.types.isObject(encodedResponsiveClassName[1])) {
+    if (isObject(encodedResponsiveClassName[1])) {
       for (const breakpointName in encodedResponsiveClassName[1]) {
         addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`);
       }
@@ -32,19 +35,19 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
   }
 
   // T
-  if (helpers.types.isNumber(encodedResponsiveClassName)) {
+  if (isNumber(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
   }
 
   // { [breakpointName: string]: T; }
-  if (helpers.types.isObject(encodedResponsiveClassName)) {
+  if (isObject(encodedResponsiveClassName)) {
     for (const breakpointName in encodedResponsiveClassName) {
       addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`);
     }
   }
 
   // T
-  if (helpers.types.isString(encodedResponsiveClassName)) {
+  if (isString(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
   }
 

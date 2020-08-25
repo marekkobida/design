@@ -2,7 +2,10 @@
  * Copyright 2020 Marek Kobida
  */
 
-import * as helpers from '@redredsk/helpers/private';
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
+import isObject from '@redredsk/helpers/private/types/isObject';
+import isString from '@redredsk/helpers/private/types/isString';
 
 import css from '../../index.css';
 
@@ -25,17 +28,17 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   }
 
   for (const encodedClassName of encodedClassNames) {
-    if (helpers.types.isArray(encodedClassName)) {
+    if (isArray(encodedClassName)) {
       for (const decodedClassName of $(...encodedClassName)) {
         addDecodedClassName(decodedClassName);
       }
     }
 
-    if (helpers.types.isNumber(encodedClassName)) {
+    if (isNumber(encodedClassName)) {
       addDecodedClassName(`${encodedClassName}`);
     }
 
-    if (helpers.types.isObject(encodedClassName)) {
+    if (isObject(encodedClassName)) {
       for (const decodedClassName in encodedClassName) {
         if (encodedClassName[decodedClassName]) {
           addDecodedClassName(decodedClassName);
@@ -43,7 +46,7 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
       }
     }
 
-    if (helpers.types.isString(encodedClassName)) {
+    if (isString(encodedClassName)) {
       for (const decodedClassName of encodedClassName.split(' ')) {
         addDecodedClassName(decodedClassName);
       }
