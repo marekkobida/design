@@ -2,10 +2,10 @@
  * Copyright 2020 Marek Kobida
  */
 
-import isArray from '@redredsk/helpers/private/types/isArray';
-import isNumber from '@redredsk/helpers/private/types/isNumber';
-import isObject from '@redredsk/helpers/private/types/isObject';
-import isString from '@redredsk/helpers/private/types/isString';
+import isArray from 'helpers/private/types/isArray';
+import isNumber from 'helpers/private/types/isNumber';
+import isObject from 'helpers/private/types/isObject';
+import isString from 'helpers/private/types/isString';
 
 export type DecodedResponsiveClassName = string;
 
