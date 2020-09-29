@@ -2,8 +2,8 @@
  * Copyright 2020 Marek Kobida
  */
 
-import isArray from 'helpers/private/types/isArray';
-import isNumber from 'helpers/private/types/isNumber';
+import isArray from '@redredsk/helpers/private/types/isArray';
+import isNumber from '@redredsk/helpers/private/types/isNumber';
 
 function f<T extends readonly any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {
   let To = 0;
