@@ -2,11 +2,6 @@
  * Copyright 2020 Marek Kobida
  */
 
-import isArray from '@redredsk/helpers/private/types/isArray';
-import isNumber from '@redredsk/helpers/private/types/isNumber';
-import isObject from '@redredsk/helpers/private/types/isObject';
-import isString from '@redredsk/helpers/private/types/isString';
-
 import css from '../../index.css';
 
 export type DecodedClassName = string;
@@ -28,28 +23,40 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   }
 
   for (const encodedClassName of encodedClassNames) {
-    if (isArray(encodedClassName)) {
+    // EncodedClassName[]
+    if (Array.isArray(encodedClassName)) {
       for (const decodedClassName of $(...encodedClassName)) {
         addDecodedClassName(decodedClassName);
       }
+
+      return decodedClassNames;
     }
 
-    if (isNumber(encodedClassName)) {
+    // number
+    if (typeof encodedClassName === 'number') {
       addDecodedClassName(`${encodedClassName}`);
+
+      return decodedClassNames;
     }
 
-    if (isObject(encodedClassName)) {
+    // string
+    if (typeof encodedClassName === 'string') {
+      for (const decodedClassName of encodedClassName.split(' ')) {
+        addDecodedClassName(decodedClassName);
+      }
+
+      return decodedClassNames;
+    }
+
+    // { [decodedClassName: string]: boolean | null | undefined; }
+    if (typeof encodedClassName === 'object') {
       for (const decodedClassName in encodedClassName) {
         if (encodedClassName[decodedClassName]) {
           addDecodedClassName(decodedClassName);
         }
       }
-    }
 
-    if (isString(encodedClassName)) {
-      for (const decodedClassName of encodedClassName.split(' ')) {
-        addDecodedClassName(decodedClassName);
-      }
+      return decodedClassNames;
     }
   }
 

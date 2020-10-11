@@ -4,14 +4,14 @@
 
 import React from 'react';
 
+import { CommonParameters, } from '../helpers/decodeCommonParameters';
+
 import Div from './html/Div';
 
-class Row extends React.Component<Div['props']> {
-  static defaultProps = { display: 'flex', flexWrap: 'wrap', mX: '!2', };
+function Row ({ display = 'flex', flexWrap = 'wrap', mX = '!2', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters>) {
+  const $ = { display, flexWrap, mX, ...parameters, };
 
-  render () {
-    return <Div {...this.props} />;
-  }
+  return <Div {...$} />;
 }
 
 export default Row;

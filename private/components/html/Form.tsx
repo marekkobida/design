@@ -7,12 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Form extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'form'>, keyof CommonParameters>> {
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+function Form (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'form'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-    return <form {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <form {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Form;

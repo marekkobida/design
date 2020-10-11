@@ -7,14 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-interface P { $: 'tbody' | 'tfoot' | 'thead'; }
+function TableSection ({ $, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'tbody'>, keyof CommonParameters> & { $: 'tbody' | 'tfoot' | 'thead'; }) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-class TableSection extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<P['$']>, keyof CommonParameters> & P> {
-  render () {
-    const { $, className, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    return <$ {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <$ {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableSection;

@@ -4,16 +4,14 @@
 
 import React from 'react';
 
+import { CommonParameters, } from '../helpers/decodeCommonParameters';
+
 import Div from './html/Div';
 
-class Container extends React.Component<Div['props']> {
-  static defaultProps = { mX: 'auto', pX: 4, };
+function Container ({ mX = 'auto', pX = 4, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = { mX, pX, ...parameters, };
 
-  render () {
-    const { className, ...commonParameters } = this.props;
-
-    return <Div {...commonParameters} className={[ 'container', className, ]} />;
-  }
+  return <Div {...commonParameters} className={[ 'container', className, ]} />;
 }
 
 export default Container;

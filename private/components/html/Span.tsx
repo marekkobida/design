@@ -7,12 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Span extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'span'>, keyof CommonParameters>> {
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+function Span (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'span'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-    return <span {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <span {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Span;

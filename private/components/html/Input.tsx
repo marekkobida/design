@@ -7,28 +7,22 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Input extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'input'>, keyof CommonParameters>> {
-  static defaultProps = { display: 'block', pX: 4, pY: 2, width: '100', };
-
-  render () {
-    const { ...commonParameters } = this.props;
-
-    if (commonParameters.type === 'button' || commonParameters.type === 'reset' || commonParameters.type === 'submit') {
-      commonParameters.display = 'inline-block';
-
-      delete commonParameters.width;
-    }
-
-    if (commonParameters.type === 'checkbox' || commonParameters.type === 'radio') {
-      commonParameters.pX = 2;
-
-      delete commonParameters.width;
-    }
-
-    const { className, ...notCommonParameters } = decodeCommonParameters(commonParameters);
-
-    return <input {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
+function Input ({ display = 'block', pX = 4, pY = 2, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'input'>, keyof CommonParameters>) {
+  if (parameters.type === 'button' || parameters.type === 'reset' || parameters.type === 'submit') {
+    display = display || 'inline-block';
   }
+
+  if (parameters.type === 'checkbox' || parameters.type === 'radio') {
+    pX = pY;
+  }
+
+  if (parameters.type === 'text') {
+    parameters.width = parameters.width || '100';
+  }
+
+  const { className, ...commonParameters } = decodeCommonParameters({ display, pX, pY, ...parameters, });
+
+  return <input {...commonParameters} className={decodeClassName('border-radius', className)} />;
 }
 
 export default Input;

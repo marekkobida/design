@@ -7,16 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-import Input from './Input';
+function Select ({ display = 'block', pX = 4, pY = 2, width = '100', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'select'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters({ display, pX, pY, width, ...parameters, });
 
-class Select extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'select'>, keyof CommonParameters>> {
-  static defaultProps = Input.defaultProps;
-
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    return <select {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
-  }
+  return <select {...commonParameters} className={decodeClassName('border-radius', className)} />;
 }
 
 export default Select;

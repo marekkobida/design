@@ -7,18 +7,12 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-interface P { headingSize: 1 | 2 | 3 | 4 | 5 | 6; }
+function Heading ({ headingSize = 1, mY = 0, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof CommonParameters> & { headingSize: 1 | 2 | 3 | 4 | 5 | 6; }) {
+  const { className, ...commonParameters } = decodeCommonParameters({ mY, ...parameters, });
 
-class Heading extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'h1'>, keyof CommonParameters> & P> {
-  static defaultProps = { headingSize: 1, mY: 0, };
+  const H = `h${headingSize}` as 'h1';
 
-  render () {
-    const { className, headingSize, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    const H = `h${headingSize}` as 'h1';
-
-    return <H {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <H {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Heading;

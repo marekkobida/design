@@ -7,12 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class TableCell extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'td'>, keyof CommonParameters>> {
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+function TableCell (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'td'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-    return <td {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <td {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableCell;

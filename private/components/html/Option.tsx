@@ -7,12 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Option extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'option'>, keyof CommonParameters>> {
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+function Option (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'option'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-    return <option {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <option {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Option;

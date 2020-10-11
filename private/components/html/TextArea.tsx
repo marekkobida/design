@@ -7,16 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-import Input from './Input';
+function TextArea ({ display = 'block', pX = 4, pY = 2, width = '100', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'textarea'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters({ display, pX, pY, width, ...parameters, });
 
-class TextArea extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'textarea'>, keyof CommonParameters>> {
-  static defaultProps = Input.defaultProps;
-
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    return <textarea {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
-  }
+  return <textarea {...commonParameters} className={decodeClassName('border-radius', className)} />;
 }
 
 export default TextArea;

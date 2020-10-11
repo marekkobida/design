@@ -2,11 +2,6 @@
  * Copyright 2020 Marek Kobida
  */
 
-import isArray from '@redredsk/helpers/private/types/isArray';
-import isNumber from '@redredsk/helpers/private/types/isNumber';
-import isObject from '@redredsk/helpers/private/types/isObject';
-import isString from '@redredsk/helpers/private/types/isString';
-
 export type DecodedResponsiveClassName = string;
 
 export type EncodedResponsiveClassName<T extends number | string> =
@@ -22,33 +17,41 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
     decodedResponsiveClassNames = [ ...decodedResponsiveClassNames, decodedResponsiveClassName, ];
   }
 
+  // T
+  if (typeof encodedResponsiveClassName === 'number') {
+    addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
+
+    return decodedResponsiveClassNames;
+  }
+
+  // T
+  if (typeof encodedResponsiveClassName === 'string') {
+    addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
+
+    return decodedResponsiveClassNames;
+  }
+
   // [ T, ]
-  if (isArray(encodedResponsiveClassName)) {
+  if (Array.isArray(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName[0]}`);
 
     // [ T, { [breakpointName: string]: T; }, ]
-    if (isObject(encodedResponsiveClassName[1])) {
+    if (encodedResponsiveClassName[1]) {
       for (const breakpointName in encodedResponsiveClassName[1]) {
         addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`);
       }
     }
-  }
 
-  // T
-  if (isNumber(encodedResponsiveClassName)) {
-    addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
+    return decodedResponsiveClassNames;
   }
 
   // { [breakpointName: string]: T; }
-  if (isObject(encodedResponsiveClassName)) {
+  if (typeof encodedResponsiveClassName === 'object') {
     for (const breakpointName in encodedResponsiveClassName) {
       addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`);
     }
-  }
 
-  // T
-  if (isString(encodedResponsiveClassName)) {
-    addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
+    return decodedResponsiveClassNames;
   }
 
   return decodedResponsiveClassNames;

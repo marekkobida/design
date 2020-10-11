@@ -7,14 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Paragraph extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'p'>, keyof CommonParameters>> {
-  static defaultProps = { mY: 0, };
+function Paragraph ({ mY = 0, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'p'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters({ mY, ...parameters, });
 
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
-
-    return <p {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <p {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Paragraph;

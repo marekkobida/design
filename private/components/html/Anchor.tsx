@@ -7,12 +7,10 @@ import React from 'react';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
 
-class Anchor extends React.Component<CommonParameters & Omit<React.ComponentPropsWithoutRef<'a'>, keyof CommonParameters>> {
-  render () {
-    const { className, ...notCommonParameters } = decodeCommonParameters(this.props);
+function Anchor (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'a'>, keyof CommonParameters>) {
+  const { className, ...commonParameters } = decodeCommonParameters(parameters);
 
-    return <a {...notCommonParameters} className={decodeClassName(className)} />;
-  }
+  return <a {...commonParameters} className={decodeClassName(className)} />;
 }
 
 export default Anchor;
