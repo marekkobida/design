@@ -28,15 +28,11 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
       for (const decodedClassName of $(...encodedClassName)) {
         addDecodedClassName(decodedClassName);
       }
-
-      return decodedClassNames;
     }
 
     // number
     if (typeof encodedClassName === 'number') {
       addDecodedClassName(`${encodedClassName}`);
-
-      return decodedClassNames;
     }
 
     // string
@@ -44,19 +40,15 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
       for (const decodedClassName of encodedClassName.split(' ')) {
         addDecodedClassName(decodedClassName);
       }
-
-      return decodedClassNames;
     }
 
     // { [decodedClassName: string]: boolean | null | undefined; }
-    if (typeof encodedClassName === 'object') {
+    if (!Array.isArray(encodedClassName) && encodedClassName !== null && typeof encodedClassName === 'object') {
       for (const decodedClassName in encodedClassName) {
         if (encodedClassName[decodedClassName]) {
           addDecodedClassName(decodedClassName);
         }
       }
-
-      return decodedClassNames;
     }
   }
 

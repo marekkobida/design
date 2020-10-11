@@ -20,15 +20,11 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
   // T
   if (typeof encodedResponsiveClassName === 'number') {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
-
-    return decodedResponsiveClassNames;
   }
 
   // T
   if (typeof encodedResponsiveClassName === 'string') {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
-
-    return decodedResponsiveClassNames;
   }
 
   // [ T, ]
@@ -41,17 +37,13 @@ function decodeResponsiveClassName ($: string, encodedResponsiveClassName?: Enco
         addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`);
       }
     }
-
-    return decodedResponsiveClassNames;
   }
 
   // { [breakpointName: string]: T; }
-  if (typeof encodedResponsiveClassName === 'object') {
+  if (!Array.isArray(encodedResponsiveClassName) && encodedResponsiveClassName !== null && typeof encodedResponsiveClassName === 'object') {
     for (const breakpointName in encodedResponsiveClassName) {
       addDecodedResponsiveClassName(`${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`);
     }
-
-    return decodedResponsiveClassNames;
   }
 
   return decodedResponsiveClassNames;
