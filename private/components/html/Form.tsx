@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Form (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'form'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters(parameters);
+function Form (parameters: Test<'form'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-  return <form {...commonParameters} className={decodeClassName(className)} />;
+  return <form {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default Form;

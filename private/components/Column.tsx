@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { CommonParameters, } from '../helpers/decodeCommonParameters';
+import { Test, } from '../helpers/common.types';
 
 import Div from './html/Div';
 
-function Column ({ flex = 'none', pX = 2, width = 'auto', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters>) {
+function Column ({ flex = 'none', pX = 2, width = 'auto', ...parameters }: Test<'div'>) {
   const $ = { flex, pX, width, ...parameters, };
 
   return <Div {...$} />;

@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Span (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'span'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters(parameters);
+function Span (parameters: Test<'span'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-  return <span {...commonParameters} className={decodeClassName(className)} />;
+  return <span {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default Span;

@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Paragraph ({ mY = 0, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'p'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters({ mY, ...parameters, });
+function Paragraph ({ mY = 0, ...parameters }: Test<'p'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters({ mY, ...parameters, });
 
-  return <p {...commonParameters} className={decodeClassName(className)} />;
+  return <p {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default Paragraph;

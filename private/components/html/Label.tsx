@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Label ({ display = 'inline-block', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'label'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters({ display, ...parameters, });
+function Label ({ display = 'inline-block', ...parameters }: Test<'label'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters({ display, ...parameters, });
 
-  return <label {...commonParameters} className={decodeClassName(className)} />;
+  return <label {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default Label;

@@ -3,11 +3,9 @@
  */
 
 interface Variables {
-
-  ':root':      { left: string; right: string; }[];
-  breakpoints:  (null | { name: string; size: number; })[];
-  sizes:        { name: string; size: number; }[];
-
+  ':root': { left: string; right: string; }[];
+  breakpoints: (null | { name: string; size: number; })[];
+  sizes: { name: string; size: number; }[];
 }
 
 const body = [

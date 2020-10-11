@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Select ({ display = 'block', pX = 4, pY = 2, width = '100', ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'select'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters({ display, pX, pY, width, ...parameters, });
+function Select ({ display = 'block', pX = 4, pY = 2, width = '100', ...parameters }: Test<'select'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters({ display, pX, pY, width, ...parameters, });
 
-  return <select {...commonParameters} className={decodeClassName('border-radius', className)} />;
+  return <select {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
 }
 
 export default Select;

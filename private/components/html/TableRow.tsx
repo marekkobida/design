@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function TableRow (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'tr'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters(parameters);
+function TableRow (parameters: Test<'tr'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-  return <tr {...commonParameters} className={decodeClassName(className)} />;
+  return <tr {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableRow;

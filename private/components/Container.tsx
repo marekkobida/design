@@ -4,14 +4,14 @@
 
 import React from 'react';
 
-import { CommonParameters, } from '../helpers/decodeCommonParameters';
+import { Test, } from '../helpers/common.types';
 
 import Div from './html/Div';
 
-function Container ({ mX = 'auto', pX = 4, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'div'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = { mX, pX, ...parameters, };
+function Container ({ className, mX = 'auto', pX = 4, ...parameters }: Test<'div'>) {
+  const $ = { mX, pX, ...parameters, };
 
-  return <Div {...commonParameters} className={[ 'container', className, ]} />;
+  return <Div {...$} className={[ 'container', className, ]} />;
 }
 
 export default Container;

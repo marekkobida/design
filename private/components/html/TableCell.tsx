@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function TableCell (parameters: CommonParameters & Omit<React.ComponentPropsWithoutRef<'td'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters(parameters);
+function TableCell (parameters: Test<'td'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-  return <td {...commonParameters} className={decodeClassName(className)} />;
+  return <td {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableCell;

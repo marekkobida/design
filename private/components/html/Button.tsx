@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function Button ({ display = 'inline-block', pX = 4, pY = 2, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'button'>, keyof CommonParameters>) {
-  const { className, ...commonParameters } = decodeCommonParameters({ display, pX, pY, ...parameters, });
+function Button ({ display = 'inline-block', pX = 4, pY = 2, ...parameters }: Test<'button'>) {
+  const { className, ...notCommonParameters } = decodeCommonParameters({ display, pX, pY, ...parameters, });
 
-  return <button {...commonParameters} className={decodeClassName('border-radius', className)} />;
+  return <button {...notCommonParameters} className={decodeClassName('border-radius', className)} />;
 }
 
 export default Button;

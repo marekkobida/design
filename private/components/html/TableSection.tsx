@@ -4,13 +4,14 @@
 
 import React from 'react';
 
+import { Test, } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
-import decodeCommonParameters, { CommonParameters, } from '../../helpers/decodeCommonParameters';
+import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
-function TableSection ({ $, ...parameters }: CommonParameters & Omit<React.ComponentPropsWithoutRef<'tbody'>, keyof CommonParameters> & { $: 'tbody' | 'tfoot' | 'thead'; }) {
-  const { className, ...commonParameters } = decodeCommonParameters(parameters);
+function TableSection ({ element: Element, ...parameters }: Test<'tbody'> & { element: 'tbody' | 'tfoot' | 'thead'; }) {
+  const { className, ...notCommonParameters } = decodeCommonParameters(parameters);
 
-  return <$ {...commonParameters} className={decodeClassName(className)} />;
+  return <Element {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableSection;
