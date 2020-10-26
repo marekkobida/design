@@ -1,0 +1,30 @@
+.flex-none {
+  flex: none !important;
+}
+.flex-1 {
+  flex: 1 !important;
+}
+@media (min-width: 40rem) {
+  .\#flex-none {
+    flex: none !important;
+  }
+  .\#flex-1 {
+    flex: 1 !important;
+  }
+}
+@media (min-width: 48rem) {
+  .\#\#flex-none {
+    flex: none !important;
+  }
+  .\#\#flex-1 {
+    flex: 1 !important;
+  }
+}
+@media (min-width: 64rem) {
+  .\#\#\#flex-none {
+    flex: none !important;
+  }
+  .\#\#\#flex-1 {
+    flex: 1 !important;
+  }
+}

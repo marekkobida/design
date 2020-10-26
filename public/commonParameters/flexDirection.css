@@ -1,0 +1,54 @@
+.flex-direction-column {
+  flex-direction: column !important;
+}
+.flex-direction-column-reverse {
+  flex-direction: column-reverse !important;
+}
+.flex-direction-row {
+  flex-direction: row !important;
+}
+.flex-direction-row-reverse {
+  flex-direction: row-reverse !important;
+}
+@media (min-width: 40rem) {
+  .\#flex-direction-column {
+    flex-direction: column !important;
+  }
+  .\#flex-direction-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+  .\#flex-direction-row {
+    flex-direction: row !important;
+  }
+  .\#flex-direction-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+}
+@media (min-width: 48rem) {
+  .\#\#flex-direction-column {
+    flex-direction: column !important;
+  }
+  .\#\#flex-direction-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+  .\#\#flex-direction-row {
+    flex-direction: row !important;
+  }
+  .\#\#flex-direction-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+}
+@media (min-width: 64rem) {
+  .\#\#\#flex-direction-column {
+    flex-direction: column !important;
+  }
+  .\#\#\#flex-direction-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+  .\#\#\#flex-direction-row {
+    flex-direction: row !important;
+  }
+  .\#\#\#flex-direction-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+}

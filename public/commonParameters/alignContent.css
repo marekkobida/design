@@ -1,0 +1,138 @@
+.align-content-baseline {
+  align-content: baseline !important;
+}
+.align-content-normal {
+  align-content: normal !important;
+}
+.align-content-space-around {
+  align-content: space-around !important;
+}
+.align-content-space-between {
+  align-content: space-between !important;
+}
+.align-content-space-evenly {
+  align-content: space-evenly !important;
+}
+.align-content-stretch {
+  align-content: stretch !important;
+}
+.align-content-center {
+  align-content: center !important;
+}
+.align-content-end {
+  align-content: end !important;
+}
+.align-content-flex-end {
+  align-content: flex-end !important;
+}
+.align-content-flex-start {
+  align-content: flex-start !important;
+}
+.align-content-start {
+  align-content: start !important;
+}
+@media (min-width: 40rem) {
+  .\#align-content-baseline {
+    align-content: baseline !important;
+  }
+  .\#align-content-normal {
+    align-content: normal !important;
+  }
+  .\#align-content-space-around {
+    align-content: space-around !important;
+  }
+  .\#align-content-space-between {
+    align-content: space-between !important;
+  }
+  .\#align-content-space-evenly {
+    align-content: space-evenly !important;
+  }
+  .\#align-content-stretch {
+    align-content: stretch !important;
+  }
+  .\#align-content-center {
+    align-content: center !important;
+  }
+  .\#align-content-end {
+    align-content: end !important;
+  }
+  .\#align-content-flex-end {
+    align-content: flex-end !important;
+  }
+  .\#align-content-flex-start {
+    align-content: flex-start !important;
+  }
+  .\#align-content-start {
+    align-content: start !important;
+  }
+}
+@media (min-width: 48rem) {
+  .\#\#align-content-baseline {
+    align-content: baseline !important;
+  }
+  .\#\#align-content-normal {
+    align-content: normal !important;
+  }
+  .\#\#align-content-space-around {
+    align-content: space-around !important;
+  }
+  .\#\#align-content-space-between {
+    align-content: space-between !important;
+  }
+  .\#\#align-content-space-evenly {
+    align-content: space-evenly !important;
+  }
+  .\#\#align-content-stretch {
+    align-content: stretch !important;
+  }
+  .\#\#align-content-center {
+    align-content: center !important;
+  }
+  .\#\#align-content-end {
+    align-content: end !important;
+  }
+  .\#\#align-content-flex-end {
+    align-content: flex-end !important;
+  }
+  .\#\#align-content-flex-start {
+    align-content: flex-start !important;
+  }
+  .\#\#align-content-start {
+    align-content: start !important;
+  }
+}
+@media (min-width: 64rem) {
+  .\#\#\#align-content-baseline {
+    align-content: baseline !important;
+  }
+  .\#\#\#align-content-normal {
+    align-content: normal !important;
+  }
+  .\#\#\#align-content-space-around {
+    align-content: space-around !important;
+  }
+  .\#\#\#align-content-space-between {
+    align-content: space-between !important;
+  }
+  .\#\#\#align-content-space-evenly {
+    align-content: space-evenly !important;
+  }
+  .\#\#\#align-content-stretch {
+    align-content: stretch !important;
+  }
+  .\#\#\#align-content-center {
+    align-content: center !important;
+  }
+  .\#\#\#align-content-end {
+    align-content: end !important;
+  }
+  .\#\#\#align-content-flex-end {
+    align-content: flex-end !important;
+  }
+  .\#\#\#align-content-flex-start {
+    align-content: flex-start !important;
+  }
+  .\#\#\#align-content-start {
+    align-content: start !important;
+  }
+}

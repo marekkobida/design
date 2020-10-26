@@ -2,7 +2,7 @@
  * Copyright 2020 Marek Kobida
  */
 
-import css from '../../index.css';
+import css from '../../public/index.css';
 
 export type DecodedClassName = string;
 

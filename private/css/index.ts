@@ -2,6 +2,8 @@
  * Copyright 2020 Marek Kobida
  */
 
+import fs from 'fs';
+
 import variables from '../variables';
 
 import button from './button';
@@ -24,7 +26,11 @@ function container () {
   return fb((breakpoint) => breakpoint.size ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
 }
 
-process.stdout.write(`*, *::after, *::before {
+function root () {
+  return `:root {
+${f(($) => `  --${$.left}: ${$.right};`, variables[':root'])}
+}
+*, *::after, *::before {
   box-sizing: border-box;
 }
 .absolute {
@@ -48,7 +54,6 @@ process.stdout.write(`*, *::after, *::before {
 .border-top {
   border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
 }
-${container()}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading--font-family);
   font-weight: var(--heading--font-weight);
@@ -74,9 +79,6 @@ ${container()}
 }
 .relative {
   position: relative;
-}
-:root {
-${f(($) => `  --${$.left}: ${$.right};`, variables[':root'])}
 }
 a {
   color: inherit;
@@ -119,11 +121,32 @@ table {
 }
 textarea {
   resize: vertical;
+}`;
 }
+
+fs.writeFileSync('./packages/design/public/commonParameters/alignContent.css', alignContent());
+fs.writeFileSync('./packages/design/public/commonParameters/alignItems.css', alignItems());
+fs.writeFileSync('./packages/design/public/commonParameters/alignSelf.css', alignSelf());
+fs.writeFileSync('./packages/design/public/commonParameters/display.css', display());
+fs.writeFileSync('./packages/design/public/commonParameters/flex.css', flex());
+fs.writeFileSync('./packages/design/public/commonParameters/flexDirection.css', flexDirection());
+fs.writeFileSync('./packages/design/public/commonParameters/flexWrap.css', flexWrap());
+fs.writeFileSync('./packages/design/public/commonParameters/justifyContent.css', justifyContent());
+fs.writeFileSync('./packages/design/public/commonParameters/textAlign.css', textAlign());
+fs.writeFileSync('./packages/design/public/commonParameters/width.css', width());
+
+fs.writeFileSync('./packages/design/public/button.css', button());
+fs.writeFileSync('./packages/design/public/container.css', container());
+fs.writeFileSync('./packages/design/public/form.css', form());
+fs.writeFileSync('./packages/design/public/helpers.css', helpers());
+fs.writeFileSync('./packages/design/public/root.css', root());
+
+fs.writeFileSync('./packages/design/public/index.css', `${root()}
 ${alignContent()}
 ${alignItems()}
 ${alignSelf()}
 ${button()}
+${container()}
 ${display()}
 ${flex()}
 ${flexDirection()}
@@ -132,5 +155,4 @@ ${form()}
 ${helpers()}
 ${justifyContent()}
 ${textAlign()}
-${width()}
-`);
+${width()}`);

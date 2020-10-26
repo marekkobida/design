@@ -1,0 +1,102 @@
+.display-none {
+  display: none !important;
+}
+.display-flex {
+  display: flex !important;
+}
+.display-grid {
+  display: grid !important;
+}
+.display-inline-block {
+  display: inline-block !important;
+}
+.display-inline-flex {
+  display: inline-flex !important;
+}
+.display-inline-grid {
+  display: inline-grid !important;
+}
+.display-block {
+  display: block !important;
+}
+.display-inline {
+  display: inline !important;
+}
+@media (min-width: 40rem) {
+  .\#display-none {
+    display: none !important;
+  }
+  .\#display-flex {
+    display: flex !important;
+  }
+  .\#display-grid {
+    display: grid !important;
+  }
+  .\#display-inline-block {
+    display: inline-block !important;
+  }
+  .\#display-inline-flex {
+    display: inline-flex !important;
+  }
+  .\#display-inline-grid {
+    display: inline-grid !important;
+  }
+  .\#display-block {
+    display: block !important;
+  }
+  .\#display-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 48rem) {
+  .\#\#display-none {
+    display: none !important;
+  }
+  .\#\#display-flex {
+    display: flex !important;
+  }
+  .\#\#display-grid {
+    display: grid !important;
+  }
+  .\#\#display-inline-block {
+    display: inline-block !important;
+  }
+  .\#\#display-inline-flex {
+    display: inline-flex !important;
+  }
+  .\#\#display-inline-grid {
+    display: inline-grid !important;
+  }
+  .\#\#display-block {
+    display: block !important;
+  }
+  .\#\#display-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 64rem) {
+  .\#\#\#display-none {
+    display: none !important;
+  }
+  .\#\#\#display-flex {
+    display: flex !important;
+  }
+  .\#\#\#display-grid {
+    display: grid !important;
+  }
+  .\#\#\#display-inline-block {
+    display: inline-block !important;
+  }
+  .\#\#\#display-inline-flex {
+    display: inline-flex !important;
+  }
+  .\#\#\#display-inline-grid {
+    display: inline-grid !important;
+  }
+  .\#\#\#display-block {
+    display: block !important;
+  }
+  .\#\#\#display-inline {
+    display: inline !important;
+  }
+}
