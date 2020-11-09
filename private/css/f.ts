@@ -2,7 +2,10 @@
  * Copyright 2020 Marek Kobida
  */
 
-function f<T extends readonly any[]> ($: (ii: T[0], i: number) => string, to: T | number): string {
+function f<T extends readonly any[]>(
+  $: (ii: T[0], i: number) => string,
+  to: T | number,
+): string {
   let To = 0;
 
   if (Array.isArray(to)) {
@@ -19,7 +22,7 @@ function f<T extends readonly any[]> ($: (ii: T[0], i: number) => string, to: T 
     const b = $(Array.isArray(to) ? to[i] : null, i);
 
     if (b) {
-      $$ = [ ...$$, b, ];
+      $$ = [...$$, b];
     }
   }
 

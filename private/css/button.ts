@@ -2,7 +2,7 @@
  * Copyright 2020 Marek Kobida
  */
 
-function button (): string {
+function button(): string {
   return `.button, button {
   background-color: rgb(var(--button--background-color));
   border: var(--button--border-width) solid rgb(var(--button--border-color));

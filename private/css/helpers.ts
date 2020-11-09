@@ -7,11 +7,11 @@ import variables from '../variables';
 import f from './f';
 import fb from './fb';
 
-function helpers (): string {
-  return fb(
-    (breakpoint) => {
-      const a = (property: string, abbreviation: string) => f(
-        ($) => `.${breakpoint.name}${abbreviation}-${$.name} {
+function helpers(): string {
+  return fb(breakpoint => {
+    const a = (property: string, abbreviation: string) =>
+      f(
+        $ => `.${breakpoint.name}${abbreviation}-${$.name} {
   ${property}: ${$.size}rem !important;
 }
 .${breakpoint.name}${abbreviation}-b-${$.name},
@@ -30,13 +30,12 @@ function helpers (): string {
 .${breakpoint.name}${abbreviation}-y-${$.name} {
   ${property}-top: ${$.size}rem !important;
 }`,
-        variables.sizes
+        variables.sizes,
       );
 
-      const b: string = f(
-        ($) => {
-          if ($.name !== '0') {
-            return `.${breakpoint.name}m-\\!${$.name} {
+    const b: string = f($ => {
+      if ($.name !== '0') {
+        return `.${breakpoint.name}m-\\!${$.name} {
   margin: calc(${$.size}rem * -1) !important;
 }
 .${breakpoint.name}m-b-\\!${$.name}, .${breakpoint.name}m-y-\\!${$.name} {
@@ -51,19 +50,20 @@ function helpers (): string {
 .${breakpoint.name}m-t-\\!${$.name}, .${breakpoint.name}m-y-\\!${$.name} {
   margin-top: calc(${$.size}rem * -1) !important;
 }`;
-          }
+      }
 
-          return '';
-        },
-        variables.sizes
-      );
+      return '';
+    }, variables.sizes);
 
-      const c = f(
-        ($, i) => `.${breakpoint.name}m-l-${i + 1}\\/12 {\n  margin-left: ${(i + 1) / 12 * 100}% !important;\n}`,
-        11
-      );
+    const c = f(
+      ($, i) =>
+        `.${breakpoint.name}m-l-${i + 1}\\/12 {\n  margin-left: ${
+          ((i + 1) / 12) * 100
+        }% !important;\n}`,
+      11,
+    );
 
-      return `${a('margin', 'm')}
+    return `${a('margin', 'm')}
 ${a('padding', 'p')}
 ${b}
 ${c}
@@ -82,8 +82,7 @@ ${c}
 .${breakpoint.name}m-t-auto, .${breakpoint.name}m-y-auto {
   margin-top: auto !important;
 }`;
-    }
-  );
+  });
 }
 
 export default helpers;

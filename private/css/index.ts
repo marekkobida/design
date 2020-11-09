@@ -22,13 +22,17 @@ import fb from './fb';
 import form from './form';
 import helpers from './helpers';
 
-function container () {
-  return fb((breakpoint) => breakpoint.size ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}` : `.container {\n  width: 100% !important;\n}`);
+function container() {
+  return fb(breakpoint =>
+    breakpoint.size
+      ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}`
+      : `.container {\n  width: 100% !important;\n}`,
+  );
 }
 
-function root () {
+function root() {
   return `:root {
-${f(($) => `  --${$.left}: ${$.right};`, variables[':root'])}
+${f($ => `  --${$.left}: ${$.right};`, variables[':root'])}
 }
 *, *::after, *::before {
   box-sizing: border-box;
@@ -124,16 +128,43 @@ textarea {
 }`;
 }
 
-fs.writeFileSync('./packages/design/public/commonParameters/alignContent.css', alignContent());
-fs.writeFileSync('./packages/design/public/commonParameters/alignItems.css', alignItems());
-fs.writeFileSync('./packages/design/public/commonParameters/alignSelf.css', alignSelf());
-fs.writeFileSync('./packages/design/public/commonParameters/display.css', display());
+fs.writeFileSync(
+  './packages/design/public/commonParameters/alignContent.css',
+  alignContent(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/alignItems.css',
+  alignItems(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/alignSelf.css',
+  alignSelf(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/display.css',
+  display(),
+);
 fs.writeFileSync('./packages/design/public/commonParameters/flex.css', flex());
-fs.writeFileSync('./packages/design/public/commonParameters/flexDirection.css', flexDirection());
-fs.writeFileSync('./packages/design/public/commonParameters/flexWrap.css', flexWrap());
-fs.writeFileSync('./packages/design/public/commonParameters/justifyContent.css', justifyContent());
-fs.writeFileSync('./packages/design/public/commonParameters/textAlign.css', textAlign());
-fs.writeFileSync('./packages/design/public/commonParameters/width.css', width());
+fs.writeFileSync(
+  './packages/design/public/commonParameters/flexDirection.css',
+  flexDirection(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/flexWrap.css',
+  flexWrap(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/justifyContent.css',
+  justifyContent(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/textAlign.css',
+  textAlign(),
+);
+fs.writeFileSync(
+  './packages/design/public/commonParameters/width.css',
+  width(),
+);
 
 fs.writeFileSync('./packages/design/public/button.css', button());
 fs.writeFileSync('./packages/design/public/container.css', container());
@@ -141,7 +172,9 @@ fs.writeFileSync('./packages/design/public/form.css', form());
 fs.writeFileSync('./packages/design/public/helpers.css', helpers());
 fs.writeFileSync('./packages/design/public/root.css', root());
 
-fs.writeFileSync('./packages/design/public/index.css', `${root()}
+fs.writeFileSync(
+  './packages/design/public/index.css',
+  `${root()}
 ${alignContent()}
 ${alignItems()}
 ${alignSelf()}
@@ -155,4 +188,5 @@ ${form()}
 ${helpers()}
 ${justifyContent()}
 ${textAlign()}
-${width()}`);
+${width()}`,
+);

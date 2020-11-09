@@ -2,7 +2,7 @@
  * Copyright 2020 Marek Kobida
  */
 
-function form (): string {
+function form(): string {
   return `input[type="checkbox"]:checked, input[type="radio"]:checked {
   background-color: rgb(var(--input--checked--background-color));
   border-color: rgb(var(--input--checked--border-color));

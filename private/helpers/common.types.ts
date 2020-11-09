@@ -4,6 +4,7 @@
 
 import React from 'react';
 
-import { CommonParameters, } from './decodeCommonParameters';
+import { CommonParameters } from './decodeCommonParameters';
 
-export type Test<T extends React.ElementType> = CommonParameters & Omit<React.ComponentPropsWithoutRef<T>, keyof CommonParameters>;
+export type Test<T extends React.ElementType> = CommonParameters &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof CommonParameters>;

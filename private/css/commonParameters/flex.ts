@@ -2,16 +2,16 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { FlexProperty, } from '../../helpers/decodeCommonParameters';
+import { FlexProperty } from '../../helpers/decodeCommonParameters';
 import f from '../f';
 import fb from '../fb';
 
-function flex (): string {
-  return fb(
-    (breakpoint) => f(
-      ($) => `.${breakpoint.name}flex-${$} {\n  flex: ${$} !important;\n}`,
-      FlexProperty
-    )
+function flex(): string {
+  return fb(breakpoint =>
+    f(
+      $ => `.${breakpoint.name}flex-${$} {\n  flex: ${$} !important;\n}`,
+      FlexProperty,
+    ),
   );
 }
 

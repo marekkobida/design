@@ -13,13 +13,13 @@ export type EncodedClassName =
   | number
   | string
   | undefined
-  | { [decodedClassName: string]: boolean | null | undefined; };
+  | { [decodedClassName: string]: boolean | null | undefined };
 
-function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
+function $(...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   let decodedClassNames: DecodedClassName[] = [];
 
-  function addDecodedClassName (decodedClassName: DecodedClassName) {
-    decodedClassNames = [ ...decodedClassNames, decodedClassName, ];
+  function addDecodedClassName(decodedClassName: DecodedClassName) {
+    decodedClassNames = [...decodedClassNames, decodedClassName];
   }
 
   for (const encodedClassName of encodedClassNames) {
@@ -43,7 +43,11 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
     }
 
     // { [decodedClassName: string]: boolean | null | undefined; }
-    if (!Array.isArray(encodedClassName) && encodedClassName !== null && typeof encodedClassName === 'object') {
+    if (
+      !Array.isArray(encodedClassName) &&
+      encodedClassName !== null &&
+      typeof encodedClassName === 'object'
+    ) {
       for (const decodedClassName in encodedClassName) {
         if (encodedClassName[decodedClassName]) {
           addDecodedClassName(decodedClassName);
@@ -55,7 +59,9 @@ function $ (...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   return decodedClassNames;
 }
 
-function decodeClassName (...encodedClassNames: EncodedClassName[]): DecodedClassName | undefined {
+function decodeClassName(
+  ...encodedClassNames: EncodedClassName[]
+): DecodedClassName | undefined {
   const decodedClassNames = $(...encodedClassNames);
 
   if (decodedClassNames.length > 0) {

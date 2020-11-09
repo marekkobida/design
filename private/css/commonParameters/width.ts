@@ -5,15 +5,17 @@
 import f from '../f';
 import fb from '../fb';
 
-function width (): string {
-  return fb(
-    (breakpoint) => {
-      const $ = f(
-        ($, i) => `.${breakpoint.name}width-${i + 1}\\/12 {\n  width: ${(i + 1) / 12 * 100}% !important;\n}`,
-        11
-      );
+function width(): string {
+  return fb(breakpoint => {
+    const $ = f(
+      ($, i) =>
+        `.${breakpoint.name}width-${i + 1}\\/12 {\n  width: ${
+          ((i + 1) / 12) * 100
+        }% !important;\n}`,
+      11,
+    );
 
-      return `${$}
+    return `${$}
 .${breakpoint.name}width-0 {
   width: 0 !important;
 }
@@ -23,8 +25,7 @@ function width (): string {
 .${breakpoint.name}width-auto {
   width: auto !important;
 }`;
-    }
-  );
+  });
 }
 
 export default width;

@@ -3,9 +3,9 @@
  */
 
 interface Variables {
-  ':root': { left: string; right: string; }[];
-  breakpoints: (null | { name: string; size: number; })[];
-  sizes: { name: string; size: number; }[];
+  ':root': { left: string; right: string }[];
+  breakpoints: (null | { name: string; size: number })[];
+  sizes: { name: string; size: number }[];
 }
 
 const body = [
@@ -19,7 +19,8 @@ const body = [
   },
   {
     left: 'body--font-family',
-    right: 'system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", sans-serif',
+    right:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
   },
   {
     left: 'body--font-size',
