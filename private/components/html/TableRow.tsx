@@ -10,7 +10,7 @@ import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
 function TableRow(parameters: Test<'tr'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return <tr {...notCommonParameters} className={decodeClassName(className)} />;

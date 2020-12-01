@@ -10,7 +10,7 @@ function fb($: (breakpoint: { name: string; size: number }) => string): string {
   return f(breakpoint => {
     if (breakpoint !== null) {
       return `@media (min-width: ${breakpoint.size}rem) {\n  ${$(
-        breakpoint,
+        breakpoint
       ).replace(/\n/g, '\n  ')}\n}`;
     }
 

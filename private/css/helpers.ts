@@ -30,7 +30,7 @@ function helpers(): string {
 .${breakpoint.name}${abbreviation}-y-${$.name} {
   ${property}-top: ${$.size}rem !important;
 }`,
-        variables.sizes,
+        variables.sizes
       );
 
     const b: string = f($ => {
@@ -60,7 +60,7 @@ function helpers(): string {
         `.${breakpoint.name}m-l-${i + 1}\\/12 {\n  margin-left: ${
           ((i + 1) / 12) * 100
         }% !important;\n}`,
-      11,
+      11
     );
 
     return `${a('margin', 'm')}

@@ -11,8 +11,8 @@ function justifyContent(): string {
     f(
       $ =>
         `.${breakpoint.name}justify-content-${$} {\n  justify-content: ${$} !important;\n}`,
-      JustifyContentProperty,
-    ),
+      JustifyContentProperty
+    )
   );
 }
 

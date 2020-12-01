@@ -10,7 +10,7 @@ import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
 function Form(parameters: Test<'form'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return (

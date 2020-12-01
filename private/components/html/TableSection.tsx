@@ -13,7 +13,7 @@ function TableSection({
   ...parameters
 }: Test<'tbody'> & { element: 'tbody' | 'tfoot' | 'thead' }) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return (

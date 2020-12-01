@@ -11,8 +11,8 @@ function alignContent(): string {
     f(
       $ =>
         `.${breakpoint.name}align-content-${$} {\n  align-content: ${$} !important;\n}`,
-      AlignContentProperty,
-    ),
+      AlignContentProperty
+    )
   );
 }
 

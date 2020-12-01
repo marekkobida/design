@@ -10,7 +10,7 @@ import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
 function Anchor(parameters: Test<'a'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return <a {...notCommonParameters} className={decodeClassName(className)} />;

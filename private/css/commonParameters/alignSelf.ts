@@ -11,8 +11,8 @@ function alignSelf(): string {
     f(
       $ =>
         `.${breakpoint.name}align-self-${$} {\n  align-self: ${$} !important;\n}`,
-      AlignSelfProperty,
-    ),
+      AlignSelfProperty
+    )
   );
 }
 

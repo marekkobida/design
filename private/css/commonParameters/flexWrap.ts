@@ -11,8 +11,8 @@ function flexWrap(): string {
     f(
       $ =>
         `.${breakpoint.name}flex-wrap-${$} {\n  flex-wrap: ${$} !important;\n}`,
-      FlexWrapProperty,
-    ),
+      FlexWrapProperty
+    )
   );
 }
 

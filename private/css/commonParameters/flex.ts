@@ -10,8 +10,8 @@ function flex(): string {
   return fb(breakpoint =>
     f(
       $ => `.${breakpoint.name}flex-${$} {\n  flex: ${$} !important;\n}`,
-      FlexProperty,
-    ),
+      FlexProperty
+    )
   );
 }
 

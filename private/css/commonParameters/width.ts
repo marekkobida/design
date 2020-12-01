@@ -12,7 +12,7 @@ function width(): string {
         `.${breakpoint.name}width-${i + 1}\\/12 {\n  width: ${
           ((i + 1) / 12) * 100
         }% !important;\n}`,
-      11,
+      11
     );
 
     return `${$}

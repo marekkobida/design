@@ -4,7 +4,7 @@
 
 function f<T extends readonly any[]>(
   $: (ii: T[0], i: number) => string,
-  to: T | number,
+  to: T | number
 ): string {
   let To = 0;
 

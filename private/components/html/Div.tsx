@@ -10,7 +10,7 @@ import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
 function Div(parameters: Test<'div'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return (

@@ -11,8 +11,8 @@ function alignItems(): string {
     f(
       $ =>
         `.${breakpoint.name}align-items-${$} {\n  align-items: ${$} !important;\n}`,
-      AlignItemsProperty,
-    ),
+      AlignItemsProperty
+    )
   );
 }
 

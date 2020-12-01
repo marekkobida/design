@@ -197,7 +197,7 @@ export interface CommonParameters {
 }
 
 function decodeCommonParameters<Parameters extends CommonParameters>(
-  parameters: Parameters,
+  parameters: Parameters
 ): Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> & {
   className: EncodedClassName[];
 } {

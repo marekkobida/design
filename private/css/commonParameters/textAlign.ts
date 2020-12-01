@@ -11,8 +11,8 @@ function textAlign(): string {
     f(
       $ =>
         `.${breakpoint.name}text-align-${$} {\n  text-align: ${$} !important;\n}`,
-      TextAlignProperty,
-    ),
+      TextAlignProperty
+    )
   );
 }
 

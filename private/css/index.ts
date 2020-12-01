@@ -26,7 +26,7 @@ function container() {
   return fb(breakpoint =>
     breakpoint.size
       ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}`
-      : `.container {\n  width: 100% !important;\n}`,
+      : `.container {\n  width: 100% !important;\n}`
   );
 }
 
@@ -130,40 +130,40 @@ textarea {
 
 fs.writeFileSync(
   './packages/design/public/commonParameters/alignContent.css',
-  alignContent(),
+  alignContent()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/alignItems.css',
-  alignItems(),
+  alignItems()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/alignSelf.css',
-  alignSelf(),
+  alignSelf()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/display.css',
-  display(),
+  display()
 );
 fs.writeFileSync('./packages/design/public/commonParameters/flex.css', flex());
 fs.writeFileSync(
   './packages/design/public/commonParameters/flexDirection.css',
-  flexDirection(),
+  flexDirection()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/flexWrap.css',
-  flexWrap(),
+  flexWrap()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/justifyContent.css',
-  justifyContent(),
+  justifyContent()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/textAlign.css',
-  textAlign(),
+  textAlign()
 );
 fs.writeFileSync(
   './packages/design/public/commonParameters/width.css',
-  width(),
+  width()
 );
 
 fs.writeFileSync('./packages/design/public/button.css', button());
@@ -188,5 +188,5 @@ ${form()}
 ${helpers()}
 ${justifyContent()}
 ${textAlign()}
-${width()}`,
+${width()}`
 );

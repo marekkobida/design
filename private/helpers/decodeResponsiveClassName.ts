@@ -12,12 +12,12 @@ export type EncodedResponsiveClassName<T extends number | string> =
 
 function decodeResponsiveClassName(
   $: string,
-  encodedResponsiveClassName?: EncodedResponsiveClassName<number | string>,
+  encodedResponsiveClassName?: EncodedResponsiveClassName<number | string>
 ): DecodedResponsiveClassName[] {
   let decodedResponsiveClassNames: DecodedResponsiveClassName[] = [];
 
   function addDecodedResponsiveClassName(
-    decodedResponsiveClassName: DecodedResponsiveClassName,
+    decodedResponsiveClassName: DecodedResponsiveClassName
   ) {
     decodedResponsiveClassNames = [
       ...decodedResponsiveClassNames,
@@ -43,7 +43,7 @@ function decodeResponsiveClassName(
     if (encodedResponsiveClassName[1]) {
       for (const breakpointName in encodedResponsiveClassName[1]) {
         addDecodedResponsiveClassName(
-          `${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`,
+          `${breakpointName}${$}${encodedResponsiveClassName[1][breakpointName]}`
         );
       }
     }
@@ -57,7 +57,7 @@ function decodeResponsiveClassName(
   ) {
     for (const breakpointName in encodedResponsiveClassName) {
       addDecodedResponsiveClassName(
-        `${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`,
+        `${breakpointName}${$}${encodedResponsiveClassName[breakpointName]}`
       );
     }
   }

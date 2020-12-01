@@ -11,8 +11,8 @@ function flexDirection(): string {
     f(
       $ =>
         `.${breakpoint.name}flex-direction-${$} {\n  flex-direction: ${$} !important;\n}`,
-      FlexDirectionProperty,
-    ),
+      FlexDirectionProperty
+    )
   );
 }
 

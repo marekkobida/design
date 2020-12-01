@@ -10,8 +10,8 @@ function display(): string {
   return fb(breakpoint =>
     f(
       $ => `.${breakpoint.name}display-${$} {\n  display: ${$} !important;\n}`,
-      DisplayProperty,
-    ),
+      DisplayProperty
+    )
   );
 }
 

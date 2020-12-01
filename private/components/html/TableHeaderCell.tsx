@@ -10,7 +10,7 @@ import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 
 function TableHeaderCell(parameters: Test<'th'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
-    parameters,
+    parameters
   );
 
   return <th {...notCommonParameters} className={decodeClassName(className)} />;
