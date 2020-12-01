@@ -4,23 +4,23 @@
 
 import fs from 'fs';
 
-import variables from '../variables';
-
-import button from './button';
 import alignContent from './commonParameters/alignContent';
 import alignItems from './commonParameters/alignItems';
 import alignSelf from './commonParameters/alignSelf';
+import button from './button';
 import display from './commonParameters/display';
+import f from './f';
+import fb from './fb';
 import flex from './commonParameters/flex';
 import flexDirection from './commonParameters/flexDirection';
 import flexWrap from './commonParameters/flexWrap';
+import form from './form';
+import helpers from './helpers';
 import justifyContent from './commonParameters/justifyContent';
 import textAlign from './commonParameters/textAlign';
 import width from './commonParameters/width';
-import f from './f';
-import fb from './fb';
-import form from './form';
-import helpers from './helpers';
+
+import variables from '../variables';
 
 function container() {
   return fb(breakpoint =>
@@ -129,51 +129,48 @@ textarea {
 }
 
 fs.writeFileSync(
-  './packages/design/public/commonParameters/alignContent.css',
+  './packages/design/css/commonParameters/alignContent.css',
   alignContent()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/alignItems.css',
+  './packages/design/css/commonParameters/alignItems.css',
   alignItems()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/alignSelf.css',
+  './packages/design/css/commonParameters/alignSelf.css',
   alignSelf()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/display.css',
+  './packages/design/css/commonParameters/display.css',
   display()
 );
-fs.writeFileSync('./packages/design/public/commonParameters/flex.css', flex());
+fs.writeFileSync('./packages/design/css/commonParameters/flex.css', flex());
 fs.writeFileSync(
-  './packages/design/public/commonParameters/flexDirection.css',
+  './packages/design/css/commonParameters/flexDirection.css',
   flexDirection()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/flexWrap.css',
+  './packages/design/css/commonParameters/flexWrap.css',
   flexWrap()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/justifyContent.css',
+  './packages/design/css/commonParameters/justifyContent.css',
   justifyContent()
 );
 fs.writeFileSync(
-  './packages/design/public/commonParameters/textAlign.css',
+  './packages/design/css/commonParameters/textAlign.css',
   textAlign()
 );
-fs.writeFileSync(
-  './packages/design/public/commonParameters/width.css',
-  width()
-);
+fs.writeFileSync('./packages/design/css/commonParameters/width.css', width());
 
-fs.writeFileSync('./packages/design/public/button.css', button());
-fs.writeFileSync('./packages/design/public/container.css', container());
-fs.writeFileSync('./packages/design/public/form.css', form());
-fs.writeFileSync('./packages/design/public/helpers.css', helpers());
-fs.writeFileSync('./packages/design/public/root.css', root());
+fs.writeFileSync('./packages/design/css/button.css', button());
+fs.writeFileSync('./packages/design/css/container.css', container());
+fs.writeFileSync('./packages/design/css/form.css', form());
+fs.writeFileSync('./packages/design/css/helpers.css', helpers());
+fs.writeFileSync('./packages/design/css/root.css', root());
 
 fs.writeFileSync(
-  './packages/design/public/index.css',
+  './packages/design/css/index.css',
   `${root()}
 ${alignContent()}
 ${alignItems()}
