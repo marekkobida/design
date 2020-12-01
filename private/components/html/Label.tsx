@@ -4,11 +4,14 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Label({ display = 'inline-block', ...parameters }: Test<'label'>) {
+function Label({
+  display = 'inline-block',
+  ...parameters
+}: ComponentParametersWithCommonParameters<'label'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     ...parameters,

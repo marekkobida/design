@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Span(parameters: Test<'span'>) {
+function Span(parameters: ComponentParametersWithCommonParameters<'span'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );

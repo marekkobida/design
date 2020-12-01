@@ -4,9 +4,9 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
 function Select({
   display = 'block',
@@ -14,7 +14,7 @@ function Select({
   pY = 2,
   width = '100',
   ...parameters
-}: Test<'select'>) {
+}: ComponentParametersWithCommonParameters<'select'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     pX,

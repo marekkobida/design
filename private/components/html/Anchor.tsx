@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Anchor(parameters: Test<'a'>) {
+function Anchor(parameters: ComponentParametersWithCommonParameters<'a'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );

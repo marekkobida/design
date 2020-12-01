@@ -4,15 +4,15 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Heading({
-  headingSize = 1,
-  mY = 0,
-  ...parameters
-}: Test<'h1'> & { headingSize?: 1 | 2 | 3 | 4 | 5 | 6 }) {
+interface P extends ComponentParametersWithCommonParameters<'h1'> {
+  headingSize?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+function Heading({ headingSize = 1, mY = 0, ...parameters }: P) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     mY,
     ...parameters,

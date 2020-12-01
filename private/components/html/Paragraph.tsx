@@ -4,11 +4,14 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Paragraph({ mY = 0, ...parameters }: Test<'p'>) {
+function Paragraph({
+  mY = 0,
+  ...parameters
+}: ComponentParametersWithCommonParameters<'p'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     mY,
     ...parameters,

@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Option(parameters: Test<'option'>) {
+function Option(parameters: ComponentParametersWithCommonParameters<'option'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );

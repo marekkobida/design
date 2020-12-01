@@ -4,19 +4,19 @@
 
 import React from 'react';
 
-import { Test } from '../helpers/common.types';
-
 import Div from './html/Div';
+
+import { ComponentParametersWithCommonParameters } from '../helpers/common.types';
 
 function Container({
   className,
   mX = 'auto',
   pX = 4,
   ...parameters
-}: Test<'div'>) {
-  const $ = { mX, pX, ...parameters };
-
-  return <Div {...$} className={['container', className]} />;
+}: ComponentParametersWithCommonParameters<'div'>) {
+  return (
+    <Div {...parameters} className={['container', className]} mX={mX} pX={pX} />
+  );
 }
 
 export default Container;

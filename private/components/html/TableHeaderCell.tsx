@@ -4,11 +4,13 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function TableHeaderCell(parameters: Test<'th'>) {
+function TableHeaderCell(
+  parameters: ComponentParametersWithCommonParameters<'th'>
+) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );

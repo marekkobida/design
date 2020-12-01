@@ -4,21 +4,20 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function TableSection({
-  element: Element,
-  ...parameters
-}: Test<'tbody'> & { element: 'tbody' | 'tfoot' | 'thead' }) {
+interface P extends ComponentParametersWithCommonParameters<'tbody'> {
+  element: 'tbody' | 'tfoot' | 'thead';
+}
+
+function TableSection({ element: E, ...parameters }: P) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
-  return (
-    <Element {...notCommonParameters} className={decodeClassName(className)} />
-  );
+  return <E {...notCommonParameters} className={decodeClassName(className)} />;
 }
 
 export default TableSection;

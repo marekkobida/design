@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Form(parameters: Test<'form'>) {
+function Form(parameters: ComponentParametersWithCommonParameters<'form'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );

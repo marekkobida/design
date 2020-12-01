@@ -4,11 +4,11 @@
 
 import React from 'react';
 
-import { Test } from '../../helpers/common.types';
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
+import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Div(parameters: Test<'div'>) {
+function Div(parameters: ComponentParametersWithCommonParameters<'div'>) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
