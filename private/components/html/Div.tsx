@@ -8,14 +8,19 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Div(parameters: ComponentParametersWithCommonParameters<'div'>) {
+export default React.forwardRef<
+  HTMLDivElement,
+  ComponentParametersWithCommonParameters<'div'>
+>(function Div(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
   return (
-    <div {...notCommonParameters} className={decodeClassName(className)} />
+    <div
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
   );
-}
-
-export default Div;
+});

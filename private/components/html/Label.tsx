@@ -8,18 +8,20 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Label({
-  display = 'inline-block',
-  ...parameters
-}: ComponentParametersWithCommonParameters<'label'>) {
+export default React.forwardRef<
+  HTMLLabelElement,
+  ComponentParametersWithCommonParameters<'label'>
+>(function Label({ display = 'inline-block', ...parameters }, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     ...parameters,
   });
 
   return (
-    <label {...notCommonParameters} className={decodeClassName(className)} />
+    <label
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
   );
-}
-
-export default Label;
+});

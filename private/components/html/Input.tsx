@@ -8,12 +8,13 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Input({
-  display = 'block',
-  pX = 4,
-  pY = 2,
-  ...parameters
-}: ComponentParametersWithCommonParameters<'input'>) {
+export default React.forwardRef<
+  HTMLInputElement,
+  ComponentParametersWithCommonParameters<'input'>
+>(function Input(
+  { display = 'block', pX = 4, pY = 2, ...parameters },
+  reference
+) {
   if (
     parameters.type === 'button' ||
     parameters.type === 'reset' ||
@@ -37,8 +38,7 @@ function Input({
     <input
       {...notCommonParameters}
       className={decodeClassName('border-radius', className)}
+      ref={reference}
     />
   );
-}
-
-export default Input;
+});

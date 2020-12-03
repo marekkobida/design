@@ -8,14 +8,19 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Form(parameters: ComponentParametersWithCommonParameters<'form'>) {
+export default React.forwardRef<
+  HTMLFormElement,
+  ComponentParametersWithCommonParameters<'form'>
+>(function Form(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
   return (
-    <form {...notCommonParameters} className={decodeClassName(className)} />
+    <form
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
   );
-}
-
-export default Form;
+});

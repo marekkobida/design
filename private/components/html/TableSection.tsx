@@ -8,16 +8,21 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-interface P extends ComponentParametersWithCommonParameters<'tbody'> {
-  element: 'tbody' | 'tfoot' | 'thead';
-}
-
-function TableSection({ element: E, ...parameters }: P) {
+export default React.forwardRef<
+  HTMLTableSectionElement,
+  ComponentParametersWithCommonParameters<'tbody'> & {
+    element: 'tbody' | 'tfoot' | 'thead';
+  }
+>(function TableSection({ element: E, ...parameters }, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
-  return <E {...notCommonParameters} className={decodeClassName(className)} />;
-}
-
-export default TableSection;
+  return (
+    <E
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
+  );
+});

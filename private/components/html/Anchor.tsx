@@ -8,12 +8,19 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Anchor(parameters: ComponentParametersWithCommonParameters<'a'>) {
+export default React.forwardRef<
+  HTMLAnchorElement,
+  ComponentParametersWithCommonParameters<'a'>
+>(function Anchor(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
-  return <a {...notCommonParameters} className={decodeClassName(className)} />;
-}
-
-export default Anchor;
+  return (
+    <a
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
+  );
+});

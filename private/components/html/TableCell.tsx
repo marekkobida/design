@@ -8,12 +8,19 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function TableCell(parameters: ComponentParametersWithCommonParameters<'td'>) {
+export default React.forwardRef<
+  HTMLTableCellElement,
+  ComponentParametersWithCommonParameters<'td'>
+>(function TableCell(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
-  return <td {...notCommonParameters} className={decodeClassName(className)} />;
-}
-
-export default TableCell;
+  return (
+    <td
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
+  );
+});

@@ -8,13 +8,20 @@ import Div from './html/Div';
 
 import { ComponentParametersWithCommonParameters } from '../helpers/common.types';
 
-function Row({
-  display = 'flex',
-  flexWrap = 'wrap',
-  mX = '!2',
-  ...parameters
-}: ComponentParametersWithCommonParameters<'div'>) {
-  return <Div {...parameters} display={display} flexWrap={flexWrap} mX={mX} />;
-}
-
-export default Row;
+export default React.forwardRef<
+  HTMLDivElement,
+  ComponentParametersWithCommonParameters<'div'>
+>(function Row(
+  { display = 'flex', flexWrap = 'wrap', mX = '!2', ...parameters },
+  reference
+) {
+  return (
+    <Div
+      {...parameters}
+      display={display}
+      flexWrap={flexWrap}
+      mX={mX}
+      ref={reference}
+    />
+  );
+});

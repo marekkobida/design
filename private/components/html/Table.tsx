@@ -8,18 +8,20 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Table({
-  width = '100',
-  ...parameters
-}: ComponentParametersWithCommonParameters<'table'>) {
+export default React.forwardRef<
+  HTMLTableElement,
+  ComponentParametersWithCommonParameters<'table'>
+>(function Table({ width = '100', ...parameters }, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     width,
     ...parameters,
   });
 
   return (
-    <table {...notCommonParameters} className={decodeClassName(className)} />
+    <table
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
   );
-}
-
-export default Table;
+});

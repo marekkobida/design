@@ -8,13 +8,13 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Select({
-  display = 'block',
-  pX = 4,
-  pY = 2,
-  width = '100',
-  ...parameters
-}: ComponentParametersWithCommonParameters<'select'>) {
+export default React.forwardRef<
+  HTMLSelectElement,
+  ComponentParametersWithCommonParameters<'select'>
+>(function Select(
+  { display = 'block', pX = 4, pY = 2, width = '100', ...parameters },
+  reference
+) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     pX,
@@ -27,8 +27,7 @@ function Select({
     <select
       {...notCommonParameters}
       className={decodeClassName('border-radius', className)}
+      ref={reference}
     />
   );
-}
-
-export default Select;
+});

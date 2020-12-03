@@ -8,15 +8,20 @@ import Div from './html/Div';
 
 import { ComponentParametersWithCommonParameters } from '../helpers/common.types';
 
-function Container({
-  className,
-  mX = 'auto',
-  pX = 4,
-  ...parameters
-}: ComponentParametersWithCommonParameters<'div'>) {
+export default React.forwardRef<
+  HTMLDivElement,
+  ComponentParametersWithCommonParameters<'div'>
+>(function Container(
+  { className, mX = 'auto', pX = 4, ...parameters },
+  reference
+) {
   return (
-    <Div {...parameters} className={['container', className]} mX={mX} pX={pX} />
+    <Div
+      {...parameters}
+      className={['container', className]}
+      mX={mX}
+      pX={pX}
+      ref={reference}
+    />
   );
-}
-
-export default Container;
+});

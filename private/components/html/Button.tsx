@@ -8,12 +8,13 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Button({
-  display = 'inline-block',
-  pX = 4,
-  pY = 2,
-  ...parameters
-}: ComponentParametersWithCommonParameters<'button'>) {
+export default React.forwardRef<
+  HTMLButtonElement,
+  ComponentParametersWithCommonParameters<'button'>
+>(function Button(
+  { display = 'inline-block', pX = 4, pY = 2, ...parameters },
+  reference
+) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     pX,
@@ -25,8 +26,7 @@ function Button({
     <button
       {...notCommonParameters}
       className={decodeClassName('border-radius', className)}
+      ref={reference}
     />
   );
-}
-
-export default Button;
+});

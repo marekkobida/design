@@ -8,13 +8,13 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function TextArea({
-  display = 'block',
-  pX = 4,
-  pY = 2,
-  width = '100',
-  ...parameters
-}: ComponentParametersWithCommonParameters<'textarea'>) {
+export default React.forwardRef<
+  HTMLTextAreaElement,
+  ComponentParametersWithCommonParameters<'textarea'>
+>(function TextArea(
+  { display = 'block', pX = 4, pY = 2, width = '100', ...parameters },
+  reference
+) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     display,
     pX,
@@ -27,8 +27,7 @@ function TextArea({
     <textarea
       {...notCommonParameters}
       className={decodeClassName('border-radius', className)}
+      ref={reference}
     />
   );
-}
-
-export default TextArea;
+});

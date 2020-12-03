@@ -8,16 +8,20 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Paragraph({
-  mY = 0,
-  ...parameters
-}: ComponentParametersWithCommonParameters<'p'>) {
+export default React.forwardRef<
+  HTMLParagraphElement,
+  ComponentParametersWithCommonParameters<'p'>
+>(function Paragraph({ mY = 0, ...parameters }, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     mY,
     ...parameters,
   });
 
-  return <p {...notCommonParameters} className={decodeClassName(className)} />;
-}
-
-export default Paragraph;
+  return (
+    <p
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
+  );
+});

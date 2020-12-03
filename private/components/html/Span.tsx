@@ -8,14 +8,19 @@ import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
 import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
 
-function Span(parameters: ComponentParametersWithCommonParameters<'span'>) {
+export default React.forwardRef<
+  HTMLSpanElement,
+  ComponentParametersWithCommonParameters<'span'>
+>(function Span(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters
   );
 
   return (
-    <span {...notCommonParameters} className={decodeClassName(className)} />
+    <span
+      {...notCommonParameters}
+      className={decodeClassName(className)}
+      ref={reference}
+    />
   );
-}
-
-export default Span;
+});
