@@ -17,8 +17,6 @@ import textAlign from './commonParameters/textAlign';
 import toString from './helpers/toString';
 import width from './commonParameters/width';
 
-console.log(width());
-
 function toFile(css: string, filePath: string) {
   fs.writeFileSync(path.resolve('./packages/design/css', filePath), css);
 }

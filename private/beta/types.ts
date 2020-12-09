@@ -8,5 +8,5 @@ export interface Breakpoint {
 }
 
 export interface Neviem {
-  [CSSStyleRuleSelectorText: string]: Partial<CSSStyleDeclaration> | Neviem;
+  [selectorText: string]: Neviem | Partial<CSSStyleDeclaration>;
 }
