@@ -2,7 +2,7 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { Breakpoint } from './beta/types';
+import { Breakpoint } from './css/types';
 
 interface Variables {
   ':root': { left: string; right: string }[];
