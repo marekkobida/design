@@ -3,15 +3,15 @@
  */
 
 import forBreakpoints from '../helpers/forBreakpoints';
+import { CSS } from '../types';
 import { DisplayProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
 
-function display(): Neviem {
-  return forBreakpoints(
+function display(): CSS {
+  return forBreakpoints(breakpoint =>
     DisplayProperty.reduce(($, displayProperty) => {
       return {
         ...$,
-        [`display-${displayProperty}`]: {
+        [`${breakpoint.name}display-${displayProperty}`]: {
           display: `${displayProperty} !important`,
         },
       };

@@ -8,6 +8,7 @@ import path from 'path';
 import alignContent from './commonParameters/alignContent';
 import alignItems from './commonParameters/alignItems';
 import alignSelf from './commonParameters/alignSelf';
+import container from './container';
 import display from './commonParameters/display';
 import flex from './commonParameters/flex';
 import flexDirection from './commonParameters/flexDirection';
@@ -24,6 +25,7 @@ function toFile(css: string, filePath: string) {
 toFile(toString(alignContent()), './commonParameters/alignContent.css');
 toFile(toString(alignItems()), './commonParameters/alignItems.css');
 toFile(toString(alignSelf()), './commonParameters/alignSelf.css');
+toFile(toString(container()), './container.css');
 toFile(toString(display()), './commonParameters/display.css');
 toFile(toString(flex()), './commonParameters/flex.css');
 toFile(toString(flexDirection()), './commonParameters/flexDirection.css');

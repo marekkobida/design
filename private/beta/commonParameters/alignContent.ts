@@ -4,14 +4,14 @@
 
 import forBreakpoints from '../helpers/forBreakpoints';
 import { AlignContentProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
+import { CSS } from '../types';
 
-function alignContent(): Neviem {
-  return forBreakpoints(
+function alignContent(): CSS {
+  return forBreakpoints(breakpoint =>
     AlignContentProperty.reduce(($, alignContentProperty) => {
       return {
         ...$,
-        [`align-content-${alignContentProperty}`]: {
+        [`${breakpoint.name}align-content-${alignContentProperty}`]: {
           alignContent: `${alignContentProperty} !important`,
         },
       };

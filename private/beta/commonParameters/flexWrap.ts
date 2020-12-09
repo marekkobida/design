@@ -3,15 +3,15 @@
  */
 
 import forBreakpoints from '../helpers/forBreakpoints';
+import { CSS } from '../types';
 import { FlexWrapProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
 
-function flexWrap(): Neviem {
-  return forBreakpoints(
+function flexWrap(): CSS {
+  return forBreakpoints(breakpoint =>
     FlexWrapProperty.reduce(($, flexWrapProperty) => {
       return {
         ...$,
-        [`flex-wrap-${flexWrapProperty}`]: {
+        [`${breakpoint.name}flex-wrap-${flexWrapProperty}`]: {
           flexWrap: `${flexWrapProperty} !important`,
         },
       };

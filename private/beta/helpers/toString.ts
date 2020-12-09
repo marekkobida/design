@@ -2,9 +2,9 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { Neviem } from '../types';
+import { CSS } from '../types';
 
-function toString(neviem: Neviem, paddingLeft = 2) {
+function toString(neviem: CSS, paddingLeft = 2) {
   let css = '';
 
   for (let a in neviem) {

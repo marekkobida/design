@@ -3,30 +3,30 @@
  */
 
 import forBreakpoints from '../helpers/forBreakpoints';
-import { Neviem } from '../types';
+import { CSS } from '../types';
 
-function width(): Neviem {
+function width(): CSS {
   const columns = 12;
 
-  return forBreakpoints({
+  return forBreakpoints(breakpoint => ({
     ...[...new Array(columns - 1).keys()].reduce(($, i) => {
       return {
         ...$,
-        [`width-${i + 1}\\/${columns}`]: {
+        [`${breakpoint.name}width-${i + 1}\\/${columns}`]: {
           width: `${((i + 1) / columns) * 100}% !important`,
         },
       };
     }, {}),
-    'width-0': {
+    [`${breakpoint.name}width-0`]: {
       width: '0 !important',
     },
-    'width-100': {
+    [`${breakpoint.name}width-100`]: {
       width: '100% !important',
     },
-    'width-auto': {
+    [`${breakpoint.name}width-auto`]: {
       width: 'auto !important',
     },
-  });
+  }));
 }
 
 export default width;

@@ -3,15 +3,15 @@
  */
 
 import forBreakpoints from '../helpers/forBreakpoints';
+import { CSS } from '../types';
 import { FlexDirectionProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
 
-function flexDirection(): Neviem {
-  return forBreakpoints(
+function flexDirection(): CSS {
+  return forBreakpoints(breakpoint =>
     FlexDirectionProperty.reduce(($, flexDirectionProperty) => {
       return {
         ...$,
-        [`flex-direction-${flexDirectionProperty}`]: {
+        [`${breakpoint.name}flex-direction-${flexDirectionProperty}`]: {
           flexDirection: `${flexDirectionProperty} !important`,
         },
       };

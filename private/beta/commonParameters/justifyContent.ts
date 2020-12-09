@@ -3,15 +3,15 @@
  */
 
 import forBreakpoints from '../helpers/forBreakpoints';
+import { CSS } from '../types';
 import { JustifyContentProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
 
-function justifyContent(): Neviem {
-  return forBreakpoints(
+function justifyContent(): CSS {
+  return forBreakpoints(breakpoint =>
     JustifyContentProperty.reduce(($, justifyContentProperty) => {
       return {
         ...$,
-        [`justify-content-${justifyContentProperty}`]: {
+        [`${breakpoint.name}justify-content-${justifyContentProperty}`]: {
           justifyContent: `${justifyContentProperty} !important`,
         },
       };

@@ -4,14 +4,14 @@
 
 import forBreakpoints from '../helpers/forBreakpoints';
 import { AlignSelfProperty } from '../../helpers/decodeCommonParameters';
-import { Neviem } from '../types';
+import { CSS } from '../types';
 
-function alignSelf(): Neviem {
-  return forBreakpoints(
+function alignSelf(): CSS {
+  return forBreakpoints(breakpoint =>
     AlignSelfProperty.reduce(($, alignSelfProperty) => {
       return {
         ...$,
-        [`align-self-${alignSelfProperty}`]: {
+        [`${breakpoint.name}align-self-${alignSelfProperty}`]: {
           alignSelf: `${alignSelfProperty} !important`,
         },
       };

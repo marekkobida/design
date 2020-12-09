@@ -6,19 +6,10 @@ import fs from 'fs';
 
 import button from './button';
 import f from './f';
-import fb from './fb';
 import form from './form';
 import helpers from './helpers';
 
 import variables from '../variables';
-
-function container() {
-  return fb(breakpoint =>
-    breakpoint.size
-      ? `.container {\n  max-width: ${breakpoint.size}rem !important;\n}`
-      : `.container {\n  width: 100% !important;\n}`
-  );
-}
 
 function root() {
   return `:root {
@@ -119,7 +110,6 @@ textarea {
 }
 
 fs.writeFileSync('./packages/design/css/button.css', button());
-fs.writeFileSync('./packages/design/css/container.css', container());
 fs.writeFileSync('./packages/design/css/form.css', form());
 fs.writeFileSync('./packages/design/css/helpers.css', helpers());
 fs.writeFileSync('./packages/design/css/root.css', root());
@@ -128,7 +118,6 @@ fs.writeFileSync(
   './packages/design/css/index.css',
   `${root()}
 ${button()}
-${container()}
 ${form()}
 ${helpers()}`
 );

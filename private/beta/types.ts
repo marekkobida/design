@@ -7,6 +7,6 @@ export interface Breakpoint {
   size: string;
 }
 
-export interface Neviem {
-  [selectorText: string]: Neviem | Partial<CSSStyleDeclaration>;
+export interface CSS {
+  [selectorText: string]: CSS | Partial<CSSStyleDeclaration>;
 }

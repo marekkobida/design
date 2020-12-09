@@ -2,7 +2,7 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { Breakpoint, Neviem } from '../types';
+import { Breakpoint, CSS } from '../types';
 
 const breakpoints: Breakpoint[] = [
   {
@@ -19,21 +19,13 @@ const breakpoints: Breakpoint[] = [
   },
 ];
 
-function forBreakpoints(neviem: Neviem): Neviem {
-  return breakpoints.reduce(($, breakpoint) => {
+function forBreakpoints($: (breakpoint: Breakpoint) => CSS): CSS {
+  return breakpoints.reduce(($$, breakpoint) => {
     return {
-      ...$,
-      [`@media (min-width: ${breakpoint.size})`]: Object.entries(neviem).reduce(
-        ($, [propertyName, property]) => {
-          return {
-            ...$,
-            [`${breakpoint.name}${propertyName}`]: property,
-          };
-        },
-        {}
-      ),
+      ...$$,
+      [`@media (min-width: ${breakpoint.size})`]: $(breakpoint),
     };
-  }, neviem);
+  }, $({ name: '', size: '' }));
 }
 
 export default forBreakpoints;
