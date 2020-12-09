@@ -11,7 +11,7 @@ function alignItems(): CSS {
     AlignItemsProperty.reduce(($, alignItemsProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}align-items-${alignItemsProperty}`]: {
+        [`.${breakpoint.name}align-items-${alignItemsProperty}`]: {
           alignItems: `${alignItemsProperty} !important`,
         },
       };

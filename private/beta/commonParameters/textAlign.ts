@@ -11,7 +11,7 @@ function textAlign(): CSS {
     TextAlignProperty.reduce(($, textAlignProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}text-align-${textAlignProperty}`]: {
+        [`.${breakpoint.name}text-align-${textAlignProperty}`]: {
           textAlign: `${textAlignProperty} !important`,
         },
       };

@@ -11,7 +11,7 @@ function alignSelf(): CSS {
     AlignSelfProperty.reduce(($, alignSelfProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}align-self-${alignSelfProperty}`]: {
+        [`.${breakpoint.name}align-self-${alignSelfProperty}`]: {
           alignSelf: `${alignSelfProperty} !important`,
         },
       };

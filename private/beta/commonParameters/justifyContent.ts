@@ -11,7 +11,7 @@ function justifyContent(): CSS {
     JustifyContentProperty.reduce(($, justifyContentProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}justify-content-${justifyContentProperty}`]: {
+        [`.${breakpoint.name}justify-content-${justifyContentProperty}`]: {
           justifyContent: `${justifyContentProperty} !important`,
         },
       };

@@ -11,7 +11,7 @@ function flex(): CSS {
     FlexProperty.reduce(($, flexProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}flex-${flexProperty}`]: {
+        [`.${breakpoint.name}flex-${flexProperty}`]: {
           flex: `${flexProperty} !important`,
         },
       };

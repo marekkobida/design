@@ -12,18 +12,18 @@ function width(): CSS {
     ...[...new Array(columns - 1).keys()].reduce(($, i) => {
       return {
         ...$,
-        [`${breakpoint.name}width-${i + 1}\\/${columns}`]: {
+        [`.${breakpoint.name}width-${i + 1}\\/${columns}`]: {
           width: `${((i + 1) / columns) * 100}% !important`,
         },
       };
     }, {}),
-    [`${breakpoint.name}width-0`]: {
+    [`.${breakpoint.name}width-0`]: {
       width: '0 !important',
     },
-    [`${breakpoint.name}width-100`]: {
+    [`.${breakpoint.name}width-100`]: {
       width: '100% !important',
     },
-    [`${breakpoint.name}width-auto`]: {
+    [`.${breakpoint.name}width-auto`]: {
       width: 'auto !important',
     },
   }));

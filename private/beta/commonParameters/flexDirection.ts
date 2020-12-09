@@ -11,7 +11,7 @@ function flexDirection(): CSS {
     FlexDirectionProperty.reduce(($, flexDirectionProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}flex-direction-${flexDirectionProperty}`]: {
+        [`.${breakpoint.name}flex-direction-${flexDirectionProperty}`]: {
           flexDirection: `${flexDirectionProperty} !important`,
         },
       };

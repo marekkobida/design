@@ -11,7 +11,7 @@ function flexWrap(): CSS {
     FlexWrapProperty.reduce(($, flexWrapProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}flex-wrap-${flexWrapProperty}`]: {
+        [`.${breakpoint.name}flex-wrap-${flexWrapProperty}`]: {
           flexWrap: `${flexWrapProperty} !important`,
         },
       };

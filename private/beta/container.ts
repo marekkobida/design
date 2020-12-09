@@ -9,12 +9,12 @@ function container(): CSS {
   return forBreakpoints(breakpoint =>
     breakpoint.name
       ? {
-          container: {
+          '.container': {
             maxWidth: `${breakpoint.size} !important`,
           },
         }
       : {
-          container: {
+          '.container': {
             width: '100% !important',
           },
         }

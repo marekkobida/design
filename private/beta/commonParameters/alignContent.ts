@@ -11,7 +11,7 @@ function alignContent(): CSS {
     AlignContentProperty.reduce(($, alignContentProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}align-content-${alignContentProperty}`]: {
+        [`.${breakpoint.name}align-content-${alignContentProperty}`]: {
           alignContent: `${alignContentProperty} !important`,
         },
       };

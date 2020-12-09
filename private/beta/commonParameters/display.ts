@@ -11,7 +11,7 @@ function display(): CSS {
     DisplayProperty.reduce(($, displayProperty) => {
       return {
         ...$,
-        [`${breakpoint.name}display-${displayProperty}`]: {
+        [`.${breakpoint.name}display-${displayProperty}`]: {
           display: `${displayProperty} !important`,
         },
       };
