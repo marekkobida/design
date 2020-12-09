@@ -2,9 +2,11 @@
  * Copyright 2020 Marek Kobida
  */
 
+import { Breakpoint } from './beta/types';
+
 interface Variables {
   ':root': { left: string; right: string }[];
-  breakpoints: (null | { name: string; size: number })[];
+  breakpoints: Breakpoint[];
   sizes: { name: string; size: number }[];
 }
 
@@ -205,18 +207,17 @@ const variables: Variables = {
     ...select,
   ],
   breakpoints: [
-    null,
     {
       name: '\\#',
-      size: 40,
+      size: '40rem',
     },
     {
       name: '\\#\\#',
-      size: 48,
+      size: '48rem',
     },
     {
       name: '\\#\\#\\#',
-      size: 64,
+      size: '64rem',
     },
   ],
   sizes: [

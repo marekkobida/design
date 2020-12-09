@@ -5,86 +5,11 @@
 import fs from 'fs';
 
 import button from './button';
-import f from './f';
 import form from './form';
 import helpers from './helpers';
 
-import variables from '../variables';
-
 function root() {
-  return `:root {
-${f($ => `  --${$.left}: ${$.right};`, variables[':root'])}
-}
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-.absolute {
-  position: absolute;
-}
-.border {
-  border: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.border-bottom {
-  border-bottom: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.border-left {
-  border-left: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.border-radius {
-  border-radius: 0.125rem;
-}
-.border-right {
-  border-right: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.border-top {
-  border-top: var(--border--border-width) solid rgb(var(--border--border-color)) !important;
-}
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading--font-family);
-  font-weight: var(--heading--font-weight);
-  line-height: var(--heading--line-height);
-}
-.h1, h1 {
-  font-size: var(--h1--font-size);
-}
-.h2, h2 {
-  font-size: var(--h2--font-size);
-}
-.h3, h3 {
-  font-size: var(--h3--font-size);
-}
-.h4, h4 {
-  font-size: var(--h4--font-size);
-}
-.h5, h5 {
-  font-size: var(--h5--font-size);
-}
-.h6, h6 {
-  font-size: var(--h6--font-size);
-}
-.relative {
-  position: relative;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:focus, a:hover {
-  text-decoration: underline;
-}
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  background-color: rgb(var(--body--background-color));
-  color: rgb(var(--body--color));
-  font-family: var(--body--font-family);
-  font-size: var(--body--font-size);
-  font-weight: var(--body--font-weight);
-  line-height: var(--body--line-height);
-  margin: 0;
-}
-button {
+  return `button {
   border-radius: 0; /* Microsoft Edge */
 }
 button, [type="button"], [type="reset"], [type="submit"] {
