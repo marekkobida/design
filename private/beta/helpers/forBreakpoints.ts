@@ -7,15 +7,15 @@ import { Breakpoint, Neviem } from '../types';
 const breakpoints: Breakpoint[] = [
   {
     name: '\\#',
-    size: 40,
+    size: '40rem',
   },
   {
     name: '\\#\\#',
-    size: 48,
+    size: '48rem',
   },
   {
     name: '\\#\\#\\#',
-    size: 64,
+    size: '64rem',
   },
 ];
 

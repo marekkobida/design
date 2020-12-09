@@ -7,7 +7,17 @@ import path from 'path';
 
 import alignContent from './commonParameters/alignContent';
 import alignItems from './commonParameters/alignItems';
+import alignSelf from './commonParameters/alignSelf';
+import display from './commonParameters/display';
+import flex from './commonParameters/flex';
+import flexDirection from './commonParameters/flexDirection';
+import flexWrap from './commonParameters/flexWrap';
+import justifyContent from './commonParameters/justifyContent';
+import textAlign from './commonParameters/textAlign';
 import toString from './helpers/toString';
+import width from './commonParameters/width';
+
+console.log(width());
 
 function toFile(css: string, filePath: string) {
   fs.writeFileSync(path.resolve('./packages/design/css', filePath), css);
@@ -15,3 +25,11 @@ function toFile(css: string, filePath: string) {
 
 toFile(toString(alignContent()), './commonParameters/alignContent.css');
 toFile(toString(alignItems()), './commonParameters/alignItems.css');
+toFile(toString(alignSelf()), './commonParameters/alignSelf.css');
+toFile(toString(display()), './commonParameters/display.css');
+toFile(toString(flex()), './commonParameters/flex.css');
+toFile(toString(flexDirection()), './commonParameters/flexDirection.css');
+toFile(toString(flexWrap()), './commonParameters/flexWrap.css');
+toFile(toString(justifyContent()), './commonParameters/justifyContent.css');
+toFile(toString(textAlign()), './commonParameters/textAlign.css');
+toFile(toString(width()), './commonParameters/width.css');

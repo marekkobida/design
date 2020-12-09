@@ -11,7 +11,7 @@ function alignContent(): Neviem {
     AlignContentProperty.reduce(($, alignContentProperty) => {
       return {
         ...$,
-        [`.align-content-${alignContentProperty}`]: {
+        [`align-content-${alignContentProperty}`]: {
           alignContent: `${alignContentProperty} !important`,
         },
       };

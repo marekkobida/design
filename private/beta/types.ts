@@ -4,9 +4,9 @@
 
 export interface Breakpoint {
   name: string;
-  size: number;
+  size: string;
 }
 
 export interface Neviem {
-  [CSSStyleRuleSelectorText: string]: CSSStyleDeclaration | Neviem;
+  [CSSStyleRuleSelectorText: string]: Partial<CSSStyleDeclaration> | Neviem;
 }

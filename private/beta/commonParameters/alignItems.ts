@@ -11,7 +11,7 @@ function alignItems(): Neviem {
     AlignItemsProperty.reduce(($, alignItemsProperty) => {
       return {
         ...$,
-        [`.align-items-${alignItemsProperty}`]: {
+        [`align-items-${alignItemsProperty}`]: {
           alignItems: `${alignItemsProperty} !important`,
         },
       };

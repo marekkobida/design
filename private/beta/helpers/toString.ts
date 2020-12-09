@@ -17,12 +17,14 @@ function toString(neviem: Neviem, paddingLeft = 2) {
 
       css += '}\n';
     } else {
-      css += `${new Array(paddingLeft + 1 - 2).join(' ')}${a} {\n`;
+      css += `${new Array(paddingLeft + 1 - 2).join(' ')}.${a} {\n`;
 
       for (let c in b) {
         const d = b[c];
 
-        css += `${new Array(paddingLeft + 1).join(' ')}${c}: ${d};\n`;
+        const test = c.replace(/[A-Z]/g, m => '-' + m.toLowerCase());
+
+        css += `${new Array(paddingLeft + 1).join(' ')}${test}: ${d};\n`;
       }
 
       css += `${new Array(paddingLeft + 1 - 2).join(' ')}}\n`;
