@@ -6,8 +6,8 @@ import forBreakpoints from './helpers/forBreakpoints';
 import { CSS } from './types';
 
 function container(): CSS {
-  return forBreakpoints(breakpoint =>
-    breakpoint.name
+  return forBreakpoints(breakpoint => {
+    return breakpoint.name
       ? {
           '.container': {
             maxWidth: `${breakpoint.size} !important`,
@@ -17,8 +17,8 @@ function container(): CSS {
           '.container': {
             width: '100% !important',
           },
-        }
-  );
+        };
+  });
 }
 
 export default container;

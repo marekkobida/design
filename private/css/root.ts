@@ -10,7 +10,7 @@ function root(): CSS {
     '*, *::after, *::before': {
       boxSizing: 'border-box',
     },
-    ':root': variables[':root'].reduce(
+    ':root': variables.reduce(
       ($, { left, right }) => ({ ...$, [`--${left}`]: right }),
       {}
     ),

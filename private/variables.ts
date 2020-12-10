@@ -2,14 +2,6 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { Breakpoint } from './css/types';
-
-interface Variables {
-  ':root': { left: string; right: string }[];
-  breakpoints: Breakpoint[];
-  sizes: { name: string; size: number }[];
-}
-
 const body = [
   {
     left: 'body--background-color',
@@ -196,68 +188,14 @@ const select = [
   },
 ];
 
-const variables: Variables = {
-  ':root': [
-    ...body,
-    ...border,
-    ...button,
-    ...heading,
-    ...input,
-    ...label,
-    ...select,
-  ],
-  breakpoints: [
-    {
-      name: '\\#',
-      size: '40rem',
-    },
-    {
-      name: '\\#\\#',
-      size: '48rem',
-    },
-    {
-      name: '\\#\\#\\#',
-      size: '64rem',
-    },
-  ],
-  sizes: [
-    {
-      name: '0',
-      size: 0,
-    },
-    {
-      name: '1',
-      size: 0.25,
-    },
-    {
-      name: '2',
-      size: 0.5,
-    },
-    {
-      name: '3',
-      size: 0.75,
-    },
-    {
-      name: '4',
-      size: 1,
-    },
-    {
-      name: '5',
-      size: 1.25,
-    },
-    {
-      name: '6',
-      size: 1.5,
-    },
-    {
-      name: '7',
-      size: 1.75,
-    },
-    {
-      name: '8',
-      size: 2,
-    },
-  ],
-};
+const variables: { left: string; right: string }[] = [
+  ...body,
+  ...border,
+  ...button,
+  ...heading,
+  ...input,
+  ...label,
+  ...select,
+];
 
 export default variables;
