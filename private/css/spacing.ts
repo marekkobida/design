@@ -21,6 +21,24 @@ function spacing(): CSS {
   const columns = 12;
 
   return forBreakpoints(breakpoint => {
+    function auto(): CSS {
+      return {
+        [`.${breakpoint.name}m-auto`]: { margin: 'auto !important' },
+        [`.${breakpoint.name}m-b-auto, .${breakpoint.name}m-y-auto`]: {
+          marginBottom: 'auto !important',
+        },
+        [`.${breakpoint.name}m-l-auto, .${breakpoint.name}m-x-auto`]: {
+          marginLeft: 'auto !important',
+        },
+        [`.${breakpoint.name}m-r-auto, .${breakpoint.name}m-x-auto`]: {
+          marginRight: 'auto !important',
+        },
+        [`.${breakpoint.name}m-t-auto, .${breakpoint.name}m-y-auto`]: {
+          marginTop: 'auto !important',
+        },
+      };
+    }
+
     function test(property: string): CSS {
       return sizes.reduce(($, { name, size }) => {
         return {
@@ -45,6 +63,7 @@ function spacing(): CSS {
     }
 
     return {
+      ...auto(),
       ...test('margin'),
       ...test('padding'),
       ...sizes.reduce(($, { name, size }) => {
@@ -77,19 +96,6 @@ function spacing(): CSS {
           },
         };
       }, {}),
-      [`.${breakpoint.name}m-auto`]: { margin: 'auto !important' },
-      [`.${breakpoint.name}m-b-auto, .${breakpoint.name}m-y-auto`]: {
-        marginBottom: 'auto !important',
-      },
-      [`.${breakpoint.name}m-l-auto, .${breakpoint.name}m-x-auto`]: {
-        marginLeft: 'auto !important',
-      },
-      [`.${breakpoint.name}m-r-auto, .${breakpoint.name}m-x-auto`]: {
-        marginRight: 'auto !important',
-      },
-      [`.${breakpoint.name}m-t-auto, .${breakpoint.name}m-y-auto`]: {
-        marginTop: 'auto !important',
-      },
     };
   });
 }
