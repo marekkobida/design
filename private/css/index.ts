@@ -37,3 +37,22 @@ toFile(toString(root()), './root.css');
 toFile(toString(spacing()), './spacing.css');
 toFile(toString(textAlign()), './commonParameters/textAlign.css');
 toFile(toString(width()), './commonParameters/width.css');
+
+const css = {
+  ...root(),
+  //
+  ...alignContent(),
+  ...alignItems(),
+  ...alignSelf(),
+  ...container(),
+  ...display(),
+  ...flex(),
+  ...flexDirection(),
+  ...flexWrap(),
+  ...justifyContent(),
+  ...spacing(),
+  ...textAlign(),
+  ...width(),
+};
+
+toFile(toString(css), './index.css');
