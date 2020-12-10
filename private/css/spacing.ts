@@ -21,7 +21,32 @@ function spacing(): CSS {
   const columns = 12;
 
   return forBreakpoints(breakpoint => {
+    function test(property: string): CSS {
+      return sizes.reduce(($, { name, size }) => {
+        return {
+          ...$,
+          [`.${breakpoint.name}${property[0]}-${name}`]: {
+            [property]: `${size} !important`,
+          },
+          [`.${breakpoint.name}${property[0]}-b-${name}, .${breakpoint.name}${property[0]}-y-${name}`]: {
+            [`${property}-bottom`]: `${size} !important`,
+          },
+          [`.${breakpoint.name}${property[0]}-l-${name}, .${breakpoint.name}${property[0]}-x-${name}`]: {
+            [`${property}-left`]: `${size} !important`,
+          },
+          [`.${breakpoint.name}${property[0]}-r-${name}, .${breakpoint.name}${property[0]}-x-${name}`]: {
+            [`${property}-right`]: `${size} !important`,
+          },
+          [`.${breakpoint.name}${property[0]}-t-${name}, .${breakpoint.name}${property[0]}-y-${name}`]: {
+            [`${property}-top`]: `${size} !important`,
+          },
+        };
+      }, {});
+    }
+
     return {
+      ...test('margin'),
+      ...test('padding'),
       ...sizes.reduce(($, { name, size }) => {
         return size === '0'
           ? $
