@@ -2,18 +2,13 @@
  * Copyright 2020 Marek Kobida
  */
 
-import variables from '../variables';
+import variables from '../variables.json';
 import { CSS } from './types';
 
 function root(): CSS {
   return {
-    '*, *::after, *::before': {
-      boxSizing: 'border-box',
-    },
-    ':root': variables.reduce(
-      ($, { left, right }) => ({ ...$, [`--${left}`]: right }),
-      {}
-    ),
+    '*, *::after, *::before': { boxSizing: 'border-box' },
+    ':root': variables,
     body: {
       backgroundColor: 'rgb(var(--body--background-color))',
       color: 'rgb(var(--body--color))',
@@ -36,9 +31,7 @@ function root(): CSS {
       borderLeft:
         'var(--border--border-width) solid rgb(var(--border--border-color)) !important',
     },
-    '.border-radius': {
-      borderRadius: '0.125rem',
-    },
+    '.border-radius': { borderRadius: '0.125rem' },
     '.border-right': {
       borderRight:
         'var(--border--border-width) solid rgb(var(--border--border-color)) !important',
@@ -52,31 +45,14 @@ function root(): CSS {
       fontWeight: 'var(--heading--font-weight)',
       lineHeight: 'var(--heading--line-height)',
     },
-    '.h1, h1': {
-      fontSize: 'var(--h1--font-size)',
-    },
-    '.h2, h2': {
-      fontSize: 'var(--h2--font-size)',
-    },
-    '.h3, h3': {
-      fontSize: 'var(--h3--font-size)',
-    },
-    '.h4, h4': {
-      fontSize: 'var(--h4--font-size)',
-    },
-    '.h5, h5': {
-      fontSize: 'var(--h5--font-size)',
-    },
-    '.h6, h6': {
-      fontSize: 'var(--h6--font-size)',
-    },
-    a: {
-      color: 'inherit',
-      textDecoration: 'none',
-    },
-    'a:focus, a:hover': {
-      textDecoration: 'underline',
-    },
+    '.h1, h1': { fontSize: 'var(--h1--font-size)' },
+    '.h2, h2': { fontSize: 'var(--h2--font-size)' },
+    '.h3, h3': { fontSize: 'var(--h3--font-size)' },
+    '.h4, h4': { fontSize: 'var(--h4--font-size)' },
+    '.h5, h5': { fontSize: 'var(--h5--font-size)' },
+    '.h6, h6': { fontSize: 'var(--h6--font-size)' },
+    a: { color: 'inherit', textDecoration: 'none' },
+    'a:focus, a:hover': { textDecoration: 'underline' },
   };
 }
 

@@ -18,15 +18,9 @@ function width(): CSS {
           },
         };
       }, {}),
-      [`.${breakpoint.name}width-0`]: {
-        width: '0 !important',
-      },
-      [`.${breakpoint.name}width-100`]: {
-        width: '100% !important',
-      },
-      [`.${breakpoint.name}width-auto`]: {
-        width: 'auto !important',
-      },
+      [`.${breakpoint.name}width-0`]: { width: '0 !important' },
+      [`.${breakpoint.name}width-100`]: { width: '100% !important' },
+      [`.${breakpoint.name}width-auto`]: { width: 'auto !important' },
     };
   });
 }
