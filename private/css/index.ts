@@ -21,7 +21,7 @@ import toString from './helpers/toString';
 import width from './commonParameters/width';
 
 function toFile(css: string, filePath: string) {
-  fs.writeFileSync(path.resolve('./packages/design/css', filePath), css);
+  fs.writeFileSync(path.resolve('./packages/design/public', filePath), css);
 }
 
 toFile(toString(alignContent()), './commonParameters/alignContent.css');
@@ -38,21 +38,50 @@ toFile(toString(spacing()), './spacing.css');
 toFile(toString(textAlign()), './commonParameters/textAlign.css');
 toFile(toString(width()), './commonParameters/width.css');
 
-const css = {
-  ...root(),
+function isObject(item: any): boolean {
+  return item && typeof item === 'object' && !Array.isArray(item);
+}
+
+function merge(target: any, ...sources: any[]): any {
+  if (!sources.length) {
+    return target;
+  }
+
+  const source = sources.shift();
+
+  if (isObject(target) && isObject(source)) {
+    for (const key in source) {
+      if (isObject(source[key])) {
+        if (!target[key]) {
+          Object.assign(target, { [key]: {} });
+        }
+
+        merge(target[key], source[key]);
+      } else {
+        Object.assign(target, { [key]: source[key] });
+      }
+    }
+  }
+
+  return merge(target, ...sources);
+}
+
+const css = merge(
+  {},
+  root(),
   //
-  ...alignContent(),
-  ...alignItems(),
-  ...alignSelf(),
-  ...container(),
-  ...display(),
-  ...flex(),
-  ...flexDirection(),
-  ...flexWrap(),
-  ...justifyContent(),
-  ...spacing(),
-  ...textAlign(),
-  ...width(),
-};
+  alignContent(),
+  alignItems(),
+  alignSelf(),
+  container(),
+  display(),
+  flex(),
+  flexDirection(),
+  flexWrap(),
+  justifyContent(),
+  spacing(),
+  textAlign(),
+  width()
+);
 
 toFile(toString(css), './index.css');

@@ -6,11 +6,11 @@ import React from 'react';
 
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
-import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
+import { ElementParametersWithCommonParameters } from '../../helpers/common.types';
 
 export default React.forwardRef<
   HTMLTableSectionElement,
-  ComponentParametersWithCommonParameters<'tbody'> & {
+  ElementParametersWithCommonParameters<'tbody'> & {
     element: 'tbody' | 'tfoot' | 'thead';
   }
 >(function TableSection({ element: E, ...parameters }, reference) {

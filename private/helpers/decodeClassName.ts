@@ -2,8 +2,6 @@
  * Copyright 2020 Marek Kobida
  */
 
-import css from '../../css/index.css';
-
 export type DecodedClassName = string;
 
 export type EncodedClassName =
@@ -15,7 +13,9 @@ export type EncodedClassName =
   | undefined
   | { [decodedClassName: string]: boolean | null | undefined };
 
-function $(...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
+function decodeClassName(
+  ...encodedClassNames: EncodedClassName[]
+): DecodedClassName | undefined {
   let decodedClassNames: DecodedClassName[] = [];
 
   function addDecodedClassName(decodedClassName: DecodedClassName) {
@@ -25,7 +25,9 @@ function $(...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
   for (const encodedClassName of encodedClassNames) {
     // EncodedClassName[]
     if (Array.isArray(encodedClassName)) {
-      for (const decodedClassName of $(...encodedClassName)) {
+      const decodedClassName = decodeClassName(...encodedClassName);
+
+      if (typeof decodedClassName === 'string') {
         addDecodedClassName(decodedClassName);
       }
     }
@@ -42,7 +44,7 @@ function $(...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
       }
     }
 
-    // { [decodedClassName: string]: boolean | null | undefined; }
+    // { [decodedClassName: string]: boolean | null | undefined }
     if (
       !Array.isArray(encodedClassName) &&
       encodedClassName !== null &&
@@ -56,21 +58,7 @@ function $(...encodedClassNames: EncodedClassName[]): DecodedClassName[] {
     }
   }
 
-  return decodedClassNames;
-}
-
-function decodeClassName(
-  ...encodedClassNames: EncodedClassName[]
-): DecodedClassName | undefined {
-  const decodedClassNames = $(...encodedClassNames);
-
   if (decodedClassNames.length > 0) {
-    for (const i in decodedClassNames) {
-      const decodedClassName = decodedClassNames[i];
-
-      decodedClassNames[i] = css[decodedClassName] || decodedClassName;
-    }
-
     return decodedClassNames.join(' ');
   }
 }

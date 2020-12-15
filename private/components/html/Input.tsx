@@ -6,13 +6,13 @@ import React from 'react';
 
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
-import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
+import { ElementParametersWithCommonParameters } from '../../helpers/common.types';
 
 export default React.forwardRef<
   HTMLInputElement,
-  ComponentParametersWithCommonParameters<'input'>
+  ElementParametersWithCommonParameters<'input'>
 >(function Input(
-  { display = 'block', pX = 4, pY = 2, ...parameters },
+  { display = 'block', pX = '4', pY = '2', ...parameters },
   reference
 ) {
   if (

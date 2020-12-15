@@ -6,11 +6,11 @@ import React from 'react';
 
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
-import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
+import { ElementParametersWithCommonParameters } from '../../helpers/common.types';
 
 export default React.forwardRef<
   HTMLOptionElement,
-  ComponentParametersWithCommonParameters<'option'>
+  ElementParametersWithCommonParameters<'option'>
 >(function Option(parameters, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters(
     parameters

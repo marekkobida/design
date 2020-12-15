@@ -6,13 +6,13 @@ import React from 'react';
 
 import Div from './html/Div';
 
-import { ComponentParametersWithCommonParameters } from '../helpers/common.types';
+import { ElementParametersWithCommonParameters } from '../helpers/common.types';
 
 export default React.forwardRef<
   HTMLDivElement,
-  ComponentParametersWithCommonParameters<'div'>
+  ElementParametersWithCommonParameters<'div'>
 >(function Column(
-  { flex = 'none', pX = 2, width = 'auto', ...parameters },
+  { flex = 'none', pX = '2', width = 'auto', ...parameters },
   reference
 ) {
   return (

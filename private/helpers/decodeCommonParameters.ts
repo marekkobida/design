@@ -2,10 +2,10 @@
  * Copyright 2020 Marek Kobida
  */
 
-import { EncodedClassName } from './decodeClassName';
 import decodeResponsiveClassName, {
   EncodedResponsiveClassName,
 } from './decodeResponsiveClassName';
+import { EncodedClassName } from './decodeClassName';
 
 // https://drafts.csswg.org/css-align/#typedef-content-distribution
 export const ContentDistribution = [
@@ -24,6 +24,14 @@ export const ContentPosition = [
   'start',
 ] as const;
 
+// https://drafts.csswg.org/css-align/#propdef-align-content
+export const AlignContentProperty = [
+  'baseline',
+  'normal',
+  ...ContentDistribution,
+  ...ContentPosition,
+] as const;
+
 // https://drafts.csswg.org/css-align/#typedef-self-position
 export const SelfPosition = [
   'center',
@@ -35,13 +43,7 @@ export const SelfPosition = [
   'start',
 ] as const;
 
-export const AlignContentProperty = [
-  'baseline',
-  'normal',
-  ...ContentDistribution,
-  ...ContentPosition,
-] as const;
-
+// https://drafts.csswg.org/css-align/#propdef-align-items
 export const AlignItemsProperty = [
   'baseline',
   'normal',
@@ -49,6 +51,7 @@ export const AlignItemsProperty = [
   ...SelfPosition,
 ] as const;
 
+// https://drafts.csswg.org/css-align/#propdef-align-self
 export const AlignSelfProperty = [
   'auto',
   'baseline',
@@ -91,12 +94,49 @@ export const FlexProperty = ['none', 1] as const;
 
 export const FlexWrapProperty = ['nowrap', 'wrap', 'wrap-reverse'] as const;
 
+// https://drafts.csswg.org/css-align/#justify-items-property
 export const JustifyContentProperty = [
   'left',
   'normal',
   'right',
   ...ContentDistribution,
   ...ContentPosition,
+] as const;
+
+export const S = [
+  '!1',
+  '!2',
+  '!3',
+  '!4',
+  '!5',
+  '!6',
+  '!7',
+  '!8',
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  'auto',
+] as const;
+
+export const MarginLeftProperty = [
+  '1/12',
+  '2/12',
+  '3/12',
+  '4/12',
+  '5/12',
+  '6/12',
+  '7/12',
+  '8/12',
+  '9/12',
+  '10/12',
+  '11/12',
+  ...S,
 ] as const;
 
 export const TextAlignProperty = [
@@ -109,43 +149,7 @@ export const TextAlignProperty = [
   'start',
 ] as const;
 
-const $s = [
-  0,
-  '!1',
-  '!2',
-  '!3',
-  '!4',
-  '!5',
-  '!6',
-  '!7',
-  '!8',
-  'auto',
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-] as const;
-
-const $mL = [
-  '1/12',
-  '2/12',
-  '3/12',
-  '4/12',
-  '5/12',
-  '6/12',
-  '7/12',
-  '8/12',
-  '9/12',
-  '10/12',
-  '11/12',
-  ...$s,
-] as const;
-
-const $width = [
+export const WidthProperty = [
   '0',
   '1/12',
   '2/12',
@@ -163,40 +167,38 @@ const $width = [
 ] as const;
 
 export interface CommonParameters {
-  alignContent?: EncodedResponsiveClassName<
-    typeof AlignContentProperty[number]
-  >;
-  alignItems?: EncodedResponsiveClassName<typeof AlignItemsProperty[number]>;
-  alignSelf?: EncodedResponsiveClassName<typeof AlignSelfProperty[number]>;
-  className?: EncodedClassName;
-  display?: EncodedResponsiveClassName<typeof DisplayProperty[number]>;
-  flex?: EncodedResponsiveClassName<typeof FlexProperty[number]>;
-  flexDirection?: EncodedResponsiveClassName<
+  alignContent: EncodedResponsiveClassName<typeof AlignContentProperty[number]>;
+  alignItems: EncodedResponsiveClassName<typeof AlignItemsProperty[number]>;
+  alignSelf: EncodedResponsiveClassName<typeof AlignSelfProperty[number]>;
+  className: EncodedClassName;
+  display: EncodedResponsiveClassName<typeof DisplayProperty[number]>;
+  flex: EncodedResponsiveClassName<typeof FlexProperty[number]>;
+  flexDirection: EncodedResponsiveClassName<
     typeof FlexDirectionProperty[number]
   >;
-  flexWrap?: EncodedResponsiveClassName<typeof FlexWrapProperty[number]>;
-  justifyContent?: EncodedResponsiveClassName<
+  flexWrap: EncodedResponsiveClassName<typeof FlexWrapProperty[number]>;
+  justifyContent: EncodedResponsiveClassName<
     typeof JustifyContentProperty[number]
   >;
-  m?: EncodedResponsiveClassName<typeof $s[number]>;
-  mB?: EncodedResponsiveClassName<typeof $s[number]>;
-  mL?: EncodedResponsiveClassName<typeof $mL[number]>;
-  mR?: EncodedResponsiveClassName<typeof $s[number]>;
-  mT?: EncodedResponsiveClassName<typeof $s[number]>;
-  mX?: EncodedResponsiveClassName<typeof $s[number]>;
-  mY?: EncodedResponsiveClassName<typeof $s[number]>;
-  p?: EncodedResponsiveClassName<typeof $s[number]>;
-  pB?: EncodedResponsiveClassName<typeof $s[number]>;
-  pL?: EncodedResponsiveClassName<typeof $s[number]>;
-  pR?: EncodedResponsiveClassName<typeof $s[number]>;
-  pT?: EncodedResponsiveClassName<typeof $s[number]>;
-  pX?: EncodedResponsiveClassName<typeof $s[number]>;
-  pY?: EncodedResponsiveClassName<typeof $s[number]>;
-  textAlign?: EncodedResponsiveClassName<typeof TextAlignProperty[number]>;
-  width?: EncodedResponsiveClassName<typeof $width[number]>;
+  m: EncodedResponsiveClassName<typeof S[number]>;
+  mB: EncodedResponsiveClassName<typeof S[number]>;
+  mL: EncodedResponsiveClassName<typeof MarginLeftProperty[number]>;
+  mR: EncodedResponsiveClassName<typeof S[number]>;
+  mT: EncodedResponsiveClassName<typeof S[number]>;
+  mX: EncodedResponsiveClassName<typeof S[number]>;
+  mY: EncodedResponsiveClassName<typeof S[number]>;
+  p: EncodedResponsiveClassName<typeof S[number]>;
+  pB: EncodedResponsiveClassName<typeof S[number]>;
+  pL: EncodedResponsiveClassName<typeof S[number]>;
+  pR: EncodedResponsiveClassName<typeof S[number]>;
+  pT: EncodedResponsiveClassName<typeof S[number]>;
+  pX: EncodedResponsiveClassName<typeof S[number]>;
+  pY: EncodedResponsiveClassName<typeof S[number]>;
+  textAlign: EncodedResponsiveClassName<typeof TextAlignProperty[number]>;
+  width: EncodedResponsiveClassName<typeof WidthProperty[number]>;
 }
 
-function decodeCommonParameters<Parameters extends CommonParameters>(
+function decodeCommonParameters<Parameters extends Partial<CommonParameters>>(
   parameters: Parameters
 ): Pick<Parameters, Exclude<keyof Parameters, keyof CommonParameters>> & {
   className: EncodedClassName[];

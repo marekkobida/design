@@ -6,14 +6,14 @@ import React from 'react';
 
 import decodeClassName from '../../helpers/decodeClassName';
 import decodeCommonParameters from '../../helpers/decodeCommonParameters';
-import { ComponentParametersWithCommonParameters } from '../../helpers/common.types';
+import { ElementParametersWithCommonParameters } from '../../helpers/common.types';
 
 export default React.forwardRef<
   HTMLHeadingElement,
-  ComponentParametersWithCommonParameters<'h1'> & {
-    headingSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  ElementParametersWithCommonParameters<'h1'> & {
+    headingSize?: '1' | '2' | '3' | '4' | '5' | '6';
   }
->(function Heading({ headingSize = 1, mY = 0, ...parameters }, reference) {
+>(function Heading({ headingSize = '1', mY = '0', ...parameters }, reference) {
   const { className, ...notCommonParameters } = decodeCommonParameters({
     mY,
     ...parameters,
