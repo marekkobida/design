@@ -33,20 +33,19 @@ function decodeClassName(
     }
 
     // number
-    if (typeof encodedClassName === 'number') {
+    else if (typeof encodedClassName === 'number') {
       addDecodedClassName(`${encodedClassName}`);
     }
 
     // string
-    if (typeof encodedClassName === 'string') {
+    else if (typeof encodedClassName === 'string') {
       for (const decodedClassName of encodedClassName.split(' ')) {
         addDecodedClassName(decodedClassName);
       }
     }
 
     // { [decodedClassName: string]: boolean | null | undefined }
-    if (
-      !Array.isArray(encodedClassName) &&
+    else if (
       encodedClassName !== null &&
       typeof encodedClassName === 'object'
     ) {

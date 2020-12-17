@@ -31,12 +31,12 @@ function decodeResponsiveClassName(
   }
 
   // T
-  if (typeof encodedResponsiveClassName === 'string') {
+  else if (typeof encodedResponsiveClassName === 'string') {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName}`);
   }
 
   // [T]
-  if (Array.isArray(encodedResponsiveClassName)) {
+  else if (Array.isArray(encodedResponsiveClassName)) {
     addDecodedResponsiveClassName(`${$}${encodedResponsiveClassName[0]}`);
 
     // [T, { [breakpointName: string]: T }]
@@ -50,8 +50,7 @@ function decodeResponsiveClassName(
   }
 
   // { [breakpointName: string]: T }
-  if (
-    !Array.isArray(encodedResponsiveClassName) &&
+  else if (
     encodedResponsiveClassName !== null &&
     typeof encodedResponsiveClassName === 'object'
   ) {

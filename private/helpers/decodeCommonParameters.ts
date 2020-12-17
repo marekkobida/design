@@ -60,22 +60,23 @@ export const AlignSelfProperty = [
   ...SelfPosition,
 ] as const;
 
-// https://drafts.csswg.org/css-display/#typedef-display-box
+// https://drafts.csswg.org/css-display-3/#typedef-display-box
 export const DisplayBox = ['none'] as const;
 
-// https://drafts.csswg.org/css-display/#typedef-display-inside
+// https://drafts.csswg.org/css-display-3/#typedef-display-inside
 export const DisplayInside = ['flex', 'grid'] as const;
 
-// https://drafts.csswg.org/css-display/#typedef-display-legacy
+// https://drafts.csswg.org/css-display-3/#typedef-display-legacy
 export const DisplayLegacy = [
   'inline-block',
   'inline-flex',
   'inline-grid',
 ] as const;
 
-// https://drafts.csswg.org/css-display/#typedef-display-outside
+// https://drafts.csswg.org/css-display-3/#typedef-display-outside
 export const DisplayOutside = ['block', 'inline'] as const;
 
+// https://drafts.csswg.org/css-display-3/#propdef-display
 export const DisplayProperty = [
   ...DisplayBox,
   ...DisplayInside,
@@ -83,6 +84,7 @@ export const DisplayProperty = [
   ...DisplayOutside,
 ] as const;
 
+// https://drafts.csswg.org/css-flexbox-1/#propdef-flex-direction
 export const FlexDirectionProperty = [
   'column',
   'column-reverse',
@@ -90,8 +92,10 @@ export const FlexDirectionProperty = [
   'row-reverse',
 ] as const;
 
+// https://drafts.csswg.org/css-flexbox-1/#propdef-flex
 export const FlexProperty = ['none', 1] as const;
 
+// https://drafts.csswg.org/css-flexbox-1/#propdef-flex-wrap
 export const FlexWrapProperty = ['nowrap', 'wrap', 'wrap-reverse'] as const;
 
 // https://drafts.csswg.org/css-align/#justify-items-property
